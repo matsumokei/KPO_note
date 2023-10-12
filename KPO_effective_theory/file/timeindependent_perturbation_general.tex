@@ -1,0 +1,92 @@
+\part{時間に依存しない摂動論}
+ここでは，時間に依存しない摂動論の一般論について，解説し，摂動論を使う際に有用な近似公式を導出する．
+\section{時間に依存しない摂動論 (time-independent perturbation theory)}
+調和振動子や水素原子など，Schr\"{o}dinger方程式を解析的に解ける例は極めて少ない．そこで，近似的にSchr\"{o}dinger方程式を解く必要がある．Schr\"{o}dinger方程式を近似的に解く方法の一つとして，摂動論がある．摂動論は完全に解ける問題に対して，わずかな補正（摂動）を与えた場合を近似的に解く方法である．本書では，時間に依存せず，縮退のない場合の摂動論について論じる．
+\subsection{問題設定}
+いま，解くべきSchr\"{o}dingerの固有値方程式は
+\begin{align}\label{Hsch}
+\hat{H}\ket{\varphi_n}=E_n\ket{\varphi_n}\ \ \ n=1,2,\cdots
+\end{align}
+とする．いま，我々が求めたいのは(\ref{Hsch})のエネルギー固有値$E_n$とその固有状態$\ket{\varphi_n}$であるが，それらの厳密解をえることができないとする．すなわち，(\ref{Hsch})は厳密には解けないとする．
+(\ref{Hsch})の与えられた物理系のハミルトニアン$\hat{H}$が
+\begin{align}\label{H}
+\hat{H}=\hat{H}_0+\lambda\hat{V}
+\end{align}
+の形をもつとする．すると，(\ref{Hsch})は
+\begin{align}\label{Hsch1}
+(\hat{H}_0+\lambda\hat{V})\ket{\varphi_n}=E_n\ket{\varphi_n}\ \ \ n=1,2,\cdots
+\end{align}
+とかける．ここで，$\lambda$は無次元のパラメータで十分に小さい($\lambda\ll1$)とする．$\hat{H}_0$を非摂動ハミルトニアン，$\hat{V}$を摂動ハミルトニアン，または摂動ポテンシャルとよぶ．
+ハミルトニアンが(\ref{H})でかかれるとき，$\hat{H}_0$のSchr\"{o}dingerの固有値方程式
+\begin{align}\label{H0sch}
+\hat{H}_0\ket{\varphi^{(0)}_n}=\epsilon_n\ket{\varphi^{(0)}_n}
+\end{align}
+は完全に解けるものとし，(\ref{H0sch})の固有状態$\ket{\varphi^{(0)}_n}$の無限個の集合$\left\{\ket{\varphi^{(0)}_n}\right\}_{n=1,2,\cdots}$は正規直交完全系をなすものとする．また，$\epsilon_n$は$\hat{H}_0$のエネルギー固有値であり，ここでは，縮退のある場合を考える．
+固有値方程式(\ref{Hsch1})において，次のことを要請する．
+　%%%%%
+　\begin{request}\label{re1}
+$\lambda\to0$のとき$E\to\epsilon_n$となる
+\end{request}
+つまり，固有値方程式(\ref{Hsch1})の解で要請\ref{re1}をみたすものを求める．
+
+
+
+
+
+
+
+
+
+
+
+%
+\subsection{摂動方程式}
+摂動を受けたハミルトニアン(\ref{H})の固有値問題(\ref{Hsch1})，すなわち，
+\begin{align}\label{Hsch2}
+(\hat{H}_0+\lambda\hat{V})\ket{\varphi_n}=E_n\ket{\varphi_n}\ \ \ n=1,2,\cdots
+\end{align}
+を解きたい．$\lambda$は十分小さいとするから，摂動の影響は$\lambda$のべき級数に展開して考えることができるだろう．(\ref{Hsch2})のエネルギー固有値$E_n$と固有状態$\ket{\varphi_n}$を$\lambda$でべき級数展開する：
+\begin{align}
+\label{Ee}
+E_n&=\epsilon_n+\lambda E^{(1)}_n+\lambda^2E^{(2)}_n+\cdots\cdots\\[10pt]
+\label{pe}
+\ket{\varphi_n}&=\ket{\varphi^{(0)}_n}+\lambda \ket{\varphi^{(1)}_n}+\lambda^2\ket{\varphi^{(2)}_n}+\cdots\cdots
+\end{align}
+ここで，$E^{(0)}_n$に当たるところを$\epsilon_n$としたのは，要請\ref{re1}による．\\
+　(\ref{Hsch2})両辺へ(\ref{Ee})と(\ref{pe})を代入すると，
+\begin{align}\label{pereq}
+\left(\hat{H}_0+\lambda\hat{V}\right)&
+\left
+(\ket{\varphi^{(0)}_n}+\lambda \ket{\varphi^{(1)}_n}+\lambda^2\ket{\varphi^{(2)}_n}+\cdots\right)\notag\\[5pt]
+&=\left(\epsilon_n+\lambda E^{(1)}_n+\lambda^2E^{(2)}_n+\cdots\right)
+\left(\ket{\varphi^{(0)}_n}+\lambda \ket{\varphi^{(1)}_n}+\lambda^2\ket{\varphi^{(2)}_n}+\cdots\right)
+\end{align}
+となる．次にこの式の両辺を$\lambda$のべきで整理して，同じべきの項を等しいとおく．これが摂動論の原理である．これはこの等式が十分小さい$\lambda$に対して常に成り立つという要求にほかならない．\\
+　(\ref{pereq})の両辺を$\lambda$のべきで整理し，同べきの項をとりだす：
+　\begin{align}
+\label{pereq0}
+\lambda^0&:&\hat{H}_0\ket{\varphi^{(0)}_n}&=\epsilon_n\ket{\varphi^{(0)}_n}\\[5pt]
+%
+\label{pereq1}
+\lambda^1&:&\hat{H}_0\ket{\varphi^{(1)}_n}+\hat{V}\ket{\varphi^{(0)}_n}
+&=\epsilon_n\ket{\varphi^{(1)}_n}+E^{(1)}_n\ket{\varphi^{(0)}_n}\\[5pt]
+%
+\label{pereq2}
+\lambda^2&:&\hat{H}_0\ket{\varphi^{(2)}_n}+\hat{V}\ket{\varphi^{(1)}_n}
+&=\epsilon_n\ket{\varphi^{(2)}_n}+E^{(1)}_n\ket{\varphi^{(1)}_n}+E^{(2)}_n\ket{\varphi^{(0)}_n}\\
+%
+\label{pereq3}
+\lambda^3&:&\hat{H}_0\ket{\varphi^{(3)}_n}+\hat{V}\ket{\varphi^{(2)}_n}
+&=\epsilon_n\ket{\varphi^{(3)}_n}+E^{(1)}_n\ket{\varphi^{(2)}_n}+E^{(2)}_n\ket{\varphi^{(1)}_n}
++E^{(3)}_n\ket{\varphi^{(0)}_n}\\
+& & &\ \ \vdots\nn[5pt]
+%
+\label{pereqN}
+\lambda^N&:&\hat{H}_0\ket{\varphi^{(N)}_n}+\hat{V}\ket{\varphi^{(N-1)}_n}
+&=\epsilon_n\ket{\varphi^{(N)}_n}+\sum_{k=1}^{N}E^{(N)}_n\ket{\varphi^{(N-k)}_n}
+\end{align}
+これを摂動方程式という．
+
+
+
+

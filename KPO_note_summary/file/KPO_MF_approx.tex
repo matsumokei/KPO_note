@@ -1,0 +1,823 @@
+\section{コヒーレント状態への近似}
+\subsection{Displacement frame of KPO}
+KPOハミルトニアンを考える：
+\begin{equation}
+    \hH_{\rm{KPO}}=- \frac{\chi}{2}
+    \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})
+\end{equation}
+このハミルトニアンをDisolacement operator $D(\alpha)$を用いて変換する：
+\begin{equation}
+    \hH_{\rm{KPO}}^{(\alpha)}=D^{\dag}(\alpha)\hH_{\rm{KPO}}D(\alpha)
+    =\hat{H}^{(1)} + \hat{H}^{(2)} + \hat{H}^{(3/4)} + E,
+\end{equation}
+where
+\begin{align}
+    \hat{H}^{(1)}&=
+    (- \chi\alpha\alpha^{\ast2}
+    +2\beta\alpha)\hat{a}
+    +(- \chi\alpha^2\alpha^{\ast}
+    + 2\beta\alpha^{\ast})\hat{a}^{\dagger}
+    \\[10pt]
+    \hat{H}^{(2)}&=
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}- \frac{\chi}{2}\alpha^{\ast2}\hat{a}^2
+    - \frac{\chi}{2}\alpha^2\hat{a}^{\dagger2}
+    +\beta\hat{a}^2+\beta\hat{a}^{\dagger2}
+    \\[10pt]
+    \hat{H}^{(3/4)}&=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    - \chi\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2
+    - \chi\alpha\hat{a}^{\dagger2}\hat{a} 
+    \\[10pt]
+    E&=- \frac{\chi}{2}|\alpha|^4+\beta\alpha^2 
+    +\beta\alpha^{\ast2}
+\end{align}
+
+ここで，$\hat{H}^{(1)}=0$となるように$\alpha$を取ると，
+\begin{align}
+    - \chi\alpha\alpha^{\ast2}
+    +2\beta\alpha &= 0\\[10pt]
+    %
+    - \chi|\alpha|^3e^{-i\theta}
+    +2\beta |\alpha|e^{i\theta} &= 0\nn[10pt]
+    %
+    |\alpha|\ (- \chi|\alpha|^2
+    +2\beta e^{2i\theta} )&= 0\nn[10pt]
+    %
+    |\alpha|\ (- \chi|\alpha|^2
+    +2\beta (\cos{2\theta}+i\sin{2\theta})&= 0\nn[10pt]
+\end{align}
+よって，
+\begin{align}
+    |\alpha|=0,\ \ \  - \chi|\alpha|^2
+    +2\beta\cos{2\theta}=0,\ \ \ \sin{2\theta}= 0
+\end{align}
+
+\begin{align}
+    - \chi|\alpha|^2
+    +2\beta\cos{2\theta}&=0\nn[10pt]
+    - \chi|\alpha|^2
+    +2\beta&=0\nn[10pt]
+    \therefore
+    |\alpha|^2
+    &=\frac{2\beta}{\chi}\nn[10pt]
+    |\alpha|^2
+    &=\frac{2\beta}{\chi}\nn[10pt]
+\end{align}
+よって，３つの解$\alpha=0,\ \pm\alpha_0$を得る．ここで
+\begin{equation}
+    \alpha_0 = \sqrt{\frac{2\beta}{\chi}}
+\end{equation}
+である．
+$\alpha=\alpha_0$のとき，KPO Haimltonian displacement frameは
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0)-E
+    =
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    +\left[\left(- \frac{\chi}{2}\alpha_0^2+\beta\right)\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    - (\pm\chi\alpha_0^{\ast}\hat{a}^{\dagger}\hat{a}^2 +{\rm{h.c.}} )
+\end{equation}
+$- \frac{\chi}{2}\alpha_0^2+\beta=0$となるから
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0)-E
+    =
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    - (\pm\chi\alpha_0^{\ast}\hat{a}^{\dagger}\hat{a}^2 +{\rm{h.c.}} )
+\end{equation}
+となる．vacuum state $\ket{0}$がこのHamiltonianの固有状態になることがわかる：
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+    =E_0\ket{0}
+\end{equation}
+左からdisplacement operator$\hat{D}(\alpha_0)$を作用させると
+\begin{equation}
+    \hat{D}(\alpha_0)\hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+    =\hH_{\rm{KPO}}\ket{\pm\alpha}
+    =E_0\ket{\pm\alpha},\ \ \ \ket{\pm\alpha}=\hat{D}({\alpha_0})\ket{0}
+\end{equation}
+となり，$\hH_{\rm{KPO}}$の固有状態が$\ket{\pm\alpha}$であることがわかる．
+
+
+
+
+
+
+\subsection{Effect of the detuning}
+KPOハミルトニアンを考える：
+\begin{equation}
+    \hH_{\rm{KPO}}=\Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2}
+    \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})
+\end{equation}
+このハミルトニアンをDisolacement operator $D(\alpha)$を用いて変換する：
+\begin{align}
+    \hH_{\rm{KPO}}^{\prime}&=D^{\dag}(\alpha)\hH_{\rm{KPO}}D(\alpha)\nn[10pt]
+    &=\Delta (\hat{a}^{\dagger}\hat{a} + \alpha^{\ast}\hat{a}\ + \alpha\hat{a}^{\dagger}+|\alpha|^2)
+    \nn[10pt]
+    &- \frac{\chi}{2}
+    (\hat{a}^{\dagger2}\hat{a}^2 + 2\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2+\alpha^{\ast2}\hat{a}^2
+    +2\alpha\hat{a}^{\dagger2}\hat{a} + 4|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    +2\alpha\alpha^{\ast2}\hat{a}
+    +\alpha^2\hat{a}^{\dagger2} 
+    + 2\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    +|\alpha|^4)\nn[10pt]
+    &+ \beta (\hat{a}^2\ + 2\alpha\hat{a}+\alpha^2+\hat{a}^{\dagger2}\ + 2\alpha^{\ast}\hat{a}^{\dagger}+\alpha^{\ast2})\nn[15pt]
+    %
+    &=\Delta\hat{a}^{\dagger}\hat{a} + \Delta\alpha^{\ast}\hat{a}\ + \Delta\alpha\hat{a}^{\dagger}+\Delta|\alpha|^2
+    \nn[10pt]
+    &
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    - \chi\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2
+    - \frac{\chi}{2}\alpha^{\ast2}\hat{a}^2
+    - \chi\alpha\hat{a}^{\dagger2}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    - \chi\alpha\alpha^{\ast2}\hat{a}
+    - \frac{\chi}{2}\alpha^2\hat{a}^{\dagger2} 
+    - \chi\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    - \frac{\chi}{2}|\alpha|^4)\nn[10pt]
+    &+\beta\hat{a}^2\ + 2\beta\alpha\hat{a}+\beta\alpha^2+\beta\hat{a}^{\dagger2}\ 
+    + 2\beta\alpha^{\ast}\hat{a}^{\dagger}+\beta\alpha^{\ast2})
+\end{align}
+\begin{align}
+    \hH_{\rm{KPO},\alpha}&=D^{\dag}(\alpha)\hH_{\rm{KPO}}D(\alpha)\nn[10pt]
+    %
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    \nn[10pt]
+    &- \frac{\chi}{2}\alpha^{\ast2}\hat{a}^2
+    - \frac{\chi}{2}\alpha^2\hat{a}^{\dagger2}
+    +\beta\hat{a}^2+\beta\hat{a}^{\dagger2}
+    \nn[10pt]
+    &
+    - \chi\alpha\alpha^{\ast2}\hat{a}
+    - \chi\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    +2\beta\alpha\hat{a}
+    + 2\beta\alpha^{\ast}\hat{a}^{\dagger}
+    + \Delta\alpha^{\ast}\hat{a}\ + \Delta\alpha\hat{a}^{\dagger}
+    \nn[10pt]
+    &
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    - \chi\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2
+    - \chi\alpha\hat{a}^{\dagger2}\hat{a} 
+    \nn[10pt]
+    &- \frac{\chi}{2}|\alpha|^4+\Delta|\alpha|^2+\beta\alpha^2 
+    +\beta\alpha^{\ast2}\nn[15pt]
+\end{align}
+
+\begin{equation}
+    \hH_{\rm{KPO}}^{(\alpha)}=\hat{H}^{(1)} + \hat{H}^{(2)} + \hat{H}^{(3/4)} + E,
+\end{equation}
+where
+\begin{align}
+    \hat{H}^{(1)}&=
+    \Delta\alpha^{\ast}\hat{a}\ + \Delta\alpha\hat{a}^{\dagger}
+    - \chi\alpha\alpha^{\ast2}\hat{a}
+    - \chi\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    +2\beta\alpha\hat{a}
+    + 2\beta\alpha^{\ast}\hat{a}^{\dagger}\nn[10pt]
+    &=
+    (\Delta\alpha
+    - \chi\alpha^2\alpha^{\ast}
+    + 2\beta\alpha^{\ast})\hat{a}^{\dagger}
+    +{\rm{h.c.}}
+    \\[10pt]
+    \hat{H}^{(2)}
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}- \frac{\chi}{2}\alpha^{\ast2}\hat{a}^2
+    - \frac{\chi}{2}\alpha^2\hat{a}^{\dagger2}
+    +\beta\hat{a}^2+\beta\hat{a}^{\dagger2}
+    \nn[10pt]
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    +\left[\left(- \frac{\chi}{2}\alpha^2
+    +\beta\right)\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    \\[10pt]
+    \hat{H}^{(3/4)}&=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    - \chi\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2
+    - \chi\alpha\hat{a}^{\dagger2}\hat{a} 
+    \nn[10pt]
+    &=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    +[- \chi\alpha\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}}]
+    \\[10pt]
+    E&=\Delta|\alpha|^2- \frac{\chi}{2}|\alpha|^4+\beta\alpha^2 
+    +\beta\alpha^{\ast2}
+\end{align}
+
+ここで，$\hat{H}^{(1)}=0$となるように$\alpha$を取ると，
+\begin{align}
+    \Delta\alpha - \chi\alpha^2\alpha^{\ast} + 2\beta\alpha^{\ast} &= 0\\[10pt]
+    %
+    \Delta|\alpha|e^{i\theta} - \chi|\alpha|^3e^{i\theta} + 2\beta|\alpha|e^{-i\theta} &= 0
+    \nn[10pt]
+    %
+    |\alpha|(\Delta  - \chi|\alpha|^2 + 2\beta e^{-2i\theta}) &= 0
+    \nn[10pt]
+    %
+    |\alpha|\Biggl(\Delta  - \chi|\alpha|^2 + 2\beta(\cos{2\theta}-i\sin{2\theta})\Biggr) &= 0
+\end{align}
+よって，
+\begin{align}
+    |\alpha|=0,\ \ \  \Delta- \chi|\alpha|^2
+    +2\beta\cos{2\theta}=0,\ \ \ \sin{2\theta}= 0
+\end{align}
+
+\begin{align}
+    \Delta- \chi|\alpha|^2
+    +2\beta\cos{2\theta}&=0\nn[10pt]
+    \Delta- \chi|\alpha|^2
+    +2\beta&=0\nn[10pt]
+    \therefore
+    |\alpha|^2
+    &=\frac{2\beta+\Delta}{\chi}
+\end{align}
+よって，３つの解$\alpha=0,\ \pm\alpha_0$を得る．ここで
+\begin{equation}
+    \alpha_0 = \sqrt{\frac{2\beta+\Delta}{\chi}}
+\end{equation}
+である．
+$\alpha=\alpha_0$のとき，KPO Haimltonian displacement frameは
+\begin{align}
+    &\hH_{\rm{KPO}}(\alpha=\pm\alpha_0)-E\nn[10pt]
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    +\left[\left(- \frac{\chi}{2}\alpha_0^2+\beta\right)\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{align}
+$- \frac{\chi}{2}\alpha_0^2+\beta=-\Delta/2$となるから
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0) - E
+    =
+    \Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    +\left[- \frac{\Delta}{2}\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{equation}
+となる．ここで，$|\Delta|\ll (-2\chi|\alpha_0|^2+\Delta)$，すなわち，$|\Delta|\ll 2\beta$のとき，
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0) - E
+    \simeq
+    \Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{equation}
+を得る．このとき，vacuum state $\ket{0}$がこのHamiltonianの固有状態になることがわかる：
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+    =E_0\ket{0}
+\end{equation}
+左からdisplacement operator$\hat{D}(\alpha_0)$を作用させると
+\begin{equation}
+    \hat{D}(\alpha_0)\hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+    =\hH_{\rm{KPO}}\ket{\pm\alpha_0}
+    =E_0\ket{\pm\alpha_0},\ \ \ \ket{\pm\alpha_0}=\hat{D}(\pm\alpha_0)\ket{0}
+\end{equation}
+となり，$|\Delta|\ll 2\beta$のとき，$\hH_{\rm{KPO}}$の固有状態が$\ket{\pm\alpha_0}$であることがわかる．
+
+
+\subsection{Effect of single photon drive}
+KPOハミルトニアンを考える：
+\begin{equation}
+    \hH_{\rm{KPO}}= - \frac{\chi}{2}
+    \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})
+    +\mathcal{E}_z (\hat{a}^{\dagger} + \hat{a})
+\end{equation}
+このハミルトニアンをDisolacement operator $D(\alpha)$を用いて変換する：
+\begin{equation}
+    \hH_{\rm{KPO}}^{(\alpha)}=\hat{H}^{(1)} + \hat{H}^{(2)} + \hat{H}^{(3/4)} + E,
+\end{equation}
+where
+\begin{align}
+    \hat{H}^{(1)}&=
+    - \chi\alpha\alpha^{\ast2}\hat{a}
+    - \chi\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    +2\beta\alpha\hat{a}
+    + 2\beta\alpha^{\ast}\hat{a}^{\dagger}
+    \mathcal{E}_z (\hat{a}^{\dagger} + \hat{a})
+    \nn[10pt]
+    &=
+    (
+    - \chi\alpha^2\alpha^{\ast}
+    + 2\beta\alpha^{\ast}+\mathcal{E}_z
+    )\hat{a}^{\dagger}
+    +{\rm{h.c.}}
+    \\[10pt]
+    \hat{H}^{(2)}
+    &=
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}- \frac{\chi}{2}\alpha^{\ast2}\hat{a}^2
+    - \frac{\chi}{2}\alpha^2\hat{a}^{\dagger2}
+    +\beta\hat{a}^2+\beta\hat{a}^{\dagger2}
+    \nn[10pt]
+    &=
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    +\left[\left(- \frac{\chi}{2}\alpha^2
+    +\beta\right)\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    \\[10pt]
+    \hat{H}^{(3/4)}&=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    - \chi\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2
+    - \chi\alpha\hat{a}^{\dagger2}\hat{a} 
+    \nn[10pt]
+    &=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    +[- \chi\alpha\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}}]
+    \\[10pt]
+    E&=- \frac{\chi}{2}|\alpha|^4+\beta\alpha^2 
+    +\beta\alpha^{\ast2}
+    +\mathcal{E}_z (\alpha^{\ast} + \alpha)
+\end{align}
+
+ここで，$\hat{H}^{(1)}=0$となるように$\alpha$を取ると，
+\begin{align}
+     - \chi\alpha^2\alpha^{\ast} + 2\beta\alpha^{\ast} +\mathcal{E}_z &= 0\\[10pt]
+    %
+    - \chi|\alpha|^3e^{i\theta} + 2\beta|\alpha|e^{-i\theta}+\mathcal{E}_z  &= 0
+    \nn[10pt]
+    %
+    - \chi|\alpha|^3 + 2\beta |\alpha| e^{-2i\theta}+\mathcal{E}_z&= 0
+\end{align}
+よって，
+\begin{align}
+    - \chi|\alpha|^3
+    +2\beta\cos{2\theta}+\mathcal{E}_z=0,\ \ \ \sin{2\theta}= 0
+\end{align}
+
+\begin{align}
+    2\beta\cos{2\theta}&=0\nn[10pt]
+    \Delta- \chi|\alpha|^2
+    +2\beta&=0\nn[10pt]
+    \therefore
+    |\alpha|^2
+    &=\frac{2\beta+\Delta}{\chi}
+\end{align}
+よって，３つの解$\alpha=\epsilon,\ \pm\alpha_0+\epsilon$を得る．ここで
+\begin{equation}
+    \alpha_0 = \sqrt{\frac{2\beta}{\chi}},\ \ \ 
+    \epsilon \simeq \mathcal{E}_z/8\beta
+\end{equation}
+である．
+\begin{align}
+    - \chi\alpha^2\alpha^\ast
+    +2\beta+\mathcal{E}_z=0,\ \ \ 
+    \therefore - \frac{\chi}{2}\alpha^2+\beta=-\mathcal{E}_z/2\alpha^\ast
+\end{align}
+を用いると，KPO Haimltonian on displacement frameは
+\begin{align}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0 + \epsilon)-E
+    =
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    +\left[-\frac{\mathcal{E}_z}{2\alpha^\ast}\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    - (\pm\chi\alpha\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{align}
+となる．ここで，$|{\mathcal{E}_z}/{2\alpha^\ast}|\ll 2\chi|\alpha_0|^2$のとき，
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0) - E
+    \simeq
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    - (\pm\chi\alpha\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{equation}
+を得る．このとき，vacuum state $\ket{0}$がこのHamiltonianの固有状態になることがわかる：
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+    =E_0\ket{0}
+\end{equation}
+左からdisplacement operator$\hat{D}(\pm\alpha_0 + \epsilon)$を作用させると
+\begin{equation}
+    \hat{D}(\alpha_0)\hH_{\rm{KPO}}(\alpha=\pm\alpha_0 + \epsilon)\ket{0}
+    =\hH_{\rm{KPO}}\ket{\pm\alpha_0 + \epsilon}
+    =E_0\ket{\pm\alpha_0 + \epsilon},\ \ \ 
+    \ket{\pm\alpha_0 + \epsilon}=\hat{D}(\pm\alpha_0 + \epsilon)\ket{0}
+\end{equation}
+となり，$|{\mathcal{E}_z}/{(\pm\alpha_0 + \epsilon)}|\ll 2\chi|\pm\alpha_0 + \epsilon|^2$のとき，$\hH_{\rm{KPO}}$の固有状態が$\ket{\pm\alpha_0 + \epsilon}$であることがわかる．
+
+
+
+
+\subsection{Effect of single photon drive and detuning}
+KPOハミルトニアンを考える：
+\begin{equation}
+    \hH_{\rm{KPO}}=\Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2}
+    \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})
+    +\mathcal{E}_z (\hat{a}^{\dagger} + \hat{a})
+\end{equation}
+このハミルトニアンをDisolacement operator $D(\alpha)$を用いて変換する：
+\begin{equation}
+    \hH_{\rm{KPO}}^{(\alpha)}=\hat{H}^{(1)} + \hat{H}^{(2)} + \hat{H}^{(3/4)} + E,
+\end{equation}
+where
+\begin{align}
+    \hat{H}^{(1)}&=
+    \Delta\alpha^{\ast}\hat{a}\ + \Delta\alpha\hat{a}^{\dagger}
+    - \chi\alpha\alpha^{\ast2}\hat{a}
+    - \chi\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    +2\beta\alpha\hat{a}
+    + 2\beta\alpha^{\ast}\hat{a}^{\dagger}
+    \mathcal{E}_z (\hat{a}^{\dagger} + \hat{a})
+    \nn[10pt]
+    &=
+    (\Delta\alpha
+    - \chi\alpha^2\alpha^{\ast}
+    + 2\beta\alpha^{\ast}+\mathcal{E}_z
+    )\hat{a}^{\dagger}
+    +{\rm{h.c.}}
+    \\[10pt]
+    \hat{H}^{(2)}
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}- \frac{\chi}{2}\alpha^{\ast2}\hat{a}^2
+    - \frac{\chi}{2}\alpha^2\hat{a}^{\dagger2}
+    +\beta\hat{a}^2+\beta\hat{a}^{\dagger2}
+    \nn[10pt]
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    +\left[\left(- \frac{\chi}{2}\alpha^2
+    +\beta\right)\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    \\[10pt]
+    \hat{H}^{(3/4)}&=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    - \chi\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2
+    - \chi\alpha\hat{a}^{\dagger2}\hat{a} 
+    \nn[10pt]
+    &=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    +[- \chi\alpha\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}}]
+    \\[10pt]
+    E&=\Delta|\alpha|^2- \frac{\chi}{2}|\alpha|^4+\beta\alpha^2 
+    +\beta\alpha^{\ast2}
+    +\mathcal{E}_z (\alpha^{\ast} + \alpha)
+\end{align}
+
+ここで，$\hat{H}^{(1)}=0$となるように$\alpha$を取ると，
+\begin{align}
+    \Delta\alpha - \chi\alpha^2\alpha^{\ast} + 2\beta\alpha^{\ast} +\mathcal{E}_z &= 0\\[10pt]
+    %
+    \Delta|\alpha|e^{i\theta} - \chi|\alpha|^3e^{i\theta} + 2\beta|\alpha|e^{-i\theta}+\mathcal{E}_z  &= 0
+    \nn[10pt]
+    %
+    \Delta|\alpha| - \chi|\alpha|^3 + 2\beta |\alpha| e^{-2i\theta}+\mathcal{E}_z&= 0
+\end{align}
+よって，
+\begin{align}
+    \Delta|\alpha| - \chi|\alpha|^3
+    +2\beta\cos{2\theta}+\mathcal{E}_z=0,\ \ \ \sin{2\theta}= 0
+\end{align}
+
+\begin{align}
+    \Delta- \chi|\alpha|^2
+    +2\beta\cos{2\theta}&=0\nn[10pt]
+    \Delta- \chi|\alpha|^2
+    +2\beta&=0\nn[10pt]
+    \therefore
+    |\alpha|^2
+    &=\frac{2\beta+\Delta}{\chi}
+\end{align}
+よって，３つの解$\alpha=\epsilon,\ \pm\alpha_0+\epsilon$を得る．ここで
+\begin{equation}
+    \alpha_0 = \sqrt{\frac{2\beta}{\chi}},\ \ \ 
+    \epsilon \simeq \mathcal{E}_z/8\beta
+\end{equation}
+である．
+$\alpha=\pm\alpha_0 + \epsilon$のとき，KPO Haimltonian displacement frameは
+\begin{align}
+    &\hH_{\rm{KPO}}(\alpha=\pm\alpha_0 + \epsilon)-E\nn[10pt]
+    &=
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    +\left[\left(- \frac{\chi}{2}\alpha_0^2+\beta\right)\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{align}
+$- \frac{\chi}{2}\alpha_0^2+\beta=-\Delta/2$となるから
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0) - E
+    =
+    \Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    +\left[- \frac{\Delta}{2}\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{equation}
+となる．ここで，$|\Delta|\ll (-2\chi|\alpha_0|^2+\Delta)$，すなわち，$|\Delta|\ll 2\beta$のとき，
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0) - E
+    \simeq
+    \Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+    - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+\end{equation}
+を得る．このとき，vacuum state $\ket{0}$がこのHamiltonianの固有状態になることがわかる：
+\begin{equation}
+    \hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+    =E_0\ket{0}
+\end{equation}
+左からdisplacement operator$\hat{D}(\alpha_0)$を作用させると
+\begin{equation}
+    \hat{D}(\alpha_0)\hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+    =\hH_{\rm{KPO}}\ket{\pm\alpha_0}
+    =E_0\ket{\pm\alpha_0},\ \ \ \ket{\pm\alpha_0}=\hat{D}(\pm\alpha_0)\ket{0}
+\end{equation}
+となり，$|\Delta|\ll 2\beta$のとき，$\hH_{\rm{KPO}}$の固有状態が$\ket{\pm\alpha_0}$であることがわかる．
+
+
+\subsection{非エルミートハミルトニアン}
+非エルミート行列の性質
+・Def : $\hat{H}\neq\hat{H}^{\dag}$
+
+
+・固有値が複素数値を取りうる
+
+GKSL方程式を考える：
+\begin{equation}
+    \frac{\partial\hat{\rho}(t)}{\partial t} = 
+    -i[\hat{H},\hat{\rho}(t)] + \frac{1}{2}\sum_{\mu}
+    \left(2\hat{L}_{\mu}\hat{\rho}(t)\hat{L}_{\mu}^{\dag}-
+    \left\{\hat{L}_{\mu}^{\dag}\hat{L}_{\mu},\hat{\rho}(t)
+    \right\}\right)
+\end{equation}
+上式右辺を次のように変形する
+\begin{align}
+    \frac{\partial\hat{\rho}(t)}{\partial t} 
+    &= -i\hat{H}\hat{\rho}(t)+i\hat{\rho}(t)\hat{H}
+    -\sum_{\mu}\frac{1}{2}\hat{L}_{\mu}^{\dag}\hat{L}_{\mu}\hat{\rho}(t)
+    -\sum_{\mu}\frac{1}{2}\hat{\rho}(t)\hat{L}_{\mu}^{\dag}\hat{L}_{\mu}
+    + \sum_{\mu}\hat{L}_{\mu}\hat{\rho}(t)\hat{L}_{\mu}^{\dag}
+    \nn[10pt]
+    &= -i\hat{H}\hat{\rho}(t)-\sum_{\mu}\frac{1}{2}\hat{L}_{\mu}^{\dag}\hat{L}_{\mu}\hat{\rho}(t)
+    -i\hat{\rho}(t)\hat{H}+\sum_{\mu}\frac{1}{2}\hat{\rho}(t)\hat{L}_{\mu}^{\dag}\hat{L}_{\mu}
+    + \sum_{\mu}\hat{L}_{\mu}\hat{\rho}(t)\hat{L}_{\mu}^{\dag}
+    \nn[10pt]
+    &= -i\left(
+    \hat{H}-i\sum_{\mu}\frac{1}{2}\hat{L}_{\mu}^{\dag}\hat{L}_{\mu}
+    \right)\hat{\rho}(t)
+    +i \hat{\rho}(t)\left(
+    \hat{H}+i\sum_{\mu}\frac{1}{2}\hat{L}_{\mu}^{\dag}\hat{L}_{\mu}
+    \right)
+    + \sum_{\mu}\hat{L}_{\mu}\hat{\rho}(t)\hat{L}_{\mu}^{\dag}
+    \nn[10pt]
+    &= -i\left(
+    \hat{H}_{\rm{eff}}\hat{\rho}(t)-\hat{\rho}(t)\hat{H}_{\rm{eff}}
+    \right)
+    + \sum_{\mu}\hat{L}_{\mu}\hat{\rho}(t)\hat{L}_{\mu}^{\dag}
+\end{align}
+と書ける．ここで非エルミート有効ハミルトニアンを次のように定義した：
+\begin{equation}
+    \hat{H}_{\rm{eff}}
+    =\hat{H}-i\sum_{\mu}\frac{1}{2}\hat{L}_{\mu}^{\dag}\hat{L}_{\mu}
+\end{equation}
+
+\subsection{Single photon loss}
+1光子損失の下で，系は以下のGKSL方程式で記述される：
+\begin{align}\label{Eq.GKSL}
+    \frac{\partial\rho}{\partial t} = -i\left[\hH_{\rm{KPO}}
+    ,\ \rho\right] 
+    +\frac{\gamma}{2} \left (2\hat a \rho \hat a^\dagger - \left\{ \hat a^\dagger \hat a, \rho \right\}\right),
+\end{align}
+where
+\begin{equation}
+    \hH_{\rm{KPO}}=\Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2} \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})
+\end{equation}
+これを次のように書き換える：
+\begin{align}
+    \frac{\partial\hat{\rho}(t)}{\partial t}
+    &= -i\left(
+    \hat{H}_{\rm{eff}}\hat{\rho}(t)-\hat{\rho}(t)\hat{H}_{\rm{eff}}
+    \right)
+    +\gamma\hat{a}\hat{\rho}(t)\hat{a}^{\dag},
+\end{align}
+where
+\begin{equation}
+    \hH_{\rm{eff}} = \hH_{\rm{KPO}} -i\gamma\hat{a}^\dagger\hat{a}/2
+\end{equation}
+である．
+このハミルトニアンをDisolacement operator $D(\alpha)$を用いて変換する：
+\begin{equation}
+    \hH_{\rm{eff}}(\alpha)=D^{\dag}(\alpha)\hH_{\rm{eff}}D(\alpha)=\hat{H}^{(1)} + \hat{H}^{(2)} + \hat{H}^{(3/4)} + E,
+\end{equation}
+where
+\begin{align}
+    \hat{H}^{(1)}&=
+    \Delta\alpha^{\ast}\hat{a}\ + \Delta\alpha\hat{a}^{\dagger}
+    - \chi\alpha\alpha^{\ast2}\hat{a}
+    - \chi\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    +2\beta\alpha\hat{a}
+    + 2\beta\alpha^{\ast}\hat{a}^{\dagger}
+    -i\gamma\alpha^{\ast}\hat{a}
+    -i\gamma\alpha\hat{a}^{\dagger}
+    \nn[10pt]
+    &=
+    (\Delta\alpha
+    - \chi\alpha^2\alpha^{\ast}
+    + 2\beta\alpha^{\ast}-i\gamma\alpha/2)\hat{a}^{\dagger}
+    +{\rm{h.c.}}
+    \\[10pt]
+    \hat{H}^{(2)}
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    -i\gamma\hat{a}^{\dagger}\hat{a}/2
+    - \frac{\chi}{2}\alpha^{\ast2}\hat{a}^2
+    - \frac{\chi}{2}\alpha^2\hat{a}^{\dagger2}
+    +\beta\hat{a}^2+\beta\hat{a}^{\dagger2}
+    \nn[10pt]
+    &=\Delta\hat{a}^{\dagger}\hat{a} 
+    - 2\chi|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    -i\gamma\hat{a}^{\dagger}\hat{a}/2
+    +\left[\left(- \frac{\chi}{2}\alpha^2
+    +\beta\right)\hat{a}^{\dagger2}
+    +{\rm{h.c.}}\right]
+    \\[10pt]
+    \hat{H}^{(3/4)}&=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    - \chi\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2
+    - \chi\alpha\hat{a}^{\dagger2}\hat{a} 
+    \nn[10pt]
+    &=
+    - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2 
+    +[- \chi\alpha\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}}]
+    \\[10pt]
+    E&=\Delta|\alpha|^2- \frac{\chi}{2}|\alpha|^4+\beta\alpha^2 
+    +\beta\alpha^{\ast2}-i\gamma|\alpha|^2/2
+\end{align}
+
+ここで，$\hat{H}^{(1)}=0$となるように$\alpha$を取ると，
+\begin{align}
+    \Delta\alpha - \chi\alpha^2\alpha^{\ast} + 2\beta\alpha^{\ast} -i\gamma\alpha/2 &= 0\\[10pt]
+    %
+    \Delta|\alpha|e^{i\theta} - \chi|\alpha|^3e^{i\theta} + 2\beta|\alpha|e^{-i\theta}
+    -i\gamma|\alpha|e^{i\theta}/2&= 0
+    \nn[10pt]
+    %
+    |\alpha|(\Delta  - \chi|\alpha|^2 + 2\beta e^{-2i\theta}-i\gamma/2)&= 0
+    \nn[10pt]
+    %
+    |\alpha|\Biggl(\Delta  - \chi|\alpha|^2 + 2\beta(\cos{2\theta}-i\sin{2\theta})-i\gamma/2\Biggr) &= 0
+\end{align}
+よって，
+\begin{align}
+    |\alpha|=0,\ \ \  \Delta- \chi|\alpha|^2
+    +2\beta\cos{2\theta}=0,\ \ \ -2\beta\sin{2\theta}-\gamma/2= 0
+\end{align}
+を得る．
+\begin{equation}
+    |\alpha|^2=\frac{2\beta\cos{2\theta}+\Delta}{\chi},\ \ \ 
+    \sin{2\theta}=-(\gamma/2)/2\beta
+\end{equation}
+\begin{align}
+    \cos{2\theta}=\sqrt{1-\sin^2{2\theta}}
+    =\sqrt{1-((\gamma/2)/2\beta)^2}
+    =\sqrt{\frac{(2\beta)^2-(\gamma/2)^2}{(2\beta)^2}}
+\end{align}
+となるので，
+\begin{align}
+    2\beta\cos{2\theta}=2\beta\sqrt{\frac{(2\beta)^2-(\gamma/2)^2}{(2\beta)^2}}
+    =\sqrt{{(2\beta)^2-(\gamma/2)^2}}
+\end{align}
+よって，
+\begin{equation}
+    |\alpha|^2=\frac{\sqrt{{(2\beta)^2-(\gamma/2)^2}}+\Delta}{\chi}
+\end{equation}
+ただし，
+\begin{align}
+    \tan{2\theta}
+    =\frac{-\gamma/2}{2\beta}\frac{2\beta}{\sqrt{{(2\beta)^2-(\gamma/2)^2}}}
+    =\frac{-\gamma/2}{\sqrt{{(2\beta)^2-(\gamma/2)^2}}}
+\end{align}
+% $\alpha=\alpha_0$のとき，KPO Haimltonian displacement frameは
+% \begin{align}
+%     &\hH_{\rm{KPO}}(\alpha=\pm\alpha_0)-E\nn[10pt]
+%     &=\Delta\hat{a}^{\dagger}\hat{a} 
+%     - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+%     - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+%     +\left[\left(- \frac{\chi}{2}\alpha_0^2+\beta\right)\hat{a}^{\dagger2}
+%     +{\rm{h.c.}}\right]
+%     - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+% \end{align}
+% $- \frac{\chi}{2}\alpha_0^2+\beta=-\Delta/2$となるから
+% \begin{equation}
+%     \hH_{\rm{KPO}}(\alpha=\pm\alpha_0) - E
+%     =
+%     \Delta\hat{a}^{\dagger}\hat{a} 
+%     - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+%     - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+%     +\left[- \frac{\Delta}{2}\hat{a}^{\dagger2}
+%     +{\rm{h.c.}}\right]
+%     - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+% \end{equation}
+% となる．ここで，$|\Delta|\ll (-2\chi|\alpha_0|^2+\Delta)$，すなわち，$|\Delta|\ll 2\beta$のとき，
+% \begin{equation}
+%     \hH_{\rm{KPO}}(\alpha=\pm\alpha_0) - E
+%     \simeq
+%     \Delta\hat{a}^{\dagger}\hat{a} 
+%     - 2\chi|\alpha_0|^2\hat{a}^{\dagger}\hat{a}
+%     - \frac{\chi}{2}\hat{a}^{\dagger2}\hat{a}^2
+%     - (\pm\chi\alpha_0\hat{a}^{\dagger2}\hat{a} +{\rm{h.c.}} )
+% \end{equation}
+% を得る．このとき，vacuum state $\ket{0}$がこのHamiltonianの固有状態になることがわかる：
+% \begin{equation}
+%     \hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+%     =E_0\ket{0}
+% \end{equation}
+% 左からdisplacement operator$\hat{D}(\alpha_0)$を作用させると
+% \begin{equation}
+%     \hat{D}(\alpha_0)\hH_{\rm{KPO}}(\alpha=\pm\alpha_0)\ket{0}
+%     =\hH_{\rm{KPO}}\ket{\pm\alpha_0}
+%     =E_0\ket{\pm\alpha_0},\ \ \ \ket{\pm\alpha_0}=\hat{D}(\pm\alpha_0)\ket{0}
+% \end{equation}
+% となり，$|\Delta|\ll 2\beta$のとき，$\hH_{\rm{KPO}}$の固有状態が$\ket{\pm\alpha_0}$であることがわかる．
+
+
+
+
+
+\subsection{重要な関係式}
+\begin{align}
+    \hat{D}^{\dag}(\alpha)\hat{a}\hat{D}(\alpha)
+    &=\hat{a} + \alpha\\[10pt]
+    \hat{D}^{\dag}(\alpha)\hat{a}^\dagger\hat{D}(\alpha)
+    &=\hat{a}^\dagger + \alpha^{\ast}\\[10pt]
+    \hat{D}^{\dag}(\alpha)\hat{a}^2\hat{D}(\alpha)
+    &=\hat{D}^{\dag}(\alpha)\hat{a}\hat{D}(\alpha)\hat{D}^{\dag}(\alpha)\hat{a}\hat{D}(\alpha)
+    =(\hat{a} + \alpha)^2\\[10pt]
+    \hat{D}^{\dag}(\alpha)\hat{a}^{\dagger2}\hat{D}(\alpha)
+    &=\hat{D}^{\dag}(\alpha)\hat{a}^{\dagger}\hat{D}(\alpha)
+    \hat{D}^{\dag}(\alpha)\hat{a}^{\dagger}\hat{D}(\alpha)
+    =(\hat{a}^{\dagger}\ + \alpha^{\ast})^2
+    %
+\end{align}
+\begin{align}
+    \hat{D}^{\dag}(\alpha)\hat{a}^{\dagger}\hat{a}\hat{D}(\alpha)
+    &=\hat{D}^{\dag}(\alpha)\hat{a}^{\dagger}\hat{D}(\alpha)
+    \hat{D}^{\dag}(\alpha)\hat{a}\hat{D}(\alpha)\nn[10pt]
+    &=(\hat{a}^{\dagger}\ + \alpha^{\ast})(\hat{a}\ + \alpha)
+    =\hat{a}^{\dagger}\hat{a} + \alpha^{\ast}\hat{a}\ + \alpha\hat{a}^{\dagger}+|\alpha|^2
+\end{align}
+\begin{align}
+    \hat{D}^{\dag}(\alpha)\hat{a}^{\dagger2}\hat{a}^2\hat{D}(\alpha)
+    &=\hat{D}^{\dag}(\alpha)\hat{a}^{\dagger}\hat{D}(\alpha)
+    \hat{D}^{\dag}(\alpha)\hat{a}^{\dagger}\hat{D}(\alpha)
+    \hat{D}^{\dag}(\alpha)\hat{a}\hat{D}(\alpha)
+    \hat{D}^{\dag}(\alpha)\hat{a}\hat{D}(\alpha)\nn[10pt]
+    &=(\hat{a}^{\dagger}\ + \alpha^{\ast})^2(\hat{a}\ + \alpha)^2\nn[10pt]
+    &=(\hat{a}^{\dagger2}\ + 2\alpha^{\ast}\hat{a}^{\dagger}+\alpha^{\ast2})
+    (\hat{a}^2\ + 2\alpha\hat{a}+\alpha^2)\nn[10pt]
+    &=\hat{a}^{\dagger2}\hat{a}^2 + 2\alpha^{\ast}\hat{a}^{\dagger}\hat{a}^2+\alpha^{\ast2}\hat{a}^2
+    +2\alpha\hat{a}^{\dagger2}\hat{a} + 4|\alpha|^2\hat{a}^{\dagger}\hat{a}
+    +2\alpha\alpha^{\ast2}\hat{a}
+    +\alpha^2\hat{a}^{\dagger2} 
+    + 2\alpha^2\alpha^{\ast}\hat{a}^{\dagger}
+    +|\alpha|^4
+\end{align}
+
+\section{}
+next is the adiabatic quantum computation.So I explained one KPO can generate a cat state by quantum bifurcation here we prepare many KPOs and we couple the KPOs according to the even Ising problem then we can get the solution for the Ising problem by the quantum adiabatic theorem.
+
+This can be explained more mathematically as follows.
+First, thier Ising problem is to minimize the Ising energy even this equation and here we introduce the coupling so called linear coupling here the coupling constants are proportional to the $J_{i,j}$ in the Ising model and the approximate final state are described by the tensorproduct of the coherent state, here $S$ is signe(assigned) over the amplitude.
+So the final energy is approximately given by this so the first term is independent of $s$, but second term isproportional to the Ising energy.
+So we can get from the vacuum state we can get the optimal solution by the adaiabatic evolution
+
+
+\section{Four-body interaction of superconducting qubits for quantum annealing}
+change my slide?
+I am talking about the four-body interaction of superconducting circuit.
+I am a researcher working for nec and this work is done with yamamoto.
+
+this is a just a mock up.
+we are trying  we are developing the actual hardware quantum annealing machine.
+I am not talking about experiments and devices, but talking about this associatetopic for theoretical study of social topic.
+my main topic is related to the LHZ architecture.
+some presentations in this conference on this architecture so you know this is the candidate for a good graph of qubit for quantum annealing or some gate-based quantum computation and the parity of multiple logical qubits are encoded in its physical qubit.
+now the good point is it dose not need coupligs of distant physical qubitbut four body interaction is needed like this hamiltonian with Ising spin variables $s_{i,j}$ takes one or minus one and if the product of the four spin is equal to one for any plackets like the square latice four spin is mapped to the the product of logical spin $\sigma$ and at low temperature for large $C$ this condition the product the product of four spin equal to one is satisfied the ground state of the LHZ Hamiltonianfor large $C$ is mapped to () logical Hamiltonian.
+So this is a great theoretical idea but what about physical implementation how do we realize the four body interaction and qubit.
+
+
+The theoretical idea to implement the LHZ architecture has been already proposed in the favorite written by Puri et al, and where qubits based on Josephson parametric oscillators are used.
+
+The qubit is based on the JPOs are based on the cat state generated in a C-shunted SQUID with a parametrically driven field .
+This is the schematic figure of of the circuit for our JPO and two states of the qubit are encoded in the two coherent states on the cat state like this figure that showed the wigner function of the coherent state that has two sorry the cat state that two coherent states correspond to two stations qubit.
+And propose target for the four body coupling of JPOs like this therefore JPOs corresponding to qubit and the coupler is a single josephson junction.
+This is the coupler and each jpo capacitively couples to the coupler via this capacitor.
+So this is the basic idea to implement the LHZ architecture but as I mentioned we need a large coupling constant to realize the LHZ scheme so how do we realize a large coupling constant .
+
+This is the aim of our study to find a four body couplers with a large coupling constant for the LHZ architecture and our study is theoretically examining four body couplers.
+one is poreviously proposed one shown in the previous slide and we also explore other couplers.
+And the result is we propose a generalized coupler and appropriate parameter settings that coupler has an additional control nodes to increase the four body interaction and the result gives the guideline for setting parameters to increase the four body coupling constant.
+
+次は4:57から
+
+
+First, I showed a coupler previous proposed again.
+This has a single josephson junction here and each jpo

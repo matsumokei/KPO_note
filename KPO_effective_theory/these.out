@@ -1,0 +1,45 @@
+%このファイルは日本語文字を含みます.
+\BOOKMARK [0][-]{part.1}{第I部 Introduction}{}% 1
+\BOOKMARK [1][-]{section.1}{property of the KPO model Hamiltonian}{part.1}% 2
+\BOOKMARK [1][-]{section.2}{いくつかの数値計算結果}{part.1}% 3
+\BOOKMARK [1][-]{section.3}{このノートの目的}{part.1}% 4
+\BOOKMARK [1][-]{section.4}{KPO Hamiltonianの行列表示}{part.1}% 5
+\BOOKMARK [0][-]{part.2}{第II部 時間に依存しない摂動論}{}% 6
+\BOOKMARK [1][-]{section.5}{時間に依存しない摂動論 \(time-independent perturbation theory\)}{part.2}% 7
+\BOOKMARK [2][-]{subsection.5.1}{問題設定}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{摂動方程式}{section.5}% 9
+\BOOKMARK [1][-]{section.6}{時間に依存しない縮退のある摂動論}{part.2}% 10
+\BOOKMARK [2][-]{subsection.6.1}{縮退について}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.2}{基本解法}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.3}{エネルギー固有値の補正値}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.4}{固有状態について}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.5}{１次摂動で縮退が解けなかった場合}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.6}{エネルギー固有値の補正値}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.7}{}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.8}{固有状態について}{section.6}% 18
+\BOOKMARK [1][-]{section.7}{縮退のない場合}{part.2}% 19
+\BOOKMARK [2][-]{subsection.7.1}{1次摂動}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.2}{2次摂動}{section.7}% 21
+\BOOKMARK [2][-]{subsection.7.3}{摂動論が有効なための条件}{section.7}% 22
+\BOOKMARK [0][-]{part.3}{第III部 KPOに対する摂動論version1}{}% 23
+\BOOKMARK [1][-]{section.8}{n=0と8が縮退する場合}{part.3}% 24
+\BOOKMARK [2][-]{subsection.8.1}{有効モデルの定義}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.2}{}{section.8}% 26
+\BOOKMARK [2][-]{subsection.8.3}{}{section.8}% 27
+\BOOKMARK [2][-]{subsection.8.4}{縮退のない摂動論への移行}{section.8}% 28
+\BOOKMARK [0][-]{part.4}{第IV部 KPOに対する摂動論version2}{}% 29
+\BOOKMARK [1][-]{section.9}{n=0と8が縮退する場合}{part.4}% 30
+\BOOKMARK [2][-]{subsection.9.1}{有効モデルの定義}{section.9}% 31
+\BOOKMARK [2][-]{subsection.9.2}{}{section.9}% 32
+\BOOKMARK [2][-]{subsection.9.3}{}{section.9}% 33
+\BOOKMARK [2][-]{subsection.9.4}{縮退のない摂動論への移行}{section.9}% 34
+\BOOKMARK [1][-]{section.10}{高次の摂動の計算について}{part.4}% 35
+\BOOKMARK [2][-]{subsection.10.1}{KPOに関する摂動論}{section.10}% 36
+\BOOKMARK [0][-]{part.5}{第V部 その他の摂動論について}{}% 37
+\BOOKMARK [1][-]{section.11}{Schrieffer-Wolff変換}{part.5}% 38
+\BOOKMARK [2][-]{subsection.11.1}{Iterative calculation of }{section.11}% 39
+\BOOKMARK [2][-]{subsection.11.2}{Example : Jaynes-Cumings model}{section.11}% 40
+\BOOKMARK [1][-]{section.12}{Peter Knight perturbation}{part.5}% 41
+\BOOKMARK [2][-]{subsection.12.1}{|0 and |4}{section.12}% 42
+\BOOKMARK [2][-]{subsection.12.2}{|0 and |6}{section.12}% 43
+\BOOKMARK [2][-]{subsection.12.3}{Dispersive Shift}{section.12}% 44

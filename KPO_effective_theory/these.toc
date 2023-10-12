@@ -1,0 +1,44 @@
+\contentsline {part}{第I部\hspace {1zw}Introduction}{2}{part.1}%
+\contentsline {section}{\numberline {1}property of the KPO model Hamiltonian}{3}{section.1}%
+\contentsline {section}{\numberline {2}いくつかの数値計算結果}{3}{section.2}%
+\contentsline {section}{\numberline {3}このノートの目的}{3}{section.3}%
+\contentsline {section}{\numberline {4}KPO Hamiltonianの行列表示}{5}{section.4}%
+\contentsline {part}{第II部\hspace {1zw}時間に依存しない摂動論}{6}{part.2}%
+\contentsline {section}{\numberline {5}時間に依存しない摂動論 (time-independent perturbation theory)}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}問題設定}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}摂動方程式}{7}{subsection.5.2}%
+\contentsline {section}{\numberline {6}時間に依存しない縮退のある摂動論}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}縮退について}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}基本解法}{9}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}エネルギー固有値の補正値}{9}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}固有状態について}{11}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}１次摂動で縮退が解けなかった場合}{13}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}エネルギー固有値の補正値}{13}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}}{16}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}固有状態について}{16}{subsection.6.8}%
+\contentsline {section}{\numberline {7}縮退のない場合}{20}{section.7}%
+\contentsline {subsection}{\numberline {7.1}1次摂動}{20}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}2次摂動}{23}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}摂動論が有効なための条件}{26}{subsection.7.3}%
+\contentsline {part}{第III部\hspace {1zw}KPOに対する摂動論version1}{27}{part.3}%
+\contentsline {section}{\numberline {8}$n=0$と8が縮退する場合}{27}{section.8}%
+\contentsline {subsection}{\numberline {8.1}有効モデルの定義}{27}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}}{28}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}}{31}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}\leavevmode {\color {red}縮退のない摂動論への移行}}{42}{subsection.8.4}%
+\contentsline {part}{第IV部\hspace {1zw}KPOに対する摂動論version2}{49}{part.4}%
+\contentsline {section}{\numberline {9}$n=0$と8が縮退する場合}{49}{section.9}%
+\contentsline {subsection}{\numberline {9.1}有効モデルの定義}{49}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}}{50}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}}{53}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}\leavevmode {\color {red}縮退のない摂動論への移行}}{65}{subsection.9.4}%
+\contentsline {section}{\numberline {10}高次の摂動の計算について}{67}{section.10}%
+\contentsline {subsection}{\numberline {10.1}KPOに関する摂動論}{67}{subsection.10.1}%
+\contentsline {part}{第V部\hspace {1zw}その他の摂動論について}{77}{part.5}%
+\contentsline {section}{\numberline {11}Schrieffer-Wolff変換}{77}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Iterative calculation of $\hat {S}$}{78}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Example : Jaynes-Cumings model}{79}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Peter Knight perturbation}{81}{section.12}%
+\contentsline {subsection}{\numberline {12.1}$\mathinner {|{0}\rangle }$ and $\mathinner {|{4}\rangle }$}{81}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}$\mathinner {|{0}\rangle }$ and $\mathinner {|{6}\rangle }$}{84}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Dispersive Shift}{88}{subsection.12.3}%

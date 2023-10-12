@@ -1,0 +1,1443 @@
+\part{入門KPO}
+\section{Introduction}
+In the Kerr-type approach, parametrically two-photon
+driven oscillators with large Kerr nonlinearity~\cite{PhysRevA.44.4704,PhysRevA.48.2494}
+are used for qubits.
+
+松崎さん情報\\
+kpoは東芝の後藤様が世界で初めて提案したと、いろいろなところで聞いていました。後藤様ご自身もそのように宣伝されていました。しかし、実は1999年に、KPOをゲート型の量子ビットとして使う提案が存在したようです。https://journals.aps.org/pra/pdf/10.1103/PhysRevA.59.2631　後藤様も最近これに気がつかれたとのことです。そのため、kpoを日本で見つけた量子ビットと呼ぶのはやめましょう。（ちなみに量子アニーリングにKPOを使うのを提案したのは、たぶん後藤様が初めてです。）
+
+
+\section{Rotating frame and Interaction picture}
+One choose the basis vectors arbitrary as long as that is satisfies CONS (complete orthonormal system). And so, we can change the basis for each problem.ここで，$z$軸周りに角周波数$\omega_{\rm{L}}$で回転する基底ベクトルへの変換を考える．基底変換を行うためには，次の回転演算子を状態に作用すればよい：
+\begin{equation}
+    \hU_{\rm{L}}\equiv=\hU_{\rm{L}}(t)=\exp{\left(
+                -i\frac{\omega_{\rm{L}} }{2}t\hsig_z
+                \right)}
+\end{equation}
+回転系に移り，その系で記述した状態ベクトルはSchr\"{o}dinger表示の状態ベクトルから，次のように変換できる：
+\begin{equation}
+    \ket{\psi(t)}_{\rr}=\hU_{\rr}^\dag\ket{\psi(t)}_{\rS}
+\end{equation}
+また，逆変換は
+\begin{equation}
+    \ket{\psi(t)}_{\rS}=\hU_{\rr}\ket{\psi(t)}_{\rr}
+\end{equation}
+となる．したがって，Schr\"{o}dinger表示のSch.eq.は，次の変換を受ける：
+\begin{align}
+    i\hbar\frac{\partial}{\partial t}\ket{\psi(t)}_{\rS}
+    &=\hH\ket{\psi(t)}_{\rS}\nn[10pt]
+    i\hbar\frac{\partial}{\partial t}\left(\hU_{\rr}\ket{\psi(t)}_{\rr}\right)
+    &=\hH\hU_{\rr}\ket{\psi(t)}_{\rr}\nn[10pt]
+    i\hbar\frac{\partial\hU_{\rr}}{\partial t}\ket{\psi(t)}_{\rr}
+    +i\hbar\hU_{\rr}\frac{\partial\ket{\psi(t)}_{\rr}}{\partial t}
+    &=\hH\hU_{\rr}\ket{\psi(t)}_{\rr}\nn[10pt]
+    i\hbar\hU_{\rr}\frac{\partial\ket{\psi(t)}_{\rr}}{\partial t}
+    &=\left(\hH\hU_{\rr}-i\hbar\frac{\partial\hU_{\rr}}{\partial t}\right)\ket{\psi(t)}_{\rr}
+\end{align}
+Operating $\hU_{\rr}^\dag$ on above equation from left, we obtain
+\begin{equation}
+    i\hbar\frac{\partial\ket{\psi(t)}_{\rr}}{\partial t}
+    =\hH_{\rr}\ket{\psi(t)}_{\rr}
+\end{equation}
+where
+\begin{equation}
+    \hH_{\rr}=\hU_{\rr}^\dag\hH\hU_{\rr}-i\hbar\hU_{\rr}^\dag\frac{\partial\hU_{\rr}}{\partial t}
+\end{equation}
+Therefore, the Hamiltonian of that system is $\hH_{\rr}$.第1項は基底の変換による変化，第2項は古典的なコリオリの力に相当する．この表示を角周波数$\omega_{\rm{L}}$における回転軸表示と呼ぶ．This called the rotating frame at a frequency $\omega_{\rm{L}}$.
+
+
+
+
+
+
+\section{Supplementary text}
+\subsection{Kerr-nonliner}
+\begin{equation}
+    \hH_{\rm{KO}}/\hbar=\omega_0\ha^\dag\ha-\frac{K}{2}\ha^{\dag2}\ha^2
+    =\omega_0\hat{n}-\frac{K}{2}\hat{n}(\hat{n}-1)
+\end{equation}
+Resonance frequency $\omega_0\gg K$, Kerr nolinearity is $K>0$.
+Rotating frame at $\omega$.
+\begin{equation}
+    \hU=e^{-i\omega t\ha^\dag \ha}, \hU^\dag\ha\hU=\ha e^{-i\omega t}
+\end{equation}
+\begin{align}
+    \hH_{\rm{KO}}^\prime/\hbar
+    &=\hU^\dag(\hH_{\rm{KO}}^\prime/\hbar)\hU
+    -i\hU^\dag\frac{\partial\hU}{\partial t}
+    =\omega_0\ha^\dag\ha-\frac{K}{2}\ha^{\dag2}\ha^2
+    -i\hU^\dag (-i\omega \ha^\dag\ha)\hU\nn[10pt]
+    &=(\omega_0-\omega)\ha^\dag\ha-\frac{K}{2}\ha^{\dag2}\ha^2
+\end{align}
+\begin{equation}
+    \hH_{\rm{KO}}^\prime/\hbar
+    =\hU^\dag(\hH_{\rm{KO}}^\prime/\hbar)\hU
+    -i\hU^\dag\frac{\partial\hU}{\partial t}
+    =\omega_0\ha^\dag\ha-\frac{K}{2}\ha^{\dag2}\ha^2
+    -i\hU^\dag (-i\omega \ha^\dag\ha)\hU
+    =(\omega_0-\omega)\ha^\dag\ha-\frac{K}{2}\ha^{\dag2}\ha^2
+\end{equation}
+Laboratory frame is Low energy states.Rotating frame at $\omega\sim\omega_0$ is small photon number states.
+
+
+\subsection{Hamiltonian of a parametric oscillator}
+The Hamiltonian of the SQUID array resonator including the parametric driving is
+\begin{equation}
+\hat{H}/\hbar = 4 E_{\C} \hat{n}^2 - N E_\J (\Phi(t)) \cos{\frac{\hat{\phi}}{N}}
+\end{equation}
+where $\hat{n}$ is the number of Cooper pairs and $\hat{\phi}$ the overall phase across the junction array. $E_\C$ is the resonator's charging energy, $N$ is the number of SQUIDs in the array and $E_\J$ is the Josephson energy for a single SQUID in the array which depends on the external flux $\Phi(t)$. The flux is harmonically modulated around its mean value with a small amplitude such that $E_\J(\Phi(t))$ can be approximated as $E_\J + \delta E_\J \cos\omega_p t$. After Taylor-expanding $\cos(\hat{\phi}/N)$ to fourth order, we get
+\begin{align}
+    \hat{H}/\hbar = & 4 E_\C \hat{n}^2 \\
+    & - N E_\J \left(
+    1 - \frac{1}{2} \left( \frac{\hat{\phi}}{N} \right)^2 + \frac{1}{24} \left( \frac{\hat{\phi}}{N} \right)^4 + \cdots
+    \right)\\
+    & - N\delta E_\J \left(
+    1 - \frac{1}{2} \left( \frac{\hat{\phi}}{N} \right)^2 + \cdots
+\right) \cos\omega_p t
+\end{align}
+
+The quadratic time-independent part of the Hamiltonian can be diagonalized by defining
+\begin{align}
+\hat{n} &= -i n_0 (\hat{a}-\hat{a}^\dagger) \\
+\hat{\phi} &= \phi_0 (\hat{a}+\hat{a}^\dagger).
+\end{align}
+where $n_0^2 = \sqrt{E_\J/32NE_\C}, \phi_0^2= \sqrt{2NE_\C/E_\J}$ are the zero point fluctuations. We also drop c-valued terms in the expression above and get
+\begin{align}
+\hat{H}/\hbar =& \omega_c^{(0)} \hat{a}^\dag \hat{a} - \frac{E_\C}{12N^2} (\hat{a} + \hat{a}^\dag)^4 \\
+&+ \frac{\delta E_\J \omega_c^{(0)}}{4E_\J} 
+(\hat{a}+\hat{a}^\dagger)^2 \cos\omega_p t,
+\end{align}
+where $\omega_c^{(0)} = \sqrt{8E_\C E_\J/N} $.
+We then transform the Hamiltonian into a rotating frame at the frequency $\omega_p/2$, perform a rotating wave approximation assuming $|\omega_c^{(0)} - \omega_p/2| \ll \omega_c^{(0)}$ and normal-order the resulting expression, which gives
+
+\begin{align}
+\hU_{\rr}^\dag\hH/\hbar\hU_{\rr} &\simeq \omega_c^{(0)} \hat{a}^\dag \hat{a} 
+- \frac{E_\C}{12N^2} (6\hat{a}^{\dag 2}\hat{a}+12\hat{a}^{\dag}\hat{a})
++ \frac{\delta E_\J \omega_c^{(0)}}{4E_\J}(\hat{a}^2+\hat{a}^{\dagger 2}),\nn[10pt]
+-i\hbar\hU_{\rr}^\dag\frac{\partial\hU_{\rr}}{\partial t}&=-\omega\hat{a}^\dag\hat{a}
+\end{align}
+
+\begin{equation}
+    \hH_{\rr}/\hbar=(\omega_c^{(0)}-\omega) \hat{a}^\dag \hat{a} 
+- \frac{E_\C}{12N^2} (6\hat{a}^{\dag 2}\hat{a}+12\hat{a}^{\dag}\hat{a})
++ \frac{\delta E_\J \omega_c^{(0)}}{4E_\J}(\hat{a}^2+\hat{a}^{\dagger 2})
+\end{equation}
+
+\begin{equation}
+\hat{H}/\hbar = \Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2} \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2}),
+\end{equation}
+where we have defined the Kerr nonlinearity $\chi =E_\C/N^2$, the parametric drive strength $\beta=\omega_c^{(0)}\delta E_\J/8E_\J$, the dressed resonator frequency $\omega_c=\omega_c^{(0)}-\chi$ and the detuning $\Delta = \omega_c - \omega_p/2$.
+
+\subsubsection{Effective potential}
+An intuitive way to understand some aspects of the dynamics of this system is to define the following effective potential \cite{Zhang2017} in phase space
+\begin{align}
+V(\alpha) &= \braket{\alpha|\hat{H}|\alpha} = \Delta |\alpha|^2 - \frac{\chi}{2} |\alpha|^4 + \beta (\alpha^2 + \alpha^{* 2})\nn[10pt]
+&= |\alpha|^2 \left( \Delta - \frac{\chi}{2} |\alpha|^2 + 2\beta \cos 2\theta \right)
+\end{align}
+where $\alpha = |\alpha | e^{i\theta}$. In the regime $2\beta > |\Delta|$, the effective potential has two symmetric local maxima (corresponding to classical stationary points of the system) at $|\alpha|>0$ and $\theta \in \{0,\pi\}$. Therefore in this case the effective potential has the shape of an inverted double-well. (Fig.~\ref{fig_potential}) When its maxima $\pm\alpha$ are sufficiently well separated, i.e., $\beta$ is large, the potential can be approximated by a quadratic function near $\pm\alpha$. Therefore the eigenstates of the system are close to Fock states displaced by $\pm\alpha$, as described in more detail below.
+
+
+
+
+
+
+
+\section{Ground state of two-photon driven Kerr resonator}
+\begin{align}
+    \hH_{\Delta=0}&\equiv\frac{\chi}{2} \hat{a}^{\dagger2}\hat{a}^2 - \frac{p}{2} (\hat{a}^2 + \hat{a}^{\dagger 2})+\frac{p^2}{2\chi}\hat{1}-\frac{p^2}{2\chi}\hat{1}\nn[10pt]
+    &=\frac{\chi}{2}\left(
+    \hat{a}^{\dag 2}-\frac{p}{\chi}\hat{1}
+    \right)
+    \left(
+    \hat{a}^{2}-\frac{p}{\chi}\hat{1}
+    \right)-\frac{p^2}{2\chi}\hat{1}\nn[10pt]
+    %
+    \hH_{\rm{eff}}&\equiv\frac{\chi}{2}\left(
+    \hat{a}^{\dag 2}-\frac{p}{\chi}\hat{1}
+    \right)
+    \left(
+    \hat{a}^{2}-\frac{p}{\chi}\hat{1}
+    \right)
+    =\frac{\chi}{2}\hA^\dag\hA
+\end{align}
+where we define
+\begin{align}
+    \hA^\dag=\left(
+    \hat{a}^{\dag 2}-\frac{p}{\chi}\hat{1}
+    \right),\ \ \ \ 
+    \hA\equiv\left(
+    \hat{a}^{2}-\frac{p}{\chi}\hat{1}
+    \right)
+\end{align}
+
+もしも，$\alpha=\sqrt{p/K}$ならば，
+\begin{equation}
+    \hH\ket{\pm\alpha}=0
+\end{equation}
+
+
+\section{Classical model of KPO}
+We describe the classical model of KPO.  The classical models of KPO are derived as follows. Heisenberg equation of $\ha$ with Hamiltonian \eqref{} is written by
+\begin{equation}
+    i\hbar\frac{d\ha}{dt}=[\ha,\hH_{\mathrm{KPO}}]=\Delta\hat{a} + \chi \hat{a}^\dagger\hat{a}^2 -p(t)\ha^\dagger.
+\end{equation}
+where we have
+\begin{align}
+    [\ha,\hH_{\mathrm{KPO}}] &= \Delta \ha\hat{a}^\dagger\hat{a} + \frac{\chi}{2} \ha\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} - \frac{p(t)}{2} (\hat{a}^3 + \ha\hat{a}^{\dagger 2})\nn[10pt]
+    &- \Delta \ha\hat{a}^\dagger\hat{a} - \frac{\chi}{2} \ha\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}
+    +\frac{p(t)}{2} (\hat{a}^3 + \hat{a}^{\dagger 2}\ha)\nn[10pt]
+    %
+    &= \Delta \hat{a}^\dagger\ha\hat{a} + \Delta\hat{a} + \frac{\chi}{2} (\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}\ha + 2\hat{a}^\dagger\hat{a}\hat{a})
+    - \frac{p(t)}{2} (\hat{a}^3 + \hat{a}^{\dagger 2}\ha + 2\ha^\dagger)\nn[10pt]
+    &- \Delta \ha\hat{a}^\dagger\hat{a} - \frac{\chi}{2} \ha\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}
+    +\frac{p(t)}{2} (\hat{a}^3 + \ha\hat{a}^{\dagger 2})\nn[10pt]
+    &=\Delta\hat{a} + \chi \hat{a}^\dagger\hat{a}^2 -p(t)\ha^\dagger.
+\end{align}
+コヒーレント状態$\ket{\alpha}$で期待値を取るという古典近似を行うことで，複素振幅$\alpha$に対する方程式を得る：
+\begin{equation}
+    \frac{d\braket{\ha}}{dt}=\frac{i}{\hbar}(p(t)\braket{\ha^\dagger} - \Delta\braket{\hat{a}} - \chi \braket{\hat{a}^\dagger\hat{a}^2}),
+\end{equation}
+\begin{equation}
+    \frac{d\alpha}{dt}=\frac{i}{\hbar}(p(t)\alpha^\ast - \Delta\alpha - \chi |\alpha|^2\alpha).
+\end{equation}
+$\alpha=x+i y$と実部，虚部に分けると，以下のように$x$，$y$を正準共役量としたHamilton方程式となる：
+\begin{align}
+    \frac{dx}{dt}&=\frac{\partial H}{\partial y} = \Bigl[
+    p + \Delta + K (x^2+y^2)
+    \Bigr]y\\[10pt]
+    \frac{dy}{dt}&=-\frac{\partial H}{\partial x} = \Bigl[
+    p -\Delta +- K (x^2+y^2)
+    \Bigr]x
+\end{align}
+where
+\begin{equation}
+    H=\frac{\chi}{4}(x^2+y^2)^2 + \frac{\Delta}{2}(x^2 + y^2) - \frac{p}{2}(x^2 - y^2)
+\end{equation}
+
+
+
+\section{Quantum model of KPO}
+We consider the quantum model of KPO. initial stateを真空状態$\ket{0}$とし，$p$をゼロから十分大きな値$p_00$へゆっくり増加させる（断熱変化）とき，KPOは最終的に互いに逆位相となる2つのコヒーレント状態$\ket{\pm\alpha}$の重ね合わせ状態，いわゆるシュレーディンガーの猫状態になる．これについて説明する．\\
+　まず，初期時刻では$p=0$であり，初期状態ではある真空状態はHamiltonianの基底状態である．次に，最終時刻$t=T$では$p=p_0\gg\Delta$となり，このとき2つのコヒーレント状態$\ket{\pm\alpha}$が近似的に基底状態となる．これは次のようにわかる．For simplicity, if we assume $\Delta = 0$, we have
+\begin{equation}
+    \hH(T) = \hbar\frac{\chi}{2}(\ha^{\dagger2} - \alpha^2)(\ha^2 - \alpha^2)
+\end{equation}
+where we denote $\alpha = \sqrt{p_0/\chi}$ and a c-number term has been dropped.
+
+
+\subsection{some basic properties}
+Wigner関数は$p=0$で真空状態，$p$がしきい値以下付近ではスクイーズ状態となり，しきい値以上ではKPOは発振しシュレーディンガーの猫状態となる．
+\subsection{Quantum bifurcation}
+Initial Hamiltonian at $p=0$\\
+\begin{equation}
+    \hH_{\rm{KPO}}/\hbar
+    =\Delta\ha^\dag\ha-\frac{K}{2}\ha^{\dag2}\ha^2
+\end{equation}
+Initial state $\ket{0}$\\
+
+Final Hamiltonian at $p>\Delta$
+\begin{equation}
+    \hH_{\rm{KPO}}/\hbar
+    =\Delta\ha^\dag\ha-\frac{K}{2}\ha^{\dag2}\ha^2+\beta(\ha^{\dagger2}+\ha^2)
+\end{equation}
+Final states $\ket{\pm\alpha}$,$\alpha=\sqrt{p/K}$
+
+\section{量子断熱定理}
+初期状態$\ket{\Psi(0)}$が$\hH(0)$の固有関数であり，$\hH(t)$が時間に関してゆっくりと変化するのであれば，常に$\ket{\Psi(t)}$は$\hH(t)$の固有関数であり続けるように変化する．
+
+
+\section{対称性}
+対称性がある　縮退がある\\
+対称性が破れる　縮退が解ける
+
+
+
+\section{KPO+qubit}
+\subsection{time independent}
+1モードのKPOとqubitの結合を考える．Hamiltonian
+\begin{equation}
+    \hH=\hH_{\rm{KPO}}+\hH_{\rm{g}}+\hH_{\rm{I}}    
+\end{equation}
+where
+\begin{align}
+    \hH_{\rm{KPO}}/\hbar&=\Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2} \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})\\[10pt]
+    \hH_{\rm{g}}/\hbar&=\frac{\omega_{\rm{g}-\omega_{\rm{p}}/2}}{2}\hsig_z\\[10pt]
+    \hH_{\rm{I}}/\hbar&=g(\ha\hsig_{+}+\ha^{\dag}\hsig_{-})
+\end{align}
+\begin{equation}
+\hat{H}/\hbar = ,
+\end{equation}
+where we have defined the dressed resonator frequency $\omega_c=\omega_c^{(0)}-\chi$ and the detuning $\Delta = \omega_c - \omega_p/2$.
+
+
+\subsection{time dependent}
+1モードのKPOとqubitの結合を考える．Hamiltonian
+\begin{equation}
+    \hH=\hH_{\rm{KPO}}+\hH_{\rm{g}}+\hH_{\rm{I}}+\hH_{\rm{D}}    
+\end{equation}
+where
+\begin{align}
+    \hH_{\rm{KPO}}/\hbar&=\Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2} \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})\\[10pt]
+    \hH_{\rm{g}}/\hbar&=\frac{\omega_{\rm{g}-\omega_{\rm{p}}/2}}{2}\hsig_z\\[10pt]
+    \hH_{\rm{I}}/\hbar&=g(\ha\hsig_{+}+\ha^{\dag}\hsig_{-})\\[10pt]
+    \hH_{\rm{D}}/\hbar&=\lambda\left(e^{i(\omega_c-\omega_p/2)t}+e^{-i(\omega_c-\omega_p/2)t}\right)
+    \hsig_x
+\end{align}
+\begin{equation}
+\hat{H}/\hbar = ,
+\end{equation}
+where we have defined the dressed resonator frequency $\omega_c=\omega_c^{(0)}-\chi$ and the detuning $\Delta = \omega_c - \omega_p/2$.
+
+
+
+\section{Sqeeze}
+We discuss the eigenvalues and eigenvector of Hamiltonian
+\begin{equation}
+    \hH_{\rm{S}}=\hbar\omega\ha^\dag\ha + \hbar \left(\frac{E^\ast}{2}\ha^{2} + \frac{E}{2}\ha^{\dag2}\right).
+\end{equation}
+Bogoliubov transformation
+\begin{align}
+    \left( 
+     \begin{array}{c}
+     \hb\\[10pt]
+     \hb^\dag
+     \end{array}
+    \right)
+    =
+    \left( 
+     \begin{array}{cc}
+     \xi_1&\xi_2 \\[10pt]
+     \xi_2^{\ast}&\xi_1^{\ast}
+     \end{array}
+    \right)
+    \left( 
+     \begin{array}{c}
+     \ha\\[10pt]
+     \ha^\dag
+     \end{array}
+    \right)
+\end{align}
+この逆変換は
+\begin{align}
+    \left( 
+     \begin{array}{c}
+     \ha\\[10pt]
+     \ha^\dag
+     \end{array}
+    \right)
+    =
+    \left( 
+     \begin{array}{cc}
+     \xi_1^{\ast}&-\xi_2 \\[10pt]
+     -\xi_2^{\ast}&\xi_1
+     \end{array}
+    \right)
+    \left( 
+     \begin{array}{c}
+     \hb\\[10pt]
+     \hb^\dag
+     \end{array}
+    \right)
+\end{align}
+
+\begin{align}
+    \ha&=\xi_1^{\ast}\hb-\xi_2\hb^\dag\\[10pt]
+     \ha^\dag&=-\xi_2^{\ast}\hb+\xi_1\hb^\dag
+\end{align}
+
+
+\begin{align}
+    \hH_{\rm{S}}&=\hbar\omega(-\xi_2^{\ast}\hb+\xi_1\hb^\dag)(\xi_1^{\ast}\hb-\xi_2\hb^\dag)\nn[10pt]
+    &+ \hbar\frac{E^\ast}{2}(\xi_1^{\ast}\hb+-\xi_2\hb^\dag)(\xi_1^{\ast}\hb+-\xi_2\hb^\dag)\nn[10pt]
+    &+ \hbar\frac{E}{2}(-\xi_2^{\ast}\hb+\xi_1\hb^\dag)(-\xi_2^{\ast}\hb+\xi_1\hb^\dag)
+\end{align}
+
+the first term
+\begin{align}
+    \hH_{\rm{S}1}/(\hbar\omega)&=(-\xi_2^{\ast}\hb+\xi_1\hb^\dag)(\xi_1^{\ast}\hb-\xi_2\hb^\dag)
+    =-\xi_1^{\ast}\xi_2^{\ast}\hb^2 +|\xi_2|^2\hb\hb^\dag
+    +|\xi_1|^2\hb^\dag\hb-\xi_1\xi_2\hb^{\dag2}\nn[10pt]
+    &=|\xi_1|^2\hb^\dag\hb
+    +|\xi_2|^2\hb^\dag\hb
+    -\xi_1^{\ast}\xi_2^{\ast}\hb^2 -\xi_1\xi_2\hb^{\dag2}+|\xi_2|^2
+\end{align}
+
+\begin{align}
+    \hH_{\rm{S}2}/(\hbar E^{\ast}/2)&=(\xi_1^{\ast}\hb-\xi_2\hb^\dag)(\xi_1^{\ast}\hb-\xi_2\hb^\dag)
+    =-\xi_1^{\ast}\xi_2\hb^\dag\hb-\xi_1^{\ast}\xi_2\hb\hb^\dag
+    +\xi_1^{\ast2}\hb^2+\xi_2^{2}\hb^{\dag2}\nn[10pt]
+    &=-2\xi_1^{\ast}\xi_2\hb^\dag\hb
+    +\xi_1^{\ast2}\hb^2+\xi_2^{2}\hb^{\dag2}-\xi_1^{\ast}\xi_2
+\end{align}
+
+
+\begin{align}
+    \hH_{\rm{S}3}/(\hbar E/2)
+    &=(-\xi_2^{\ast}\hb+\xi_1\hb^\dag)(-\xi_2^{\ast}\hb+\xi_1\hb^\dag)
+    =-\xi_1\xi_2^{\ast}\hb^\dag\hb-\xi_1\xi_2^{\ast}\hb\hb^\dag
+    +\xi_2^{\ast2}\hb^2+\xi_1^{2}\hb^{\dag2}\nn[10pt]
+    &=-2\xi_1\xi_2^{\ast}\hb^\dag\hb
+    +\xi_2^{\ast2}\hb^2+\xi_1^{2}\hb^{\dag2}-\xi_1\xi_2^{\ast}
+\end{align}
+
+\begin{align}
+    \hH_{\rm{S}}&=\hbar\omega(|\xi_1|^2\hb^\dag\hb
+    +|\xi_2|^2\hb^\dag\hb
+    -\xi_1^{\ast}\xi_2^{\ast}\hb^2 -\xi_1\xi_2\hb^{\dag2}+|\xi_2|^2)\nn[10pt]
+    &+ \hbar\frac{E^\ast}{2}(-2\xi_1^{\ast}\xi_2\hb^\dag\hb
+    +\xi_1^{\ast2}\hb^2+\xi_2^{2}\hb^{\dag2}-\xi_1^{\ast}\xi_2)\nn[10pt]
+    &+ \hbar\frac{E}{2}(-2\xi_1\xi_2^{\ast}\hb^\dag\hb
+    +\xi_2^{\ast2}\hb^2+\xi_1^{2}\hb^{\dag2}-\xi_1\xi_2^{\ast})\nn[15pt]
+    %
+    &=\hbar\left\{\omega(|\xi_1|^2+|\xi_2|^2)\hb^\dag\hb
+    +\frac{E^\ast}{2}(-2\xi_1^{\ast}\xi_2\hb^\dag\hb)
+    +\frac{E}{2}(-2\xi_1\xi_2^{\ast}\hb^\dag\hb)
+    \right\}
+    \nn[10pt]
+    &+\hbar\left\{\omega(-\xi_1^{\ast}\xi_2^{\ast}\hb^2)
+    +\frac{E^\ast}{2}(\xi_1^{\ast2}\hb^2)
+    +\frac{E}{2}(\xi_2^{\ast2}\hb^2)
+    \right\}\nn[10pt]
+    &+\hbar\left\{\omega(-\xi_1\xi_2\hb^{\dag2})
+    +\frac{E^\ast}{2}(\xi_2^{2}\hb^{\dag2})
+    +\frac{E}{2}(\xi_1^{2}\hb^{\dag2})
+    \right\}\nn[10pt]
+    &+\hbar\left\{\omega|\xi_2|^2
+    +\frac{E^\ast}{2}(-\xi_1^{\ast}\xi_2)
+    +\frac{E}{2}(-\xi_1\xi_2^{\ast})
+    \right\}
+\end{align}
+このHaniltonianを対角化するためには，非対角項が
+\begin{align}
+    -\omega\xi_1^{\ast}\xi_2^{\ast}
+    +\frac{E^\ast}{2}\xi_1^{\ast2}
+    +\frac{E}{2}\xi_2^{\ast2}&=0\\[10pt]
+    %
+    -\omega\xi_1\xi_2
+    +\frac{E^\ast}{2}\xi_2^{2}
+    +\frac{E}{2}\xi_1^{2}&=0
+\end{align}
+を満たすような$\xi_1$，$\xi_2$を満たす必要がある．\eqref{}の両辺に$E^\ast/\xi_1^2$をかけると
+\begin{align}
+    E^{\ast2}\left(\frac{\xi_2}{\xi_1}\right)^{2}-2\omega E^{\ast}\frac{\xi_2}{\xi_1}
+    +|E|^2
+    &=0
+\end{align}
+
+\begin{align}
+    \frac{\xi_2}{\xi_1}&=\frac{\omega E^{\ast}\pm\sqrt{\omega^2E^{\ast2}-E^{\ast2}|E|^2}}{E^{\ast2}}\nn[10pt]
+    &=\frac{\omega \pm\sqrt{\omega^2-|E|^2}}{E^{\ast}}
+    =\frac{\omega \pm\lambda}{E^{\ast}}
+\end{align}
+where $\lambda=\sqrt{\omega^2-|E|^2}$
+\begin{align}
+    ax^2+bx+c=0\\[10pt]
+    x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{align}
+同様にして，\eqref{}の両辺に$E/\xi_1^{\ast2}$をかけると
+\begin{align}
+    E^{2}\left(\frac{\xi_2^{\ast}}{\xi_1^{\ast}}\right)^{2}-2\omega E\frac{\xi_2^{\ast}}{\xi_1^{\ast}}
+    +|E|^2
+    &=0
+\end{align}
+\begin{align}
+    \frac{\xi_2^{\ast}}{\xi_1^{\ast}}
+    &=\frac{\omega \pm\sqrt{\omega^2-|E|^2}}{E}
+    =\frac{\omega \pm\lambda}{E}
+\end{align}
+where $\lambda=\sqrt{\omega^2-|E|^2}$.
+\begin{align}
+    \frac{|\xi_2|^2}{|\xi_1|^2}
+    &=\frac{(\omega \pm\lambda)^2}{|E|^2}
+    =\frac{-(\lambda\pm\omega)^2}{(\lambda^2-\omega^2)}
+    =\frac{-(\lambda\pm\omega)}{(\lambda\mp\omega)}
+\end{align}
+\begin{align}
+    -\frac{|\xi_2|^2}{|\xi_1|^2}
+    =\frac{(\lambda\pm\omega)}{(\lambda\mp\omega)}
+\end{align}
+Using $|\xi_1|^2-|\xi_2|^2=1$, we obtain
+\begin{align}
+    \frac{1}{|\xi_1|^2}&=1+\left(-\frac{|\xi_2|^2}{|\xi_1|^2}\right)
+    =1+\frac{(\lambda\pm\omega)}{(\lambda\mp\omega)}=\frac{2\lambda}{\lambda\mp\omega}
+\end{align}
+Therefore we have
+\begin{align}
+    |\xi_1|^2&=\frac{\lambda\mp\omega}{2\lambda}\\[10pt]
+    |\xi_2|^2&=\frac{\lambda\mp\omega}{2\lambda}-1=\frac{\lambda\mp\omega-2\lambda}{2\lambda}
+    =\frac{-\lambda\mp\omega}{2\lambda}.
+\end{align}
+
+
+
+\begin{align}
+    \hH_{\rm{S}}
+    &=\hbar\left\{\omega(|\xi_1|^2+|\xi_2|^2)\hb^\dag\hb
+    +\frac{E^\ast}{2}(-2\xi_1^{\ast}\xi_2\hb^\dag\hb)
+    +\frac{E}{2}(-2\xi_1\xi_2^{\ast}\hb^\dag\hb)
+    \right\}
+\end{align}
+
+
+
+
+\begin{align}
+    \hH_{\rm{S}}
+    &=|\xi_1|^2+|\xi_2|^2=\frac{\lambda\mp\omega}{2\lambda}+\frac{-\lambda\mp\omega}{2\lambda}
+    =\frac{\mp2\omega}{2\lambda}=\mp\frac{\omega}{\lambda}
+\end{align}
+
+
+
+
+
+
+\begin{align}
+    \hH_{\rm{S}}
+    %
+    &=\frac{E^\ast}{2}(-2\xi_1^{\ast}\xi_2)
+    =-E^\ast\xi_1^{\ast}\xi_2
+    =-E^\ast|\xi_1|^2\frac{\xi_2}{\xi_1}
+    =-E^\ast\frac{\lambda\mp\omega}{2\lambda}\frac{\omega\pm\lambda}{E^\ast}\nn[10pt]
+    &=\frac{(\pm\omega-\lambda)(\omega\pm\lambda)}{2\lambda}
+    =\frac{\omega^2-\lambda^2}{2\lambda}=\frac{|E|^2}{2\lambda}
+\end{align}
+
+\begin{align}
+    \hH_{\rm{S}}
+    %
+    &=\frac{E}{2}(-2\xi_1\xi_2^{\ast})
+    =-E|\xi_1|^2\frac{\xi_2^{\ast}}{\xi_1^{\ast}}
+    =-E \frac{\lambda\mp\omega}{2\lambda}\frac{\omega\pm\lambda}{E}\nn[10pt]
+    &=\frac{(\pm\omega-\lambda)(\omega\pm\lambda)}{2\lambda}
+    =\frac{\omega^2-\lambda^2}{2\lambda}=\frac{|E|^2}{2\lambda}
+\end{align}
+
+
+\begin{align}
+    \hH_{\rm{S}}
+    &=\hbar\left\{\mp\frac{\omega^2}{\lambda}
+    \pm\frac{|E|^2}{2\lambda}
+    \pm\frac{|E|^2}{2\lambda}
+    \right\}\hb^\dag\hb
+    %
+    =\hbar\left\{\frac{\mp\omega^2\pm|E|^2}{\lambda}
+    \right\}\hb^\dag\hb
+    =\mp\hbar\lambda\hb^\dag\hb
+\end{align}
+
+
+
+
+
+\section{Spectroscopic Measurement}
+\begin{equation}
+    \hH = \hH_0 + \lambda\hA\cos{\omega t}
+\end{equation}
+
+we set initial state $\ket{\psi_0}=\ket{g}$
+\begin{align}
+    \hH_{\I}&=\hU^\dagger(\hA\cos{\omega t})\hU
+    =e^{i\hH_0 t}(\hA\cos{\omega t})e^{-i\hH_0 t}\nn[10pt]
+    &=e^{i\hH_0 t}\left(\sum_{n,m}\ket{E_n}\braket{E_n|\hA|E_m}\bra{E_m}\right)e^{-i\hH_0 t}\cos{\omega t}\nn[10pt]
+    &=\sum_{n,m}e^{i(E_n-E_m)t}\ket{E_n}\braket{E_n|\hA|E_m}\bra{E_m}\frac{e^{i\omega t}+e^{-i\omega t}}{2}\nn[10pt]
+    &=\frac{1}{2}\sum_{n,m}e^{i(E_n-E_m+\omega)t}\ket{E_n}\braket{E_n|\hA|E_m}\bra{E_m}
+    +e^{i(E_n-E_m-\omega)t}\ket{E_n}\braket{E_n|\hA|E_m}\bra{E_m}
+\end{align}
+
+\begin{align}
+    \ket{\psi(t)}&=\ket{\psi(0)}-i\lambda\int_{0}^{t}ds\hH_{\I}(s)\ket{\psi(0)}\nn[10pt]
+    &=\ket{\psi(0)}-\frac{i\lambda}{2}\int_{0}^{t}ds
+    \sum_{n,m}e^{i(E_n-E_m+\omega)s}\ket{E_n}\braket{E_n|\hA|E_m}\braket{E_m|E_0}
+    +e^{i(E_n-E_m-\omega)s}\ket{E_n}\braket{E_n|\hA|E_m}\braket{E_m|E_0}\nn[10pt]
+    &=\ket{\psi(0)}-\frac{i\lambda}{2}\int_{0}^{t}ds
+    \sum_{n,m}e^{i(E_n-E_m+\omega)s}\ket{E_n}\braket{E_n|\hA|E_m}\delta_{m,0}
+    +e^{i(E_n-E_m-\omega)s}\ket{E_n}\braket{E_n|\hA|E_m}\delta_{m,0}\nn[10pt]
+    &=\ket{\psi(0)}-\frac{i\lambda}{2}\int_{0}^{t}ds
+    \sum_{n}e^{i(E_n-E_0+\omega)s}\ket{E_n}\braket{E_n|\hA|E_0}
+    +e^{i(E_n-E_0-\omega)s}\ket{E_n}\braket{E_n|\hA|E_0}\nn[10pt]
+    &=\ket{\psi(0)}-\frac{i\lambda}{2}
+    \sum_{n}\frac{e^{i(E_n-E_0\pm\omega)s}-1}{i(E_n-E_0+\omega)}\ket{E_n}\braket{E_n|\hA|E_0}
+    +\frac{e^{i(E_n-E_0-\omega)s}-1}{i(E_n-E_0\pm\omega)}\ket{E_n}\braket{E_n|\hA|E_0}
+\end{align}
+
+
+\begin{align}
+    \int_{0}^{t}ds\ e^{i(E_n-E_0\pm\omega)s}
+    &=\frac{1}{i(E_n-E_0\pm\omega)}\left[e^{i(E_n-E_0\pm\omega)s}\right]_{s=0}^{s=t}
+    =\frac{e^{i(E_n-E_0\pm\omega)s}-1}{i(E_n-E_0\pm\omega)}\nn[10pt]
+    &=\frac{e^{i(E_n-E_0\pm\omega)t/2}}{e^{i(E_n-E_0\pm\omega)t/2}}\frac{e^{i(E_n-E_0\pm\omega)t}-1}{i(E_n-E_0\pm\omega)}\nn[10pt]
+    &=t e^{i(E_n-E_0\pm\omega)t/2}\frac{e^{i(E_n-E_0\pm\omega)t/2}-e^{-i(E_n-E_0\pm\omega)t/2}}{2i(E_n-E_0\pm\omega)t/2}\nn[10pt]
+    &=t e^{i(E_n-E_0\pm\omega)t/2}\frac{\sin{(E_n-E_0\pm\omega)t/2}}{(E_n-E_0\pm\omega)t/2}\nn[10pt]
+    &=t e^{i(E_n-E_0\pm\omega)t/2}\ {\rm{sinc}}{(E_n-E_0\pm\omega)t/2)}\nn[10pt]
+\end{align}
+となるので，
+\begin{align}
+    \ket{\psi(t)}
+    &=\ket{\psi(0)}-\frac{i\lambda}{2}
+    \sum_{n}t e^{i(E_n-E_0-\omega)t/2}\ {\rm{sinc}}{((E_n-E_0-\omega)t/2)}\ket{E_n}\braket{E_n|\hA|E_0}
+\end{align}
+
+\begin{align}
+    \braket{E_m|\psi(t)}
+    &=\braket{E_m|E_0}-\frac{i\lambda}{2}
+    \sum_{n}t e^{i(E_n-E_0-\omega)t/2}\ {\rm{sinc}}{((E_n-E_0-\omega)t/2)}\braket{E_n|\hA|E_0}\delta_{n,m}\nn[10pt]
+    &=\braket{E_m|E_0}-\frac{i\lambda}{2}
+    t e^{i(E_m-E_0-\omega)t/2}\ {\rm{sinc}}{((E_m-E_0-\omega)t/2)}\braket{E_m|\hA|E_0}\nn[10pt]
+\end{align}
+
+
+\begin{align}
+    |C_{m,0}|^2=\frac{\lambda^2}{2}
+    t^2  \frac{\sin^2{(E_n-E_0\pm\omega)t/2}}{(E_n-E_0\pm\omega)^2t^2/4}\braket{E_m|\hA|E_0}
+\end{align}
+\begin{align}
+    |C_{m,0}(t)|^2&=\frac{\lambda^2}{2}
+    t^2  \frac{\sin^2{(E_n-E_0\pm\omega)t/2}}{(E_n-E_0\pm\omega)^2t^2/4}\braket{E_m|\hA|E_0}\nn[10pt]
+    &=\frac{\lambda^2}{2}
+    \pi t  \frac{\sin^2{(E_n-E_0\pm\omega)t/2}}{\pi\{(E_n-E_0\pm\omega)/2\}^2t}\braket{E_m|\hA|E_0}\nn[10pt]
+\end{align}
+
+\begin{equation}
+    \lim_{t\to\infty}\frac{\sin^2{(E_n-E_0\pm\omega)t/2}}{\pi\{(E_n-E_0\pm\omega)/2\}^2t}
+    \delta((E_n-E_0\pm\omega)/2)=2\delta(E_n-E_0\pm\omega)
+\end{equation}
+
+\begin{align}
+    \lim_{t\to\infty}\frac{\sin^2{\alpha t}}{\pi\alpha^2 t}=\delta(\alpha)
+\end{align}
+
+
+\begin{equation}
+    \lim_{t\to\infty}|C_{m,0}(t)|^2
+    =\frac{\lambda^2}{2}
+    2\pi t \braket{E_m|\hA|E_0}
+    \delta(E_n-E_0\pm\omega)
+\end{equation}
+
+
+\section{Mollow Triplet}
+\begin{equation}
+    \hH=\hH_{\rm{g}}+\hH_{\rm{I}}+\hH_{\rm{D}}    
+\end{equation}
+where
+\begin{align}
+    \hH_{\rm{g}}/\hbar&=\Delta\hsig_z\\[10pt]
+    \hH_{\rm{I}}/\hbar&=g\alpha(\hsig_{+}+\hsig_{-})\\[10pt]
+    \hH_{\rm{D}}/\hbar&=\lambda\left(e^{i(\omega_c-\omega_p/2)t}\hsig_{+}+e^{-i(\omega_c-\omega_p/2)t}\hsig_{-}\right)
+\end{align}
+\begin{equation}
+\hat{H}/\hbar = ,
+\end{equation}
+$\Delta=0$, $g/2\pi=5$, $\alpha=1$, $\lambda/2\pi=0.1$, $\omega=\omega_c-\omega_p/2$
+
+
+\section{Time dependent perturbation}
+\subsection{time dependent}
+We consider the following Hamiltonian
+\begin{equation}
+    \hH=\frac{1}{2}\lambda\hsig_x + \lambda_p (\hsig_+e^{i\omega t} + \hsig_-e^{-i\omega t}).
+\end{equation}
+
+We can rewrite Hamiltonian as
+\begin{align}
+    \hH=\frac{1}{2}\lambda\hsig_x + \lambda_p ((\hsig_x+i\hsig_y)e^{i\omega t} + (\hsig_x-\hsig_y)e^{-i\omega t}),
+\end{align}
+where we use
+\begin{align}
+    \hsig_+&=\hsig_x+i\hsig_y\\[10pt]
+    \hsig_-&=\hsig_x-\hsig_y.
+\end{align}
+
+Rotating a basis around the y-axis, we get
+\begin{align}
+    \hH=\frac{1}{2}\lambda\hat{Z} + \lambda_p ((\hat{Z}+i\hat{Y})e^{i\omega t} + (\hat{Z}-\hat{Y})e^{-i\omega t})
+\end{align}
+where $\hsig_x\to\hat{Z}$, $\hsig_y\to\hat{Y}$, $\hsig_z\to\hat{X}$.
+
+We can rewrite Hamiltonian as
+\begin{align}
+    \hH=\frac{1}{2}\lambda\hat{Z} + \lambda_p \left(\left\{\hat{Z}+i\frac{\hsig_+^\prime-\hsig_-^\prime}{2i}\right\}e^{i\omega t} + \left\{\hat{Z}-\frac{\hsig_+^\prime-\hsig_-^\prime}{2i}\right\}e^{-i\omega t}\right)
+\end{align}
+
+We can transform out of the interaction picture by using the transformation
+\begin{equation}
+    \hU=\exp{\left(i\frac{\lambda}{2}\hat{Z}\right)}.
+\end{equation}
+
+The resulting Hamiltonian is
+\begin{align}
+    \hH_{\I}(t)&=\lambda_p \left(\left\{\hat{Z}+i\frac{\hsig_+^\prime e^{i\lambda t}-\hsig_-^\prime e^{-i\lambda t}}{2i}\right\}e^{i\omega t} + \left\{\hat{Z}-\frac{\hsig_+^\prime e^{i\lambda t}-\hsig_-^\prime e^{-i\lambda t}}{2i}\right\}e^{-i\omega t}\right)\nn[10pt]
+    %
+    &=\lambda_p \left(\hat{Z}e^{i\omega t}+\frac{1}{2}\hsig_+^\prime e^{i(\lambda+\omega) t}-\frac{1}{2}\hsig_-^\prime e^{i(-\lambda+\omega) t}
+    +\hat{Z}e^{-i\omega t}-\frac{1}{2}\hsig_+^\prime e^{i(\lambda-\omega) t}-\frac{1}{2}\hsig_-^\prime e^{-i(\lambda+\omega) t}\right).
+\end{align}
+
+We solve time dependent Schrodinger eqation at interaction picture
+\begin{equation}
+    i\hbar\frac{d}{dt}\ket{\psi(t)}=\hH_{\I}(t)\ket{\psi(t)}
+\end{equation}
+
+\begin{align}
+    \ket{\psi(t)}=\ket{\psi(0)} + \frac{1}{i\hbar}\int_{0}^{t} \hH_{\I}(t_1)\ket{\psi(0)} 
+    +\frac{1}{(i\hbar)^2}\int_{0}^{t}\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2) \ket{\psi(0)}+\mathcal{O}(\lambda_{\rm{p}}^3)
+\end{align}
+
+\subsection{first order}
+\begin{align}
+    &\frac{1}{\lambda_p}\int_{0}^{t_1} dt_1 \hH_{\I}(t_1)\nn[10pt]
+    &=\hat{Z}\frac{e^{i\omega t}-1}{i\omega}+\frac{1}{2}\hsig_+^\prime \frac{e^{i(\lambda+\omega) t}-1}{i(\lambda+\omega)}
+    -\frac{1}{2}\hsig_-^\prime \frac{e^{i(-\lambda+\omega) t}-1}{i(-\lambda+\omega)}
+    +\hat{Z}\frac{e^{-i\omega t}-1}{-i\omega}
+    -\frac{1}{2}\hsig_+^\prime \frac{e^{i(\lambda-\omega) t}-1}{i(\lambda-\omega)} -\frac{1}{2}\hsig_-^\prime \frac{e^{-i(\lambda+\omega) t}-1}{-i(\lambda+\omega)} \nn[10pt]
+    &=\hat{Z}t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2}
+    +\frac{1}{2}\hsig_+^\prime t e^{i(\lambda+\omega)t/2}\frac{\sin{(\lambda+\omega)t/2}}{(\lambda+\omega)t/2}
+    -\frac{1}{2}\hsig_-^\prime t e^{i(-\lambda+\omega)t/2}\frac{\sin{(-\lambda+\omega)t/2}}{(-\lambda+\omega)t/2}\nn[10pt]
+    &+\hat{Z}t e^{-i\omega t/2}\frac{\sin{-\omega t/2}}{\omega t/2}
+    -\frac{1}{2}\hsig_+^\prime t e^{i(\lambda-\omega)t/2}\frac{\sin{(\lambda-\omega)t/2}}{(\lambda-\omega)t/2}
+    -\frac{1}{2}\hsig_-^\prime t e^{-i(\lambda+\omega)t/2}\frac{\sin{-(\lambda+\omega)t/2}}{-(\lambda+\omega)t/2}
+\end{align}
+
+
+\begin{align}
+    \int_{0}^{t}ds\ e^{iAs}
+    &=\frac{1}{iA}\left[e^{iAs}\right]_{s=0}^{s=t}
+    =\frac{e^{iAs}-1}{iA}=\frac{e^{iAt/2}}{e^{iAt/2}}\frac{e^{iAt}-1}{iA}\nn[10pt]
+    &=t e^{iAt/2}\frac{e^{iAt/2}-e^{-iAt/2}}{2iAt/2}
+    =t e^{iAt/2}\frac{\sin{At/2}}{At/2}
+\end{align}
+
+\begin{align}
+    C_{0\to1}^{1}=&\int_{0}^{t_1} dt_1 \braket{1|\hH_{\I}(t_1)|0}\nn[10pt]
+    &=\frac{\lambda_p}{2} \frac{e^{i(\lambda+\omega) t}-1}{i(\lambda+\omega)}
+    -\frac{\lambda_p}{2}\frac{e^{i(\lambda-\omega) t}-1}{i(\lambda-\omega)}\nn[10pt]
+    &=\frac{\lambda_p}{2} e^{i(\lambda+\omega)t/2}\frac{\sin{(\lambda+\omega)t/2}}{(\lambda+\omega)t/2}
+    -\frac{\lambda_p}{2} e^{i(\lambda-\omega)t/2}\frac{\sin{(\lambda-\omega)t/2}}{(\lambda-\omega)t/2}\nn[10pt]
+\end{align}
+
+
+
+\subsection{second order}
+\begin{align}
+    &\frac{1}{\lambda_p^2}\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \left(\textcolor{red}{\hat{Z}e^{i\omega t_1}+\frac{1}{2}\hsig_+^\prime e^{i(\lambda+\omega) t_1}-\frac{1}{2}\hsig_-^\prime e^{i(-\lambda+\omega) t_1}}
+    +\textcolor{blue}{\hat{Z}e^{-i\omega t_1}-\frac{1}{2}\hsig_+^\prime e^{i(\lambda-\omega) t_1}-\frac{1}{2}\hsig_-^\prime e^{-i(\lambda+\omega) t_1}}\right)\nn[10pt]
+    &\times\left(\textcolor{green}{\hat{Z}e^{i\omega t_2}+\frac{1}{2}\hsig_+^\prime e^{i(\lambda+\omega) t_2}-\frac{1}{2}\hsig_-^\prime e^{i(-\lambda+\omega) t_2}}
+    +\textcolor{violet}{\hat{Z}e^{-i\omega t_2}-\frac{1}{2}\hsig_+^\prime e^{i(\lambda-\omega) t_2}-\frac{1}{2}\hsig_-^\prime e^{-i(\lambda+\omega) t_2}}\right)\nn[15pt]
+    %%%%%%%%%%
+    &= \left(\textcolor{red}{\hat{Z}e^{i\omega t_1}+\frac{1}{2}\hsig_+^\prime e^{i(\lambda+\omega) t_1}-\frac{1}{2}\hsig_-^\prime e^{i(-\lambda+\omega) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{i\omega t_2}+\frac{1}{2}\hsig_+^\prime e^{i(\lambda+\omega) t_2}-\frac{1}{2}\hsig_-^\prime e^{i(-\lambda+\omega) t_2}}\right)
+    \nn[10pt]
+    &+\left(\textcolor{red}{\hat{Z}e^{-i\omega t_1}-\frac{1}{2}\hsig_+^\prime e^{i(\lambda-\omega) t_1}-\frac{1}{2}\hsig_-^\prime e^{-i(\lambda+\omega) t_1}}\right)
+    \left(\textcolor{violet}{\hat{Z}e^{i\omega t_2}+\frac{1}{2}\hsig_+^\prime e^{i(\lambda+\omega) t_2}-\frac{1}{2}\hsig_-^\prime e^{i(-\lambda+\omega) t_2}}\right)
+    \nn[10pt]
+    &+\left(\textcolor{blue}{\hat{Z}e^{i\omega t_1}+\frac{1}{2}\hsig_+^\prime e^{i(\lambda+\omega) t_1}-\frac{1}{2}\hsig_-^\prime e^{i(-\lambda+\omega) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{-i\omega t_2}-\frac{1}{2}\hsig_+^\prime e^{i(\lambda-\omega) t_2}-\frac{1}{2}\hsig_-^\prime e^{-i(\lambda+\omega) t_2}}\right)\nn[10pt]
+    &+\left(\textcolor{blue}{\hat{Z}e^{-i\omega t_1}-\frac{1}{2}\hsig_+^\prime e^{i(\lambda-\omega) t_1}-\frac{1}{2}\hsig_-^\prime e^{-i(\lambda+\omega) t_1}}\right)
+    \left(\textcolor{violet}{\hat{Z}e^{-i\omega t_2}-\frac{1}{2}\hsig_+^\prime e^{i(\lambda-\omega) t_2}-\frac{1}{2}\hsig_-^\prime e^{-i(\lambda+\omega) t_2}}\right)
+\end{align}
+
+
+\begin{align}
+    \frac{1}{\lambda_p^2}\hH_{\I}(t_1)\hH_{\I}(t_2)
+    &= \left(e^{i\omega (t_1+t_2)}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}e^{i(\lambda+\omega) t_2}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}e^{i(-\lambda+\omega) t_1}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda+\omega) t_1}e^{i\omega t_2}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda+\omega) t_1}e^{i(\lambda+\omega) t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}e^{i(-\lambda+\omega) t_2}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}e^{i\omega t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}e^{i(\lambda+\omega) t_2}
+    -\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-\lambda+\omega) t_1}e^{i(-\lambda+\omega) t_2}\right)
+    \nn[20pt]
+    %%%%%%%%%%%%%%%%
+    &+e^{-i\omega t_1}e^{i\omega t_2}+\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}e^{i(\lambda+\omega) t_2}-\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}e^{i(-\lambda+\omega) t_2}\nn[10pt]
+    %
+    & 
+    \left(-\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda-\omega) t_1}e^{i\omega t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda-\omega) t_1}e^{i(\lambda+\omega) t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}e^{i(-\lambda+\omega) t_2}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(\lambda+\omega) t_1}e^{i\omega t_2}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}e^{i(\lambda+\omega) t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(\lambda+\omega) t_1}e^{i(-\lambda+\omega) t_2}\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(e^{i\omega t_1}e^{-i\omega t_2}-\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}e^{i(\lambda-\omega) t_2}-\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}e^{-i(\lambda+\omega) t_2}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(\lambda+\omega) t_1}e^{-i\omega t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda+\omega) t_1}e^{i(\lambda-\omega) t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}e^{-i(\lambda+\omega) t_2}\right)\nn[10pt]
+    %
+    &
+    -\left(-\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}e^{-i\omega t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}e^{i(\lambda-\omega) t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-\lambda+\omega) t_1}e^{-i(\lambda+\omega) t_2}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(\hat{Z}\hat{Z}e^{-i\omega t_1}e^{-i\omega t_2}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}e^{i(\lambda-\omega) t_2}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}e^{-i(\lambda+\omega) t_2}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(\lambda-\omega) t_1}e^{-i\omega t_2}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda-\omega) t_1}e^{i(\lambda-\omega) t_2}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}e^{-i(\lambda+\omega) t_2}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(\lambda+\omega) t_1}e^{-i\omega t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}e^{i(\lambda-\omega) t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(\lambda+\omega) t_1}e^{-i(\lambda+\omega) t_2}\right)
+\end{align}
+
+
+
+\begin{align}
+    &\frac{1}{\lambda_p^2}\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \left(e^{i\omega (t_1)}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda+\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)
+    \nn[20pt]
+    %%%%%%%%%%%%%%%%
+    &+e^{-i\omega t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\nn[10pt]
+    %
+    & 
+    \left(-\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda-\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda-\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(e^{i\omega t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda-\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda-\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &
+    -\left(-\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(e^{-i\omega t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(\lambda-\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(\lambda-\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)
+\end{align}
+
+
+\begin{align}
+    &\frac{1}{\lambda_p^2}\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \left(e^{i\omega (t_1)}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%
+    &+e^{-i\omega t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\nn[10pt]
+    %
+    & 
+    \left(-\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda-\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(e^{i\omega t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda-\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &
+    -\left(-\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(e^{-i\omega t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(\lambda-\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}\right)
+\end{align}
+
+
+\begin{align}
+    &\frac{1}{\lambda_p^2}\int_{0}^{t}\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \left(e^{i\omega (t_1)}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%
+    &+e^{-i\omega t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\nn[10pt]
+    %
+    & 
+    \left(-\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(\lambda-\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}\frac{e^{i(-\lambda+\omega) t_1}-1}{i(-\lambda+\omega)}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(\lambda+\omega) t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{i(\lambda+\omega) t_1}-1}{i(\lambda+\omega)}\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(e^{i\omega t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\omega t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda-\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\omega t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda+\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &
+    -\left(-\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-\lambda+\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(e^{-i\omega t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\omega t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\omega t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(\lambda-\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(\lambda-\omega) t_1}\frac{e^{-i(\lambda+\omega) t_1}-1}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(\lambda+\omega) t_1}\frac{e^{-i\omega t_1}-1}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(\lambda+\omega) t_1}\frac{e^{-i(\lambda-\omega) t_1}-1}{-i(\lambda+\omega)}\right)
+\end{align}
+
+
+\begin{align}
+    &\frac{1}{\lambda_p^2}\int_{0}^{t}\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \left(e^{i\omega (t_1)}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}(e^{i(\lambda+2\omega) t_1}-e^{i\omega t_1})
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}(e^{i(-\lambda+2\omega) t_1}-e^{i\omega t_1})\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\omega}(e^{i(\lambda+2\omega) t_1}-e^{i(\lambda+\omega) t_1})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(\lambda+\omega) t_1}e^{i(-\lambda+\omega) t_1}-e^{i(\lambda+\omega) t_1}}{i(-\lambda+\omega)}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{e^{i(-\lambda+\omega) t_1}e^{i\omega t_1}-e^{i(-\lambda+\omega) t_1}}{i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{i(-\lambda+\omega) t_1}e^{i(\lambda+\omega) t_1}-e^{i(-\lambda+\omega) t_1}}{i(\lambda+\omega)}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%
+    &+e^{-i\omega t_1}\frac{e^{i\omega t_1}-1}{i\omega}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{e^{-i\omega t_1}e^{i(\lambda+\omega) t_1}-e^{-i\omega t_1}}{i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{e^{-i\omega t_1}e^{i(-\lambda+\omega) t_1}-e^{-i\omega t_1}}{i(-\lambda+\omega)}\nn[10pt]
+    %
+    & 
+    \left(-\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{e^{i(\lambda-\omega) t_1}e^{i\omega t_1}-e^{i(\lambda-\omega) t_1}}{i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(\lambda-\omega) t_1}e^{i(-\lambda+\omega) t_1}-e^{i(\lambda-\omega) t_1}}{i(-\lambda+\omega)}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} \frac{e^{-i(\lambda+\omega) t_1}e^{i\omega t_1}-e^{-i(\lambda+\omega) t_1}}{i\omega}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{-i(\lambda+\omega) t_1}e^{i(\lambda+\omega) t_1}-e^{-i(\lambda+\omega) t_1}}{i(\lambda+\omega)}\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(\frac{e^{i\omega t_1}e^{-i\omega t_1}-e^{i\omega t_1}}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{e^{i\omega t_1}e^{-i(\lambda-\omega) t_1}-e^{i\omega t_1}}{-i(\lambda-\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{e^{i\omega t_1}e^{-i(\lambda+\omega) t_1}-e^{i\omega t_1}}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime \hat{Z}\frac{e^{i(\lambda+\omega) t_1}e^{-i\omega t_1}-e^{i(\lambda+\omega) t_1}}{-i\omega}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(\lambda+\omega) t_1}e^{-i(\lambda+\omega) t_1}-e^{i(\lambda+\omega) t_1}}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &
+    -\left(-\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{e^{i(-\lambda+\omega) t_1}e^{-i\omega t_1}-e^{i(-\lambda+\omega) t_1}}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{i(-\lambda+\omega) t_1}e^{-i(\lambda-\omega) t_1}-e^{i(-\lambda+\omega) t_1}}{-i(\lambda+\omega)}\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(\frac{e^{-i\omega t_1}e^{-i\omega t_1}-e^{-i\omega t_1}}{-i\omega}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{e^{-i\omega t_1}e^{-i(\lambda-\omega) t_1}-e^{-i\omega t_1}}{-i(\lambda+\omega)}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{e^{-i\omega t_1}e^{-i(\lambda+\omega) t_1}-e^{-i\omega t_1}}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_+^\prime\hat{Z} \frac{e^{i(\lambda-\omega) t_1}e^{-i\omega t_1}-e^{i(\lambda-\omega) t_1}}{-i\omega}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(\lambda-\omega) t_1}e^{-i(\lambda+\omega) t_1}-e^{i(\lambda-\omega) t_1}}{-i(\lambda+\omega)}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}\frac{e^{-i(\lambda+\omega) t_1}e^{-i\omega t_1}-e^{-i(\lambda+\omega) t_1}}{-i\omega}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{-i(\lambda+\omega) t_1}e^{-i(\lambda-\omega) t_1}-e^{-i(\lambda+\omega) t_1}}{-i(\lambda+\omega)}\right)
+\end{align}
+
+
+
+\begin{align}
+    &\frac{1}{\lambda_p^2}\int_{0}^{t}\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \left(\frac{1}{i\omega}((e^{i2\omega t_1}-e^{i\omega (t_1)})
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}(e^{i(\lambda+2\omega) t_1}-e^{i\omega t_1})
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}(e^{i(-\lambda+2\omega) t_1}-e^{i\omega t_1})\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\omega}(e^{i(\lambda+2\omega) t_1}-e^{i(\lambda+\omega) t_1})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}(e^{i(2\omega) t_1}-e^{i(\lambda+\omega) t_1})\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{i\omega}(e^{i(-\lambda+2\omega) t_1}-e^{i(-\lambda+\omega) t_1})
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(\lambda+\omega)}(e^{i(2\omega) t_1}-e^{i(-\lambda+\omega) t_1})\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%
+    &+\frac{1}{i\omega}(-e^{-i\omega t_1})
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}(e^{i(\lambda) t_1}-e^{-i\omega t_1})
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}(e^{i(-\lambda) t_1}-e^{-i\omega t_1})\nn[10pt]
+    %
+    & 
+    \left(-\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\omega}(e^{i(\lambda) t_1}-e^{i(\lambda-\omega) t_1})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}(-e^{i(\lambda-\omega) t_1})\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} \frac{1}{i\omega}(e^{-i(\lambda) t_1}-e^{-i(\lambda+\omega) t_1})
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(\lambda+\omega)}(-e^{-i(\lambda+\omega) t_1})\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(\frac{1}{-i\omega}(-e^{i\omega t_1})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(\lambda-\omega)}(e^{-i(\lambda-2\omega) t_1}-e^{i\omega t_1})
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}(e^{-i(\lambda) t_1}-e^{i\omega t_1})\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime \hat{Z}\frac{1}{-i\omega}(e^{i(\lambda) t_1}-e^{i(\lambda+\omega) t_1})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}(-e^{i(\lambda+\omega) t_1})\right)\nn[10pt]
+    %
+    &
+    -\left(-\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{-i\omega}(e^{i(-\lambda) t_1}-e^{i(-\lambda+\omega) t_1})
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}(e^{i(-2\lambda+2\omega) t_1}-e^{i(-\lambda+\omega) t_1})\right)\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\left(\frac{1}{-i\omega}(e^{-i2\omega t_1}-e^{-i\omega t_1})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}(e^{-i(\lambda) t_1}-e^{-i\omega t_1})
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}(e^{-i(\lambda+2\omega) t_1}-e^{-i\omega t_1})\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_+^\prime\hat{Z} \frac{1}{-i\omega}(e^{i(\lambda-2\omega) t_1}-e^{i(\lambda-\omega) t_1})
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}(e^{i(-2\omega) t_1}-e^{i(\lambda-\omega) t_1})\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}\frac{1}{-i\omega}(e^{-i(\lambda+2\omega) t_1}-e^{-i(\lambda+\omega) t_1})
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}(e^{-i(2\lambda) t_1}-e^{-i(\lambda+\omega) t_1})\right)
+\end{align}
+
+%\newcommand{\sinc}[1]{{t e^{i #1 t/2}\frac{\sin{#1 t/2}}{#1 t/2}}}
+%$\sinc{\omega}$
+%
+
+\begin{align}
+    &\frac{1}{\lambda_p^2}\int_{0}^{t}dt_1\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \Biggl(\frac{1}{i\omega}((t e^{i2\omega t/2}\frac{\sin{2\omega t/2}}{2\omega t/2}
+    -t e^{i \omega t/2}\frac{\sin{ \omega t/2}}{\omega t/2})
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\nn[10pt]
+    &-\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}
+    (t e^{i(-\lambda+2\omega) t/2}\frac{\sin{(-\lambda+2\omega) t/2}}{(-\lambda+2\omega) t/2}-t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\Biggr)\nn[30pt]
+    %
+    &+\Biggl(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\omega}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}
+    (t e^{i2\omega t/2}\frac{\sin{2\omega t/2}}{2\omega t/2}
+    -t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\Biggr)
+    \nn[30pt]
+    %
+    &+\Biggl(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{i\omega}
+    (t e^{i(-\lambda+2\omega) t/2}\frac{\sin{(-\lambda+2\omega) t/2}}{(-\lambda+2\omega) t/2}-t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(\lambda+\omega)}
+    (t e^{i2\omega t/2}\frac{\sin{2\omega t/2}}{2\omega t/2}
+    -t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\Biggr)\nn[50pt]
+    %%%%%%%%%%%%%%%%
+    &+\frac{1}{i\omega}\Biggl(-t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[10pt]
+    &-\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2}\Biggr)\nn[30pt]
+    %
+    & 
+    \left(-\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\omega}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-\lambda+\omega)}
+    (-t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\right)\nn[30pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} \frac{1}{i\omega}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i-(\lambda+\omega) t/2}\frac{\sin{-(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2})
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(\lambda+\omega)}
+    (-t e^{i-(\lambda+\omega) t/2}\frac{\sin{-(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2})\notag
+\end{align}
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\Biggl(\frac{1}{-i\omega}\Biggl(t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(\lambda-\omega)}
+    (t e^{i-(\lambda-2\omega) t/2}\frac{\sin{-(\lambda-2\omega) t/2}}{-(\lambda-2\omega) t/2}
+    -t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\nn[10pt]
+    &-\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\Biggr)\nn[30pt]
+    %
+    &+\Biggl(\frac{1}{2}\hsig_+^\prime \hat{Z}\frac{1}{-i\omega}
+    t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}
+    (-t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\Biggr)\nn[30pt]
+    %
+    &
+    -\Biggl(-\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{-i\omega}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-2\lambda+2\omega) t/2}\frac{\sin{(-2\lambda+2\omega) t/2}}{(-2\lambda+2\omega) t/2}
+    -t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\Biggr)\nn[50pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\Biggl(\frac{1}{-i\omega}
+    (t e^{i-2\omega t/2}\frac{\sin{-2\omega t/2}}{-2\omega t/2}
+    -t e^{i-\omega t/2}\frac{\sin{-\omega t/2}}{-\omega t/2})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[10pt]
+    &-\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i-(\lambda+2\omega) t/2}\frac{\sin{-(\lambda+2\omega) t/2}}{-(\lambda+2\omega) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\Biggr)\nn[30pt]
+    %
+    &\Biggl(-\frac{1}{2}\hsig_+^\prime\hat{Z} \frac{1}{-i\omega}
+    (t e^{i(\lambda-2\omega) t/2}\frac{\sin{(\lambda-2\omega) t/2}}{(\lambda-2\omega) t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-2\omega) t/2}\frac{\sin{(-2\omega) t/2}}{(-2\omega) t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\Biggr)\nn[30pt]
+    %
+    &\Biggl(-\frac{1}{2}\hsig_-^\prime \hat{Z}\frac{1}{-i\omega}
+    (t e^{i-(\lambda+2\omega) t/2}\frac{\sin{-(\lambda+2\omega) t/2}}{ -(\lambda+2\omega) t/2}
+    -t e^{i-(\lambda+\omega) t/2}\frac{\sin{-(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-2\lambda) t/2}\frac{\sin{(-2\lambda) t/2}}{(-2\lambda) t/2}
+    -t e^{i-(\lambda+\omega) t/2}\frac{\sin{ -(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2}\Biggr)
+\end{align}
+
+次の関係式をつかってまとめる：
+\begin{align}
+    \hsig_-^\prime\hat{Z}&=\ket{g}\bra{e}(\ket{e}\bra{e}-\ket{g}\bra{g})=\ket{g}\bra{e}=\hsig_-^\prime\\[10pt]
+    \hsig_+^\prime\hat{Z}&=\ket{e}\bra{g}(\ket{e}\bra{e}-\ket{g}\bra{g})=-\ket{e}\bra{g}=-\hsig_+^\prime\\[10pt]
+    \hat{Z}\hsig_-^\prime&=(\ket{e}\bra{e}-\ket{g}\bra{g})\ket{g}\bra{e}=-\ket{g}\bra{e}=-\hsig_-^\prime\\[10pt]
+    \hat{Z}\hsig_+^\prime&=(\ket{e}\bra{e}-\ket{g}\bra{g})\ket{e}\bra{g}=\ket{e}\bra{g}=\hsig_+^\prime
+\end{align}
+%%%%%%%%%%%%
+\begin{align}
+    &\frac{1}{\lambda_p^2}\int_{0}^{t}dt_1\int_{0}^{t_1}dt_2\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \Biggl(\frac{1}{i\omega}((t e^{i2\omega t/2}\frac{\sin{2\omega t/2}}{2\omega t/2}
+    -t e^{i \omega t/2}\frac{\sin{ \omega t/2}}{\omega t/2})
+    +\frac{1}{2}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\nn[10pt]
+    &-\frac{1}{2}(-\hsig_-^\prime) \frac{1}{i(-\lambda+\omega)}
+    (t e^{i(-\lambda+2\omega) t/2}\frac{\sin{(-\lambda+2\omega) t/2}}{(-\lambda+2\omega) t/2}-t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\Biggr)\nn[30pt]
+    %
+    &+\Biggl(\frac{1}{2}(-\hsig_+^\prime)\frac{1}{i\omega}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\nn[10pt]
+    &-\frac{1}{4}\ket{e}\bra{e} \frac{1}{i(-\lambda+\omega)}
+    (t e^{i2\omega t/2}\frac{\sin{2\omega t/2}}{2\omega t/2}
+    -t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\Biggr)
+    \nn[30pt]
+    %
+    &+\Biggl(\frac{1}{2}\hsig_-^\prime\frac{1}{i\omega}
+    (t e^{i(-\lambda+2\omega) t/2}\frac{\sin{(-\lambda+2\omega) t/2}}{(-\lambda+2\omega) t/2}-t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\ket{g}\bra{e} \frac{1}{i(\lambda+\omega)}
+    (t e^{i2\omega t/2}\frac{\sin{2\omega t/2}}{2\omega t/2}
+    -t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\Biggr)\nn[50pt]
+    %%%%%%%%%%%%%%%%
+    &+\frac{1}{i\omega}\Biggl(-t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})
+    +\frac{1}{2}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[10pt]
+    &-\frac{1}{2}(-\hsig_-^\prime) \frac{1}{i(-\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2}\Biggr)\nn[30pt]
+    %
+    & 
+    \left(-\frac{1}{2}(-\hsig_+^\prime)\frac{1}{i\omega}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})
+    -\frac{1}{4}\ket{e}\bra{e} \frac{1}{i(-\lambda+\omega)}
+    (-t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\right)\nn[30pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime \frac{1}{i\omega}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i-(\lambda+\omega) t/2}\frac{\sin{-(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2})
+    -\frac{1}{4}\ket{g}\bra{g} \frac{1}{i(\lambda+\omega)}
+    (-t e^{i-(\lambda+\omega) t/2}\frac{\sin{-(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2})\notag
+\end{align}
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\Biggl(\frac{1}{-i\omega}\Biggl(t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})
+    -\frac{1}{2}\hsig_+^\prime \frac{1}{-i(\lambda-\omega)}
+    (t e^{i-(\lambda-2\omega) t/2}\frac{\sin{-(\lambda-2\omega) t/2}}{-(\lambda-2\omega) t/2}
+    -t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\nn[10pt]
+    &-\frac{1}{2}(-\hsig_-^\prime) \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\Biggr)\nn[30pt]
+    %
+    &+\Biggl(\frac{1}{2}(-\hsig_+^\prime)\frac{1}{-i\omega}
+    t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\nn[10pt]
+    &-\frac{1}{4}\ket{e}\ket{e} \frac{1}{-i(\lambda+\omega)}
+    (-t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\Biggr)\nn[30pt]
+    %
+    &
+    -\Biggl(-\frac{1}{2}\hsig_-^\prime\frac{1}{-i\omega}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\ket{g}\bra{g} \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-2\lambda+2\omega) t/2}\frac{\sin{(-2\lambda+2\omega) t/2}}{(-2\lambda+2\omega) t/2}
+    -t e^{i(-\lambda+\omega) t/2}\frac{\sin{(-\lambda+\omega) t/2}}{(-\lambda+\omega) t/2})\Biggr)\nn[50pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\Biggl(\frac{1}{-i\omega}
+    (t e^{i-2\omega t/2}\frac{\sin{-2\omega t/2}}{-2\omega t/2}
+    -t e^{i-\omega t/2}\frac{\sin{-\omega t/2}}{-\omega t/2})
+    -\frac{1}{2}\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[10pt]
+    &-\frac{1}{2}(-\hsig_-^\prime)\frac{1}{-i(\lambda+\omega)}
+    (t e^{i-(\lambda+2\omega) t/2}\frac{\sin{-(\lambda+2\omega) t/2}}{-(\lambda+2\omega) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\Biggr)\nn[30pt]
+    %
+    &\Biggl(-\frac{1}{2}(-\hsig_+^\prime) \frac{1}{-i\omega}
+    (t e^{i(\lambda-2\omega) t/2}\frac{\sin{(\lambda-2\omega) t/2}}{(\lambda-2\omega) t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\ket{e}\bra{e} \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-2\omega) t/2}\frac{\sin{(-2\omega) t/2}}{(-2\omega) t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\Biggr)\nn[30pt]
+    %
+    &\Biggl(-\frac{1}{2}\hsig_-^\prime\frac{1}{-i\omega}
+    (t e^{i-(\lambda+2\omega) t/2}\frac{\sin{-(\lambda+2\omega) t/2}}{ -(\lambda+2\omega) t/2}
+    -t e^{i-(\lambda+\omega) t/2}\frac{\sin{-(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2})\nn[10pt]
+    &+\frac{1}{4}\ket{g}\bra{g} \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-2\lambda) t/2}\frac{\sin{(-2\lambda) t/2}}{(-2\lambda) t/2}
+    -t e^{i-(\lambda+\omega) t/2}\frac{\sin{ -(\lambda+\omega) t/2}}{-(\lambda+\omega) t/2}\Biggr)
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{align}
+C_{0\to1}^{(2)}=
+    &\int_{0}^{t}dt_1\int_{0}^{t_1}dt_2\braket{1|\hH_{\I}(t_1)\hH_{\I}(t_2)|0}\nn[10pt]
+    &= \Biggl(
+    \frac{1}{2} \frac{1}{i(\lambda+\omega)}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\nn[10pt]
+    %
+    &+\Biggl(\frac{1}{2}(-1)\frac{1}{i\omega}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\nn[10pt]
+    %
+    %%%%%%%%%%%%%%%%
+    &
+    +\frac{1}{2} \frac{1}{i(\lambda+\omega)}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[30pt]
+    %
+    & 
+    -\frac{1}{2}(-1)\frac{1}{i\omega}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\nn[30pt]
+    %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &
+    -\frac{1}{2} \frac{1}{-i(\lambda-\omega)}
+    (t e^{i-(\lambda-2\omega) t/2}\frac{\sin{-(\lambda-2\omega) t/2}}{-(\lambda-2\omega) t/2}
+    -t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\nn[30pt]
+    %
+    &+\Biggl(\frac{1}{2}(-1)\frac{1}{-i\omega}
+    t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\nn[50pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\Biggl(
+    -\frac{1}{2} \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[30pt]
+    %
+    &\Biggl(-\frac{1}{2}(-1) \frac{1}{-i\omega}
+    (t e^{i(\lambda-2\omega) t/2}\frac{\sin{(\lambda-2\omega) t/2}}{(\lambda-2\omega) t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{align}
+    C_{0\to1}^{(2)}=
+    &\int_{0}^{t}dt_1\int_{0}^{t_1}dt_2\braket{1|\hH_{\I}(t_1)\hH_{\I}(t_2)|0}\nn[10pt]
+    &= \lambda_p^2\Biggl(
+    -\frac{1}{2} \frac{1}{i(\lambda+\omega)}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\Biggr)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\omega}
+    (t e^{i(\lambda+2\omega) t/2}\frac{\sin{(\lambda+2\omega) t/2}}{(\lambda+2\omega) t/2}-t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})
+    -t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\right)
+    \nn[20pt]
+    %
+    %%%%%%%%%%%%%%%%
+    &+\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(\lambda+\omega)}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[10pt]
+    %
+    & 
+    \Biggl(-\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\omega}
+    (t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &-\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(\lambda-\omega)}
+    (t e^{i-(\lambda-2\omega) t/2}\frac{\sin{-(\lambda-2\omega) t/2}}{-(\lambda-2\omega) t/2}
+    -t e^{i\omega t/2}\frac{\sin{\omega t/2}}{\omega t/2})\nn[10pt]
+    %
+    &+\Biggl(\frac{1}{2}\hsig_+^\prime \hat{Z}\frac{1}{-i\omega}
+    t e^{i\lambda t/2}\frac{\sin{\lambda t/2}}{\lambda t/2}
+    -t e^{i(\lambda+\omega) t/2}\frac{\sin{(\lambda+\omega) t/2}}{(\lambda+\omega) t/2})\nn[20pt]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(\lambda+\omega)}
+    (t e^{i(-\lambda) t/2}\frac{\sin{(-\lambda) t/2}}{(-\lambda) t/2}
+    -t e^{i(-\omega) t/2}\frac{\sin{(-\omega) t/2}}{(-\omega) t/2})\nn[10pt]
+    %
+    &\Biggl(-\frac{1}{2}\hsig_+^\prime\hat{Z} \frac{1}{-i\omega}
+    (t e^{i(\lambda-2\omega) t/2}\frac{\sin{(\lambda-2\omega) t/2}}{(\lambda-2\omega) t/2}
+    -t e^{i(\lambda-\omega) t/2}\frac{\sin{(\lambda-\omega) t/2}}{(\lambda-\omega) t/2})
+\end{align}
+
+
+
+
+\begin{align}
+    \int_{0}^{t}ds\ e^{iAs}
+    &=\frac{1}{iA}\left[e^{iAs}\right]_{s=0}^{s=t}
+    =\frac{e^{iAs}-1}{iA}=\frac{e^{iAt/2}}{e^{iAt/2}}\frac{e^{iAt}-1}{iA}\nn[10pt]
+    &=t e^{iAt/2}\frac{e^{iAt/2}-e^{-iAt/2}}{2iAt/2}
+    =t e^{iAt/2}\frac{\sin{At/2}}{At/2}
+\end{align}
+
+\begin{align}
+    \hsig_-^\prime\hat{Z}&=\ket{g}\bra{e}(\ket{g}\bra{g}-\ket{e}\bra{e})=-\ket{g}\bra{e}=-\sigma_-^\prime\\[10pt]
+    \hsig_+^\prime\hat{Z}&=\ket{e}\bra{g}(\ket{g}\bra{g}-\ket{e}\bra{e})=\ket{e}\bra{g}=\sigma_+^\prime\\[10pt]
+    \hat{Z}\hsig_-^\prime&=(\ket{g}\bra{g}-\ket{e}\bra{e})\ket{g}\bra{e}=\ket{g}\bra{e}=\sigma_-^\prime\\[10pt]
+    \hat{Z}\hsig_+^\prime&=(\ket{g}\bra{g}-\ket{e}\bra{e})\ket{e}\bra{g}=-\ket{e}\bra{g}=-\sigma_+^\prime
+\end{align}
+
+
+
+\section{Calcuration}
+\begin{equation}
+    \hU(t)=e^{-i\omega \hat{a}^\dag\hat{a}t}
+\end{equation}
+We have
+\begin{equation}
+    \hU^\dag\hat{a}\hU=\hat{a}e^{-i\omega t}
+\end{equation}
+\begin{equation}
+    \hU^\dag\hat{a}^\dag\hU=\hat{a}^{\dagger}e^{i\omega t}
+\end{equation}
+And so we obtain
+\begin{equation}
+    \hU^\dag\hat{a}^2\hU=\hU^\dag\hat{a}\hU\hU^\dag\hat{a}\hU=\hat{a}^2e^{-2i\omega t}
+\end{equation}
+\begin{equation}
+    \hU^\dag {{\hat{a}}^{\dag 2}} \hU=\hU^\dag\hat{a}\hU\hU^\dag\hat{a}\hU=\hat{a}^{\dag 2}e^{2i\omega t}
+\end{equation}
+
+\subsection{}
+\begin{align}
+    (\hat{a}+\hat{a}^{\dag})^4&=\hat{a}^4+\hat{a}\hat{a}^{\dag}\hat{a}^2+\hat{a}^{\dag 2}\hat{a}^2
+    +\hat{a}^2\hat{a}^{\dag}\hat{a}+\hat{a}\hat{a}^{\dag 2}\hat{a}\nn[10pt]
+    &+\hat{a}^{\dag}\hat{a}\hat{a}^{\dag}\hat{a}
+    +\hat{a}^{\dag 3}\hat{a}+\hat{a}^{3}\hat{a}^{\dag}+\hat{a}\hat{a}^{\dag}\hat{a}\hat{a}^{\dag}\nn[10pt]
+    &+\hat{a}^{\dag 2}\hat{a}\hat{a}^{\dag}+\hat{a}^2\hat{a}^{\dag 2}+\hat{a}\hat{a}^{\dag 3}
+    +\hat{a}^{\dag}\hat{a}\hat{a}^{\dag 2}+\hat{a}^{\dag 4}\nn[15pt]
+    %
+    &=\hat{a}^4+\hat{a}^{\dag 4}+\hat{a}^{\dag 2}\hat{a}^2+\hat{a}^{\dag 3}\hat{a}\nn[10pt]
+    &+\hat{a}\hat{a}^{\dag}\hat{a}^2+\hat{a}^{\dag}\hat{a}\hat{a}^{\dag}\hat{a}
+    +\hat{a}\hat{a}^{\dag}\hat{a}\hat{a}^{\dag}+\hat{a}^{\dag 2}\hat{a}\hat{a}^{\dag}\nn[10pt]
+    &+\hat{a}^2\hat{a}^{\dag}\hat{a}+\hat{a}\hat{a}^{\dag 2}\hat{a}
+    +\hat{a}^{3}\hat{a}^{\dag}+\hat{a}^2\hat{a}^{\dag 2}+\hat{a}\hat{a}^{\dag 3}
+    +\hat{a}^{\dag}\hat{a}\hat{a}^{\dag 2}\nn[15pt]
+    %
+    &=\hat{a}^4+\hat{a}^{\dag 4}+\hat{a}^{\dag 2}\hat{a}^2+\hat{a}^{\dag 3}\hat{a}\nn[10pt]
+    &+(\hat{a}^{\dag}\hat{a}+\hat{1})\hat{a}^2+\hat{a}^{\dag}(\hat{a}^{\dag}\hat{a}+\hat{1})\hat{a}
+    +\textcolor{blue}{\hat{a}\hat{a}^{\dag}\hat{a}\hat{a}^{\dag}}+\hat{a}^{\dag 2}(\hat{a}^{\dag}\hat{a}+\hat{1})\nn[10pt]
+    &+(\hat{a}^{\dag}\hat{a}^2+2\hat{a})\hat{a}+(\hat{a}^{\dag 2}\hat{a}+2\hat{a}^{\dag})\hat{a}
+    +(\hat{a}^{\dag}\hat{a}^{3}+3\hat{a}^2)+(\hat{a}^{\dag 2}\hat{a}^2+4\hat{a}^\dag\hat{a}+4)+(\hat{a}^{\dag 3}\hat{a}+3\hat{a}^{\dag 2})
+    +\hat{a}^{\dag}(\hat{a}^{\dag 2}\hat{a}+2\hat{a}^{\dag})\nn[15pt]
+    %
+    &=\hat{a}^4+\hat{a}^{\dag 4}+\hat{a}^{\dag 2}\hat{a}^2+\hat{a}^{\dag 3}\hat{a}\nn[10pt]
+    &+\hat{a}^{\dag}\hat{a}^3+\hat{a}^2+\hat{a}^{\dag 2}\hat{a}^2+\hat{a}^{\dag}\hat{a}
+    +\textcolor{blue}{\hat{a}^{\dag 2}\hat{a}^2+3\hat{a}^{\dag}\hat{a}-\hat{1}}
+    +\hat{a}^{\dag 3}\hat{a}+\hat{a}^{\dag 2}\nn[10pt]
+    &+\hat{a}^{\dag}\hat{a}^3+2\hat{a}^2+\hat{a}^{\dag 2}\hat{a}^2+2\hat{a}^{\dag}\hat{a}
+    +\hat{a}^{\dag}\hat{a}^{3}+3\hat{a}^2
+    +\hat{a}^{\dag 2}\hat{a}^2+4\hat{a}^\dag\hat{a}+4+\hat{a}^{\dag 3}\hat{a}+3\hat{a}^{\dag 2}
+    +\hat{a}^{\dag 3}\hat{a}+2\hat{a}^{\dag 2}\nn[15pt]
+    %
+    &=\hat{a}^4+\hat{a}^{\dag 4}+\hat{a}^{\dag 2}\hat{a}^2+\hat{a}^{\dag 3}\hat{a}\nn[10pt]
+    &+\hat{a}^{\dag}\hat{a}^3+\hat{a}^2+\hat{a}^{\dag 2}\hat{a}^2+\hat{a}^{\dag}\hat{a}
+    +\hat{a}^{\dag 2}\hat{a}^2+3\hat{a}^{\dag}\hat{a}-\hat{1}
+    +\hat{a}^{\dag 3}\hat{a}+\hat{a}^{\dag 2}\nn[10pt]
+    &+\hat{a}^{\dag}\hat{a}^3+2\hat{a}^2+\hat{a}^{\dag 2}\hat{a}^2+2\hat{a}^{\dag}\hat{a}
+    +\hat{a}^{\dag}\hat{a}^{3}+3\hat{a}^2
+    +\hat{a}^{\dag 2}\hat{a}^2+4\hat{a}^\dag\hat{a}+4+\hat{a}^{\dag 3}\hat{a}+3\hat{a}^{\dag 2}
+    +\hat{a}^{\dag 3}\hat{a}+2\hat{a}^{\dag 2}
+\end{align}
+
+\begin{align}
+    (\hat{a}+\hat{a}^{\dag})^2
+    &=\hat{a}^2+\hat{a}^2+2\hat{a}^{\dag}\hat{a}+\hat{1}
+\end{align}
+
+Using the relation $[\hat{a},\hat{a}^{\dag}]$, we obtain
+\begin{align}
+    [\hat{a},\hat{a}^{\dag 3}]&=\hat{a}\hat{a}^{\dag 3}-\hat{a}^{\dag 3}\hat{a}\nn[10pt]
+    &=\hat{a}^{\dag}\hat{a}\hat{a}^{\dag 2}+\hat{a}^{\dag}-\hat{a}^{\dag 3}\hat{a}\nn[10pt]
+    &=\hat{a}^{\dag 2}\hat{a}\hat{a}^{\dag}+2\hat{a}^{\dag}-\hat{a}^{\dag 3}\hat{a}\nn[10pt]
+    &=\hat{a}^{\dag 3}\hat{a}+3\hat{a}^{\dag}-\hat{a}^{\dag 3}\hat{a}
+    =3\hat{a}^{\dag 2}
+\end{align}
+and
+\begin{align}
+    [\hat{a}^3,\hat{a}^{\dag}]
+    =3\hat{a}^{2}
+\end{align}
+\begin{align}
+    [\hat{a},\hat{a}^{\dag 2}]&=
+    =3\hat{a}^{\dag}\\[10pt]
+    %
+     [\hat{a}^2,\hat{a}^{\dag}]
+    &=2\hat{a}\\[10pt]
+    [\hat{a}^2,\hat{a}^{\dag 2}]&=4\hat{a}^{\dag}\hat{a}+4
+\end{align}
+
+\begin{align}
+    \textcolor{blue}{\hat{a}\hat{a}^{\dag}\hat{a}\hat{a}^{\dag}}
+    &=\hat{a}\hat{a}^{\dag}\hat{a}^{\dag}\hat{a}+\hat{a}\hat{a}^{\dag}
+    =\hat{a}^{\dag}\hat{a}\hat{a}^{\dag}\hat{a}+\hat{a}^{\dag}\hat{a}+\hat{a}^{\dag}\hat{a}-\hat{1}\nn[10pt]
+    &=\hat{a}^{\dag}\hat{a}^{\dag}\hat{a}\hat{a}+3\hat{a}^{\dag}\hat{a}-\hat{1}\nn[10pt]
+\end{align}
+
+
+\section{GKSL Master equation with qutip}
+\begin{equation}
+    \dot\rho(t)=-\frac{i}{\hbar}[H(t),\rho(t)]+\sum_n \frac{1}{2} \left[2 C_n \rho(t) C_n^\dagger - \rho(t) C_n^\dagger C_n - C_n^\dagger C_n \rho(t)\right]
+\end{equation}
+where the $C_n = \sqrt{\gamma_n} A_n$ are collapse operators, and $A_n$ are the operators through which the environment couples to the system in $H_{\rm int}$, and $\gamma_n$ are the corresponding rates.  

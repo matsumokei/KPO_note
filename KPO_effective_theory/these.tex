@@ -1,0 +1,264 @@
+\documentclass[dvipdfmx,autodetect-engine,10.5pt]{jsarticle}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}%these two come together
+\usepackage[dvipdfmx]{color}
+\usepackage{braket}%dirac notation
+\usepackage{wrapfig}
+\usepackage{here}
+\usepackage{tabularx, dcolumn}
+\usepackage{subfigure}
+\usepackage{cases}
+\usepackage{bigints}%インテグラルで大きくする
+\usepackage{mathtools} 
+\hypersetup{hidelinks}
+\interfootnotelinepenalty=10000 % this is to keep a footnote in a single page
+\usepackage{bm}%ベクトル記号
+\usepackage{ascmac} %囲い
+%%%%%%
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{cases}%連立方程式
+
+
+%%%%%%newcomand
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\nn}{\notag \\}
+
+\usepackage{mdframed}%ページをまたぐ    
+\newmdenv[skipabove=6mm, skipbelow=4mm]{kotak}
+
+
+\newtheorem{definition}{定義}[section]
+\newtheorem{theorem}[definition]{定理}
+\newtheorem{proof}{証明}
+\newtheorem{request}[definition]{要請}
+\newtheorem{prop}[definition]{命題}
+\newtheorem{these}[definition]{仮定}
+\newtheorem{lemma}[definition]{補題}
+\newtheorem{postlate}[definition]{公理}
+
+%sectionの大きさを変更する
+%\usepackage[explicit]{titlesec}
+
+%operator
+\newcommand{\hH}{{\hat{H}}}%ハミルトニアン
+\newcommand{\hHt}{{\hat{\mathcal{H}}}}%ハミルトニアン
+\newcommand{\hU}{{\hat{U}}}
+\newcommand{\hM}{{\hat{M}}}
+\newcommand{\hN}{{\hat{N}}}
+\newcommand{\hA}{{\hat{A}}}
+\newcommand{\hB}{{\hat{B}}}
+\newcommand{\hO}{{\hat{O}}}
+\newcommand{\hAd}{{\hat{A}^\dag}}
+\newcommand{\ha}{{\hat{a}}}
+\newcommand{\hb}{{\hat{b}}}
+\newcommand{\had}{{\hat{a}^\dag}}
+\newcommand{\hpsi}{{\hat{\psi}}}
+\newcommand{\hpsid}{{\hat{\psi}^\dag}}
+\newcommand{\hrho}{{\hat{\rho}}}
+\newcommand{\hsig}{{\hat{\sigma}}}
+\newcommand{\hx}{{\hat{x}}}
+\newcommand{\hy}{{\hat{y}}}
+\newcommand{\hz}{{\hat{z}}}
+\newcommand{\hX}{{\hat{X}}}
+\newcommand{\hY}{{\hat{Y}}}
+\newcommand{\hZ}{{\hat{Z}}}
+\newcommand{\hp}{{\hat{p}}}
+\newcommand{\hvp}{{\hat{\bm p}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USER SPECIFIED COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ie}{i.e.}
+\newcommand{\eg}{e.g.}
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\e}{\textrm{e}} % Exponential
+\newcommand{\hc}{\text{h.c.}} % Hermitian conjugate
+
+\newcommand{\nbar}{\bar{n}}
+\newcommand{\adag}{\hat{a}^\dagger}
+\newcommand{\adagsq}{\hat{a}^{\dagger 2}}
+\newcommand{\hata}{\hat{a}}
+
+\newcommand{\jg}[1]{{\color{orange}#1}}
+\newcommand{\dr}[1]{{\color{red}#1}}
+\newcommand{\rg}[1]{{\color{MidnightBlue}#1}}
+\newcommand{\filler}[1][1]{{\color{gray}\lipsum[1-#1]}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vector
+\newcommand{\vr}{{\bm{r}}} %vector r
+\newcommand{\vP}{{\bm{P}}} %vector r
+\newcommand{\vphi}{{\varphi(t,\bm{r})}}
+
+%
+
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\rint}{\mathrm{int}}
+\newcommand{\tot}{\mathrm{tot}}
+
+
+\newcommand{\YM}[1]{\textcolor[rgb]{1, 0.1, 0.1}{#1}}
+\newcommand{\YMdel}[1]{\sout{#1}}
+%\newcommand{\YMdel}[1]{\textcolor[rgb]{1, 0.1, 0.1}{\sout{\textcolor{black}{#1}}}}
+\newcommand{\KM}[1]{\textcolor[rgb]{0.1, 0.1, 1}{#1}}
+\newcommand{\KMdel}[1]{\textcolor[rgb]{0.1, 0.1, 0.9}{\sout{\textcolor{black}{#1}}}}
+
+
+\makeatletter
+\title{低ポンプ領域における有効理論を用いたKPOの解析}
+
+
+
+\begin{document}
+\maketitle
+
+
+\tableofcontents
+%目の保護用
+%\pagecolor{black}
+%\color{white}
+%%%%%%%%%%%%%%%%%%%%%
+\input{file/intro}
+\input{file/timeindependent_perturbation_general.tex}
+\input{file/timeindependent_perturbation_degenerate.tex}
+\input{file/timeindependent_perturbation_nondegenerate.tex}
+\input{file/KPO_effective_version3_0and8}
+\input{file/KPO_effective_version4_0and8}
+\input{file/SW_theory.tex}
+\input{file/peater_knight_perturbation.tex}
+
+
+% まず、パラメトリックドライブがない場合に
+% |0>と|8>が縮退
+% |2>と|6>が縮退
+% している場合を考えます。
+
+ 
+% このとき、on resonantの条件では、パラメトリックドライブを弱くいれるとエネルギー固有状態は近似的には
+% |0>+|8>
+
+% |0>-|8> 
+
+% |2>+|6>
+
+% |2>-|6>
+
+% |4>
+
+ 
+
+% になります。
+
+% これらをまとめて
+
+% |E_n> n=1,2,3,4,5
+
+% と書きます。
+
+ 
+
+% このときに重要な点は
+
+% <E_n|a^{\dagger}a|E_n>=4　　(1)
+
+% がすべてのnに対して成立します。
+
+ 
+
+% 一方で、マスター方程式を解いたときに定常解は
+
+% ρst=\sum _n p_n |E_n><E_n|　(2)
+
+% になるはずです。つまり、エネルギー固有状態の古典混合になるはずです。
+
+ 
+
+% そして、(1)と(2)から
+
+ 
+
+% Tr[ρst a^{\dagger}a]=4
+
+ 
+
+% が示せます。これは数値計算結果とほぼ一致します。
+
+ 
+
+% 上の議論は|0>と|8>が縮退する場合のものです。
+
+ 
+
+% しかし同様の議論が
+
+% |0>と|2n>が縮退する場合
+
+% に、一般に適用できて、
+
+% Tr[ρst a^{\dagger}a]=n
+
+% を示せます。
+
+ 
+
+% これも数値計算結果とほぼ一致します。
+
+ 
+
+% ただし、上の計算はon resonantの場合に限定されます。
+
+ 
+
+% そのため、on resonant ではない、detuningの場合（|0>と|2n>が縮退しない場合）に、平均光子数がどうなるかは、まだわかりません。
+
+ 
+
+% detuningの場合に、平均光子数が少なくなる理由も理解したいと考えています。
+
+ 
+
+% そのためには
+
+ 
+
+% e^{-iHt}|0>
+
+% を計算して、Fock stateのpopulationがどのように変化するかを数値計算いたします。
+
+ 
+
+% 予想としては、
+
+% 「on resonant で|0>と|8>が縮退する場合は、|8>のpopulationが増えていく」
+
+% 「detuning で|0>と|8>が縮退しない場合は、|0>以外のpopulationは増えない」
+
+% ことが予想されます。
+
+ 
+
+% また、これは私と松本さん用のメモですが、この予想はpeter knight approximationを使ってeffective Hamiltonianを導出すれば示せるはずです。
+
+ 
+
+% 以上になります。長文失礼いたしました。
+
+
+
+
+\bibliographystyle{unsrt}%参考文bibliographystyle献出力スタイル
+\bibliography{myrefs}
+\end{document}
+
+
+
+
+

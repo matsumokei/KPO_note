@@ -1,0 +1,970 @@
+\section{時間に依存しない縮退のある摂動論}
+\subsection{縮退について}
+エネルギー固有値$\epsilon_n$に属する$\hat{H}_0$の固有値が$N$重縮退している場合を考える．これらの縮退している固有状態を区別するために，量子数$\alpha=1,2,\ldots,N$を導入し，$|\varphi^{(0)}_n;\alpha\rangle$と書くことにする．そして，これらについて規格直交化しておく：
+\begin{equation}
+    \braket{\varphi^{(0)}_n;\alpha|\varphi^{(0)}_n;\beta} = \delta_{\alpha,\beta}
+\end{equation}
+また，$\epsilon_{n}$以外の他の固有状態$\epsilon_m$に属する固有ベクトルを$|\varphi^{(0)}_m\rangle$で表し，$\braket{\varphi^{(0)}_{m^\prime}|\varphi^{(0)}_m}=\delta_{m^\prime,m}$とする．さらにこのとき，$\braket{\varphi^{(0)}_n;\alpha|\varphi^{(0)}_m}=0$, $(\alpha=1,2,\ldots,N)$である．
+
+縮退のある場合，$N$個の固有ベクトル$|\varphi^{(0)}_n;\alpha\rangle$のほかに，これらの任意の重ね合わせもまた$\hat{H}_0$の固有ベクトルである．そこで，Sch.eqの解として，次も考えられる：
+\begin{equation}\label{Eq:dege_state_superposition}
+    |\varphi^{(0)}_n\rangle\rangle = \sum_{\beta=1}^N |\varphi^{(0)}_n;\beta\rangle C_{\beta},
+\end{equation}
+後に，重ね合わせ状態$|\varphi^{(0)}_n\rangle\rangle$は，縮退がとけた場合のインデックスを書き加え，修正を行うことに注意．
+係数$C_{\beta}$を求めることで，$\hat{H}_0$の固有状態$|\varphi^{(0)}_n\rangle\rangle$が決まる．このとき，$\hat{H}$の固有状態，固有値に関する摂動展開と摂動方程式は，それぞれ，次のように与えられる：
+\begin{align}
+\label{Ee}
+E_n&=\epsilon_n+\lambda E^{(1)}_n+\lambda^2E^{(2)}_n+\cdots\cdots\\[10pt]
+\label{pe}
+\ket{\varphi_n}&=|\varphi^{(0)}_n\rangle\rangle +\lambda \ket{\varphi^{(1)}_n}+\lambda^2\ket{\varphi^{(2)}_n}+\cdots\cdots
+\end{align}
+
+\begin{align}
+\label{pereq0}
+\lambda^0&:&\hat{H}_0|\varphi^{(0)}_n\rangle\rangle &=\epsilon_n|\varphi^{(0)}_n\rangle\rangle \\[5pt]
+%
+\label{pereq1}
+\lambda^1&:&(\epsilon_n-\hat{H}_0)\ket{\varphi^{(1)}_n}
+&=(\hat{V}-E^{(1)}_n)|\varphi^{(0)}_n\rangle\rangle\\[5pt]
+%
+\label{pereq2}
+\lambda^2&:&(\epsilon_n-\hat{H}_0)\ket{\varphi^{(2)}_n}
+&=(\hat{V}-E^{(1)}_n)\ket{\varphi^{(1)}_n}-E^{(2)}_n|\varphi^{(0)}_n\rangle\rangle\\
+%
+\label{pereq3}
+\lambda^3&:&(\epsilon_n-\hat{H}_0)\ket{\varphi^{(3)}_n}
+&=(\hat{V}-E^{(1)}_n)\ket{\varphi^{(2)}_n}-E^{(2)}_n|\varphi^{(1)}_n\rangle-E^{(3)}_n|\varphi^{(0)}_n\rangle\rangle\\
+& & &\ \ \vdots\nn[5pt]
+%
+\label{pereqN}
+\lambda^N&:&(\epsilon_n-\hat{H}_0)\ket{\varphi^{(N)}_n}
+&=(\hat{V}-E^{(1)}_n)\ket{\varphi^{(N)}_n}-E^{(2)}_n|\varphi^{(1)}_n\rangle-\cdots-E^{(N)}_n|\varphi^{(0)}_n\rangle\rangle
+\end{align}
+
+
+\subsection{基本解法}
+
+
+
+
+
+
+\subsection{エネルギー固有値の補正値}
+エネルギー固有値の補正値の1次近似について考える．そのために，Eq.~\eqref{pereq1}
+\begin{align}
+(
+\epsilon_n-\hat{H}_0)\ket{\varphi^{(1)}_n}
+&=(\hat{V}-E^{(1)}_n)|\varphi^{(0)}_n\rangle\rangle
+\end{align}
+に左から，$\ket{\varphi^{(0)}_n;\alpha}$を書けると，
+\begin{align}\label{pereq1-1_degenerate}
+(\epsilon_n-\epsilon_n)\braket{\varphi^{(0)}_n;\alpha|\varphi^{(1)}_n}
+&=\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n}\rangle\rangle-E^{(1)}_n
+\langle \varphi^{(0)}_n;\alpha|\varphi^{(0)}_n\rangle\rangle\\[10pt]
+%
+(\epsilon_n-\epsilon_n)\braket{\varphi^{(0)}_n;\alpha|\varphi^{(1)}_n}
+&=\sum_{\beta=1}^{N}\braket{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\beta}C_{\beta}
+-\sum_{\beta=1}^{N}E^{(1)}_n
+\langle \varphi^{(0)}_n;\alpha|\varphi^{(0)}_n;\beta\rangle C_\beta
+\end{align}
+を得る．ここで，Eq.~\eqref{Eq:dege_state_superposition}を使い，右辺を展開した．左辺第一項は明らかにゼロ，よって
+\begin{align}\label{1stpertubation_matrix}
+\sum_{\beta=1}^{N}[
+E^{(1)}_n \delta_{\alpha,\beta}
+-\braket{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\beta}
+]C_\beta=0
+\end{align}
+となる．この$C_{\beta}$に関する斉１次連立方程式が0以外の解を持つためには，$C_{\beta}$の係数のつくる行列が0でなくてはならない．すなわち，固有値$E^{(1)}_{n}$は以下の特性方程式の解である：
+\begin{equation}\label{1st_eigen_eq}
+    \det{(E^{(1)}_n \delta_{\alpha,\beta}
+    -\braket{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\beta})}=0
+\end{equation}
+この固有値方程式は重解も含めて$N$個の解 : $E^{(1)}_{n,\alpha}$, $(\alpha=1,2,\ldots,N)$を持つ．そして，$N$個のそれぞれの解$E^{(1)}_{n,\alpha}$を行列方程式に代入し，規格化条件$\sum_{\beta}|C_{\beta}|=1$のもとで，\eqref{1stpertubation_matrix}を解くことにより，それぞれの解$E^{(1)}_{n,\alpha}$に対する係数が決定する．その係数を改めて$C_{\beta,\alpha}$と書き，これに対応する固有ベクトルを
+\begin{equation}
+    |\varphi^{(0)}_{n};\alpha\rangle\rangle
+    =\sum_{\beta=1}^{N}
+    \ket{\varphi^{(0)}_{n};\beta}C_{\beta,\alpha}
+\end{equation}
+と書き直す．これで第０近似での固有状態を決めることができた．固有状態$|\varphi^{(0)}_{n};\alpha\rangle\rangle$を\eqref{pereq1-1_degenerate}の$|\varphi^{(0)}_{n}\rangle\rangle$へ代入すると，
+\begin{align}
+\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle
+=E^{(1)}_n
+\langle \varphi^{(0)}_n;\gamma|\varphi^{(0)}_n;\alpha\rangle\rangle
+\end{align}
+を得る．ここで，係数$C_{\gamma,\beta}^{\ast}$をかけて，$\gamma$について和をとると，
+\begin{align}
+    E^{(1)}_n
+    \sum_{\gamma}C_{\gamma,\beta}^{\ast}\langle \varphi^{(0)}_n;\gamma|\varphi^{(0)}_n;\alpha\rangle\rangle
+    &=\sum_{\gamma}C_{\gamma,\beta}^{\ast}\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle\nn[10pt]
+    %
+    E^{(1)}_n
+    \langle\langle \varphi^{(0)}_n;\beta|\varphi^{(0)}_n;\alpha\rangle\rangle
+    &=\langle\langle{\varphi^{(0)}_n;\beta|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle
+\end{align}
+となる．したがって，
+\begin{align}
+    E^{(1)}_n\delta_{\alpha,\beta}
+    &=\langle\langle{\varphi^{(0)}_n;\beta|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle\\[10pt]
+    \textcolor{red}{
+    E^{(1)}_n}
+    &=\textcolor{red}{\langle\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle}
+\end{align}
+を得る．これが，縮退のある場合のエネルギーの１次の補正項である．
+
+
+
+
+\eqref{1st_eigen_eq}の解に重根がなく，第１次近似で状態$|\varphi^{(0)}_n;\alpha\rangle\rangle$のすべての縮退がとけたたきの第２次近似のエネルギー補正項について計算する．まず\eqref{pereq1}へ，状態ベクトル$\bra{\varphi^{(0)}_{m}}$をかけると，
+\begin{align}
+    (\epsilon_n-\epsilon_m)\braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}
+    &=\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle
+    -E^{(1)}_n\langle\varphi^{(0)}_{m}|\varphi^{(0)}_n;\alpha\rangle\rangle
+\end{align}
+ここで，右辺第二項は
+\begin{equation}
+    \langle\varphi^{(0)}_{m}|\varphi^{(0)}_n;\alpha\rangle\rangle
+    = \sum_{\beta}C_{\beta,\alpha}\langle\varphi^{(0)}_{m}|\varphi^{(0)}_n;\beta\rangle
+    =0
+\end{equation}
+となり，$\epsilon_n\neq\epsilon_m$であるから，
+\begin{align}
+    \Tilde{C}^{(1)}_{m,\alpha}=\braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}
+    &=\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+を得る．
+
+また，\eqref{pereq2}へ，状態ベクトル$\langle\langle{\varphi^{(0)}_{n};\alpha}|$をかけると，
+\begin{align}
+    (\epsilon_n-\epsilon_n)\langle\braket{\varphi^{(0)}_{n};\alpha|\varphi^{(2)}_n;\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(1)}_n;\alpha}
+    -E^{(1)}_n\langle\braket{\varphi^{(0)}_{n};\alpha|\varphi^{(1)}_n;\alpha}
+    -E^{(2)}_n\langle\langle\varphi^{(0)}_{n};\alpha|\varphi^{(0)}_n;\alpha\rangle\rangle
+\end{align}
+ここで，左辺は0，右辺第二項は（証明できていないが）0になるので，
+% \begin{equation}
+%     \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n}
+%     = 
+% \end{equation}
+
+\begin{align}
+    E^{(2)}_n=
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(1)}_n;\alpha}
+\end{align}
+となる．これに完全系$\hat{1}=\hat{P}+\hat{Q}$, where $\hat{P}=\sum_{\beta}|\varphi^{(0)}_{n};\beta\rangle\rangle\langle\langle\varphi^{(0)}_{n};\beta|$, $\hat{Q}=\sum_{n\neq m}\ket{\varphi^{(0)}_{m}}\bra{\varphi^{(0)}_{m}}$を挿入し，
+\begin{align}
+    E^{(2)}_{n,\alpha}&=
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}\hat{1}|\varphi^{(1)}_n;\alpha}
+    =\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}\hat{P}|\varphi^{(1)}_n;\alpha}
+    +\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}\hat{Q}|\varphi^{(1)}_n;\alpha}
+    \nn[10pt]
+    &=\sum_{\beta=1}^{N}
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_n;\beta}\rangle
+    \langle\braket{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}
+    %
+    +\sum_{m\neq n}
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=\sum_{\beta=1}^{N}
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_n;\beta}\rangle
+    C^{(1)}_{\beta,\alpha}
+    %
+    +\sum_{m\neq n}
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+    \Tilde{C}^{(1)}_{m,\alpha}
+\end{align}
+ここで，右辺第一項に
+\begin{equation}
+    E^{(1)}_{n,\alpha}\delta_{\alpha,\beta}
+    =\langle\langle{\varphi^{(0)}_n;\beta|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle
+\end{equation}
+を代入すると
+\begin{align}
+    E^{(2)}_{n,\alpha}
+    &=\sum_{\beta=1}^{N}
+    E^{(1)}_n\delta_{\alpha,\beta}
+    \langle\braket{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}
+    %
+    +\sum_{m\neq n}
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    %
+    &=E^{(1)}_{n,\alpha}
+    \textcolor{blue}{\langle\braket{\varphi^{(0)}_n;\alpha|\varphi^{(1)}_n;\alpha}}
+    %
+    +\sum_{m\neq n}
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+    \textcolor{blue}{\braket{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}}\nn[10pt]
+    %
+    &=E^{(1)}_{n,\alpha}
+    \textcolor{blue}{C^{(1)}_{\alpha,\alpha}}
+    %
+    +\sum_{m\neq n}
+    \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+    \textcolor{blue}{\Tilde{C}^{(1)}_{m,\alpha}}
+\end{align}
+を得る．ここで，右辺第一項が0，右辺第二項に
+\begin{align}
+    \Tilde{C}^{(1)}_{m,\alpha}=\braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}
+    &=\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+を代入することで，
+\begin{align}
+    E^{(2)}_{n,\alpha}
+    &=
+    %
+    \sum_{m\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+    =
+    \frac{\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}
+    \hat{Q}\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+を得る．これが第２次のエネルギーの補正項である．以上をまとめると，１次の摂動によって，縮退が解かれるとき，エネルギー固有値は
+\begin{align}\label{1st_2nd_energy}
+    E_{n,\alpha}
+    &=\epsilon_n + \lambda E^{(1)}_{n,\alpha}
+    +\lambda^2
+    E^{(2)}_{n,\alpha}\nn[10pt]
+    &=\epsilon_n + \lambda \langle\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle
+    +\lambda^2 
+    \sum_{m\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+で与えられる．
+
+
+
+\subsection{固有状態について}
+ここでは\eqref{1st_2nd_energy}が成立するときの固有状態を第１近似で求める．\eqref{pereq2}に左から$\langle\langle\varphi^{(0)}_{n};\beta|$, $(\beta\neq\alpha)$，をかけると
+\begin{align}
+    (\epsilon_n-\epsilon_n)\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(2)}_n;\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(1)}_n;\alpha}
+    -E^{(1)}_n\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha}
+    -E^{(2)}_n\langle\langle\varphi^{(0)}_{n};\beta|\varphi^{(0)}_n;\alpha\rangle\rangle
+\end{align}
+ここで，第１項は消え，第３項もまた$\langle\varphi^{(0)}_{n};\beta|\varphi^{(0)}_n;\alpha\rangle\rangle=0$となるから
+\begin{align}
+    E^{(1)}_{n,\alpha}\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(1)}_n;\alpha}\\[10pt]
+    E^{(1)}_{n,\alpha}C^{(1)}_{\beta,\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(1)}_n;\alpha}
+\end{align}
+ここで右辺に，完全性関係$\hat{1}=\hat{P}+\hat{Q}$を代入すると，
+\begin{align}
+    E^{(1)}_{n,\alpha}C^{(1)}_{\beta,\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}\hat{P}|\varphi^{(1)}_n;\alpha}
+    +\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}\hat{Q}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=\sum_{\gamma=1}^{N}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_n;\gamma}\rangle
+    \langle\braket{\varphi^{(0)}_{n};\gamma|\varphi^{(1)}_n;\alpha}
+    +\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=\sum_{\gamma=1}^{N}E^{(1)}_{n,\beta}\delta_{\beta,\gamma}
+    \langle\braket{\varphi^{(0)}_{n};\gamma|\varphi^{(1)}_n;\alpha}
+    +\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=E^{(1)}_{n,\beta}
+    \langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha}
+    +\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=E^{(1)}_{n,\beta}
+    C^{(1)}_{\beta,\alpha}
+    +\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \Tilde{C}^{(1)}_{m,\alpha}
+\end{align}
+となる．すなわち，
+\begin{equation}
+    (E^{(1)}_{n,\alpha}-E^{(1)}_{n,\beta})\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha}
+    =\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}
+\end{equation}
+を得る．１次の摂動で$\epsilon_n$の縮退はすべて解かれているから，$E^{(1)}_{n,\alpha}\neq E^{(1)}_{n,\beta}$である．したがって，$\beta\neq\alpha$に対して，
+\begin{align}
+    \Tilde{C}^{(1)}_{m,\alpha}=\braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}
+    &=\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+をより，
+\begin{align}
+    C^{(1)}_{\beta,\alpha}=\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha}
+    &=\sum_{m\neq n}\frac{1}{(E^{(1)}_{n,\alpha}-E^{(1)}_{n,\beta})}
+    \langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=\sum_{m\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(E^{(1)}_{n,\alpha}-E^{(1)}_{n,\beta})(\epsilon_n-\epsilon_m)},\ \ \ \beta\neq\alpha
+\end{align}
+
+よって，固有状態の1次補正は
+\begin{align}
+    \ket{\varphi_{n,\alpha}^{(1)}}
+    &=\hat{P}\ket{\varphi_{n,\alpha}^{(1)}}+\hat{Q}\ket{\varphi_{n,\alpha}^{(1)}}\nn[10pt]
+    &=\sum_{\beta=1}^{N}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \langle\langle\varphi^{(0)}_n;\beta|\varphi_{n,\alpha}^{(1)}\rangle
+    +\sum_{m\neq n}\ket{\varphi^{(0)}_m}\braket{\varphi^{(0)}_m|\varphi_{n,\alpha}^{(1)}}\nn[10pt]
+    &=\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \langle\langle\varphi^{(0)}_n;\beta|\varphi_{n,\alpha}^{(1)}\rangle
+    +\sum_{m\neq n}\ket{\varphi^{(0)}_m}\braket{\varphi^{(0)}_m|\varphi_{n,\alpha}^{(1)}}\nn[10pt]
+    &=\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    C^{(1)}_{\beta,\alpha}
+    +\sum_{m\neq n}\ket{\varphi^{(0)}_m}\Tilde{C}^{(1)}_{m,\alpha}\nn[10pt]
+    &=\sum_{m\neq n}\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(E^{(1)}_{n,\alpha}-E^{(1)}_{n,\beta})(\epsilon_n-\epsilon_m)}
+    +\sum_{m\neq n}\ket{\varphi^{(0)}_m}
+    \frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+
+以上の結果をまとめると，$\lambda$の１次近似で固有状態$\ket{\varphi_{n,\alpha}}$は
+\begin{align}
+    \ket{\varphi_{n};\alpha}
+    &=|\varphi^{(0)}_n;\alpha\rangle\rangle
+    +\lambda \ket{\varphi_{n,\alpha}^{(1)}}\\[10pt]
+    &=
+    |\varphi^{(0)}_n;\alpha\rangle\rangle
+    +\lambda\sum_{m\neq n}
+    \Biggl\{\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(E^{(1)}_{n,\alpha}-E^{(1)}_{n,\beta})(\epsilon_n-\epsilon_m)}
+    +\ket{\varphi_m^{(0)}}\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+    \Biggr\}
+\end{align}
+で与えられる．
+
+
+\subsection{１次摂動で縮退が解けなかった場合}
+1次の摂動によって，縮退が解けなかった場合を考える．\eqref{pereq2}
+
+\subsection{エネルギー固有値の補正値}
+1次近似について考える．
+\begin{align}
+(\epsilon_n-\hat{H}_0)\ket{\varphi^{(2)}_n}
+&=(\hat{V}-E^{(1)}_n)\ket{\varphi^{(1)}_n}-E^{(2)}_n|\varphi^{(0)}_n\rangle\rangle
+\end{align}
+これに，左から$\bra{\varphi^{(0)}_n;\alpha}$を書けると，
+\begin{align}\label{pereq2-1_degenerate}
+(\epsilon_n-\epsilon_n)\braket{\varphi^{(0)}_n;\alpha|\varphi^{(2)}_n}
+&=\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(1)}_n}\rangle
+-E^{(1)}_n\langle{\varphi^{(0)}_n;\alpha|\varphi^{(1)}_n}\rangle
+-E^{(2)}\langle{\varphi^{(0)}_n;\alpha|\varphi^{(0)}_n}\rangle\rangle\\[10pt]
+%
+&=\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(1)}_n}\rangle
+-E^{(1)}_n\langle{\varphi^{(0)}_n;\alpha|\varphi^{(1)}_n}\rangle
+-\sum_{\beta=1}^{N}E^{(2)}_n
+\langle \varphi^{(0)}_n;\alpha|\varphi^{(0)}_n;\beta\rangle C_{\beta,\alpha}
+\end{align}
+左辺第一項は明らかにゼロ，右辺第二項もゼロ，よって
+\begin{align}\label{2ndpertubation_matrix}
+\sum_{\beta=1}^{N}E^{(2)}_n
+\delta_{\alpha,\beta}C_{\beta,\alpha}&=
+\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(1)}_n}\rangle
+\end{align}
+を得る．ここで，右辺を次のように展開する：
+\begin{align}
+    \langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(1)}_n}\rangle
+    &=\langle{\varphi^{(0)}_n;\alpha|\hat{V}\hat{1}|\varphi^{(1)}_n}\rangle\nn[10pt]
+    &=\langle{\varphi^{(0)}_n;\alpha|\hat{V}\hat{P}|\varphi^{(1)}_n}\rangle\
+    + \langle{\varphi^{(0)}_n;\alpha|\hat{V}\hat{Q}|\varphi^{(1)}_n}\rangle\nn[10pt]
+    %%%%%%
+    &=\sum_{\beta=1}^{N}\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\beta}\rangle
+    \langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n}\rangle\
+    +\sum_{m\neq n}\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \langle{\varphi^{(0)}_m|\varphi^{(1)}_n}\rangle\nn[10pt]
+    %%%%%%
+    &=\sum_{\beta=1}^{N}\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\beta}\rangle
+    \langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle\
+    +\sum_{m\neq n}\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \textcolor{red}{\langle{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}\rangle}\nn[10pt]
+    %%%%%%
+    &=\sum_{\beta=1}^{N}E^{(1)}_{n}\delta_{\alpha,\beta}
+    \langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle\
+    +\sum_{m\neq n}
+    \frac{\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}\nn[10pt]
+    %%%%%%
+    &=\sum_{\beta=1}^{N}E^{(1)}_{n,\alpha}
+    \langle{\varphi^{(0)}_n;\alpha|\varphi^{(1)}_n;\alpha}\rangle\
+    +\sum_{m\neq n}
+    \frac{\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+ここで，右辺第一項は0，右辺第二項は
+\begin{align}
+    \sum_{m\neq n}
+    \frac{\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+    &= \sum_{m\neq n}
+    \frac{\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\Bigl(\sum_{\beta=1}^{N}|\varphi^{(0)}_n;\beta}\rangle C_{\beta,\alpha}\Bigr)}
+    {(\epsilon_n-\epsilon_m)}\nn[10pt]
+    &=\sum_{\beta=1}^{N} \sum_{m\neq n}
+    \frac{\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle}
+    {(\epsilon_n-\epsilon_m)}C_{\beta,\alpha}
+\end{align}
+以上より，
+
+\begin{align}\label{2ndpertubation_matrix}
+\sum_{\beta=1}^{N}\Biggl[
+E^{(2)}_n \delta_{\alpha,\beta}
+-(\hat{V}^{(2)})_{\alpha,\beta}
+\biggr]C_{\beta,\alpha}=0,
+\end{align}
+ここで，
+\begin{equation}
+    (\hat{V}^{(2)})_{\alpha,\beta}
+    \equiv\sum_{m\neq n}
+    \frac{\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle}
+    {(\epsilon_n-\epsilon_m)}
+\end{equation}
+この$C_{\beta}$に関する斉１次連立方程式が0以外の解を持つためには，$C_{\beta}$の係数のつくる行列が0でなくてはならない．すなわち，固有値$E^{(2)}_{n}$は以下の特性方程式の解である：
+\begin{equation}\label{2nd_eigen_eq}
+    \det{(E^{(2)}_n \delta_{\alpha,\beta}
+    -(\hat{V}^{(2)})_{\alpha,\beta})}=0
+\end{equation}
+この固有値方程式は重解も含めて$N$個の解 : $E^{(2)}_{n,\alpha}$, $(\alpha=1,2,\ldots,N)$を持つ．そして，$N$個のそれぞれの解$E^{(2)}_{n,\alpha}$を行列方程式に代入し，規格化条件$\sum_{\beta}|C_{\beta}|=1$のもとで，\eqref{2ndpertubation_matrix}を解くことにより，それぞれの解$E^{(2)}_{n,\alpha}$に対する係数が決定する．その係数を改めて$C_{\beta,\alpha}$と書き，これに対応する固有ベクトルを
+\begin{equation}
+    |\varphi^{(0)}_{n};\alpha\rangle\rangle
+    =\sum_{\beta=1}^{N}
+    \ket{\varphi^{(0)}_{n};\beta}C_{\beta,\alpha}
+\end{equation}
+と書き直す．これで第０近似での固有状態を決めることができた．固有状態$|\varphi^{(0)}_{n};\alpha\rangle\rangle$を\eqref{pereq2-1_degenerate}の$|\varphi^{(0)}_{n}\rangle\rangle$へ代入すると，
+\begin{align}
+(\epsilon_n-\epsilon_n)\braket{\varphi^{(0)}_n;\gamma|\varphi^{(2)}_n;\alpha}
+&=\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(1)}_n;\alpha}\rangle
+-E^{(1)}_n\langle{\varphi^{(0)}_n;\gamma|\varphi^{(1)}_n;\alpha}\rangle
+-E^{(2)}\langle{\varphi^{(0)}_n;\gamma|\varphi^{(0)}_n;\alpha}\rangle\rangle
+%
+\end{align}
+を得る．左辺と右辺第二項は$\braket{\varphi^{(0)}_n;\alpha|\varphi^{(k)}_n;\alpha}=0$より，ゼロ．したがって，
+\begin{align}
+E^{(2)}_n\langle{\varphi^{(0)}_n;\alpha|\varphi^{(0)}_n;\alpha}\rangle\rangle
+&=\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(1)}_n;\alpha}\rangle
+-E^{(1)}_n\langle{\varphi^{(0)}_n;\gamma|\varphi^{(1)}_n;\alpha}\rangle
+%
+\end{align}
+右辺第二項を次のように展開する：
+\begin{align}
+\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(1)}_n;\alpha}\rangle
+&=\langle{\varphi^{(0)}_n;\alpha|\hat{V}\hat{1}|\varphi^{(1)}_n;\alpha}\rangle\nn[10pt]
+&=\langle{\varphi^{(0)}_n;\alpha|\hat{V}\hat{P}|\varphi^{(1)}_n;\alpha}\rangle
++\langle{\varphi^{(0)}_n;\alpha|\hat{V}\hat{Q}|\varphi^{(1)}_n;\alpha}\rangle\nn[10pt]
+%
+&=\sum_{\beta=1}^{N}\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_n;\beta}\rangle
+\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle
++\sum_{m\neq n}\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_m}\rangle
+\langle{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}\rangle\nn[10pt]
+%
+&=\sum_{\beta=1}^{N}E^{(1)}_n \delta_{\gamma,\beta}
+\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle
++\sum_{m\neq n}\frac{\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}\nn[10pt]
+%
+&=E^{(1)}_n 
+\langle{\varphi^{(0)}_n;\gamma|\varphi^{(1)}_n;\alpha}\rangle
++\sum_{m\neq n}\frac{\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+したがって，$E^{1}_{n}$が重解のとき，
+
+\begin{equation}
+    E^{(2)}_n \langle{\varphi^{(0)}_n;\alpha|\varphi^{(0)}_n;\alpha}\rangle\rangle
+    =\sum_{m\neq n}\frac{\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{equation}
+
+ここで，係数$C_{\gamma,\beta}^{\ast}$をかけて，$\gamma$について和をとると，
+\begin{align}
+    E^{(2)}_n
+    \sum_{\gamma}C_{\gamma,\beta}^{\ast}\langle \varphi^{(0)}_n;\gamma|\varphi^{(0)}_n;\alpha\rangle\rangle
+    &=\sum_{\gamma}C_{\gamma,\beta}^{\ast}
+    \sum_{m\neq n}\frac{\langle{\varphi^{(0)}_n;\gamma|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}\nn[10pt]
+    %
+    E^{(2)}_n
+    \langle\langle \varphi^{(0)}_n;\beta|\varphi^{(0)}_n;\alpha\rangle\rangle
+    &=\sum_{m\neq n}\frac{\langle\langle{\varphi^{(0)}_n;\beta|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+\end{align}
+となる．したがって，
+\begin{align}
+    E^{(2)}_n\delta_{\alpha,\beta}
+    &=\sum_{m\neq n}\frac{\langle\langle{\varphi^{(0)}_n;\beta|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}\\[10pt]
+    \textcolor{red}{
+    E^{(2)}_n}
+    &=\textcolor{red}{\sum_{m\neq n}\frac{\langle\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_m}\rangle
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}}
+\end{align}
+を得る．これが，1次で縮退が解けなかった場合における，縮退のある場合のエネルギーの2次の補正項である．
+
+
+
+\subsection{}
+\eqref{2nd_eigen_eq}の解に重根がなく，第2次近似で状態$|\varphi^{(0)}_n;\alpha\rangle\rangle$のすべての縮退がとけたたきの第3次近似のエネルギー補正項について計算する．まず\eqref{pereq2}へ，状態ベクトル$\bra{\varphi^{(0)}_{m}}$をかけると，
+\begin{align}
+    (\epsilon_n-\epsilon_m)\braket{\varphi^{(0)}_{m}|\varphi^{(2)}_n;\alpha}
+    &=\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(1)}_n;\alpha}
+    -E^{(1)}_n\langle\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha\rangle
+    -E^{(2)}_n\langle\varphi^{(0)}_{m}|\varphi^{(0)}_n;\alpha\rangle\rangle
+\end{align}
+ここで，右辺第3項は
+\begin{equation}
+    \langle\varphi^{(0)}_{m}|\varphi^{(0)}_n;\alpha\rangle\rangle
+    = \sum_{\beta}C_{\beta,\alpha}\langle\varphi^{(0)}_{m}|\varphi^{(0)}_n;\beta\rangle
+    =0
+\end{equation}
+となり，$\epsilon_n\neq\epsilon_m$であるから，
+\begin{align}
+    (\epsilon_n-\epsilon_m)\braket{\varphi^{(0)}_{m}|\varphi^{(2)}_n;\alpha}
+    &=\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(1)}_n;\alpha}
+    -E^{(1)}_n\Tilde{C}^{(1)}_{m,\alpha}
+    %-E^{(2)}_{n,\alpha}\langle\varphi^{(0)}_{m}|\varphi^{(0)}_n;\alpha\rangle\rangle
+\end{align}
+ここで，右辺を次のように展開すると
+\begin{align}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(1)}_n;\alpha}
+    &=\braket{\varphi^{(0)}_{m}|\hat{V}\hat{1}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=\braket{\varphi^{(0)}_{m}|\hat{V}\hat{P}|\varphi^{(1)}_n;\alpha}
+    +\braket{\varphi^{(0)}_{m}|\hat{V}\hat{P}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+    &=\sum_{\beta=1}^N\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle
+    +\sum_{p\neq n}\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \textcolor{red}{\langle{\varphi^{(0)}_p|\varphi^{(1)}_n;\alpha}\rangle}
+\end{align}
+ここで，
+\begin{align}
+    \textcolor{red}{\Tilde{C}^{(1)}_{p,\alpha}=\langle{\varphi^{(0)}_p|\varphi^{(1)}_n;\alpha}\rangle
+    =\frac{\braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_p)}
+    }
+\end{align}
+を使うと，
+\begin{align}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(1)}_n;\alpha}
+    &=\sum_{\beta=1}^N\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle
+    +\sum_{p\neq n}
+    \frac{\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_p)}
+\end{align}
+となる．したがって，
+\begin{align}
+    \textcolor{red}{\Tilde{C}^{(2)}_{m,\alpha}}
+    &=\braket{\varphi^{(0)}_{m}|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    &=\textcolor{red}{\sum_{\beta=1}^N
+    \frac{\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+    +\sum_{p\neq n}
+    \frac{\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}
+    -E^{(1)}_n\frac{\Tilde{C}^{(1)}_{m,\alpha}}{(\epsilon_n-\epsilon_p)}}
+\end{align}
+を得る．
+
+% また，\eqref{pereq2}へ，状態ベクトル$\langle\langle{\varphi^{(0)}_{n};\alpha}|$をかけると，
+% \begin{align}
+%     (\epsilon_n-\epsilon_n)\langle\braket{\varphi^{(0)}_{n};\alpha|\varphi^{(2)}_n;\alpha}
+%     &=\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(1)}_n;\alpha}
+%     -E^{(1)}_n\langle\braket{\varphi^{(0)}_{n};\alpha|\varphi^{(1)}_n;\alpha}
+%     -E^{(2)}_n\langle\langle\varphi^{(0)}_{n};\alpha|\varphi^{(0)}_n;\alpha\rangle\rangle
+% \end{align}
+% ここで，左辺は0，右辺第二項は（証明できていないが）0になるので，
+% % \begin{equation}
+% %     \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n}
+% %     = 
+% % \end{equation}
+
+% \begin{align}
+%     E^{(2)}_n=
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(1)}_n;\alpha}
+% \end{align}
+% となる．これに完全系$\hat{1}=\hat{P}+\hat{Q}$, where $\hat{P}=\sum_{\beta}|\varphi^{(0)}_{n};\beta\rangle\rangle\langle\langle\varphi^{(0)}_{n};\beta|$, $\hat{Q}=\sum_{n\neq m}\ket{\varphi^{(0)}_{m}}\bra{\varphi^{(0)}_{m}}$を挿入し，
+% \begin{align}
+%     E^{(2)}_{n,\alpha}&=
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}\hat{1}|\varphi^{(1)}_n;\alpha}
+%     =\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}\hat{P}|\varphi^{(1)}_n;\alpha}
+%     +\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}\hat{Q}|\varphi^{(1)}_n;\alpha}
+%     \nn[10pt]
+%     &=\sum_{\beta=1}^{N}
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_n;\beta}\rangle
+%     \langle\braket{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}
+%     %
+%     +\sum_{m\neq n}
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+%     \braket{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}\nn[10pt]
+%     &=\sum_{\beta=1}^{N}
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_n;\beta}\rangle
+%     C^{(1)}_{\beta,\alpha}
+%     %
+%     +\sum_{m\neq n}
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+%     \Tilde{C}^{(1)}_{m,\alpha}
+% \end{align}
+% ここで，右辺第一項に
+% \begin{equation}
+%     E^{(1)}_{n,\alpha}\delta_{\alpha,\beta}
+%     =\langle\langle{\varphi^{(0)}_n;\beta|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle
+% \end{equation}
+% を代入すると
+% \begin{align}
+%     E^{(2)}_{n,\alpha}
+%     &=\sum_{\beta=1}^{N}
+%     E^{(1)}_n\delta_{\alpha,\beta}
+%     \langle\braket{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}
+%     %
+%     +\sum_{m\neq n}
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+%     \braket{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}\nn[10pt]
+%     %
+%     &=E^{(1)}_{n,\alpha}
+%     \textcolor{blue}{\langle\braket{\varphi^{(0)}_n;\alpha|\varphi^{(1)}_n;\alpha}}
+%     %
+%     +\sum_{m\neq n}
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+%     \textcolor{blue}{\braket{\varphi^{(0)}_m|\varphi^{(1)}_n;\alpha}}\nn[10pt]
+%     %
+%     &=E^{(1)}_{n,\alpha}
+%     \textcolor{blue}{C^{(1)}_{\alpha,\alpha}}
+%     %
+%     +\sum_{m\neq n}
+%     \langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+%     \textcolor{blue}{\Tilde{C}^{(1)}_{m,\alpha}}
+% \end{align}
+% を得る．ここで，右辺第一項が0，右辺第二項に
+% \begin{align}
+%     \Tilde{C}^{(1)}_{m,\alpha}=\braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}
+%     &=\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+% \end{align}
+% を代入することで，
+% \begin{align}
+%     E^{(2)}_{n,\alpha}
+%     &=
+%     %
+%     \sum_{m\neq n}
+%     \frac{\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+%     \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+%     =
+%     \frac{\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}
+%     \hat{Q}\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+% \end{align}
+% を得る．これが第２次のエネルギーの補正項である．以上をまとめると，１次の摂動によって，縮退が解かれるとき，エネルギー固有値は
+% \begin{align}\label{1st_2nd_3rd_energy}
+%     E_{n,\alpha}
+%     &=\epsilon_n + \lambda E^{(1)}_{n,\alpha}
+%     +\lambda^2
+%     E^{(2)}_{n,\alpha}\nn[10pt]
+%     &=\epsilon_n + \lambda \langle\langle{\varphi^{(0)}_n;\alpha|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle\rangle
+%     +\lambda^2 
+%     \sum_{m\neq n}
+%     \frac{\langle\braket{\varphi^{(0)}_{n};\alpha|\hat{V}|\varphi^{(0)}_m}
+%     \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+% \end{align}
+% で与えられる．
+
+
+
+\subsection{固有状態について}
+ここでは\eqref{1st_2nd_3rd_energy}が成立するときの固有状態を第2近似で求める．\eqref{pereq3}に左から$\langle\langle\varphi^{(0)}_{n};\beta|$, $(\beta\neq\alpha)$，をかけると
+\begin{align}
+    (\epsilon_n-\epsilon_n)\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(3)}_n;\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(2)}_n;\alpha}
+    -E^{(1)}_{n,\alpha}\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    &\hspace{50pt}
+    -E^{(2)}_{n,\alpha}\langle\langle\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha\rangle
+    -E^{(3)}_{n,\alpha}\langle\langle\varphi^{(0)}_{n};\beta|\varphi^{(0)}_n;\alpha\rangle\rangle
+\end{align}
+ここで，%第2項は消え，
+第4項もまた$\langle\varphi^{(0)}_{n};\beta|\varphi^{(0)}_n;\alpha\rangle\rangle=0$となるから
+\begin{align}
+    E^{(2)}_{n,\alpha}\langle\langle\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha\rangle
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(2)}_n;\alpha}
+    -E^{(1)}_{n,\alpha}\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(2)}_n;\alpha}\\[10pt]
+    %
+    E^{(2)}_{n,\alpha}C^{(1)}_{\beta,\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(2)}_n;\alpha}
+    -E^{(1)}_{n,\alpha}C^{(2)}_{\beta,\alpha}
+\end{align}
+ここで右辺第一項に，完全性関係$\hat{1}=\hat{P}+\hat{Q}$を代入すると，
+\begin{align}
+    \langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(2)}_n;\alpha}
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}\hat{1}|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    &=\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}\hat{P}|\varphi^{(2)}_n;\alpha}
+    +\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}\hat{Q}|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    &=\sum_{\gamma=1}^{N}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_n;\gamma}\rangle
+    \langle\braket{\varphi^{(0)}_{n};\gamma|\varphi^{(2)}_n;\alpha}
+    +\sum_{m\neq n}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    %
+    &=\sum_{\gamma=1}^{N}E^{(1)}_{n,\beta}\delta_{\beta,\gamma}
+    \langle\braket{\varphi^{(0)}_{n};\gamma|\varphi^{(2)}_n;\alpha}
+    +\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    %
+    &=E^{(1)}_{n,\gamma}
+    \langle\braket{\varphi^{(0)}_{n};\gamma|\varphi^{(2)}_n;\alpha}
+    +\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    &=E^{(1)}_{n,\gamma}
+    C^{(2)}_{\gamma,\alpha}
+    +\sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \Tilde{C}^{(2)}_{m,\alpha}
+\end{align}
+となる．$E^{(1)}_{n}=0$を仮定すると
+
+\begin{align}
+    %
+    E^{(2)}_{n,\alpha}C^{(1)}_{\beta,\alpha}
+    &=%E^{(1)}_{n,\gamma}C^{(2)}_{\gamma,\alpha}
+    \sum_{m}\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \Tilde{C}^{(2)}_{m,\alpha}
+    %-E^{(1)}_{n,\alpha}C^{(2)}_{\beta,\alpha}
+\end{align}
+を得る．上式に
+\begin{align}
+    \textcolor{red}{\Tilde{C}^{(2)}_{m,\alpha}}
+    &=\braket{\varphi^{(0)}_{m}|\varphi^{(2)}_n;\alpha}\nn[10pt]
+    &=\textcolor{red}{\sum_{\beta=1}^N
+    \frac{\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+    +\sum_{p\neq n}
+    \frac{\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}
+    -E^{(1)}_n\frac{\Tilde{C}^{(1)}_{m,\alpha}}{(\epsilon_n-\epsilon_p)}}
+\end{align}
+を代入すると
+\begin{align}
+    %
+    E^{(2)}_{n,\alpha}C^{(1)}_{\beta,\alpha}
+    &=%E^{(1)}_{n,\gamma}C^{(2)}_{\gamma,\alpha}
+    \sum_{m\neq n}\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}\nn[10pt]
+    &\hspace{30pt}\times\Biggl[\sum_{\beta=1}^N
+    \frac{\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+    +\sum_{p\neq n}
+    \frac{\langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}
+    -E^{(1)}_n\frac{\Tilde{C}^{(1)}_{m,\alpha}}{(\epsilon_n-\epsilon_p)}
+    \Biggr]\nn[10pt]
+    %
+    &=
+    \sum_{m\neq n}
+    \Biggl[\sum_{\beta=1}^N
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}\nn[10pt]
+    &\hspace{70pt}+\sum_{p\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}\nn[10pt]
+    %
+    &\hspace{100pt}
+    -E^{(1)}_n
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)^2}
+    \Biggr]\\[20pt]
+    %
+    %
+    %
+    %
+    &=
+    \sum_{m\neq n}
+    \Biggl[\sum_{\beta=1}^N
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}\nn[10pt]
+    &\hspace{70pt}+\sum_{p\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}\Biggr]\nn[10pt]
+    %%
+    &\hspace{100pt}
+    -E^{(1)}_n
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)^2}
+    \Biggr]
+\end{align}
+ここで，右辺第一項は
+\begin{align}
+    &\sum_{m\neq n}
+    \sum_{\beta=1}^N
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}\nn[10pt]
+    &=
+    \sum_{\beta=1}^N
+    \textcolor{red}{
+    \sum_{m\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\beta}\rangle\rangle
+    }{(\epsilon_n-\epsilon_m)}}\langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle\nn[10pt]
+    %
+    &=
+    \sum_{\beta=1}^N
+    \textcolor{red}{
+    E^{(2)}_{n,\gamma}\delta_{\gamma,\beta}
+    }
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle\nn[10pt]
+    %
+    &=E^{(2)}_{n,\beta}
+    \langle\langle{\varphi^{(0)}_n;\beta|\varphi^{(1)}_n;\alpha}\rangle
+    =E^{(2)}_{n,\beta}
+    C^{(1)}_{\beta,\alpha}
+\end{align}
+となるから，
+\begin{align}
+    %
+    E^{(2)}_{n,\alpha}C^{(1)}_{\beta,\alpha}
+    &=
+    E^{(2)}_{n,\beta}
+    C^{(1)}_{\beta,\alpha}
+    +\sum_{m\neq n}\Biggl[\sum_{p\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}\nn[10pt]
+    %
+    &\hspace{100pt}
+    -E^{(1)}_n
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)^2}
+    \Biggr]
+    \nn[10pt]
+    %
+    \therefore
+    (E^{(2)}_{n,\alpha}-E^{(2)}_{n,\beta})C^{(1)}_{\beta,\alpha}&=
+    \sum_{m\neq n}\Biggl[\sum_{p\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}\nn[10pt]
+    %
+    &\hspace{100pt}
+    -E^{(1)}_n
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)^2}
+    \Biggr]
+\end{align}
+したがって，
+\begin{align}
+    C^{(1)}_{\beta,\alpha}
+    &=
+    \frac{1}{(E^{(2)}_{n,\alpha}-E^{(2)}_{n,\beta})}
+    \sum_{m\neq n}\Biggl[\sum_{p\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}\nn[10pt]
+    %
+    &\hspace{100pt}
+    -E^{(1)}_n
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)^2}
+    \Biggr]
+\end{align}
+
+
+
+
+
+
+% １次の摂動で$\epsilon_n$の縮退はすべて解かれているから，$E^{(1)}_{n,\alpha}\neq E^{(1)}_{n,\beta}$である．したがって，$\beta\neq\alpha$に対して，
+% \begin{align}
+%     \Tilde{C}^{(1)}_{m,\alpha}=\braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}
+%     &=\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}
+% \end{align}
+% をより，
+% \begin{align}
+%     C^{(1)}_{\beta,\alpha}=\langle\braket{\varphi^{(0)}_{n};\beta|\varphi^{(1)}_n;\alpha}
+%     &=\sum_{m\neq n}\frac{1}{(E^{(1)}_{n,\alpha}-E^{(1)}_{n,\beta})}
+%     \langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+%     \braket{\varphi^{(0)}_{m}|\varphi^{(1)}_n;\alpha}\nn[10pt]
+%     &=\sum_{m\neq n}
+%     \frac{\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+%     \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+%     {(E^{(1)}_{n,\alpha}-E^{(1)}_{n,\beta})(\epsilon_n-\epsilon_m)},\ \ \ \beta\neq\alpha
+% \end{align}
+
+よって，固有状態の1次補正は
+\begin{align}
+    \ket{\varphi_{n,\alpha}^{(1)}}
+    &=\hat{P}\ket{\varphi_{n,\alpha}^{(1)}}+\hat{Q}\ket{\varphi_{n,\alpha}^{(1)}}\nn[10pt]
+    &=\sum_{\beta=1}^{N}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \langle\langle\varphi^{(0)}_n;\beta|\varphi_{n,\alpha}^{(1)}\rangle
+    +\sum_{m\neq n}\ket{\varphi^{(0)}_m}\braket{\varphi^{(0)}_m|\varphi_{n,\alpha}^{(1)}}\nn[10pt]
+    &=\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \langle\langle\varphi^{(0)}_n;\beta|\varphi_{n,\alpha}^{(1)}\rangle
+    +\sum_{m\neq n}\ket{\varphi^{(0)}_m}\braket{\varphi^{(0)}_m|\varphi_{n,\alpha}^{(1)}}\nn[10pt]
+    %
+    &=\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \textcolor{red}{C^{(1)}_{\beta,\alpha}}
+    +\sum_{m\neq n}\ket{\varphi^{(0)}_m}
+    \textcolor{blue}{\braket{\varphi^{(0)}_m|\varphi_{n,\alpha}^{(1)}}}\nn[10pt]
+    %
+    %
+    &=\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \textcolor{red}{\frac{1}{(E^{(2)}_{n,\alpha}-E^{(2)}_{n,\beta})}
+    \sum_{m\neq n}\Biggl[\sum_{p\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}}\nn[10pt]
+    %
+    &\hspace{100pt}
+    \textcolor{red}{-E^{(1)}_n
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)^2}
+    \Biggr]}
+    \nn[10pt]
+    %
+    &\hspace{200pt}+
+    \sum_{m\neq n}\ket{\varphi^{(0)}_m}
+    \textcolor{blue}{
+    \frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}}
+\end{align}
+
+以上の結果をまとめると，$\lambda$の１次近似で固有状態$\ket{\varphi_{n,\alpha}}$は
+\begin{align}
+    \ket{\varphi_{n,\alpha}}
+    &=|\varphi^{(0)}_n;\alpha\rangle\rangle
+    +\lambda \ket{\varphi_{n,\alpha}^{(1)}}\\[10pt]
+    &=
+    |\varphi^{(0)}_n;\alpha\rangle\rangle
+    +\lambda\sum_{\textcolor{red}{\beta\neq\alpha}}|\varphi^{(0)}_n;\beta\rangle\rangle
+    \textcolor{red}{\frac{1}{(E^{(2)}_{n,\alpha}-E^{(2)}_{n,\beta})}
+    \sum_{m\neq n}\Biggl[\sum_{p\neq n}
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \langle{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_p}\rangle
+    \braket{\varphi^{(0)}_{p}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}
+    {(\epsilon_n-\epsilon_m)(\epsilon_n-\epsilon_p)}}\nn[10pt]
+    %
+    &\hspace{100pt}
+    \textcolor{red}{-E^{(1)}_n
+    \frac{\langle\braket{\varphi^{(0)}_{n};\gamma|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)^2}
+    \Biggr]}
+    \nn[10pt]
+    %
+    &\hspace{200pt}+
+    \sum_{m\neq n}\ket{\varphi^{(0)}_m}
+    \textcolor{blue}{
+    \frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;\alpha}\rangle}{(\epsilon_n-\epsilon_m)}}
+\end{align}
+で与えられる．
+
+
+
+
+
+
+
+
+

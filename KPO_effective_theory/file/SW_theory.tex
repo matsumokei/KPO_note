@@ -1,0 +1,358 @@
+
+\part{その他の摂動論について}
+\section{Schrieffer-Wolff変換}
+Schrieffer-Wolff変換とは，非対角項を持つHamiltonianに対して，近似的に対角化を行う，一種の摂動論である．
+
+Schrieffer-Wolff transiformation is a perturbation theory which a Hamiltonian with off-diagonal elements approximately diagonalize.
+
+We consider the following Hamiltonian
+\begin{equation}
+    \hat{H} = \hat{H}_0 + \lambda\hat{V}
+\end{equation}
+where, $\hat{H}_0$ is the non-perturbative Hamiltonian and $\hat{V}$ is the interaction Hamiltonian. Here, we decompose $\hat{V}=\hat{H}_1 + \hat{H}_2$, where $\hat{H}_1$ and $\hat{H}_2$ denote ブロック対角Hamiltonian and  非対角ブロックHamiltonian.
+
+
+The Schrieffer-Wolff transiformation is defined by 
+
+\begin{equation}
+    \hat{H}^{\prime}\equiv e^{\hat{S}}\hat{H} e^{-\hat{S}},
+\end{equation}
+where $\hat{S}$ is an anti-Hermitian operator. 
+
+We choose $\hat{S}$ such that $\hat{H}^{\prime}$ satisfies
+
+Using BCH-fomula, 
+\begin{equation}
+    e^{\hat{S}}\hat{H}e^{-\hat{S}}
+    =\hat{H}+[\hat{S}, \hat{H}]
+    +\frac{1}{2!}\bigl[
+    \hat{S}, [\hat{S}, \hat{H}]
+    \bigr]
+    +\frac{1}{3!}
+    \Bigl[\hat{S},
+    \bigl[
+    \hat{S}, [\hat{S}, \hat{H}]
+    \bigr]
+    \Bigr]
+    +\cdots
+\end{equation}
+
+\begin{align}
+    e^{\hat{S}}\hat{H}e^{-\hat{S}}
+    &=\hat{H}_0 + \lambda\hat{V}+[\hat{S}, \hat{H}_0 + \lambda\hat{V}]
+    +\frac{1}{2!}\bigl[
+    \hat{S}, [\hat{S}, \hat{H}_0 + \lambda\hat{V}]
+    \bigr]
+    +\frac{1}{3!}
+    \Bigl[\hat{S},
+    \bigl[
+    \hat{S}, [\hat{S}, \hat{H}_0 + \lambda\hat{V}]
+    \bigr]
+    \Bigr]
+    +\cdots\nn[10pt]
+    %
+    &=\hat{H}_0 + \lambda\hat{V}+[\hat{S}, \hat{H}_0] +
+    \lambda[\hat{S}, \hat{V}]
+    +\frac{1}{2!}\bigl[
+    \hat{S}, [\hat{S}, \hat{H}_0]
+    \bigr]
+    +\frac{1}{2!}\lambda\bigl[
+    \hat{S}, [\hat{S}, \hat{V}]
+    \bigr]
+    +\cdots \\[10pt]
+    &=\hat{H}_0 + \hat{W},
+\end{align}
+where
+\begin{equation}
+    \hat{W} = \lambda\hat{V}+[\hat{S}, \hat{H}_0] +
+    \lambda[\hat{S}, \hat{V}]
+    +\frac{1}{2!}\bigl[
+    \hat{S}, [\hat{S}, \hat{H}_0]
+    \bigr]
+    +\frac{1}{2!}\lambda\bigl[
+    \hat{S}, [\hat{S}, \hat{V}]
+    \bigr]
+    +\cdots
+\end{equation}
+この演算子はlevel-shift 演算子と呼ばれている．
+
+
+\subsection{Iterative calculation of $\hat{S}$}
+
+We expand $\hat{S}$ as $\sum_{n}\lambda^{n}\hat{S_n}$, so we obtain
+
+
+
+
+\begin{align}
+    e^{\hat{S}}\hat{H}e^{-\hat{S}}
+    &=\hat{H}_0 + \lambda\hat{V}+\left[\sum_{n}\lambda^{n}\hat{S_n}, \hat{H}_0\right] +
+    \lambda\left[\sum_{n}\lambda^{n}\hat{S_n}, \hat{V}\right]\nn[10pt]
+    &+\frac{1}{2!}\biggl[
+    \sum_{n}\lambda^{n}\hat{S_n}, \left[\sum_{n}\lambda^{n}\hat{S_n}, \hat{H}_0\right]
+    \biggr]
+    +\frac{1}{2!}\lambda\biggl[
+    \sum_{n}\lambda^{n}\hat{S_n}, \left[\sum_{n}\lambda^{n}\hat{S_n}, \hat{V}\right]
+    \biggr]
+    +\cdots\nn[10pt]
+    %
+    &=\hat{H}_0 + \lambda\hat{V}+\lambda[\hat{S_1}, \hat{H}_0] + \lambda^2[\hat{S_2}, \hat{H}_0]
+    +\lambda^2[\hat{S_1}, \hat{V}]
+    +\frac{1}{2!}\lambda^2\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    +\mathcal{O}(\lambda^3)\nn[10pt]
+    %
+    &=\hat{H}_0 + \lambda
+    \Bigl\{\hat{V}+[\hat{S_1}, \hat{H}_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hat{H}_0]
+    +[\hat{S_1}, \hat{V}]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)
+\end{align}
+
+
+
+$\lambda$の次数について，整理すると，
+\begin{align}
+    e^{\hat{S}}\hat{H}e^{-\hat{S}}
+    &=\hat{H}_0 + \lambda
+    \Bigl\{\hat{V}+[\hat{S_1}, \hat{H}_0]\Bigr\}\nn[10pt]
+    %
+    &+\lambda^2
+    \biggl\{[\hat{S_2}, \hat{H}_0]
+    +[\hat{S_1}, \hat{V}]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)
+\end{align}
+
+
+
+
+\begin{align}
+    e^{\hat{S}}\hat{H}e^{-\hat{S}}
+    &=\hat{H}_0 + \lambda
+    \Bigl\{\hat{V}+[\hat{S_1}, \hat{H}_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hat{H}_0]
+    +[\hat{S_1}, \hat{V}]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)
+\end{align}
+
+
+We have $\hat{V}=\hat{H}_1 + \hat{H}_2$ and obtain 
+\begin{align}
+    e^{\hat{S}}\hat{H}e^{-\hat{S}}
+    &=\hat{H}_0 + \lambda
+    \Bigl\{\hat{H}_1+\hat{H}_2+[\hat{S_1}, \hat{H}_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hat{H}_0]
+    +[\hat{S_1}, \hat{H}_1]
+    +[\hat{S_1}, \hat{H}_2]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)\nn[10pt]
+    &=\hat{H}_0 + \lambda\hat{H}_1
+    +\lambda^2
+    \biggl\{
+    [\hat{S_1}, \hat{H}_2]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}\nn[10pt]
+    %
+    &\hspace{50pt}+\lambda
+    \Bigl\{\hat{H}_2+[\hat{S_1}, \hat{H}_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hat{H}_0]
+    +[\hat{S_1}, \hat{H}_1]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)
+\end{align}
+ここで，$[\hat{S_1}, [\hat{S}_{1}, \hat{H}_0]]$は[非ブロック対角, [非ブロック対角,ブロック対角]]=[非ブロック対角,ブロック対角]=ブロック対角よりブロック対角,$[\hat{S_2}, \hat{H}_0]$, $[\hat{S_1}, \hat{H}_1]$は非ブロック対角行列である．なぜならば
+，ブロック対角行列と非ブロック対角行列の交換関係は非ブロック対角であり、2つの非ブロック対角行列の交換関係はブロック対角になるからである．
+
+Here, we choose $\hat{S}_1$ and $\hat{S}_2$ to cancel the off-diagonal elements of $\hat{H}^{\prime}$, 
+\begin{equation}
+    [\hat{S_1}, \hat{H}_0]=-\hat{H}_2
+\end{equation}
+\begin{equation}
+    [\hat{S_2}, \hat{H}_0]
+    =-[\hat{S_1}, \hat{H}_1]
+\end{equation}
+
+Therefore we obtain the effective Hamiltonian
+\begin{align}
+    \hat{H}^{\prime}
+    &=\hat{H}_0 + \lambda\hat{H}_1
+    +\lambda^2
+    \biggl\{
+    [\hat{S_1}, \hat{H}_2]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, \textcolor{red}{[\hat{S}_{1}, \hat{H}_0]}
+    \biggr]
+    \biggr\}\\[10pt]
+    &=\hat{H}_0 + \lambda\hat{H}_1
+    +\lambda^2
+    \biggl\{
+    [\hat{S_1}, \hat{H}_2]
+    -\frac{1}{2}[
+    \hat{S_1}, \hat{H}_2
+    ]
+    \biggr\}\nn[10pt]
+    &=\hat{H}_0 + \lambda\hat{H}_1
+    +\frac{1}{2}\lambda^2
+    [\hat{S_1}, \hat{H}_2]
+\end{align}
+
+\subsection{Example : Jaynes-Cumings model}
+We introduce the Jaynes-Cumings model.
+The Hamiltonian is given by
+\begin{equation}
+    \hat{H}_{\rm{JC}}
+    =\frac{1}{2}\hbar\omega\hsig_z
+    +\hbar\omega_0\hat{a}^\dagger\ha
+    +\hbar g(\hsig_+\hat{a}+\hsig_-\hat{a}^\dagger)
+\end{equation}
+
+To construct of an effective Hamiltonian, we can list out the diagonal and off-diagonal parts of the Hamiltonian as $\hat{H}_0$ and $\hat{V}=\hat{H}_2$ respectively:
+\begin{align}
+    \hat{H}_0&=\frac{1}{2}\hbar\omega\hsig_z
+    +\hbar\omega_0\hat{a}^\dagger\ha\\[10pt]
+    \hat{V}&=\hbar g(\hsig_+\hat{a}+\hsig_-\hat{a}^\dagger)
+\end{align}
+
+We assume that $\hat{S}_{1}$ is given by
+\begin{equation}
+    \hat{S}_{1}=-\sum_{m,n}\frac{\braket{m|\hat{V}|n}}{E_{m}-E_{n}}\ket{m}\bra{n}.
+\end{equation}
+これは，$\hat{H}_0$の固有状態で，
+
+\begin{equation}
+    \hat{S}_1 = \sum_{m,n}\ket{m}\braket{m|\hat{S}_1|n}\bra{n}
+    =\sum_{m,n}c_{m,n}\ket{m}\bra{n}
+\end{equation}をと展開し，\eqref{}へ代入することで得られる．
+
+Using $\hat{S}_1$, we obtain
+\begin{align}
+    \hat{S}_{1}
+    &=-\sum_{m,n}
+    \left[
+    \frac{\braket{m|\hsig_+\hat{a}|n}}{E_{m}-E_{n}}\ket{m}\bra{n}
+    +\frac{\braket{m|\hsig_-\hat{a}^\dagger|n}}{E_{m}-E_{n}}\ket{m}\bra{n}
+    \right]\nn[10pt]
+    &=\frac{g}{\Delta}(\hsig_+\hat{a}-\hsig_-\hat{a}^\dagger)
+\end{align}
+where $\Delta = \omega-\omega_0$.
+We adapt the Schrieffer-Wolff transiformation of $\hat{S}_1$, and we obtain
+\begin{align}
+    \hat{H}^{\prime}
+   &=\hat{H}_0
+    +\frac{1}{2}\lambda^2
+    [\hat{S}_1, \hat{H}_2]\nn[10pt]
+    &=\frac{1}{2}\hbar\omega\hsig_z
+    +\hbar\omega_0\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}(\hsig_+\hsig_-
+    +\hsig_z\hat{a}^\dagger\hat{a})\nn[10pt]
+    %%
+    &=\frac{1}{2}\hbar\omega(\hsig_+\hsig_- - \hsig_-\hsig_+)
+    +\hbar\omega_0(\hsig_+\hsig_- + \hsig_-\hsig_+)\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\hsig_+\hsig_-
+    +\frac{\hbar g^2}{\Delta}(\hsig_+\hsig_- - \hsig_-\hsig_+)\hat{a}^\dagger\hat{a}\nn[10pt]
+    %%
+    &=\frac{1}{2}\hbar\omega\hsig_+\hsig_- 
+    - \frac{1}{2}\hbar\omega\hsig_-\hsig_+
+    +\hbar\omega_0\hsig_+\hsig_- \hat{a}^\dagger\ha
+    + \hbar\omega_0\hsig_-\hsig_+\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\hsig_+\hsig_-
+    +\frac{\hbar g^2}{\Delta}\hsig_+\hsig_- \hat{a}^\dagger\hat{a}
+    -\frac{\hbar g^2}{\Delta} \hsig_-\hsig_+\hat{a}^\dagger\hat{a}\nn[10pt]
+     %%
+    &=\frac{1}{2}\hbar\omega\ket{e}\bra{e}
+    - \frac{1}{2}\hbar\omega\ket{g}\bra{g}
+    +\hbar\omega_0\ket{e}\bra{e} \hat{a}^\dagger\ha
+    + \hbar\omega_0\ket{g}\bra{g}\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e}
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e} \hat{a}^\dagger\hat{a}
+    -\frac{\hbar g^2}{\Delta} \ket{g}\bra{g}\hat{a}^\dagger\hat{a}\nn[10pt]
+     %%
+    &=\frac{1}{2}\hbar\omega\ket{e}\bra{e}
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e}
+    +\hbar\omega_0\ket{e}\bra{e} \hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e} \hat{a}^\dagger\hat{a}
+    - \frac{1}{2}\hbar\omega\ket{g}\bra{g}
+    + \hbar\omega_0\ket{g}\bra{g}\hat{a}^\dagger\ha
+    -\frac{\hbar g^2}{\Delta} \ket{g}\bra{g}\hat{a}^\dagger\hat{a}\nn[10pt]
+    %%
+    &=\ket{e}\bra{e}\otimes\left\{
+    \left(\frac{1}{2}\hbar\omega
+    +\frac{\hbar g^2}{\Delta}
+    \right)
+    +\left(\hbar\omega_0
+    +\frac{\hbar g^2}{\Delta} 
+    \right)\hat{a}^\dagger\hat{a}
+    \right\}
+    +\ket{g}\bra{g}\left\{
+    -\frac{1}{2}\hbar\omega
+    +\left(
+    \hbar\omega_0
+    -\frac{\hbar g^2}{\Delta}
+    \right)\hat{a}^\dagger\hat{a}
+    \right\}\nn[10pt]
+\end{align}
+
+where we calculate
+\begin{align}
+    [\hat{S_1}, \hat{H}_2]
+    &=\hat{S_1}\hat{H}_2-\hat{H}_2\hat{S_1}\nn[10pt]
+    &=\frac{g^2}{\Delta}[(\hsig_+\hat{a}-\hsig_-\hat{a}^\dagger),(\hsig_+\hat{a}+\hsig_-\hat{a}^\dagger)]\nn[10pt]
+    &=\frac{g^2}{\Delta}\Bigl\{
+    [\hsig_+\hat{a},\hsig_+\hat{a}]
+    +[\hsig_+\hat{a},\hsig_-\hat{a}^\dagger]
+    -[\hsig_-\hat{a}^\dagger,\hsig_+\hat{a}]
+    -[\hsig_-\hat{a}^\dagger,\hsig_-\hat{a}^\dagger]
+    \Bigr\}\nn[10pt]
+    &=\frac{g^2}{\Delta}\Bigl\{
+    [\hsig_+\hat{a},\hsig_-\hat{a}^\dagger]
+    -[\hsig_-\hat{a}^\dagger,\hsig_+\hat{a}]
+    \Bigr\}\nn[10pt]
+    &=\frac{g^2}{\Delta}\Bigl\{
+    (\hsig_+\hsig_- \hat{a}\hat{a}^\dagger-\hsig_-\hsig_+\hat{a}^\dagger\hat{a})
+    -(
+    \hsig_-\hsig_+\hat{a}^\dagger\hat{a}
+    -\hsig_+\hsig_-\hat{a}\hat{a}^\dagger
+    )
+    \Bigr\}\nn[10pt]
+    &=\frac{2g^2}{\Delta}(
+    \hsig_+\hsig_- \hat{a}\hat{a}^\dagger-\hsig_-\hsig_+\hat{a}^\dagger\hat{a})\nn[10pt]
+\end{align}
+
+\begin{align}
+    \hsig_+\hsig_- \hat{a}\hat{a}^\dagger-\hsig_-\hsig_+\hat{a}^\dagger\hat{a}
+    &= \hsig_+\hsig_-\hat{a}^\dagger\hat{a}
+    +\hsig_+\hsig_-
+    -\hsig_-\hsig_+\hat{a}^\dagger\hat{a}\nn[10pt]
+    &=\hsig_+\hsig_-
+    +(\hsig_+\hsig_-
+    -\hsig_-\hsig_+)\hat{a}^\dagger\hat{a}\nn[10pt]
+    &=\hsig_+\hsig_-
+    +\hsig_z\hat{a}^\dagger\hat{a}
+\end{align}
+

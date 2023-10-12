@@ -1,0 +1,1508 @@
+\section*{2,3 June 2022}
+\section{Schrieffer-Wolff変換}
+Schrieffer-Wolff変換とは，非対角項を持つHamiltonianに対して，近似的に対角化を行う，一種の摂動論である．
+
+Schrieffer-Wolff transiformation is a perturbation theory which a Hamiltonian with off-diagonal elements approximately diagonalize.
+
+We consider the following Hamiltonian
+\begin{equation}
+    \hH = \hH_0 + \lambda\hat{V}
+\end{equation}
+where, $\hH_0$ is the non-perturbative Hamiltonian and $\hat{V}$ is the interaction Hamiltonian. Here, we decompose $\hat{V}=\hH_1 + \hH_2$, where $\hH_1$ and $\hH_2$ denote ブロック対角Hamiltonian and  非対角ブロックHamiltonian.
+
+
+The Schrieffer-Wolff transiformation is defined by 
+
+\begin{equation}
+    \hH^{\prime}\equiv e^{\hat{S}}\hH e^{-\hat{S}},
+\end{equation}
+where $\hat{S}$ is an anti-Hermitian operator. 
+
+We choose $\hat{S}$ such that $\hH^{\prime}$ satisfies
+
+Using BCH-fomula, 
+\begin{equation}
+    e^{\hat{S}}\hat{\hH}e^{-\hat{S}}
+    =\hat{\hH}+[\hat{S}, \hat{H}]
+    +\frac{1}{2!}\bigl[
+    \hat{S}, [\hat{S}, \hat{H}]
+    \bigr]
+    +\frac{1}{3!}
+    \Bigl[\hat{S},
+    \bigl[
+    \hat{S}, [\hat{S}, \hat{H}]
+    \bigr]
+    \Bigr]
+    +\cdots
+\end{equation}
+
+\begin{align}
+    e^{\hat{S}}\hat{\hH}e^{-\hat{S}}
+    &=\hH_0 + \lambda\hat{V}+[\hat{S}, \hH_0 + \lambda\hat{V}]
+    +\frac{1}{2!}\bigl[
+    \hat{S}, [\hat{S}, \hH_0 + \lambda\hat{V}]
+    \bigr]
+    +\frac{1}{3!}
+    \Bigl[\hat{S},
+    \bigl[
+    \hat{S}, [\hat{S}, \hH_0 + \lambda\hat{V}]
+    \bigr]
+    \Bigr]
+    +\cdots\nn[10pt]
+    %
+    &=\hH_0 + \lambda\hat{V}+[\hat{S}, \hH_0] +
+    \lambda[\hat{S}, \hat{V}]
+    +\frac{1}{2!}\bigl[
+    \hat{S}, [\hat{S}, \hH_0]
+    \bigr]
+    +\frac{1}{2!}\lambda\bigl[
+    \hat{S}, [\hat{S}, \hat{V}]
+    \bigr]
+    +\cdots
+\end{align}
+
+We expand $\hat{S}$ as $\sum_{n}\lambda^{n}\hat{S_n}$, so we obtain
+\begin{align}
+    e^{\hat{S}}\hat{\hH}e^{-\hat{S}}
+    &=\hH_0 + \lambda\hat{V}+\left[\sum_{n}\lambda^{n}\hat{S_n}, \hH_0\right] +
+    \lambda\left[\sum_{n}\lambda^{n}\hat{S_n}, \hat{V}\right]\nn[10pt]
+    &+\frac{1}{2!}\biggl[
+    \sum_{n}\lambda^{n}\hat{S_n}, \left[\sum_{n}\lambda^{n}\hat{S_n}, \hH_0\right]
+    \biggr]
+    +\frac{1}{2!}\lambda\biggl[
+    \sum_{n}\lambda^{n}\hat{S_n}, \left[\sum_{n}\lambda^{n}\hat{S_n}, \hat{V}\right]
+    \biggr]
+    +\cdots\nn[10pt]
+    %
+    &=\hH_0 + \lambda\hat{V}+\lambda[\hat{S_1}, \hH_0] + \lambda^2[\hat{S_2}, \hH_0]
+    +\lambda^2[\hat{S_1}, \hat{V}]
+    +\frac{1}{2!}\lambda^2\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    +\mathcal{O}(\lambda^3)\nn[10pt]
+    %
+    &=\hH_0 + \lambda
+    \Bigl\{\hat{V}+[\hat{S_1}, \hH_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hH_0]
+    +[\hat{S_1}, \hat{V}]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)
+\end{align}
+
+\begin{align}
+    e^{\hat{S}}\hat{\hH}e^{-\hat{S}}
+    &=\hH_0 + \lambda
+    \Bigl\{\hat{V}+[\hat{S_1}, \hH_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hH_0]
+    +[\hat{S_1}, \hat{V}]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)
+\end{align}
+
+
+We have $\hat{V}=\hat{H}_1 + \hat{H}_2$ and obtain 
+\begin{align}
+    e^{\hat{S}}\hat{\hH}e^{-\hat{S}}
+    &=\hH_0 + \lambda
+    \Bigl\{\hat{H}_1+\hat{H}_2+[\hat{S_1}, \hH_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hH_0]
+    +[\hat{S_1}, \hat{H}_1]
+    +[\hat{S_1}, \hat{H}_2]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)\nn[10pt]
+    &=\hH_0 + \lambda\hat{H}_1
+    +\lambda^2
+    \biggl\{
+    [\hat{S_1}, \hat{H}_2]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}\nn[10pt]
+    %
+    &\hspace{50pt}+\lambda
+    \Bigl\{\hat{H}_2+[\hat{S_1}, \hH_0]\Bigr\}
+    %
+    +\lambda^2
+    \biggl\{[\hat{S_2}, \hH_0]
+    +[\hat{S_1}, \hat{H}_1]
+    \biggr\}
+    +\mathcal{O}(\lambda^3)
+\end{align}
+ここで，$[\hat{S_1}, [\hat{S}_{1}, \hat{H}_0]]$は[非ブロック対角, [非ブロック対角,ブロック対角]]=[非ブロック対角,ブロック対角]=ブロック対角よりブロック対角,$[\hat{S_2}, \hH_0]$, $[\hat{S_1}, \hat{H}_1]$は非ブロック対角行列である．なぜならば
+，ブロック対角行列と非ブロック対角行列の交換関係は非ブロック対角であり、2つの非ブロック対角行列の交換関係はブロック対角になるからである．
+
+Here, we choose $\hat{S}_1$ and $\hat{S}_2$ to cancel the off-diagonal elements of $\hH^{\prime}$, 
+\begin{equation}
+    [\hat{S_1}, \hH_0]=-\hat{H}_2
+\end{equation}
+\begin{equation}
+    [\hat{S_2}, \hH_0]
+    =-[\hat{S_1}, \hat{H}_1]
+\end{equation}
+
+Therefore we obtain the effective Hamiltonian
+\begin{align}
+    \hH^{\prime}
+    &=\hH_0 + \lambda\hat{H}_1
+    +\lambda^2
+    \biggl\{
+    [\hat{S_1}, \hat{H}_2]
+    +\frac{1}{2}\biggl[
+    \hat{S_1}, [\hat{S}_{1}, \hat{H}_0]
+    \biggr]
+    \biggr\}\\[10pt]
+    &=\hH_0 + \lambda\hat{H}_1
+    +\lambda^2
+    \biggl\{
+    [\hat{S_1}, \hat{H}_2]
+    -\frac{1}{2}[
+    \hat{S_1}, \hat{H}_2
+    ]
+    \biggr\}\nn[10pt]
+    &=\hH_0 + \lambda\hat{H}_1
+    +\frac{1}{2}\lambda^2
+    [\hat{S_1}, \hat{H}_2]
+\end{align}
+
+\subsection{Example : Jaynes-Cumings model}
+We introduce the Jaynes-Cumings model.
+The Hamiltonian is given by
+\begin{equation}
+    \hH_{\rm{JC}}
+    =\frac{1}{2}\hbar\omega\hsig_z
+    +\hbar\omega_0\hat{a}^\dagger\ha
+    +\hbar g(\hsig_+\hat{a}+\hsig_-\hat{a}^\dagger)
+\end{equation}
+
+We can list out the diagonal and off-diagonal parts of the Hamiltonian as $\hH_0$ and $\hat{V}=\hH_2$ respectively:
+\begin{align}
+    \hH_0&=\frac{1}{2}\hbar\omega\hsig_z
+    +\hbar\omega_0\hat{a}^\dagger\ha\\[10pt]
+    \hat{V}&=\hbar g(\hsig_+\hat{a}+\hsig_-\hat{a}^\dagger)
+\end{align}
+
+We assume that $\hat{S_{1}}$ is given by
+\begin{equation}
+    \hat{S_{1}}=-\sum_{m,n}\frac{\braket{m|\hat{V}|n}}{E_{m}-E_{n}}\ket{m}\bra{n}.
+\end{equation}
+
+Using $\hat{S}_1$, we obtain
+\begin{align}
+    \hat{S_{1}}
+    &=-\sum_{m,n}
+    \left[
+    \frac{\braket{m|\hsig_+\hat{a}|n}}{E_{m}-E_{n}}\ket{m}\bra{n}
+    +\frac{\braket{m|\hsig_-\hat{a}^\dagger|n}}{E_{m}-E_{n}}\ket{m}\bra{n}
+    \right]\nn[10pt]
+    &=\frac{g}{\Delta}(\hsig_+\hat{a}-\hsig_-\hat{a}^\dagger)
+\end{align}
+where $\Delta = \omega-\omega_0$.
+We adapt the Schrieffer-Wolff transiformation of $\hat{S}_1$, and we obtain
+\begin{align}
+    \hH^{\prime}
+   &=\hH_0
+    +\frac{1}{2}\lambda^2
+    [\hat{S_1}, \hat{H}_2]\nn[10pt]
+    &=\frac{1}{2}\hbar\omega\hsig_z
+    +\hbar\omega_0\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}(\hsig_+\hsig_-
+    +\hsig_z\hat{a}^\dagger\hat{a})\nn[10pt]
+    &=\frac{1}{2}\hbar\omega\hsig_z
+    +\hbar\omega_0\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}(\hsig_+\hsig_-
+    +\hsig_z\hat{a}^\dagger\hat{a})\nn[10pt]
+    %%
+    &=\frac{1}{2}\hbar\omega(\hsig_+\hsig_- - \hsig_-\hsig_+)
+    +\hbar\omega_0(\hsig_+\hsig_- + \hsig_-\hsig_+)\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\hsig_+\hsig_-
+    +\frac{\hbar g^2}{\Delta}(\hsig_+\hsig_- - \hsig_-\hsig_+)\hat{a}^\dagger\hat{a}\nn[10pt]
+    %%
+    &=\frac{1}{2}\hbar\omega\hsig_+\hsig_- 
+    - \frac{1}{2}\hbar\omega\hsig_-\hsig_+
+    +\hbar\omega_0\hsig_+\hsig_- \hat{a}^\dagger\ha
+    + \hbar\omega_0\hsig_-\hsig_+\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\hsig_+\hsig_-
+    +\frac{\hbar g^2}{\Delta}\hsig_+\hsig_- \hat{a}^\dagger\hat{a}
+    -\frac{\hbar g^2}{\Delta} \hsig_-\hsig_+\hat{a}^\dagger\hat{a}\nn[10pt]
+     %%
+    &=\frac{1}{2}\hbar\omega\ket{e}\bra{e}
+    - \frac{1}{2}\hbar\omega\ket{g}\bra{g}
+    +\hbar\omega_0\ket{e}\bra{e} \hat{a}^\dagger\ha
+    + \hbar\omega_0\ket{g}\bra{g}\hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e}
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e} \hat{a}^\dagger\hat{a}
+    -\frac{\hbar g^2}{\Delta} \ket{g}\bra{g}\hat{a}^\dagger\hat{a}\nn[10pt]
+     %%
+    &=\frac{1}{2}\hbar\omega\ket{e}\bra{e}
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e}
+    +\hbar\omega_0\ket{e}\bra{e} \hat{a}^\dagger\ha
+    +\frac{\hbar g^2}{\Delta}\ket{e}\bra{e} \hat{a}^\dagger\hat{a}
+    - \frac{1}{2}\hbar\omega\ket{g}\bra{g}
+    + \hbar\omega_0\ket{g}\bra{g}\hat{a}^\dagger\ha
+    -\frac{\hbar g^2}{\Delta} \ket{g}\bra{g}\hat{a}^\dagger\hat{a}\nn[10pt]
+    %%
+    &=\ket{e}\bra{e}\otimes\left\{
+    \left(\frac{1}{2}\hbar\omega
+    +\frac{\hbar g^2}{\Delta}
+    \right)
+    +\left(\hbar\omega_0
+    +\frac{\hbar g^2}{\Delta} 
+    \right)\hat{a}^\dagger\hat{a}
+    \right\}
+    +\ket{g}\bra{g}\left\{
+    -\frac{1}{2}\hbar\omega
+    +\left(
+    \hbar\omega_0
+    -\frac{\hbar g^2}{\Delta}
+    \right)\hat{a}^\dagger\hat{a}
+    \right\}\nn[10pt]
+\end{align}
+
+where we calculate
+\begin{align}
+    [\hat{S_1}, \hat{H}_2]
+    &=\hat{S_1}\hat{H}_2-\hat{H}_2\hat{S_1}\nn[10pt]
+    &=\frac{g^2}{\Delta}[(\hsig_+\hat{a}-\hsig_-\hat{a}^\dagger),(\hsig_+\hat{a}+\hsig_-\hat{a}^\dagger)]\nn[10pt]
+    &=\frac{g^2}{\Delta}\Bigl\{
+    [\hsig_+\hat{a},\hsig_+\hat{a}]
+    +[\hsig_+\hat{a},\hsig_-\hat{a}^\dagger]
+    -[\hsig_-\hat{a}^\dagger,\hsig_+\hat{a}]
+    -[\hsig_-\hat{a}^\dagger,\hsig_-\hat{a}^\dagger]
+    \Bigr\}\nn[10pt]
+    &=\frac{g^2}{\Delta}\Bigl\{
+    [\hsig_+\hat{a},\hsig_-\hat{a}^\dagger]
+    -[\hsig_-\hat{a}^\dagger,\hsig_+\hat{a}]
+    \Bigr\}\nn[10pt]
+    &=\frac{g^2}{\Delta}\Bigl\{
+    (\hsig_+\hsig_- \hat{a}\hat{a}^\dagger-\hsig_-\hsig_+\hat{a}^\dagger\hat{a})
+    -(
+    \hsig_-\hsig_+\hat{a}^\dagger\hat{a}
+    -\hsig_+\hsig_-\hat{a}\hat{a}^\dagger
+    )
+    \Bigr\}\nn[10pt]
+    &=\frac{2g^2}{\Delta}(
+    \hsig_+\hsig_- \hat{a}\hat{a}^\dagger-\hsig_-\hsig_+\hat{a}^\dagger\hat{a})\nn[10pt]
+\end{align}
+
+\begin{align}
+    \hsig_+\hsig_- \hat{a}\hat{a}^\dagger-\hsig_-\hsig_+\hat{a}^\dagger\hat{a}
+    &= \hsig_+\hsig_-\hat{a}^\dagger\hat{a}
+    +\hsig_+\hsig_-
+    -\hsig_-\hsig_+\hat{a}^\dagger\hat{a}\nn[10pt]
+    &=\hsig_+\hsig_-
+    +(\hsig_+\hsig_-
+    -\hsig_-\hsig_+)\hat{a}^\dagger\hat{a}\nn[10pt]
+    &=\hsig_+\hsig_-
+    +\hsig_z\hat{a}^\dagger\hat{a}
+\end{align}
+
+
+
+
+\newpage
+\section{25 and 26, May, 2022}
+\subsection{Dispersive Shift}
+Here we introduce a model of a mode coupled with a qubit.
+The total Hamiltonian then is given by 
+\begin{equation}
+    \hH = \hH_0 +\hH_{\rm{I}},
+\end{equation}
+where $\hH_0$ is the non-perturbative Hamiltonian and $\hH_{\rm{I}}$ is the interaction Hamiltonian.ここで相互作用Hamiltonianは
+\begin{equation}
+    \hH_{\rm{I}}=\hbar g(\hat{A}+\hat{A}^\dagger)
+\end{equation}
+と書く．where $\hat{A}$ and $g$ denote the product of operators describing the interaction, and the coupling constant, respectively.
+Here we take $\hat{A}=\hat{a}\hsig_+$, and we consider the following interaction Hamiltonian \begin{equation}
+    \hH_{\rm{I}}=\hbar g(\hat{a}\hsig_+ + \hat{a}^\dagger\hsig_-)
+\end{equation}
+and
+\begin{equation}
+    \hH_{0}=\hbar\omega\hat{a}^\dagger\hat{a}+\frac{\hbar\omega_0}{2}\hsig_z.
+\end{equation}
+
+The timed-dependent Schr\"{o}dinger equation in the Schr\"{o}dinger picture(SP) is
+\begin{equation}
+    i\hbar\frac{d}{dt}\ket{\psi_{\rm{SP}}(t)}
+    =\left(
+    \hH_0+\hH_{\rm{I}}
+    \right)
+    \ket{\psi_{\rm{SP}}(t)}
+\end{equation}
+where $ket{\psi_{\rm{SP}}(t)}$ is the state vector in the SP.
+
+We now can transform out of the interaction picture (IP) using the transformation
+\begin{equation}
+    \hU_0=e^{-i\hH_0 t/\hbar}
+    =e^{-i\omega\hat{a}^{\dagger}\hat{a} t}\otimes
+    e^{-i\omega_0\hsig_z t/2}
+\end{equation}
+
+The state vector in the IP is given by
+\begin{equation}
+    \ket{\psi_{\rm{IP}}(t)}
+    =\hat{U}_0^\dagger\ket{\psi_{\rm{SP}}(t)}
+\end{equation}
+and the Sch\"{O}dinger equation in the IP becomes
+\begin{equation}
+    i\hbar\frac{d}{dt}\ket{\psi_{\rm{IP}}(t)}
+    =\left(
+    \hH_0+\hH_{\rm{I}}
+    \right)
+    \ket{\psi_{\rm{IP}}(t)},
+\end{equation}
+where
+\begin{align}
+    \hH_{\rm{IP}}(t)
+    &=\hU_0^\dagger\hH\hU_0
+    -i\hbar\hat{U}_0^\dagger\frac{d}{dt}\hU_0\\[10pt]
+    &=\hH_0 + \hbar g \left(
+    \hat{a}\hsig_+e^{i(\omega_0-\omega)t}
+    +\hat{a}^\dagger\hsig_-e^{-i(\omega_0-\omega)t}
+    \right)
+    -i\hbar\hat{U}_0^\dagger\left(
+    -i\frac{\hH_0}{\hbar}
+    \right)\hU_0\\[10pt]
+    &=\hbar g \left(
+    \hat{a}\hsig_+e^{i(\omega_0-\omega)t}
+    +\hat{a}^\dagger\hsig_-e^{-i(\omega_0-\omega)t},
+    \right)
+\end{align}
+where $\Delta=\omega_0-\omega$ is the detuning of the field and the atom.
+
+Also, we use the following relation
+\begin{align}
+    \hU^{\dagger}_0\hat{a}\hU_0&=\hat{a}e^{-i\omega t}\\[10pt]
+    \hU^{\dagger}_0\hat{a}^{\dagger}\hU_0&=\hat{a}^{\dagger}e^{i\omega t},
+\end{align}
+and 
+\begin{align}
+    \hU^{\dagger}_0\hat{\sigma}_{\pm}\hU_0&=\hat{\sigma}_{\pm}e^{\pm i\omega t}.
+\end{align}
+The detuning will be assumed large, $\Delta \gg 1$.
+
+The solution to Eq.~\eqref{} can be written formally as
+\begin{equation}
+    \ket{\psi_{\rm{IP}}(t)}=
+    \hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]\ket{\psi_{\rm{IP}}(0)}.
+\end{equation}
+
+We make the pertubation expansion
+\begin{align}\label{Tevol}
+    &\hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]\nn[10pt]
+    &=\hat{\mathcal{T}}\left[
+    \hat{1}-\frac{i}{\hbar}\int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    +\frac{(-i)^2}{2!\hbar^2}\int_0^{t}dt^\prime 
+    \int_0^{t^\prime}dt^{\prime\prime} \hH_{\rm{IP}}(t^\prime)\hH_{\rm{IP}}(t^{\prime\prime})
+    \right]\nn[10pt]
+    &=
+    \hat{1}-\frac{i}{\hbar}\int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    +\frac{(-i)^2}{2!\hbar^2}\int_0^{t}dt^\prime
+    \hat{\mathcal{T}}\left[
+    \int_0^{t^\prime}dt^{\prime\prime} \hH_{\rm{IP}}(t^\prime)\hH_{\rm{IP}}(t^{\prime\prime})
+    \right]
+\end{align}
+
+The second term in Eq.\eqref{Tevol} yields
+\begin{align}
+    \int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    &=\int_0^{t}dt^\prime 
+    \left[
+    \hbar g \left(
+    \hat{a}\hsig_+e^{i\Delta t^\prime}
+    +\hat{a}^\dagger\hsig_-e^{-i\Delta t^\prime}
+    \right)
+    \right]\nn[10pt]
+    &=\hbar g
+    \left[
+    \hat{a}\hsig_+
+    \frac{e^{i\Delta t^\prime}}{i\Delta}
+    +\hat{a}^\dagger\hsig_-\frac{e^{i\Delta t^\prime}}{-i\Delta}
+    \right]_0^t\nn[10pt]
+    &=\frac{\hbar g}{i\Delta}
+    \left[
+    \hat{a}\hsig_+
+    \left(e^{i\Delta t}-1\right)
+    -\hat{a}^\dagger\hsig_-\left(e^{i\Delta t}-1\right)
+    \right]
+\end{align}
+
+
+The second-oder term now becomes
+\begin{align}
+    \int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \int_0^{t^\prime}dt^{\prime^\prime} \hH_{\rm{IP}}(t^{\prime\prime})
+    &=\frac{\hbar^2 g^2}{i\Delta}\int_0^{t}dt^\prime
+    \left[
+    \hat{a}\hsig_+e^{i\Delta t^\prime}
+    +\hat{a}^\dagger\hsig_-e^{-i\Delta t^\prime}
+    \right]
+    \times
+    \left[
+    \hat{a}\hsig_+
+    \left(e^{i\Delta t^\prime}-1\right)
+    -\hat{a}^\dagger\hsig_-\left(e^{i\Delta t^\prime}-1\right)
+    \right]\nn[10pt]
+    %
+    &=\frac{\hbar^2 g^2}{i\Delta}\int_0^{t}dt^\prime
+    \Biggl[
+    \hat{a}^2\hsig_+^2e^{2i\Delta t^\prime}
+    -\hat{a}^2\hsig_+^2e^{i\Delta t^\prime}
+    -\hat{a}^{\dagger2}\hsig_-^2e^{-2i\Delta t^\prime}
+    +\hat{a}^{\dagger2}\hsig_+^2e^{-i\Delta t^\prime}\nn[10pt]
+    %
+    &
+    +\hat{a}^{\dagger}\hat{a}\hsig_-\hsig_+(1-e^{-i\Delta t^\prime})
+    -\hat{a}\hat{a}^{\dagger}\hsig_+\hsig_-(1-e^{i\Delta t^\prime})
+    \Biggr]
+\end{align}
+$t^\prime$に関する積分を実行すると，terms of $g^2/\Delta$に関する項が出てくるが，detuningが十分小さい場合にはこれらの項は小さくなり無視できる．Thus we obtain 
+\begin{align}
+    \int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \int_0^{t^\prime}dt^{\prime^\prime} \hH_{\rm{IP}}(t^{\prime\prime})
+    \simeq\frac{i\hbar^2g^2}{\Delta}t[\hat{A}, \hat{A}^\dagger]
+\end{align}
+ Thus to second order time evolution operator we have
+\begin{equation}
+    \hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]
+    \simeq
+    \hat{1}-\frac{g}{\Delta}[\hat{A}(e^{i\Delta t}-1)-\hat{A}^\dagger(e^{-i\Delta t}-1)]
+    -\frac{ig^2t}{\Delta}[\hat{A},\hat{A}^\dagger].
+\end{equation}
+
+
+If the mean excitation A is not large and if B, assumed vaild because of the large detuning, then the second term of Eq. 1.
+
+
+
+平均励起Aが大きくなく、Bの場合、離調が大きいために有効であると想定される場合、式（1）の第2項は次のようになります。 1.1。
+
+\begin{equation}
+    \hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]
+    \simeq
+    \hat{1}-\frac{ig^2t}{\Delta}[\hat{A},\hat{A}^\dagger]
+    =\hat{1}-\frac{i}{\hbar}\hH_{\rm{eff}}t,
+\end{equation}
+where
+\begin{equation}
+    \hH_{\rm{eff}}=\frac{\hbar g^2t}{\Delta}[\hat{A},\hat{A}^\dagger].
+\end{equation}
+
+For the Jaynes-Cumings interaction we have $\hat{A}=\hat{a}\hsig_+$ so that
+\begin{equation}
+    \hH_{\rm{eff}}=\frac{\hbar g^2t}{\Delta}(\hsig_+\hsig_-
+    +\hat{a}^\dagger\hat{a}\hsig_z),
+\end{equation}
+where we have
+\begin{align}
+    [\hat{a}\hsig_+,\hat{a}^\dagger\hsig_-]
+    &=\hat{a}\hat{a}^\dagger\hsig_+\hsig_-
+    -\hat{a}^\dagger\hat{a}\hsig_-\hsig_+\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger\hsig_+\hsig_-
+    -\hat{a}^\dagger\hat{a}\hsig_-\hsig_+\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger(\hsig_+\hsig_-
+    -\hsig_-\hsig_+)\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger(\ket{e}\braket{g|g}\bra{e}
+    -\ket{g}\braket{e|e}\bra{g})\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger\hsig_z
+\end{align}
+
+
+
+\subsection{Dispersive Shift of KPO}
+Here we introduce a model of a KPO coupled with a qubit.
+The total Hamiltonian then is given by 
+\begin{equation}
+    \hH = \hH_0 +\hH_{\rm{I}},
+\end{equation}
+
+\begin{align}\label{total hamiltonian}
+    \hH_{\rm{KPO}}&=\Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2} \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a} + \beta (\hat{a}^2 + \hat{a}^{\dagger 2})\\[10pt]
+    \hH_{\rm{g}}&=\frac{\omega_{\rm{g}}-\omega_{\rm{p}}/2}{2}\hsig_z\\[10pt]
+    \hH_{\rm{I}}&=g(\hat{a}\hsig_{+}+\hat{a}^\dagger\hsig_{-})
+\end{align}
+where $\hH_0=\hH_{\rm{KPO}}+\hH_{\rm{g}}$ is the non-perturbative Hamiltonian and $\hH_{\rm{I}}$ is the interaction Hamiltonian.
+
+The timed-dependent Schr\"{o}dinger equation in the Schr\"{o}dinger picture(SP) is
+\begin{equation}
+    i\hbar\frac{d}{dt}\ket{\psi_{\rm{SP}}(t)}
+    =\left(
+    \hH_0+\hH_{\rm{I}}
+    \right)
+    \ket{\psi_{\rm{SP}}(t)}
+\end{equation}
+where $\ket{\psi_{\rm{SP}}(t)}$ is the state vector in the SP.
+
+We now can transform out of the interaction picture (IP) using the transformation
+\begin{equation}
+    \hU_0=e^{-i\hH_0 t/\hbar}
+    =e^{-i\hH_{\rm{KPO}} t}\otimes
+    \hat{I}_{\rm{g}}
+\end{equation}
+
+The state vector in the IP is given by
+\begin{equation}
+    \ket{\psi_{\rm{IP}}(t)}
+    =\hat{U}_0^\dagger\ket{\psi_{\rm{SP}}(t)}
+\end{equation}
+and the Sch\"{O}dinger equation in the IP becomes
+\begin{equation}
+    i\hbar\frac{d}{dt}\ket{\psi_{\rm{IP}}(t)}
+    =\left(
+    \hH_0+\hH_{\rm{I}}
+    \right)
+    \ket{\psi_{\rm{IP}}(t)},
+\end{equation}
+where
+\begin{align}
+    \hH_{\rm{IP}}(t)
+    &=\hU_0^\dagger\hH\hU_0
+    -i\hbar\hat{U}_0^\dagger\frac{d}{dt}\hU_0\\[10pt]
+    &=\hH_0 + \hbar g \left(
+    \hat{a}\hsig_+e^{i(\omega_0-\omega)t}
+    +\hat{a}^\dagger\hsig_-e^{-i(\omega_0-\omega)t}
+    \right)
+    -i\hbar\hat{U}_0^\dagger\left(
+    -i\frac{\hH_0}{\hbar}
+    \right)\hU_0\\[10pt]
+    &=\hbar g \left(
+    \hat{a}\hsig_+e^{i(\omega_0-\omega)t}
+    +\hat{a}^\dagger\hsig_-e^{-i(\omega_0-\omega)t},
+    \right)
+\end{align}
+where $\Delta=\omega_0-\omega$ is the detuning of the field and the atom.
+
+Also, we use the following relation
+\begin{align}
+    \hU^{\dagger}_0\hat{a}\hU_0&=\hat{a}e^{-i\omega t}\\[10pt]
+    \hU^{\dagger}_0\hat{a}^{\dagger}\hU_0&=\hat{a}^{\dagger}e^{i\omega t},
+\end{align}
+and 
+\begin{align}
+    \hU^{\dagger}_0\hat{\sigma}_{\pm}\hU_0&=\hat{\sigma}_{\pm}e^{\pm i\omega t}.
+\end{align}
+The detuning will be assumed large, $\Delta \gg 1$.
+
+The solution to Eq.~\eqref{} can be written formally as
+\begin{equation}
+    \ket{\psi_{\rm{IP}}(t)}=
+    \hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]\ket{\psi_{\rm{IP}}(0)}.
+\end{equation}
+
+We make the pertubation expansion
+\begin{align}\label{Tevol}
+    &\hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]\nn[10pt]
+    &=\hat{\mathcal{T}}\left[
+    \hat{1}-\frac{i}{\hbar}\int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    +\frac{(-i)^2}{2!\hbar^2}\int_0^{t}dt^\prime 
+    \int_0^{t^\prime}dt^{\prime\prime} \hH_{\rm{IP}}(t^\prime)\hH_{\rm{IP}}(t^{\prime\prime})
+    \right]\nn[10pt]
+    &=
+    \hat{1}-\frac{i}{\hbar}\int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    +\frac{(-i)^2}{2!\hbar^2}\int_0^{t}dt^\prime
+    \hat{\mathcal{T}}\left[
+    \int_0^{t^\prime}dt^{\prime\prime} \hH_{\rm{IP}}(t^\prime)\hH_{\rm{IP}}(t^{\prime\prime})
+    \right]
+\end{align}
+
+The second term in Eq.\eqref{Tevol} yields
+\begin{align}
+    \int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    &=\int_0^{t}dt^\prime 
+    \left[
+    \hbar g \left(
+    \hat{a}\hsig_+e^{i\Delta t^\prime}
+    +\hat{a}^\dagger\hsig_-e^{-i\Delta t^\prime}
+    \right)
+    \right]\nn[10pt]
+    &=\hbar g
+    \left[
+    \hat{a}\hsig_+
+    \frac{e^{i\Delta t^\prime}}{i\Delta}
+    +\hat{a}^\dagger\hsig_-\frac{e^{i\Delta t^\prime}}{-i\Delta}
+    \right]_0^t\nn[10pt]
+    &=\frac{\hbar g}{i\Delta}
+    \left[
+    \hat{a}\hsig_+
+    \left(e^{i\Delta t}-1\right)
+    -\hat{a}^\dagger\hsig_-\left(e^{i\Delta t}-1\right)
+    \right]
+\end{align}
+
+
+The second-oder term now becomes
+\begin{align}
+    \int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \int_0^{t^\prime}dt^{\prime^\prime} \hH_{\rm{IP}}(t^{\prime\prime})
+    &=\frac{\hbar^2 g^2}{i\Delta}\int_0^{t}dt^\prime
+    \left[
+    \hat{a}\hsig_+e^{i\Delta t^\prime}
+    +\hat{a}^\dagger\hsig_-e^{-i\Delta t^\prime}
+    \right]
+    \times
+    \left[
+    \hat{a}\hsig_+
+    \left(e^{i\Delta t^\prime}-1\right)
+    -\hat{a}^\dagger\hsig_-\left(e^{i\Delta t^\prime}-1\right)
+    \right]\nn[10pt]
+    %
+    &=\frac{\hbar^2 g^2}{i\Delta}\int_0^{t}dt^\prime
+    \Biggl[
+    \hat{a}^2\hsig_+^2e^{2i\Delta t^\prime}
+    -\hat{a}^2\hsig_+^2e^{i\Delta t^\prime}
+    -\hat{a}^{\dagger2}\hsig_-^2e^{-2i\Delta t^\prime}
+    +\hat{a}^{\dagger2}\hsig_+^2e^{-i\Delta t^\prime}\nn[10pt]
+    %
+    &
+    +\hat{a}^{\dagger}\hat{a}\hsig_-\hsig_+(1-e^{-i\Delta t^\prime})
+    -\hat{a}\hat{a}^{\dagger}\hsig_+\hsig_-(1-e^{i\Delta t^\prime})
+    \Biggr]
+\end{align}
+$t^\prime$に関する積分を実行すると，terms of $g^2/\Delta$に関する項が出てくるが，detuningが十分小さい場合にはこれらの項は小さくなり無視できる．Thus we obtain 
+\begin{align}
+    \int_0^{t}dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \int_0^{t^\prime}dt^{\prime^\prime} \hH_{\rm{IP}}(t^{\prime\prime})
+    \simeq\frac{i\hbar^2g^2}{\Delta}t[\hat{A}, \hat{A}^\dagger]
+\end{align}
+ Thus to second order time evolution operator we have
+\begin{equation}
+    \hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]
+    \simeq
+    \hat{1}-\frac{g}{\Delta}[\hat{A}(e^{i\Delta t}-1)-\hat{A}^\dagger(e^{-i\Delta t}-1)]
+    -\frac{ig^2t}{\Delta}[\hat{A},\hat{A}^\dagger].
+\end{equation}
+
+
+If the mean excitation A is not large and if B, assumed vaild because of the large detuning, then the second term of Eq. 1.
+
+
+
+平均励起Aが大きくなく、Bの場合、離調が大きいために有効であると想定される場合、式（1）の第2項は次のようになります。 1.1。
+
+\begin{equation}
+    \hat{\mathcal{T}}\left[
+    \exp{\left(
+    -\frac{i}{\hbar}\int_0^t dt^\prime \hH_{\rm{IP}}(t^\prime)
+    \right)}
+    \right]
+    \simeq
+    \hat{1}-\frac{ig^2t}{\Delta}[\hat{A},\hat{A}^\dagger]
+    =\hat{1}-\frac{i}{\hbar}\hH_{\rm{eff}}t,
+\end{equation}
+where
+\begin{equation}
+    \hH_{\rm{eff}}=\frac{\hbar g^2t}{\Delta}[\hat{A},\hat{A}^\dagger].
+\end{equation}
+
+For the Jaynes-Cumings interaction we have $\hat{A}=\hat{a}\hsig_+$ so that
+\begin{equation}
+    \hH_{\rm{eff}}=\frac{\hbar g^2t}{\Delta}(\hsig_+\hsig_-
+    +\hat{a}^\dagger\hat{a}\hsig_z),
+\end{equation}
+where we have
+\begin{align}
+    [\hat{a}\hsig_+,\hat{a}^\dagger\hsig_-]
+    &=\hat{a}\hat{a}^\dagger\hsig_+\hsig_-
+    -\hat{a}^\dagger\hat{a}\hsig_-\hsig_+\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger\hsig_+\hsig_-
+    -\hat{a}^\dagger\hat{a}\hsig_-\hsig_+\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger(\hsig_+\hsig_-
+    -\hsig_-\hsig_+)\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger(\ket{e}\braket{g|g}\bra{e}
+    -\ket{g}\braket{e|e}\bra{g})\nn[10pt]
+    &=\hsig_+\hsig_-+\hat{a}\hat{a}^\dagger\hsig_z
+\end{align}
+
+
+\section*{15,17, June, 2022, }
+\section{Floquet Theory}
+We have the following Hamiltonian 
+\begin{equation}
+    \hH = \lambda\hsig_x
+    +\lambda_p (\hsig_+ e^{i\omega t} + \hsig_- e^{-i\omega t})
+\end{equation}
+
+We define
+\begin{equation}
+    \hH = \hH_{-1}e^{-i\omega t} + \hH_0 +\hH_1 e^{i\omega t},
+\end{equation}
+where 
+\begin{align}
+    \hH_0 & = \lambda\hsig_x\\
+    \hH_{-1} & = \lambda_p \hsig_-\\
+    \hH_1 & = \lambda_p \hsig_+
+\end{align}
+
+We consider the timed-dependent Schr\"{o}dinger equation
+\begin{equation}
+    i\frac{d}{dt}\ket{\psi(t)}=\hH(t)\ket{\psi(t)}
+\end{equation}
+
+We assume　まず二準位系の基底で展開
+\begin{equation}
+    \ket{\psi(t)} = e^{-iqt}\sum_{j=0,1} c_j
+    \ket{\phi_j}
+\end{equation}
+
+次に，基底をフーリエ級数で展開する：
+\begin{equation}
+    \ket{\phi_j} = \sum_{j=-1,0,1} e^{-in\omega t}\ket{E_{j,n}}
+\end{equation}
+
+Thus, we obtain 
+\begin{equation}
+    \ket{\psi(t)} =\sum_{j=0,1} \sum_{n=-1,0,1} e^{-iqt-in\omega t}\ket{E_{j,n}}
+    \ket{\phi_j}
+\end{equation}
+
+これをsch equationに代入して,
+\begin{align}
+    \sum_{j=0,1} \sum_{n=-1,0,1} 
+    (q+n\omega)
+    e^{-iqt-in\omega t}\ket{E_{j,n}}
+    =\left(
+    \hH_{-1}e^{-i\omega t} + \hH_0 +\hH_1 e^{i\omega t}
+    \right)
+    \sum_{j=0,1} \sum_{n=-1,0,1} e^{-iqt-in\omega t}\ket{E_{j,n}}
+\end{align}
+term of $e^{-iqt-i\omega t}$
+\begin{align}
+    \hH_0\sum_{j=0,1} e^{-iqt-in\omega t}\ket{E_{j,1}}
+    +\hH_{-1}\sum_{j=0,1}e^{-iqt-in\omega t}\ket{E_{j,0}}
+    &=\sum_{j=0,1}
+    (q+n\omega)
+    e^{-iqt-in\omega t}\ket{E_{j,{1}}}\\[10pt]
+    \hH_0\sum_{j=0,1} \ket{E_{j,1}}
+    +\hH_{-1}\sum_{j=0,1}\ket{E_{j,0}}
+    &=\sum_{j=0,1}
+    (q+n\omega)
+    \ket{E_{j,{1}}}
+\end{align}
+
+term of $e^{-iqt-0}$
+\begin{align}
+    \hH_{-1}\sum_{j=0,1} e^{-iqt}\ket{E_{j,1}}
+    +\hH_{0}\sum_{j=0,1} e^{-iqt}\ket{E_{j,0}}
+    +\hH_{1}\sum_{j=0,1}e^{-iqt}\ket{E_{j,{-1}}}
+    &=\sum_{j=0,1}q
+    e^{-iqt}\ket{E_{j,{0}}}\\[10pt]
+    \hH_{-1}\sum_{j=0,1} \ket{E_{j,1}}
+    +\hH_{0}\sum_{j=0,1} \ket{E_{j,0}}
+    +\hH_{1}\sum_{j=0,1}\ket{E_{j,{-1}}}
+    &=\sum_{j=0,1}
+    q\ket{E_{j,{0}}}
+\end{align}
+
+term of $e^{-iqt+i\omega t}$
+\begin{align}
+    \hH_1\sum_{j=0,1} e^{-iqt+in\omega t}\ket{E_{j,0}}
+    +\hH_{0}\sum_{j=0,1}e^{-iqt+in\omega t}\ket{E_{j,{-1}}}
+    &=\sum_{j=0,1}
+    (q-n\omega)
+    e^{-iqt+in\omega t}\ket{E_{j,{-1}}}\\[10pt]
+    \hH_1\sum_{j=0,1} \ket{E_{j,0}}
+    +\hH_{0}\sum_{j=0,1}\ket{E_{j,{-1}}}
+    &=\sum_{j=0,1}
+    (q-\omega)\ket{E_{j,{-1}}}
+\end{align}
+
+\begin{align}
+    \left\{ \,
+    \begin{aligned}
+    \sum_{j=0,1}
+    \left(
+    {\textcolor{blue}{\hH_0 \ket{E_{j,1}}}}
+    +{\textcolor{green}{\hH_{-1}\ket{E_{j,0}}}}
+    -{\textcolor{blue}{n\omega \ket{E_{j,{1}}}}}
+    \right)
+    &=\sum_{j=0,1}q
+    \ket{E_{j,{1}}}\\[10pt]
+    %
+    \sum_{j=0,1}
+    \left(
+    {\textcolor{blue}{\hH_{-1} \ket{E_{j,1}}}}
+    +{\textcolor{green}{\hH_{0}\ket{E_{j,{0}}}}}
+    +{\textcolor{red}{\hH_{1}\ket{E_{j,{-1}}}}}
+    +{\textcolor{green}{0\omega\ket{E_{j,{0}}}}}
+    \right)
+    &=\sum_{j=0,1}
+    q\ket{E_{j,{0}}}\\[10pt]
+    %
+    \sum_{j=0,1}
+    \left(
+    {\textcolor{green}{\hH_1\ket{E_{j,0}}}}
+    +{\textcolor{red}{\hH_{0}\ket{E_{j,{-1}}}}}
+    +{\textcolor{red}{n\omega\ket{E_{j,{-1}}}}}
+    \right)
+    &=\sum_{j=0,1}
+    q\ket{E_{j,{-1}}}
+    \end{aligned}
+\right.
+\end{align}
+
+
+
+全部足して
+
+\begin{align}
+    \sum_{j=0,1}
+    \biggl[
+    &\left(
+    {\textcolor{blue}{\hH_0 \ket{E_{j,1}}}}
+    +{\textcolor{blue}{\hH_{-1} \ket{E_{j,1}}}}
+    -{\textcolor{blue}{n\omega \ket{E_{j,{1}}}}}
+    \right)\nn[10pt]
+    %
+    &\hspace{40pt}
+    +\left(
+    {\textcolor{green}{\hH_1\ket{E_{j,0}}}}
+    +{\textcolor{green}{\hH_{0}\ket{E_{j,0}}}}
+    +{\textcolor{green}{\hH_{-1}\ket{E_{j,0}}}}
+    +{\textcolor{green}{0\omega\ket{E_{j,{0}}}}}
+    \right)\nn[10pt]
+    %
+    &\hspace{60pt}
+    +\left(
+    +{\textcolor{red}{\hH_{1}\ket{E_{j,{-1}}}}}
+    +{\textcolor{red}{\hH_{0}\ket{E_{j,{-1}}}}}
+    +{\textcolor{red}{n\omega\ket{E_{j,{-1}}}}}
+    \right)\biggr]\nn[10pt]
+    &=q\sum_{j=0,1}
+    \ket{E_{j,{1}}}
+    +\ket{E_{j,{0}}}
+    +\ket{E_{j,{-1}}}
+\end{align}
+
+\begin{align}
+    \sum_{j=0,1}
+    \biggl[
+    &\left(
+    {\textcolor{blue}{\hH_0 \ket{E_{j,1}}}}
+    +{\textcolor{blue}{\hH_{-1} \ket{E_{j,1}}}}
+    -{\textcolor{blue}{n\omega \ket{E_{j,{1}}}}}
+    \right)\nn[10pt]
+    %
+    &\hspace{40pt}
+    +\left(
+    {\textcolor{green}{\hH_1\ket{E_{j,0}}}}
+    +{\textcolor{green}{\hH_{0}\ket{E_{j,0}}}}
+    +{\textcolor{green}{\hH_{-1}\ket{E_{j,0}}}}
+    +{\textcolor{green}{0\omega\ket{E_{j,{0}}}}}
+    \right)\nn[10pt]
+    %
+    &\hspace{60pt}
+    +\left(
+    +{\textcolor{red}{\hH_{1}\ket{E_{j,{-1}}}}}
+    +{\textcolor{red}{\hH_{0}\ket{E_{j,{-1}}}}}
+    +{\textcolor{red}{n\omega\ket{E_{j,{-1}}}}}
+    \right)\biggr]\nn[10pt]
+    &=q\sum_{j=0,1}
+    \ket{E_{j,{1}}}
+    +\ket{E_{j,{0}}}
+    +\ket{E_{j,{-1}}}
+\end{align}
+
+\begin{align}
+    \left(
+    \begin{array}{ccc}
+    \hH_0-\omega\hat{I} & \hat{H}_1& \mathcal{O}\\[10pt]
+    \hH_{-1} & \hH_0-\omega\hat{I} & \hat{H}_1 \\[10pt]
+     \mathcal{O}  & \hH_{-1} & \hH_0-\omega\hat{I}
+    \end{array}
+    \right)
+    \left(
+    \begin{array}{c}
+    \ket{\Psi_1} \\[10pt]
+    \ket{\Psi_0} \\[10pt]
+    \ket{\Psi_{-1}}
+    \end{array}
+    \right)
+    =
+    q
+    \left(
+    \begin{array}{c}
+    \ket{\Psi_1} \\[10pt]
+    \ket{\Psi_0} \\[10pt]
+    \ket{\Psi_{-1}}
+    \end{array}
+    \right)
+\end{align}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Two-mode squeezed states}
+\begin{align}
+    [\hat{a}_{+}, \hat{a}_{+}^{\dagger}]&=[\hat{a}_{-}, \hat{a}_{-}^{\dagger}]=\hat{1}\\[10pt]
+    [\hat{a}_{+}, \hat{a}_{-}^{\dagger}]&=[\hat{a}_{-}, \hat{a}_{+}^{\dagger}]=0
+\end{align}
+直交位相振幅
+\begin{equation}
+    \hat{x}_1 \equiv \frac{1}{2}(\hat{a}_{+} + \hat{a}_{-}^\dagger),\ \ \ 
+    \hat{x}_2 \equiv \frac{1}{2}(-i\hat{a}_{+} + i\hat{a}_{-}^\dagger)
+\end{equation}
+スクイーズ演算子を
+\begin{equation}
+    \hat{S}(\epsilon, \zeta)\equiv
+    \exp{
+    \left\{
+    \frac{1}{2}(\zeta^\ast\hat{a}_{+}\hat{a}_{-}-\zeta\hat{a}_{+}^{\dagger}\hat{a}_{-}^{\dagger})
+    \right\}
+    },\ \ \ \zeta = re^{i\varphi}
+\end{equation}
+により導入する．定義より
+\begin{equation}
+    \hat{S}^\dagger(\zeta)=\hat{S}(-\zeta)=\hat{S}^{-1}(\zeta)
+\end{equation}
+が確認できる．つまりスクイーズ演算子はユニタリ演算子であることがわかる．
+
+一般スクイーズ状態はスクイーズ演算子$\hat{S}(\zeta)$を用いて，以下のように定義される：
+\begin{equation}
+    \ket{\zeta,\alpha}\equiv\hat{S}(\zeta)\ket{\alpha}
+    =\hat{S}(\zeta)\hat{D}(\alpha)\ket{0}
+\end{equation}
+
+
+また，スクイーズ演算子による生成消滅演算子$\hat{a}^\dagger$, $\hat{a}$のユニタリ変換は
+\begin{align}
+    \hat{S}^\dagger(\epsilon, \zeta)\hat{a}_{\pm}\hat{S}(\epsilon, \zeta)&=
+    \hat{a}_{\pm}\cosh{r} - \hat{a}^\dagger_{\mp} e^{i\varphi}\sinh{r}\\[10pt]
+    \hat{S}^\dagger(\epsilon,\zeta)\hat{a}_{\pm}^{\dagger}\hat{S}(\epsilon,\zeta)&=
+    \hat{a}_{\pm}^\dagger\cosh{r} - \hat{a}_{\mp} e^{-i\varphi}\sinh{r}
+\end{align}
+同様にして，
+\begin{align}
+    \hat{S}(\zeta)\hat{a}\hat{S}^\dagger(\zeta)&=
+    \hat{a}\cosh{r} + \hat{a}^\dagger e^{i\varphi}\sinh{r}\\[10pt]
+    \hat{S}(\zeta)\hat{a}^{\dagger}\hat{S}^\dagger(\zeta)&=
+    \hat{a}^\dagger\cosh{r} + \hat{a} e^{-i\varphi}\sinh{r}
+\end{align}
+
+2モードスクイーズド状態を$\ket{\psi}$とおくと，
+\begin{equation}
+    \ket{\psi}\hat{S}(\epsilon, \zeta)\hat{D}(\alpha_+)\hat{D}(\alpha)\ket{0}
+\end{equation}
+$\alpha_+=\alpha_-=0$, すなわち真空スクイーズド状態のときを考える．
+\begin{align}
+    \braket{\hat{x}_1\hat{x}_1^{\dagger} + \hat{x}_1^{\dagger}\hat{x}_1}
+    &=\Braket{0|\hat{S}^\dagger
+    \left(
+    \frac{\hat{a}_++\hat{a}_-^{\dagger}}{2}
+    \right)
+    \left(
+    \frac{\hat{a}_+^{\dagger}+\hat{a}_-}{2}
+    \right)
+    +
+    \left(
+    \frac{\hat{a}_+^{\dagger}+\hat{a}_-}{2}
+    \right)
+    \left(
+    \frac{\hat{a}_++\hat{a}_-^{\dagger}}{2}
+    \right)
+    \hat{S}
+    |0}\nn[10pt]
+    %%%
+    &=\frac{1}{4}\Braket{0|\hat{S}^\dagger
+    \left(
+    \hat{a}_++\hat{a}_-^{\dagger}
+    \right)
+    \left(
+    \hat{a}_+^{\dagger}+\hat{a}_-
+    \right)
+    +
+    \left(
+    \hat{a}_+^{\dagger}+\hat{a}_-
+    \right)
+    \left(
+    \hat{a}_++\hat{a}_-^{\dagger}
+    \right)
+    \hat{S}
+    |0}\nn[10pt]
+     %%%
+    &=\frac{1}{4}\Braket{0|\hat{S}^\dagger
+    \left(
+    \hat{a}_+\hat{a}_+^{\dagger}+\hat{a}_+\hat{a}_-
+    +\hat{a}_-^{\dagger}\hat{a}_+^{\dagger}+\hat{a}_-^{\dagger}\hat{a}_-
+    \right)
+    +
+    \left(
+    \hat{a}_+^{\dagger}\hat{a}_++\hat{a}_+^{\dagger}\hat{a}_-^{\dagger}
+    +\hat{a}_-\hat{a}_+ + \hat{a}_-\hat{a}_-^{\dagger}
+    \right)
+    \hat{S}
+    |0}\nn[10pt]
+    %%%%%%%%%%%
+    &=\frac{1}{4}\biggl[
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{a}_+^{\dagger}\hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{a}_-\hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{a}_+^{\dagger}
+    \hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{a}_-
+    \hat{S}|0}\nn[10pt]
+    %
+    &+\braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{a}_+
+    \hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{a}_-^{\dagger}
+    \hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{a}_+
+    \hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{a}_-^{\dagger}
+    \hat{S}|0}\biggr]\nn[10pt]
+    %
+    &=\frac{1}{4}2(\cosh^2{r}+\sinh^2{r}-e^{-i\varphi}\sinh{r}\cosh{r}-e^{i\varphi}\sinh{r}\cosh{r})\nn[10pt]
+    %
+    &=\frac{1}{2}(\cosh^2{r}+\sinh^2{r}-(e^{-i\varphi}+e^{i\varphi})/2 \cdot 2\sinh{r}\cosh{r})\nn[10pt]
+    %
+    &=\frac{1}{2}(\cosh{2r}-\cos{\varphi}\sinh{2r})
+\end{align}
+
+
+ここで各項を計算すると以下のようになることを用いた：
+\begin{align}
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{a}_+^{\dagger}\hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{S}\hat{S}^\dagger\hat{a}_+^{\dagger}\hat{S}|0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{+}\cosh{r} - \hat{a}^\dagger_{-} e^{i\varphi}\sinh{r})
+    (\hat{a}_{+}^\dagger\cosh{r} - \hat{a}_{-} e^{-i\varphi}\sinh{r})|0}\nn[10pt]
+    &=\braket{0|\hat{a}_{+}\hat{a}_{+}^\dagger\cosh^2{r} 
+    -\hat{a}_{+}\hat{a}_{-} e^{-i\varphi}\sinh{r}\cosh{r}
+    - \hat{a}^\dagger_{-} \hat{a}_{+}^\dagger e^{i\varphi}\sinh{r}\cosh{r}
+    - \hat{a}_{-}^\dagger\hat{a}_{-}\sinh^2{r}|0}\nn[10pt]
+    &=\cosh^2{r}
+\end{align}
+\begin{align}
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{a}_-\hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{S}\hat{S}^\dagger\hat{a}_-\hat{S}|0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{+}\cosh{r} - \hat{a}^\dagger_{-} e^{i\varphi}\sinh{r})
+    (\hat{a}_{-}\cosh{r} - \hat{a}^\dagger_{+} e^{i\varphi}\sinh{r})
+    |0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{+}\hat{a}_{-}\cosh^2{r} -\hat{a}_{+}\hat{a}^\dagger_{+} e^{i\varphi}\sinh{r}\cosh{r} 
+    - \hat{a}^\dagger_{-}\hat{a}_{-} e^{i\varphi}\sinh{r}\cosh{r}
+    + \hat{a}^\dagger_{-}\hat{a}^\dagger_{+} e^{2i\varphi}\sinh^2{r}
+    |0}\nn[10pt]
+    &=-e^{i\varphi}\sinh{r}\cosh{r} 
+\end{align}
+\begin{align}
+    %
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{a}_+^{\dagger}
+    \hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{S}\hat{S}^\dagger\hat{a}_+^{\dagger}
+    \hat{S}|0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{-}^\dagger\cosh{r} - \hat{a}_{+} e^{-i\varphi}\sinh{r})
+    (\hat{a}_{+}^\dagger\cosh{r} - \hat{a}_{-} e^{-i\varphi}\sinh{r})
+    |0}\nn[10pt]
+    &=\braket{0|\hat{a}_{-}^\dagger\hat{a}_{+}^\dagger\cosh^2{r} 
+    - \hat{a}_{-}^\dagger\hat{a}_{-} e^{-i\varphi}\sinh{r}\cosh^2{r}
+    - \hat{a}_{+} \hat{a}_{+}^\dagger e^{-i\varphi}\sinh{r}\cosh{r} 
+    -\hat{a}_{+} \hat{a}_{-} e^{-2i\varphi}\sinh^2{r}
+    |0}
+    \nn[10pt]
+    &=-e^{-i\varphi}\sinh{r}\cosh{r}
+\end{align}
+\begin{align}
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{a}_-
+    \hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{S}\hat{S}^\dagger\hat{a}_-
+    \hat{S}|0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{-}^\dagger\cosh{r} - \hat{a}_{+} e^{-i\varphi}\sinh{r})
+    (\hat{a}_{-}\cosh{r} - \hat{a}^\dagger_{+} e^{i\varphi}\sinh{r})
+    |0}\nn[10pt]
+    &=\braket{0|\hat{a}_{-}^\dagger\hat{a}_{-}\cosh^2{r} 
+    - \hat{a}_{-}^\dagger\hat{a}^\dagger_{+} e^{i\varphi}\sinh{r}\cosh{r}
+    - \hat{a}_{+}\hat{a}_{-}e^{-i\varphi}\sinh{r})\cosh{r} 
+    + \hat{a}_{+}\hat{a}^\dagger_{+} \sinh^2{r}
+    |0}\nn[10pt]
+    &=\sinh^2{r}
+\end{align}
+\begin{align}
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{a}_+
+    \hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{S}\hat{S}^\dagger\hat{a}_+
+    \hat{S}|0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{+}^\dagger\cosh{r} - \hat{a}_{-} e^{-i\varphi}\sinh{r})
+    (\hat{a}_{+}\cosh{r} - \hat{a}^\dagger_{-} e^{i\varphi}\sinh{r})
+    |0}\nn[10pt]
+    &=\braket{0|
+    \hat{a}_{+}^\dagger\hat{a}_{+}^\dagger\cosh^2{r} 
+    - \hat{a}_{+}^\dagger\hat{a}_{-} e^{-i\varphi}\sinh{r}\cosh{r}
+    -\hat{a}_{-} \hat{a}_{+} e^{-i\varphi}\sinh{r}\cosh{r} 
+    + \hat{a}_{-}\hat{a}_{-}^\dagger \sinh^2{r}
+    |0}\nn[10pt]
+    &=-\sinh^2{r}
+\end{align}
+\begin{align}
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{a}_-^{\dagger}
+    \hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{S}\hat{S}^\dagger\hat{a}_-^{\dagger}
+    \hat{S}|0}\nn[10pt]
+    &=
+    \braket{0|(\hat{a}_{+}^\dagger\cosh{r} - \hat{a}_{-} e^{-i\varphi}\sinh{r})
+    (\hat{a}_{-}^\dagger\cosh{r} - \hat{a}_{+} e^{-i\varphi}\sinh{r})
+    |0}\nn[10pt]
+    &=
+    \braket{0| 
+    \hat{a}_{+}^\dagger\hat{a}_{-}^\dagger\cosh^2{r} 
+    - \hat{a}_{+}^\dagger\hat{a}_{+} e^{-i\varphi}\sinh{r}\cosh{r}
+    -\hat{a}_{-} \hat{a}_{-}^\dagger e^{-i\varphi}\sinh{r}\cosh{r} 
+    +\hat{a}_{-}\hat{a}_{+} e^{-2i\varphi}\sinh^2{r}
+    |0}\nn[10pt]
+    &=-e^{-i\varphi}\sinh{r}\cosh{r}
+\end{align}
+\begin{align}
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{a}_+
+    \hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{S}\hat{S}^\dagger\hat{a}_+
+    \hat{S}|0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{-}\cosh{r} - \hat{a}^\dagger_{+} e^{i\varphi}\sinh{r})
+    (\hat{a}_{+}\cosh{r} - \hat{a}^\dagger_{-} e^{i\varphi}\sinh{r})|0}\nn[10pt]
+    &=\braket{0|\hat{a}_{-}\hat{a}_{+}\cosh^2{r} 
+    - \hat{a}_{-}\hat{a}^\dagger_{-} e^{i\varphi}\sinh{r}\cosh{r}
+    - \hat{a}^\dagger_{+} \hat{a}_{+}e^{i\varphi}\sinh{r}\cosh{r} 
+    + \hat{a}^\dagger_{+} \hat{a}^\dagger_{-} e^{2i\varphi}\sinh^2{r}
+    |0}\nn[10pt]
+    &=-e^{i\varphi}\sinh{r}\cosh{r}
+\end{align}
+
+\begin{align}
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{a}_-^{\dagger}
+    \hat{S}|0}
+    &=\braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{S}\hat{S}^\dagger\hat{a}_-^{\dagger}
+    \hat{S}|0}\nn[10pt]
+    &=\braket{0|(\hat{a}_{-}\cosh{r} - \hat{a}^\dagger_{+} e^{i\varphi}\sinh{r})
+    (\hat{a}_{-}^\dagger\cosh{r} - \hat{a}_{+} e^{-i\varphi}\sinh{r})|0}\nn[10pt]
+    &=\braket{0|
+    \hat{a}_{-}\hat{a}_{-}^\dagger\cosh^2{r} 
+    - \hat{a}_{-} \hat{a}_{+} e^{-i\varphi}\sinh{r}\cosh{r}
+    - \hat{a}^\dagger_{+} \hat{a}_{-}^\dagger e^{i\varphi}\sinh{r}\cosh{r} 
+    + \hat{a}^\dagger_{+}\hat{a}_{+} \sinh^2{r}
+    |0}
+    \nn[10pt]
+    &=\cosh^2{r}
+\end{align}
+
+
+
+
+同様にして，$\hat{x}_2$についても
+\begin{equation}
+    \braket{\hat{x}_2\hat{x}_2^{\dagger} + \hat{x}_2^{\dagger}\hat{x}_2}
+    =\frac{1}{2}(\cosh{2r}+\cos{\varphi}\sinh{2r})
+\end{equation}
+が示せる．
+
+\begin{align}
+    \braket{\hat{x}_2\hat{x}_2^{\dagger} + \hat{x}_2^{\dagger}\hat{x}_2}
+    &=\Braket{0|\hat{S}^\dagger
+    \left(
+    \frac{-i(\hat{a}_+-\hat{a}_-^{\dagger})}{2}
+    \right)
+    \left(
+    \frac{-i(\hat{a}_+^{\dagger}-\hat{a}_-)}{2}
+    \right)
+    +
+    \left(
+    \frac{-i(\hat{a}_+^{\dagger}-\hat{a}_-)}{2}
+    \right)
+    \left(
+    \frac{-i(\hat{a}_+-\hat{a}_-^{\dagger})}{2}
+    \right)
+    \hat{S}
+    |0}\nn[10pt]
+    %%%
+    &=-\frac{1}{4}\Braket{0|\hat{S}^\dagger
+    \left(
+    \hat{a}_+-\hat{a}_-^{\dagger}
+    \right)
+    \left(
+    \hat{a}_+^{\dagger}-\hat{a}_-
+    \right)
+    +
+    \left(
+    \hat{a}_+-\hat{a}_-^{\dagger}
+    \right)
+    \left(
+    \hat{a}_+^{\dagger}-\hat{a}_-
+    \right)
+    \hat{S}
+    |0}\nn[10pt]
+     %%%
+    &=-\frac{1}{4}\Braket{0|\hat{S}^\dagger
+    \left(
+    \hat{a}_+\hat{a}_+^{\dagger}-\hat{a}_+\hat{a}_-
+    -\hat{a}_-^{\dagger}\hat{a}_+^{\dagger}+\hat{a}_-^{\dagger}\hat{a}_-
+    \right)
+    +
+    \left(
+    \hat{a}_+^{\dagger}\hat{a}_+-\hat{a}_+^{\dagger}\hat{a}_-^{\dagger}
+    -\hat{a}_-\hat{a}_+ + \hat{a}_-\hat{a}_-^{\dagger}
+    \right)
+    \hat{S}
+    |0}\nn[10pt]
+    %%%%%%%%%%%
+    &=\frac{1}{4}\biggl[
+    \braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{a}_+^{\dagger}\hat{S}|0}
+    %
+    -\braket{0|\hat{S}^\dagger
+    \hat{a}_+\hat{a}_-\hat{S}|0}
+    %
+    -\braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{a}_+^{\dagger}
+    \hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_-^{\dagger}\hat{a}_-
+    \hat{S}|0}\nn[10pt]
+    %
+    &+\braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{a}_+
+    \hat{S}|0}
+    %
+    -\braket{0|\hat{S}^\dagger
+    \hat{a}_+^{\dagger}\hat{a}_-^{\dagger}
+    \hat{S}|0}
+    %
+    -\braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{a}_+
+    \hat{S}|0}
+    %
+    +\braket{0|\hat{S}^\dagger
+    \hat{a}_-\hat{a}_-^{\dagger}
+    \hat{S}|0}\biggr]\nn[10pt]
+    %
+    &=\frac{1}{4}2(\cosh^2{r}+\sinh^2{r}+e^{-i\varphi}\sinh{r}\cosh{r}+e^{i\varphi}\sinh{r}\cosh{r})\nn[10pt]
+    %
+    &=\frac{1}{2}(\cosh^2{r}+\sinh^2{r}+(e^{-i\varphi}+e^{i\varphi})/2 \cdot 2\sinh{r}\cosh{r})\nn[10pt]
+    %
+    &=\frac{1}{2}(\cosh{2r}+\cos{\varphi}\sinh{2r})
+\end{align}
+
+
+\section{eigen Energy}
+
+$\beta = 43
+[-9264.388311781371, -9263.645791028603, -8689.51230897309, -8688.42990612944, -7483.672196504716,\\ -7482.230406091983, -6968.845446747174, -6967.009638478214, -6236.429464221302, -6234.425363656883,\\ -5767.1702378392, -5764.805394872297, -5249.290347674856, -5246.880038479066, -4818.817254190899,\\ -4816.228535782525, -4394.48067664673, -4391.890275022398, -4000.473659330187, -3997.847512055394,\\ -3623.1781238001345, -3620.558975144456, -3265.2228694015057, -3262.607206173962, -2925.180004171383,\\ -2922.574141645881, -2603.2443895870883, -2600.6492150091194, -2299.3157801166835, -2296.7332185391074,\\ -2013.4082792429474, -2010.840106337452, -1745.5207950516099, -1742.969236658556, -1495.6601281053152,\\ -1493.1279065960048, -1263.8349665555143, -1261.3255099171952, -1050.0583643686082, -1047.5760602045223,\\ -854.3499013754199, -851.9004862049596, -676.740136389349, -674.331300789045, -517.2789483465892, \\-514.9213319452595, -376.0528497271563, -373.761830526699, -253.21724946907605, -251.01573340865065, \-149.24164207303153, -147.18214413863674, -63.300417347709846, -61.33687776952805, -8.963152614869612, -7.751852141860386,\\ 69.19704019292354, 69.84938723882786, 85.968716864145, 86.388752105323]
+$
+\begin{align}
+    85.968716864145-69.19704019292354\\
+    86.388752105323-69.84938723882786
+\end{align}
+
+56.23421424968498, 57.154900571426865, 72.55965640764491, 73.1609142402740
+
+
+\section{Quantum anealing with KPO}
+真空状態が初期ハミルトニアンの基底状態であるという条件を満たすために、初期ハミルトニアンが正の半正定値になるように$\xi_0$を設定する。これは初期条件として十分で、初期状態ではポンピング率$p$は$0$であり、したがって真空状態は初期ハミルトニアンの ゼロ固有値, 固有状態であるからである。この条件は、$\Delta-\xi_0\lambda_{\rm{max}}\geq0$[50] (ここで$\lambda_{\rm{max}}$は結合行列$J$の最大固有値)のときに満たされる。なぜなら、そのときデチューニング項と結合項は正の半正定値演算子となり、カー項も正の半正定値となる。線形結合の物理的意味は、2つのKPO間の光子交換である。これは、2つのKPOを直接結合させるか、あるいは遠く離れた共鳴結合共振器を用いることで容易に実現できる。後者の場合、共振器の項を断熱的に除去することで線形結合のハミルトニアンを得ることができる。表IIに示すKPOネットワークの対応する古典モデルは、単一KPOの場合と同じ方法で導かれる。古典モデルにおける分岐点（KPOネットワークの閾値）は、$p_{\rm{th}}=\Delta-\xi_0\lambda_{\rm{max}}$ で与えられる[50]。量子モデルにおける正の半正定値初期ハミルトニアンの上記条件は、古典モデルにおける非負の閾値に相当する。
+
+
+
+we find a resonance around 1.25 mhz from the simulation
+
+
+on the other hand, by diagonaling the hamiltonian, 
+
+
+we obtain an energy difefrence of e45＝1.25 mhz and e12＝0.4
+
+so we interplete that the resonance peak observed in the numerical simulatin comes from e45 and e12.
+
+also e23 and e45 are comparable with the rabi frequency lambda.
+
+this means that the power broadening occurs for this peak, which makes it difficult to specify the accurate resonance frequency in the numerical simulation.
+
+
+\section{Introductionの作成準備}
+\KM{
+Quantum annealing (QA) is one of the techniques to solve combinational optimization problems~\cite{kadowaki1998quantum}. The solution of the problems can be embedded into a ground state of the Ising Hamiltonian, and we obtain the ground state after performing QA. Recently, QA with Kerr nonlinear parametric oscillators (KPOs), which can be realized by a superconducting circuit, was proposed ~\cite{goto2016bifurcation,puri2017quantum}. Starting from vacuum states, we increase parametric driving terms in an adiabatic way, and the network of the KPOs finds a ground state of the Hamiltonian via a bifurcation process. Importantly, the Hamiltonian of the KPOs can be mapped into an Ising Hamiltonian. However, for the accurate mapping from the KPO Hamiltonian to the Ising Hamiltonian, we need to know the average number of the photons of each KPO. Although there is a formula to calculate the number of the photons of the KPO with some approximations, the calculated value can be different from the actual value~\cite{kanao2021high,}. So a reliable way to estimate of the number of the photons of the KPO is essential to perform QA. }
+
+\KM{
+In this paper, we propose a scheme to estimate the number of photons of the KPO from a spectroscopic meas-urement. Suppose that the KPO is coupled with a qubit such as a transmon qubit, as shown Fig. 1. We show that a spec-troscopic measurement on the ancillary qubit provides an estimate of the number of the photons of the KPO. We evaluate the performance of our scheme with numerical simulations by solving a master equation.}
+In the Kerr-type approach, parametrically two-photon
+driven oscillators with large Kerr nonlinearity~\cite{PhysRevA.44.4704,PhysRevA.48.2494}
+are used for qubits.
+量子分岐現象の最初の発見は~\cite{PhysRevA.44.4704,PhysRevA.48.2494}で議論されている．その後\cite{cochrane1999macroscopically}でKPOを回路モデル量子コンピュータの量子ビットとして使う提案が存在したよう．ノイズに対してロバストなqubitとして利用しようという提案がなされている．
+KPOは初めゲート型量子コンピュータのキュービットとして応用することが提案された．
+
+
+その後，ノイズがない場合の量子アニーリングとして，後藤さんが提案
+
+その後，puriがノイズありの場合について議論している．
+
+
+
+\KM{
+Quantum annealing (QA) is one of the techniques to solve combinational optimization problems~\cite{kadowaki1998quantum}. The solution of the problems can be embedded into a ground state of the Ising Hamiltonian, and we obtain the ground state after performing QA.}
+
+\KM{Recently, QA with Kerr nonlinear parametric oscillators (KPOs), which is based on a two-photon-driven Kerr-nonlinear resonators~\cite{PhysRevA.44.4704,PhysRevA.48.2494}, was proposed~\cite{goto2016bifurcation,puri2017quantum}.
+The application of KPOs as qubits in gate based quantum computers has first been proposed.
+After, other applications have also been proposed not only QA but also gate-based universal quantum computation, Boltzmann sampling, studies of quantum critical phenomena.
+KPOs can be realized experimentally by a superconducting parametric circuit.}
+
+
+\KM{Starting from vacuum states, we increase parametric driving terms in an adiabatic way, and the network of the KPOs finds a ground state of the Hamiltonian via a bifurcation process. Importantly, the Hamiltonian of the KPOs can be mapped into an Ising Hamiltonian. However, for the accurate mapping from the KPO Hamiltonian to the Ising Hamiltonian, we need to know the average number of the photons of each KPO. Although there is a formula to calculate the number of the photons of the KPO with some approximations, the calculated value can be different from the actual value~\cite{kanao2021high,}. So a reliable way to estimate of the number of the photons of the KPO is essential to perform QA. }
+
+\KM{
+In this paper, we propose a scheme to estimate the number of photons of the KPO from a spectroscopic measurement. Suppose that the KPO is coupled with a qubit such as a transmon qubit, as shown Fig. 1. We show that a spectroscopic measurement on the ancillary qubit provides an estimate of the number of the photons of the KPO. We evaluate the performance of our scheme with numerical simulations by solving a master equation.}
+
+\KM{The paper is organized as follows. In Sec. II, we introduce a model of a KPO coupled with a qubit. In Sec. III, we describe our scheme to estimate the number of the photons of the KPO by spectroscopic measurements.
+In Sec. IV, we show the results of numerical simulation using the GKSL master equation.
+In Sec. V, we conclude our discussion.
+Throughout this paper, we set $\hbar=1$.}
+
+より広いクラスの実問題を解くためには、全共通のスピン結合を持つイジング問題用のQbMが必要である。しかし、この目的のためには、オリジナルのQbMは文字通り、KPO間の2体相互作用の全てを必要とし、そのスケーラブルな実装は知られていませんでした。そのため、全共通スピン結合のためのQbMの代替アーキテクチャが提案されています。参考文献41のアーキテクチャは 41はLechner-Hauke-Zoller (LHZ) スキームに基づいており、局所的な4体相互作用を持つKPOの2次元アレイによって、すべてのスピン結合を実現することが可能である。
+
+4体相互作用で接続された4つのKPOがプラケットを構成し、そのプラケットが全体のアレイを構成している。QbMの場合、4体相互作用は単一のジョセフソン接合における4波混合によって実現されるため41、このアーキテクチャはLHZ方式の大規模実装の有力候補となる。この単純な4体相互作用は、フラックス量子ビット50やトランスモン量子ビット51を用いたLHZ方式における量子アニーラーの利点となり得るが、4体相互作用には複数のアンシラ量子ビットによる複雑な回路が必要となる可能性がある。しかし，これまでの数値研究では，LHZ方式でのKPOの数は我々の知る限り3つまでに制限されていた（ref.41の4つのKPOの数値シミュレーションでは，3つのKPOが進化している）。41では，3つのKPOが分岐を経て時間発展し，もう1つはコヒーレントな状態で固定されている)．3つのKPOは1つのプラケットにあり、対称的である41。このような対称性は、複数のプラケットを持つ一般的なケースでは崩れる。このため、このアーキテクチャが大規模な実装に有効かどうかは明らかにされていない。この重要な問題を検証するために、ここでは、より多くのKPOを持つLHZ方式のKPOネットワーク（LHZ-QbM）を用いて断熱的量子計算を行う。このLHZ-QbMは複数のプラケットで構成され、非対称になる。LHZ方式の非対称性により，KPOの平均光子数が不均質になり，イジング問題の解法精度が低下することを見出した。そこで、我々は、KPOの量子状態をモニターすることなく、断熱的時間発展でデチューニングをスケジューリングすることにより、不均質性を低減させる方法を提案する。最後に、この方法によって解の精度が劇的に向上することを数値的に示す。この方法は、LHZ-QbMにおける任意の数のKPOに適用でき、したがって、その大規模な実装に適用できる。
+
+
+
+
+
+
+
+
+\section{Puri Intro}
+
+
+
+
+物理学、化学、生物学、社会科学など様々な分野で生じる難しい組合せ最適化問題の多くは、イジングハミルトニアンの基底状態を求めることに対応させることができます1-4。この問題はイジング問題と呼ばれ、一般にNP困難である5。量子アニーリングは、断熱的量子計算（AQC）6,7に基づき、イジング問題の解を求めることを目的とし、古典的アルゴリズムに比べて大幅な高速化が期待されています。AQCでは、系は些細な初期ハミルトニアンの非縮退基底状態から、計算問題をコード化した最終ハミルトニアンの基底状態までゆっくりと進化する。時間発展の過程で、系のエネルギースペクトルは変化し、断熱条件を満たすためには、進化は瞬時の基底状態と励起状態の間の逆最小エネルギーギャップと比較して遅くなければなりません。このギャップの問題サイズに対するスケーリング挙動が、断熱的アニーリングアルゴリズムの効率を決定する。
+
+量子アニーリングを行うために、イジングスピンは量子系の2つのレベル、すなわち量子ビットにマッピングされ、最適化問題はこれらの量子ビット間の相互作用に符号化されます。核磁気スピン8や超伝導量子ビット9,10など、さまざまな物理的実現による断熱的最適化が実証されています。しかし、これらのシステムがノイズの存在下で大きな問題を解くことができるかどうかについては、多大な努力にもかかわらず、未解決のままです11。そのため、ノイズに対する耐性を向上させた実装を探索することが急務となっています。一般的なイジング問題は、イジングスピンの完全連結グラフ上で定義されます。しかし、物理系は局所的な結合を自然に実現するため、このような長距離の相互作用を持つ大きな問題を効率的に埋め込むことは困難です。一つのアプローチとして、イジングスピンの完全連結グラフをいわゆるキメラグラフに埋め込む方法があります12,13。また、最近ではLechner, Hauke and Zoller (LHZ) によって、N個の論理イジングスピンをM個の物理スピンにM-N+1制約でエンベッドする方式が提案されている。各物理スピンは、論理スピンのペアの相対的な配置を表しています。論理スピンにおける全対全連結イジング問題は、論理結合を物理スピンに作用する局所場にマッピングし、問題に依存しない四体結合で制約を強制することで実現される。このシンプルな設計は、局所場の精密な制御を必要とするだけであり、大きな問題サイズへのスケーリングに魅力的である。ここでは、イジング問題を2光子駆動のカー非線形共振器（KNR）のネットワークにエンコードすることを提案します。この方式では、1つのイジングスピンが逆位相の2つのコヒーレント状態にマッピングされ、駆動部の回転フレームにおいて2光子駆動型KNRの2回縮退固有空間を構成します15。ここでは、量子スピンを準直交コヒーレント状態に符号化することにより、量子断熱アルゴリズムを実現することを提案する。このシステムでは、共振器からの単一光子損失が主な誤差要因になる。しかし、コヒーレント状態は光子ジャンプ演算子の作用下で不変であるため、符号化されたイジングスピンはビット反転に対して安定化される。我々は、量子アニーリングプラットフォームの回路QED実装について述べる。そこでは、有効局所磁場とKNR間の四体結合に依存するLHZスキームを用いて、イジングスピンの完全連結グラフが埋め込まれている。共振器を真空に初期化し、単一サイト駆動のみを変化させて、埋め込みイジング問題の基底状態まで系を断熱的に進化させることで、断熱的最適化を行う。この実現により、接続性、スピン-スピン結合の符号や振幅に制限を受けることなく、任意のイジング問題を符号化することができるようになりました。コヒーレント状態の位相でイジングスピンを符号化することは、古典イジングマシンの文脈で以前に研究されています16-21。量子的なケースはref.22で検討されています。しかし、この先行研究では、ノイズ解析を行わず、理想化された量子系に焦点を当て、これらのアイデアの実用的な実装を考慮していませんでした。これに対して、本研究では、最も支配的な損失メカニズムである単一光子損失が存在する場合の量子アニーリングの性能を考慮した。その結果、従来の量子ビットの実装と同等のノイズ強度であれば、断熱プロトコル中に光子の損失によってシステムが瞬時に基底状態から励起状態のいずれかにジャンプする確率が大幅に抑制されることを数値的に示しました。このように光量子損失による悪影響を受けにくいため、2光子駆動型KNRにマッピングされた最適化問題において高い成功確率を得ることができます。
+
+
+ このノイズ耐性と、共振器電界振幅のホモダイン測定による簡単な初期化・最終状態検出を組み合わせることで、良好なノイズ耐性を持つ大規模量子アニーラーの実現への扉が開かれました。
+
+
+
+
+\section{Kanao san 論文まとめ}
+幅広い問題を解くためには，QbMs（量子分岐マシン）の全結合のスピン相互作用が必要となる．しかし，後藤さんたちのオリジナルのQbMではKPO間の2体全結合を繰り返し使わなければならない．これのscalableな実装方法は知られていなかった．
+したがって，別のarchitecturesが提案されている．その中でもPuriらはLHZ schemeをもとにした実装を提案した．全結合のイジング問題を4体相互作用（plaquette）により実現する．
+この方式は大規模な実装を可能にする候補となっている．4体相互作用はsingle josepson junctionの4波混合により実現できるため，このsimpleな4体相互作用はflux qubitやtransmonを使ったLHZ scheme QAと比較して利点がある．なぜならばflux qubit と トランズモンをつかったQA with LHZは多くの補助量子ビットを用いた複雑な回路が必要であるからである．
+しかし，Puriらの研究ではLHZ schemeのKPOの数が3つに限られていた．（彼らは4つのKPOでsimulationを行っており，3つは分岐によって時間発展させ，残り一つはコヒーレント状態に固定していた）3つのKPOはプラケットの1つの中にあり，対称性がある．プラケットがたくさんあれば，この対称性が壊れる．したがって，大規模な系を考えた場合この実装がちゃんと動くかは明らかになっていない．この重要な問題を検証するために，多体KPOにLHZ方式QAを実行する．このLHZ-QbMは多くのプラケットからなっているため，非対称である．
+
+わかったこと：\\
+
+・LHZ scheme（多体）の非対称性によって，KPOの平均光子数が不均質になる．
+
+
+・この不均質性がイジング問題の精度を劣化させること
+
+金尾さんたちの提案はこの不均質性を取り除くことである．量子断熱変化の途中，KPOの量子状態を監視せずにKPOのdetuningを調整することで，この不均質を取り除く．これにより，劇的に精度が向上することを数値的に確かめた．任意の数のKPOによるLZHに適用できるため，大規模な実装を可能にする．
+
+
+
+\section{Puriさん論文まとめ}
+
+
+
+
+\section{Intro用}
+1 KPOについて
+2QAについて
+3QA with KPOについて
+4LHZ schemeについて
+5問題点
+6我々のていあんについて
+QA with KPOはイジング問題をtwo-photon-driven KNRへエンコードすることにより実現される．単一イジングスピンを互いに逆位相の2つのコヒーレント状態をマップする．ここで，errorの主な原因となるのはresonatorからのsingle photon loss である．
+
+KPO量子アニーリングの仕組みを説明．
+
+真空状態から出発して、パラメトリック駆動項を断熱的に増加させ、KPOのネットワークは分岐過程を経てハミルトニアンの基底状態を見出す。重要なのは、KPOのハミルトニアンはイジングハミルトニアンに写像できることである。しかし、KPOのハミルトニアンからイジングハミルトニアンへの正確なマッピングのためには、各KPOの平均光子数を知る必要がある。KPO の光子数を近似的に計算する式はあるが、計算値は実際の値と異なることがある[?,?]。そのため，品質保証を行うためには，KPOの光子数を確実に推定する方法が不可欠である．本論文では、分光測定からKPOの光子数を推定する方式を提案する。図1に示すように、KPOがトランスモン量子ビットのような量子ビットと結合していると仮定する。我々は、補助的な量子ビットの分光測定から、KPOの光子数の推定値が得られることを示す。本方式の性能を、マスター方程式を解く数値シミュレーションで評価する。
+
+
+KPOの実装にはLHZが使われている．PuriらはLHZ schemeを使うことで，ノイズに耐性のあるall-to-allな量子アニーリングの実装を提案した．
+
+
+
+Puri等の提案はscalableでノイズに対して堅牢なQAの物理的なプラットホームの提案である．全結合のイジング問題を4体相互作用（plaquette）により実現する．多くのプラケットにより対称性が壊れることで，LHZ scheme（多体）の非対称性によって，KPOの平均光子数が不均質になる．そして，この不均質性がイジング問題の精度を劣化させることが分かっている．したがって，KPO一つ一つの光子数を測定することは重要である．
+
+
+Puriさんたちはsingle-photon lossがある場合を考慮し，結果，同じくらいのノイズ強度があるqubitの実装に比べて，断熱過程中のphoton-lossの影響でシステムが瞬時に基底状態から，励起状態のどれか一つにjumpする確率を大幅に抑制できることを数値的に示した．
+ノイズ耐性と単純な初期化，resonator's field amplitudesのホモダイン測定による最終状態検出によって，ノイズ耐性の有利性を持つ大規模な量子アニーラーを実現することが可能である．
+
+幅広い問題を解くためには，QbMs（量子分岐マシン）の全結合のスピン相互作用が必要となる．しかし，後藤さんたちのオリジナルのQbMではKPO間の2体全結合を繰り返し使わなければならない．これのscalableな実装方法は知られていなかった．
+したがって，別のarchitecturesが提案されている．その中でもPuriらはLHZ schemeをもとにした実装を提案した．
+この方式は大規模な実装を可能にする候補となっている．4体相互作用はsingle josepson junctionの4波混合により実現できるため，このsimpleな4体相互作用はflux qubitやtransmonを使ったLHZ scheme QAと比較して利点がある．なぜならばflux qubit と トランズモンをつかったQA with LHZは多くの補助量子ビットを用いた複雑な回路が必要であるからである．
+しかし，Puriらの研究ではLHZ schemeのKPOの数が3つに限られていた．（彼らは4つのKPOでsimulationを行っており，3つは分岐によって時間発展させ，残り一つはコヒーレント状態に固定していた）3つのKPOはプラケットの1つの中にあり，対称性がある．プラケットがたくさんあれば，この対称性が壊れる．したがって，大規模な系を考えた場合この実装がちゃんと動くかは明らかになっていない．この重要な問題を検証するために，多体KPOにLHZ方式QAを実行する．このLHZ-QbMは多くのプラケットからなっているため，非対称である．
+
+わかったこと：\\
+
+・LHZ scheme（多体）の非対称性によって，KPOの平均光子数が不均質になる．
+
+
+・この不均質性がイジング問題の精度を劣化させること
+
+金尾さんたちの提案はこの不均質性を取り除くことである．量子断熱変化の途中，KPOの量子状態を監視せずにKPOのdetuningを調整することで，この不均質を取り除く．これにより，劇的に精度が向上することを数値的に確かめた．任意の数のKPOによるLZHに適用できるため，大規模な実装を可能にする．

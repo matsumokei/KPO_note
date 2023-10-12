@@ -1,0 +1,295 @@
+\begin{thebibliography}{10}
+
+\bibitem{goto2016bifurcation}
+Hayato Goto.
+\newblock Bifurcation-based adiabatic quantum computation with a nonlinear
+  oscillator network.
+\newblock {\em Scientific Reports}, 6(1):1--8, 2016.
+
+\bibitem{goto2019quantum}
+Hayato Goto.
+\newblock Quantum computation based on quantum adiabatic bifurcations of
+  kerr-nonlinear parametric oscillators.
+\newblock {\em Journal of the Physical Society of Japan}, 88(6):061015, 2019.
+
+\bibitem{goto2019demand}
+Hayato Goto, Zhirong Lin, Tsuyoshi Yamamoto, and Yasunobu Nakamura.
+\newblock On-demand generation of traveling cat states using a parametric
+  oscillator.
+\newblock {\em Phys. Rev. A}, 99(2):023838, 2019.
+
+\bibitem{wang2019quantum}
+Zhaoyou Wang, Marek Pechal, E~Alex Wollack, Patricio Arrangoiz-Arriola, Maodong
+  Gao, Nathan~R Lee, and Amir~H Safavi-Naeini.
+\newblock Quantum dynamics of a few-photon parametric oscillator.
+\newblock {\em Phys. Rev. X}, 9(2):021049, 2019.
+
+\bibitem{grimm2020stabilization}
+Alexander Grimm, Nicholas~E Frattini, Shruti Puri, Shantanu~O Mundhada, Steven
+  Touzard, Mazyar Mirrahimi, Steven~M Girvin, Shyam Shankar, and Michel~H
+  Devoret.
+\newblock Stabilization and operation of a kerr-cat qubit.
+\newblock {\em Nature}, 584(7820):205--209, 2020.
+
+\bibitem{yamaji2022spectroscopic}
+Tomohiro Yamaji, Sota Kagami, Aiko Yamaguchi, Tetsuro Satoh, Kazuki Koshino,
+  Hayato Goto, ZR~Lin, Yasunobu Nakamura, and Tsuyoshi Yamamoto.
+\newblock Spectroscopic observation of the crossover from a classical duffing
+  oscillator to a kerr parametric oscillator.
+\newblock {\em Phys. Rev. A}, 105(2):023519, 2022.
+
+\bibitem{PhysRevA.44.4704}
+G.~J. Milburn and C.~A. Holmes.
+\newblock Quantum coherence and classical chaos in a pulsed parametric
+  oscillator with a kerr nonlinearity.
+\newblock {\em Phys. Rev. A}, 44:4704--4711, Oct 1991.
+
+\bibitem{PhysRevA.48.2494}
+B.~Wielinga and G.~J. Milburn.
+\newblock Quantum tunneling in a kerr medium with parametric pumping.
+\newblock {\em Phys. Rev. A}, 48:2494--2496, Sep 1993.
+
+\bibitem{bourassa2012josephson}
+J~Bourassa, F~Beaudoin, Jay~M Gambetta, and A~Blais.
+\newblock Josephson-junction-embedded transmission-line resonators: From kerr
+  medium to in-line transmon.
+\newblock {\em Phys. Rev. A}, 86(1):013814, 2012.
+
+\bibitem{meaney2014quantum}
+Charles~H Meaney, Hyunchul Nha, Timothy Duty, and Gerard~J Milburn.
+\newblock Quantum and classical nonlinear dynamics in a microwave cavity.
+\newblock {\em EPJ Quantum Technology}, 1(1):1--23, 2014.
+
+\bibitem{leghtas2015confining}
+Zaki Leghtas, Steven Touzard, Ioan~M Pop, Angela Kou, Brian Vlastakis, Andrei
+  Petrenko, Katrina~M Sliwa, Anirudh Narla, Shyam Shankar, Michael~J Hatridge,
+  et~al.
+\newblock Confining the state of light to a quantum manifold by engineered
+  two-photon loss.
+\newblock {\em Science}, 347(6224):853--857, 2015.
+
+\bibitem{cochrane1999macroscopically}
+Paul~T Cochrane, Gerard~J Milburn, and William~J Munro.
+\newblock Macroscopically distinct quantum-superposition states as a bosonic
+  code for amplitude damping.
+\newblock {\em Physical Review A}, 59(4):2631, 1999.
+
+\bibitem{goto2016universal}
+Hayato Goto.
+\newblock Universal quantum computation with a nonlinear oscillator network.
+\newblock {\em Phys. Rev. A}, 93(5):050301, 2016.
+
+\bibitem{puri2017engineering}
+Shruti Puri, Samuel Boutin, and Alexandre Blais.
+\newblock Engineering the quantum states of light in a kerr-nonlinear resonator
+  by two-photon driving.
+\newblock {\em npj Quantum Information}, 3(1):1--7, 2017.
+
+\bibitem{puri2020bias}
+Shruti Puri, Lucas St-Jean, Jonathan~A Gross, Alexander Grimm, Nicholas~E
+  Frattini, Pavithran~S Iyer, Anirudh Krishna, Steven Touzard, Liang Jiang,
+  Alexandre Blais, et~al.
+\newblock Bias-preserving gates with stabilized cat qubits.
+\newblock {\em Science Advances}, 6(34):eaay5901, 2020.
+
+\bibitem{bartolo2016exact}
+Nicola Bartolo, Fabrizio Minganti, Wim Casteels, and Cristiano Ciuti.
+\newblock Exact steady state of a kerr resonator with one-and two-photon
+  driving and dissipation: Controllable wigner-function multimodality and
+  dissipative phase transitions.
+\newblock {\em Phys. Rev. A}, 94(3):033841, 2016.
+
+\bibitem{minganti2018spectral}
+Fabrizio Minganti, Alberto Biella, Nicola Bartolo, and Cristiano Ciuti.
+\newblock Spectral theory of liouvillians for dissipative phase transitions.
+\newblock {\em Phys. Rev. A}, 98(4):042118, 2018.
+
+\bibitem{dykman2018interaction}
+MI~Dykman, Christoph Bruder, Niels L{\"o}rch, and Yaxing Zhang.
+\newblock Interaction-induced time-symmetry breaking in driven quantum
+  oscillators.
+\newblock {\em Phys. Rev. B}, 98(19):195444, 2018.
+
+\bibitem{rota2019quantum}
+Riccardo Rota, Fabrizio Minganti, Cristiano Ciuti, and Vincenzo Savona.
+\newblock Quantum critical regime in a quadratically driven nonlinear photonic
+  lattice.
+\newblock {\em Physical Review Letters}, 122(11):110405, 2019.
+
+\bibitem{puri2017quantum}
+Shruti Puri, Christian~Kraglund Andersen, Arne~L Grimsmo, and Alexandre Blais.
+\newblock Quantum annealing with all-to-all connected nonlinear oscillators.
+\newblock {\em Nature communications}, 8(1):1--9, 2017.
+
+\bibitem{kadowaki1998quantum}
+Tadashi Kadowaki and Hidetoshi Nishimori.
+\newblock Quantum annealing in the transverse ising model.
+\newblock {\em Phys. Rev. E}, 58(5):5355, 1998.
+
+\bibitem{farhi2001quantum}
+Edward Farhi, Jeffrey Goldstone, Sam Gutmann, Joshua Lapan, Andrew Lundgren,
+  and Daniel Preda.
+\newblock A quantum adiabatic evolution algorithm applied to random instances
+  of an np-complete problem.
+\newblock {\em Science}, 292(5516):472--475, 2001.
+
+\bibitem{morita2008mathematical}
+Satoshi Morita and Hidetoshi Nishimori.
+\newblock Mathematical foundation of quantum annealing.
+\newblock {\em Journal of Mathematical Physics}, 49(12):125210, 2008.
+
+\bibitem{lechner2015quantum}
+Wolfgang Lechner, Philipp Hauke, and Peter Zoller.
+\newblock A quantum annealing architecture with all-to-all connectivity from
+  local interactions.
+\newblock {\em Science Advances}, 1(9):e1500838, 2015.
+
+\bibitem{nigg2017robust}
+Simon~E Nigg, Niels L{\"o}rch, and Rakesh~P Tiwari.
+\newblock Robust quantum optimizer with full connectivity.
+\newblock {\em Science Advances}, 3(4):e1602273, 2017.
+
+\bibitem{onodera2020quantum}
+Tatsuhiro Onodera, Edwin Ng, and Peter~L McMahon.
+\newblock A quantum annealer with fully programmable all-to-all coupling via
+  floquet engineering.
+\newblock {\em npj Quantum Information}, 6(1):1--10, 2020.
+
+\bibitem{2020CmPhy...3..235G}
+Hayato {Goto} and Taro {Kanao}.
+\newblock {Quantum annealing using vacuum states as effective excited states of
+  driven systems}.
+\newblock {\em Communications Physics}, 3(1):235, December 2020.
+
+\bibitem{kanao2021high}
+Taro Kanao and Hayato Goto.
+\newblock High-accuracy ising machine using kerr-nonlinear parametric
+  oscillators with local four-body interactions.
+\newblock {\em npj Quantum Information}, 7(1):1--7, 2021.
+
+\bibitem{astafiev2010resonance}
+O~Astafiev, Alexandre~M Zagoskin, AA~Abdumalikov~Jr, Yu~A Pashkin, T~Yamamoto,
+  K~Inomata, Y~Nakamura, and Jaw~Shen Tsai.
+\newblock Resonance fluorescence of a single artificial atom.
+\newblock {\em Science}, 327(5967):840--843, 2010.
+
+\bibitem{masuda2021theoretical}
+S~Masuda, A~Yamaguchi, T~Yamaji, T~Yamamoto, T~Ishikawa, Y~Matsuzaki, and
+  S~Kawabata.
+\newblock Theoretical study of reflection spectroscopy for superconducting
+  quantum parametrons.
+\newblock {\em New Journal of Physics}, 23(9):093023, 2021.
+
+\bibitem{mallet2009single}
+Francois Mallet, Florian~R Ong, Agustin Palacios-Laloy, Francois Nguyen,
+  Patrice Bertet, Denis Vion, and Daniel Esteve.
+\newblock Single-shot qubit readout in circuit quantum electrodynamics.
+\newblock {\em Nature Physics}, 5(11):791--795, 2009.
+
+\bibitem{walter2017rapid}
+Theodore Walter, Philipp Kurpiers, Simone Gasparinetti, Paul Magnard, Anton
+  Poto{\v{c}}nik, Yves Salath{\'e}, Marek Pechal, Mintu Mondal, Markus
+  Oppliger, Christopher Eichler, et~al.
+\newblock Rapid high-fidelity single-shot dispersive readout of superconducting
+  qubits.
+\newblock {\em Physical Review Applied}, 7(5):054020, 2017.
+
+\bibitem{vijay2011observation}
+R~Vijay, DH~Slichter, and I~Siddiqi.
+\newblock Observation of quantum jumps in a superconducting artificial atom.
+\newblock {\em Physical Review Letters}, 106(11):110502, 2011.
+
+\bibitem{2022ssdmkm}
+K.~Matsumoto, A.~Yamaguchi, T.~Yamamoto, S.~Kawabata, and Y.~Matsuzaki.
+\newblock " pectroscopic estimation of the photon number for superconducting
+  kerr parametric oscillators ".
+\newblock {\em { \rm{ Ext. Abstr. Solid State Devices and Materials, 2022, p.
+  187}}}, (2022).
+
+\bibitem{johnson2010quantum}
+BR~Johnson, MD~Reed, Andrew~Addison Houck, DI~Schuster, Lev~S Bishop, Eran
+  Ginossar, JM~Gambetta, L~DiCarlo, L~Frunzio, SM~Girvin, et~al.
+\newblock Quantum non-demolition detection of single microwave photons in a
+  circuit.
+\newblock {\em Nature Physics}, 6(9):663--667, 2010.
+
+\bibitem{PhysRevApplied.14.044022}
+R.~Dassonneville, R.~Assouly, T.~Peronnin, P.~Rouchon, and B.~Huard.
+\newblock Number-resolved photocounter for propagating microwave mode.
+\newblock {\em Phys. Rev. Applied}, 14:044022, Oct 2020.
+
+\bibitem{PhysRevX.11.031045}
+Antoine Essig, Quentin Ficheux, Th\'eau Peronnin, Nathana\"el Cottet, Rapha\"el
+  Lescanne, Alain Sarlette, Pierre Rouchon, Zaki Leghtas, and Benjamin Huard.
+\newblock Multiplexed photon number measurement.
+\newblock {\em Phys. Rev. X}, 11:031045, Aug 2021.
+
+\bibitem{PhysRevA.103.023705}
+Jacob~C. Curtis, Connor~T. Hann, Salvatore~S. Elder, Christopher~S. Wang, Luigi
+  Frunzio, Liang Jiang, and Robert~J. Schoelkopf.
+\newblock Single-shot number-resolved detection of microwave photons with error
+  mitigation.
+\newblock {\em Phys. Rev. A}, 103:023705, Feb 2021.
+
+\bibitem{endo2020projecting}
+Suguru Endo, Yuichiro Matsuzaki, Kosuke Kakuyanagi, Shiro Saito, Neill Lambert,
+  and Franco Nori.
+\newblock Projecting an ultra-strongly-coupled system in a
+  non-energy-eigenbasis with a driven nonlinear resonator.
+\newblock {\em Scientific Reports}, 10(1):1--20, 2020.
+
+\bibitem{Mollow:1969zz}
+B.~R. Mollow.
+\newblock {Power Spectrum of Light Scattered by Two-Level Systems}.
+\newblock {\em Phys. Rev.}, 188:1969--1975, 1969.
+
+\bibitem{wu1994phase}
+Qilin Wu, Daniel~J Gauthier, and TW~Mossberg.
+\newblock Phase-sensitive dynamics of bichromatically driven two-level atoms.
+\newblock {\em Phys. Rev. A}, 49(3):R1519, 1994.
+
+\bibitem{wrigge2008efficient}
+Gert Wrigge, Ilja Gerhardt, Jaesuk Hwang, Gert Zumofen, and Vahid Sandoghdar.
+\newblock Efficient coupling of photons to a single molecule and the
+  observation of its resonance fluorescence.
+\newblock {\em Nature Physics}, 4(1):60--66, 2008.
+
+\bibitem{ulhaq2012cascaded}
+Ata Ulhaq, Stefanie Weiler, Sven~M Ulrich, Robert Ro{\ss}bach, Michael Jetter,
+  and Peter Michler.
+\newblock Cascaded single-photon emission from the mollow triplet sidebands of
+  a quantum dot.
+\newblock {\em Nature Photonics}, 6(4):238--242, 2012.
+
+\bibitem{xu2007coherent}
+Xiaodong Xu, Bo~Sun, Paul~R Berman, Duncan~G Steel, Allan~S Bracker, Dan
+  Gammon, and Lu~J Sham.
+\newblock Coherent optical spectroscopy of a strongly driven quantum dot.
+\newblock {\em Science}, 317(5840):929--932, 2007.
+
+\bibitem{laucht2017dressed}
+Arne Laucht, Rachpon Kalra, Stephanie Simmons, Juan~P Dehollain, Juha~T
+  Muhonen, Fahd~A Mohiyaddin, Solomon Freer, Fay~E Hudson, Kohei~M Itoh,
+  David~N Jamieson, et~al.
+\newblock A dressed spin qubit in silicon.
+\newblock {\em Nature Nanotechnology}, 12(1):61--66, 2017.
+
+\bibitem{wallraff2004strong}
+Andreas Wallraff, David~I Schuster, Alexandre Blais, Luigi Frunzio, R-S Huang,
+  Johannes Majer, Sameer Kumar, Steven~M Girvin, and Robert~J Schoelkopf.
+\newblock Strong coupling of a single photon to a superconducting qubit using
+  circuit quantum electrodynamics.
+\newblock {\em Nature}, 431(7005):162--167, 2004.
+
+\bibitem{chiorescu2004coherent}
+I~Chiorescu, P~Bertet, K~Semba, Y~Nakamura, CJPM Harmans, and JE~Mooij.
+\newblock Coherent dynamics of a flux qubit coupled to a harmonic oscillator.
+\newblock {\em Nature}, 431(7005):159--162, 2004.
+
+\bibitem{johansson2012qutip}
+J~Robert Johansson, Paul~D Nation, and Franco Nori.
+\newblock Qutip: An open-source python framework for the dynamics of open
+  quantum systems.
+\newblock {\em Computer Physics Communications}, 183(8):1760--1772, 2012.
+
+\end{thebibliography}

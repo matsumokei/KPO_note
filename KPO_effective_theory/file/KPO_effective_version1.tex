@@ -1,0 +1,346 @@
+\part{Boltzmann machine}
+\section{時間に依存しない摂動論を用いた低ポンプ下におけるKPOの固有状態，エネルギー固有値の解析}
+\subsection{property of the model Hamiltonian}
+\begin{align}\label{Eq.GKSL}
+    \hat{H}_{\rm{KPO}}&=\hat{H}_0 +\beta\hat{V}\\[5pt]
+    \hat{H}_0&=\Delta \hat{a}^\dagger\hat{a} - \frac{\chi}{2} \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}\\[5pt]
+    \hat{V}&=(\hat{a}^2 + \hat{a}^{\dagger 2})
+\end{align}
+ここで，$\hat{H}_0$は対角化できており，エネルギー固有状態とエネルギー固有値は以下で与えられる：
+\begin{align}
+    \hat{H}_0&=\Delta \hat{n} - \frac{\chi}{2}\hat{n}(\hat{n}-1) \\[5pt]
+    \hat{H}_0\ket{n}&=\epsilon_n\ket{n},\ \ \ 
+    \epsilon_n = \Delta n - \frac{\chi}{2}n(n-1)
+\end{align}
+ここで，基底状態と各励起状態が縮退する条件は
+\begin{align}
+        \epsilon_n &= \Delta n - \frac{\chi}{2}n(n-1) =0\\[10pt]
+        \Delta &= \frac{\chi}{2}(n-1)
+\end{align}
+となる．
+\subsection{基底状態と第二励起状態が縮退している場合}
+$\ket{0}$と$\ket{2}$が縮退している場合を考えてみる．このとき，摂動を受ける部分空間Pは$\{\ket{0},\ \ket{2}\}$であり，完全性条件は
+\begin{equation}
+    \hat{1} = \hat{P} + \hat{Q} 
+    = \ket{0}\bra{0} + \ket{2}\bra{2} + \sum_{i\neq 0,2}\ket{i}\bra{i} 
+\end{equation}
+となる．また，$\ket{0}$と$\ket{2}$が縮退している場合，$\Delta=\chi/2$が縮退する条件となる．このとき，$\epsilon_0=\epsilon_2=0$となる．
+
+\paragraph{基底状態}
+\begin{align}
+    \ket{\varphi_{n,0}^{(1)}}
+    &=\sum_{m\neq 0,2}
+    \Biggl\{\sum_{\textcolor{red}{\beta\neq0}}
+    |\varphi^{(0)}_n;\beta\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;0}\rangle}
+    {(E^{(1)}_{n,0}-E^{(1)}_{n,\beta})(\epsilon_n-\epsilon_m)}
+    +\ket{\varphi_m^{(0)}}\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;0}\rangle}{(\epsilon_n-\epsilon_m)}
+    \Biggr\}\nn[20pt]
+    %%%%%%%%%%%%%%%%%
+    &=\sum_{m\neq 0,2}
+    \Biggl\{
+    |\varphi^{(0)}_n;2\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};2|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;0}\rangle}
+    {(E^{(1)}_{n,0}-E^{(1)}_{n,2})(\epsilon_n-\epsilon_m)}
+    +\ket{\varphi_m^{(0)}}\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;0}\rangle}{(\epsilon_n-\epsilon_m)}
+    \Biggr\}\nn[20pt]
+    %%%%%%%%%%%%%%%%%
+    &=
+    |\varphi^{(0)}_n;2\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};2|\hat{V}|\varphi^{(0)}_4}
+    \braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;0}\rangle}
+    {(E^{(1)}_{n,0}-E^{(1)}_{n,2})(-\epsilon_4)}
+    +\ket{\varphi_4^{(0)}}\frac{\braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;0}\rangle}{(-\epsilon_4)}
+\end{align}
+ここで，$|\varphi^{(0)}_n;0\rangle\equiv\ket{0}$, $|\varphi^{(0)}_n;2\rangle\equiv\ket{2}$, $|\varphi^{(0)}_m\rangle\equiv\ket{m}$と対応させると，
+\begin{align}
+    \langle\braket{\varphi^{(0)}_{n};2|\hat{V}|\varphi^{(0)}_4}
+    &=\langle\braket{\varphi^{(0)}_{n};2|\hat{V}|4}
+    =\frac{1}{\sqrt{2}}(-\braket{0|\hat{V}|4} + \braket{2|\hat{V}|4})\nn[10pt]
+    &=\frac{1}{\sqrt{2}}\braket{2|\hat{a}^{\dagger2}+\hat{a}^2|4}
+    =\frac{1}{\sqrt{2}}\sqrt{4}\sqrt{3}=\sqrt{2}\sqrt{3}
+\end{align}
+\begin{align}
+    \langle\braket{\varphi^{(0)}_{n};0|\hat{V}|\varphi^{(0)}_4}
+    &=\langle\braket{\varphi^{(0)}_{n};0|\hat{V}|4}
+    =\frac{1}{\sqrt{2}}(\braket{0|\hat{V}|4} + \braket{2|\hat{V}|4})\nn[10pt]
+    &=\frac{1}{\sqrt{2}}\braket{2|\hat{a}^{\dagger2}+\hat{a}^2|4}
+    =\frac{1}{\sqrt{2}}\sqrt{4}\sqrt{3}=\sqrt{2}\sqrt{3}
+\end{align}
+また, $\Delta=K/2$なので，
+\begin{equation}
+    \epsilon_4 = 4\Delta - \frac{\chi}{2}3\cdot4 = 4\frac{\chi}{2} - \frac{\chi}{2}3\cdot4
+    =-4\chi
+\end{equation}
+\begin{align}
+    \hat{a}^\dag\ket{n} &= \sqrt{n+1}\ket{n+1}\\[10pt]
+    \hat{a}\ket{n} &= \sqrt{n}\ket{n-1}
+\end{align}
+\begin{align}
+    \ket{\varphi_{n,0}^{(1)}}
+    &=
+    |\varphi^{(0)}_n;2\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};2|\hat{V}|\varphi^{(0)}_4}
+    \braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;0}\rangle}
+    {(E^{(1)}_{n,0}-E^{(1)}_{n,2})(-\epsilon_4)}
+    +\ket{\varphi_4^{(0)}}\frac{\braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;0}\rangle}{(-\epsilon_4)}\nn[10pt]
+    &=|\varphi^{(0)}_n;2\rangle\rangle
+    \frac{(\sqrt{2}\sqrt{3})(-\sqrt{2}\sqrt{3})}
+    {(-2\sqrt{2})(-\epsilon_4)}
+    +\ket{\varphi_4^{(0)}}\frac{\sqrt{2}\sqrt{3}}{(-\epsilon_4)}\nn[10pt]
+    &=|\varphi^{(0)}_n;2\rangle\rangle
+    \frac{(\sqrt{2}\sqrt{3})(-\sqrt{2}\sqrt{3})}
+    {(-2\sqrt{2})(-(-4\chi))}
+    +\ket{\varphi_4^{(0)}}\frac{\sqrt{2}\sqrt{3}}{(-(-4\chi))}\nn[10pt]
+    &=|\varphi^{(0)}_n;2\rangle\rangle
+    \frac{2\cdot3}
+    {8\sqrt{2}\chi}
+    +\ket{\varphi_4^{(0)}}\frac{\sqrt{2}\sqrt{3}}{4\chi}\nn[10pt]
+    &=\frac{1}{\sqrt{2}}
+    \frac{2\cdot3}
+    {8\sqrt{2}\chi}
+    (\ket{0}-\ket{2})
+    +\frac{\sqrt{2}\sqrt{3}}{4\chi}\ket{4}
+    =
+    \frac{3}
+    {8\chi}
+    (\ket{0}-\ket{2})
+    +\frac{\sqrt{2}\sqrt{3}}{4\chi}\ket{4}
+\end{align}
+よって，
+\begin{align}
+    \ket{\varphi_{n,0}}
+    =
+    \frac{1}
+    {\sqrt{2}}
+    (\ket{0}+\ket{2})
+    +\frac{3\beta}
+    {8\chi}
+    (\ket{0}-\ket{2})
+    +\frac{\sqrt{2}\sqrt{3}\beta}{4\chi}\ket{4}
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{第2励起状態}
+\begin{align}
+    \ket{\varphi_{n,2}^{(1)}}
+    &=\sum_{m\neq 0,2}
+    \Biggl\{\sum_{\textcolor{red}{\beta\neq2}}
+    |\varphi^{(0)}_n;\beta\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};\beta|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;2}\rangle}
+    {(E^{(1)}_{n,2}-E^{(1)}_{n,\beta})(\epsilon_n-\epsilon_m)}
+    +\ket{\varphi_m^{(0)}}\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;2}\rangle}{(\epsilon_n-\epsilon_m)}
+    \Biggr\}\nn[20pt]
+    %%%%%%%%%%%%%%%%%
+    &=\sum_{m\neq 0,2}
+    \Biggl\{
+    |\varphi^{(0)}_n;0\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};0|\hat{V}|\varphi^{(0)}_m}
+    \braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;2}\rangle}
+    {(E^{(1)}_{n,2}-E^{(1)}_{n,0})(\epsilon_n-\epsilon_m)}
+    +\ket{\varphi_m^{(0)}}\frac{\braket{\varphi^{(0)}_{m}|\hat{V}|\varphi^{(0)}_n;2}\rangle}{(\epsilon_n-\epsilon_m)}
+    \Biggr\}\nn[20pt]
+    %%%%%%%%%%%%%%%%%
+    &=
+    |\varphi^{(0)}_n;0\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};0|\hat{V}|\varphi^{(0)}_4}
+    \braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;2}\rangle}
+    {(E^{(1)}_{n,2}-E^{(1)}_{n,0})(-\epsilon_4)}
+    +\ket{\varphi_4^{(0)}}\frac{\braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;2}\rangle}{(-\epsilon_4)}
+\end{align}
+ここで，$|\varphi^{(0)}_n;0\rangle\equiv\ket{0}$, $|\varphi^{(0)}_n;2\rangle\equiv\ket{2}$, $|\varphi^{(0)}_m\rangle\equiv\ket{m}$と対応させると，
+\begin{align}
+    \langle\braket{\varphi^{(0)}_{n};2|\hat{V}|\varphi^{(0)}_4}
+    &=\langle\braket{\varphi^{(0)}_{n};2|\hat{V}|4}
+    =\frac{1}{\sqrt{2}}(-\braket{0|\hat{V}|4} + \braket{2|\hat{V}|4})\nn[10pt]
+    &=\frac{1}{\sqrt{2}}\braket{2|\hat{a}^{\dagger2}+\hat{a}^2|4}
+    =\frac{1}{\sqrt{2}}\sqrt{4}\sqrt{3}=-\sqrt{2}\sqrt{3}
+\end{align}
+\begin{align}
+    \langle\braket{\varphi^{(0)}_{n};0|\hat{V}|\varphi^{(0)}_4}
+    &=\langle\braket{\varphi^{(0)}_{n};0|\hat{V}|4}
+    =\frac{1}{\sqrt{2}}(\braket{0|\hat{V}|4} + \braket{2|\hat{V}|4})\nn[10pt]
+    &=\frac{1}{\sqrt{2}}\braket{2|\hat{a}^{\dagger2}+\hat{a}^2|4}
+    =\frac{1}{\sqrt{2}}\sqrt{4}\sqrt{3}=\sqrt{2}\sqrt{3}
+\end{align}
+また, $\Delta=K/2$なので，
+\begin{equation}
+    \epsilon_4 = 4\Delta - \frac{\chi}{2}3\cdot4 = 4\frac{\chi}{2} - \frac{\chi}{2}3\cdot4
+    =-4\chi
+\end{equation}
+\begin{align}
+    \hat{a}^\dag\ket{n} &= \sqrt{n+1}\ket{n+1}\\[10pt]
+    \hat{a}\ket{n} &= \sqrt{n}\ket{n-1}
+\end{align}
+\begin{align}
+    \ket{\varphi_{n,2}^{(1)}}
+    &=
+    |\varphi^{(0)}_n;0\rangle\rangle
+    \frac{\langle\braket{\varphi^{(0)}_{n};0|\hat{V}|\varphi^{(0)}_4}
+    \braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;2}\rangle}
+    {(E^{(1)}_{n,2}-E^{(1)}_{n,0})(-\epsilon_4)}
+    +\ket{\varphi_4^{(0)}}\frac{\braket{\varphi^{(0)}_{4}|\hat{V}|\varphi^{(0)}_n;2}\rangle}{(-\epsilon_4)}\nn[10pt]
+    &=|\varphi^{(0)}_n;0\rangle\rangle
+    \frac{(\sqrt{2}\sqrt{3})(-\sqrt{2}\sqrt{3})}
+    {(2\sqrt{2})(-\epsilon_4)}
+    +\ket{\varphi_4^{(0)}}\frac{-\sqrt{2}\sqrt{3}}{(-\epsilon_4)}\nn[10pt]
+    &=|\varphi^{(0)}_n;0\rangle\rangle
+    \frac{(\sqrt{2}\sqrt{3})(-\sqrt{2}\sqrt{3})}
+    {(2\sqrt{2})(-(-4\chi))}
+    +\ket{\varphi_4^{(0)}}\frac{-\sqrt{2}\sqrt{3}}{(-(-4\chi))}\nn[10pt]
+    &=|\varphi^{(0)}_n;0\rangle\rangle
+    \frac{2\cdot3}
+    {8\sqrt{2}\chi}
+    -\ket{\varphi_4^{(0)}}\frac{\sqrt{2}\sqrt{3}}{4\chi}\nn[10pt]
+    &=\frac{1}{\sqrt{2}}
+    \frac{2\cdot3}
+    {8\sqrt{2}\chi}
+    (\ket{0}+\ket{2})
+    -\frac{\sqrt{2}\sqrt{3}}{4\chi}\ket{4}
+    =
+    \frac{3}
+    {8\chi}
+    (\ket{0}+\ket{2})
+    -\frac{\sqrt{2}\sqrt{3}}{4\chi}\ket{4}
+\end{align}
+よって，
+\begin{align}
+    \ket{\varphi_{n,2}}
+    =
+    \frac{1}
+    {\sqrt{2}}
+    (\ket{0}-\ket{2})
+    +\frac{3\beta}
+    {8\chi}
+    (\ket{0}+\ket{2})
+    -\frac{\sqrt{2}\sqrt{3}\beta}{4\chi}\ket{4}
+\end{align}
+
+
+
+\subsection{縮退のない場合}
+\section*{固有エネルギーの補正値}
+縮退のない摂動論より，固有エネルギーの補正値は以下の式で与えられる：
+\begin{align}
+E_n&\simeq E_{n}^{(0)}+\lambda E_{n}^{(1)}+\lambda^2 E_{n}^{(2)}\notag\\[10pt]
+&=\epsilon_n+\Braket{\varphi_{n}^{(0)}|\lambda\hat{V}|\varphi_{n}^{(0)}}
++\lambda^2\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{n}^{(0)}}\hat{V}\ket{\varphi_{m}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}.
+\end{align}
+
+
+\section*{固有状態の補正}
+\paragraph{基底状態}
+\begin{align}
+\ket{\varphi_{n}}&\simeq\ket{\varphi_{n}^{(0)}}+\lambda\ket{\varphi_{n}^{(1)}}+\lambda^2\ket{\varphi_{n}^{(2)}}\notag\\[10pt]
+&=\ket{\varphi_{n}^{(0)}}
++
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{\braket{\varphi_{n}^{(0)}|\lambda\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\ket{\varphi_{m}^{(0)}}\notag\\[10pt]
+&+\lambda^2
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+　\left[\left(
+\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{k}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})(\epsilon_{n}-\epsilon_{m})}
+    \right)
+  -
+   \frac{
+ \braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})^2}
+  \right]
+\ket{\varphi_{m}^{(0)}}
+\end{align}
+
+\begin{align}
+    \ket{\varphi_{0}^{(1)}}
+    &=\displaystyle\sum_{\substack{m\neq 0}}^\infty
+     \frac{\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}}{(\epsilon_{0}-\epsilon_{m})}
+    \ket{\varphi_{m}^{(0)}}
+    =
+     \frac{\braket{\varphi_{2}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}}{(\epsilon_{0}-\epsilon_{2})}
+    \ket{\varphi_{2}^{(0)}}
+    %
+    = \frac{\braket{2|\hat{V}|0}}{(-\epsilon_{2})}
+    \ket{2}\nn[10pt]
+    & = \frac{\sqrt{2}}{\chi-2\Delta}
+    \ket{2}
+\end{align}
+
+\begin{align}
+\ket{\varphi_{0}^{(2)}}
+& = 
+    \displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+    　\left[\left(
+    \displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+     \frac{
+     \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}
+      \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{k}^{(0)}}}{(\epsilon_{0}-\epsilon_{k})(\epsilon_{0}-\epsilon_{m})}
+        \right)
+      -
+       \frac{
+     \braket{\varphi_{0}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}}{(\epsilon_{0}-\epsilon_{m})^2}
+      \right]
+    \ket{\varphi_{m}^{(0)}}\nn[10pt]
+    &=\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+    \left(
+     \frac{
+     \braket{\varphi_{2}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}
+      \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{2}^{(0)}}}{(\epsilon_{0}-\epsilon_{2})(\epsilon_{0}-\epsilon_{m})}
+      +\frac{
+     \braket{\varphi_{4}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}
+      \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{4}^{(0)}}}{(\epsilon_{0}-\epsilon_{4})(\epsilon_{0}-\epsilon_{m})}
+        \right)
+    \ket{\varphi_{m}^{(0)}}\nn[10pt]
+    &=
+     \frac{
+     \braket{\varphi_{2}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}
+      \bra{\varphi_{4}^{(0)}}\hat{V}\ket{\varphi_{2}^{(0)}}}{(\epsilon_{0}-\epsilon_{2})(\epsilon_{0}-\epsilon_{4})}
+    \ket{\varphi_{4}^{(0)}}
+    =\frac{
+     \braket{2|\hat{V}|0}
+      \bra{4}\hat{V}\ket{2}}{(-\epsilon_{2})(-\epsilon_{4})}
+    \ket{4}\nn[10pt]
+    &=
+     \frac{
+     \braket{\varphi_{2}^{(0)}|\hat{V}|\varphi_{0}^{(0)}}
+      \bra{\varphi_{4}^{(0)}}\hat{V}\ket{\varphi_{2}^{(0)}}}{(\epsilon_{0}-\epsilon_{2})(\epsilon_{0}-\epsilon_{4})}
+    \ket{\varphi_{4}^{(0)}}
+    =\frac{
+     \braket{2|\hat{V}|0}
+      \bra{4}\hat{V}\ket{2}}{(\chi-2\Delta)(2\cdot3\chi-4\Delta)}
+    \ket{4}\nn[10pt]
+    &
+    =\frac{
+     \sqrt{2}\sqrt{3}\sqrt{4}}{2(\chi-2\Delta)(3\chi-2\Delta)}
+    \ket{4}
+    =\frac{
+     \sqrt{2}\sqrt{3}}{(\chi-2\Delta)(3\chi-2\Delta)}
+    \ket{4}\nn[10pt]
+\end{align}
+
+
+\begin{align}
+\ket{\varphi_{n}}&\simeq\ket{\varphi_{n}^{(0)}}+\beta\ket{\varphi_{n}^{(1)}}+\beta^2\ket{\varphi_{n}^{(2)}}\notag\\[10pt]
+&=\ket{0}
++\beta\frac{\sqrt{2}}{\chi-2\Delta}
+    \ket{2}
++\beta^2\frac{
+     \sqrt{2}\sqrt{3}}{(\chi-2\Delta)(3\chi-2\Delta)}
+    \ket{4}
+\end{align}
+
+
+
+
+
+
+
+
+

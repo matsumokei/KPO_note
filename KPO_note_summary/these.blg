@@ -1,0 +1,60 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: these.aux
+The style file: unsrt.bst
+Database file #1: myrefs.bib
+Repeated entry---line 186 of file myrefs.bib
+ : @article{PhysRevA.44.4704
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 212 of file myrefs.bib
+ : @article{PhysRevA.48.2494
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 228 of file myrefs.bib
+ : @article{cochrane1999macroscopically
+ :                                     ,
+I'm skipping whatever remains of this entry
+You've used 48 entries,
+            1791 wiz_defined-function locations,
+            745 strings with 13783 characters,
+and the built_in function-call counts, 12608 in all, are:
+= -- 993
+> -- 827
+< -- 0
++ -- 293
+- -- 245
+* -- 1154
+:= -- 2153
+add.period$ -- 144
+call.type$ -- 48
+change.case$ -- 48
+chr.to.int$ -- 0
+cite$ -- 48
+duplicate$ -- 431
+empty$ -- 1090
+format.name$ -- 245
+if$ -- 2619
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 48
+newline$ -- 243
+num.names$ -- 48
+pop$ -- 50
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 149
+stack$ -- 0
+substring$ -- 938
+swap$ -- 48
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 118
+width$ -- 50
+write$ -- 529
+is.kanji.str$ -- 0
+(There were 3 error messages)

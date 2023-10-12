@@ -1,0 +1,1376 @@
+
+\section{Appendix}
+In this appendix, to understand the violation of the rotating wave approximation in in Figs.~\ref{fig:spec2}, we calculate the second-order transition probability with the effective qubit Hamiltonian~Eq.\eqref{qubit_Hamiltonian}.
+We consider the following Hamiltonian
+\begin{equation}
+    \hH=g\alpha\ \hsig_x+\lambda_{\rm{p}}\left(\hsig_+ e^{-i\Delta _{\rm{q}}t}+\hsig_- e^{i\Delta _{\rm{q}}t}\right).
+\end{equation}
+
+We can rewrite Hamiltonian as
+\begin{align}
+    \hH=g\alpha\hsig_x + \lambda_{\rm{p}} ((\hsig_x+i\hsig_y)e^{-i\Delta _{\rm{q}} t} + (\hsig_x-i\hsig_y)e^{i\Delta _{\rm{q}} t}),
+\end{align}
+where we use
+\begin{align}
+    \hsig_+&=\hsig_x+i\hsig_y\\[10pt]
+    \hsig_-&=\hsig_x-i\hsig_y.
+\end{align}
+
+We change the basis of $\hsig_z$ to the one of $\hsig_x$, and get
+\begin{align}
+    \hH=g\alpha\ \hat{Z} + \lambda_{\rm{p}} ((\hat{Z}+i\hat{Y})e^{-i\Delta _{\rm{q}} t} + (\hat{Z}-i\hat{Y})e^{i\Delta _{\rm{q}} t})
+\end{align}
+where we define
+\begin{align}
+    \hat{X} &\equiv \hsig_z 
+    = \ket{+}\bra{-} + \ket{-}\bra{+}\\[10pt]
+    \hat{Y} &\equiv \hsig_y 
+    = -i\ket{+}\bra{-} +i \ket{-}\bra{-}\\[10pt]
+    \hat{Z} &\equiv \hsig_x 
+    = \ket{+}\bra{+} - \ket{-}\bra{-},
+\end{align}
+\begin{align}
+    \ket{+} &
+    = \frac{1}{\sqrt{2}}
+    (\ket{e} + \ket{g})\\[10pt]
+    \ket{-} &
+    = \frac{1}{\sqrt{2}}
+    (\ket{e} - \ket{g})
+\end{align}
+
+We can rewrite Hamiltonian as
+\begin{align}
+    \hH=g\alpha\ \hat{Z} + \lambda_{\rm{p}} \left(\left\{\hat{Z}+i\frac{\hsig_+^\prime-\hsig_-^\prime}{2i}\right\}e^{-i\Delta _{\rm{q}} t} + \left\{\hat{Z}-i\frac{\hsig_+^\prime-\hsig_-^\prime}{2i}\right\}e^{i\Delta _{\rm{q}} t}\right)
+\end{align}
+
+We can transform out of the interaction picture by using the transformation
+\begin{equation}
+    \hU=\exp{\left(i\ g\alpha\ \hat{Z}\right)}.
+\end{equation}
+
+The resulting Hamiltonian is
+\begin{align}
+    \hH_{\I}(t)&=\lambda_{\rm{p}} 
+    \left(
+    \left\{\hat{Z}+i\frac{\hsig_+^\prime e^{2ig\alpha t}-\hsig_-^\prime e^{-2ig\alpha t}}{2i}\right\}e^{-i\Delta _{\rm{q}} t} + \left\{\hat{Z}-i\frac{\hsig_+^\prime e^{2ig\alpha t}-\hsig_-^\prime e^{-2ig\alpha t}}{2i}\right\}e^{i\Delta _{\rm{q}} t}
+    \right)\nn[10pt]
+    %
+    &=\lambda_{\rm{p}} \Biggl(\hat{Z}e^{-i\Delta _{\rm{q}} t}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t}\nn[10pt]
+    &\hspace{80pt}+\hat{Z}e^{i\Delta _{\rm{q}} t}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t}+\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t}\Biggr).
+\end{align}
+
+We solve time dependent Schrodinger eqation at interaction picture
+\begin{equation}
+    i\hbar\frac{d}{dt}\ket{\psi(t)}=\lambda_{\rm{p}}\hH_{\I}(t)\ket{\psi(t)}.
+\end{equation}
+We can perform the time-dependent perturbation theory up to the second
+order, and obtain the following
+\begin{align}
+    \ket{\psi(t)}\simeq\ket{\psi(0)} 
+    + \frac{1}{i\hbar}\lambda_{\rm{p}}D_1\ket{\psi(0)} 
+    +\frac{1}{(i\hbar)^2}\lambda_{\rm{p}}^2 D_2\ket{\psi(0)}
+\end{align}
+\begin{align}
+    D_1 & \equiv \int_{0}^{t} \hH_{\rm{I}}(t_1)\\[10pt]
+    D_2 &\equiv \int_{0}^{t}\int_{0}^{t_1}dt_2\hH_{\rm{I}}(t_1)\hH_{\rm{I}}(t_2)
+\end{align}
+We set a initial state as $\ket{g}$ where is the ground state.
+We have the transition probability from $\ket{e}$ to $\ket{g}$
+\begin{align}
+    \braket{\psi_{f}|\psi(t)}\simeq\braket{\psi_{f}|\psi_0} + C^{(1)}(t) 
+    +C^{(2)}(t),
+\end{align}
+\begin{align}
+    C^{(1)}(t) &= \braket{\psi_f|D_1|\psi_0}\\[10pt]
+    C^{(2)}(t) &= \braket{\psi_f|D_2|\psi_0}
+\end{align}
+
+
+\subsection{first order}
+\begin{align}
+    D_1&=
+    \hat{Z}\frac{e^{-i\Delta _{\rm{q}} t}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hsig_+^\prime \frac{e^{i(2g\alpha-\Delta _{\rm{q}}) t}-1}{i(2g\alpha-\Delta _{\rm{q}})} -\frac{1}{2}\hsig_-^\prime \frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t}-1}{-i(2g\alpha+\Delta _{\rm{q}})} \nn[10pt]
+    &+\hat{Z}\frac{e^{i\Delta _{\rm{q}} t}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hsig_+^\prime \frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hsig_-^\prime \frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\nn[20pt]
+    %
+    &+\hat{Z}t e^{-i\Delta _{\rm{q}} t/2}\frac{\sin{-\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}
+    +\frac{1}{2}\hsig_+^\prime t e^{i(2g\alpha-\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}})t/2}}{(2g\alpha-\Delta _{\rm{q}})t/2}
+    -\frac{1}{2}\hsig_-^\prime t e^{-i(2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}})t/2}}{-(2g\alpha+\Delta _{\rm{q}})t/2}\nn[10pt]
+    &=\hat{Z}t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}
+    -\frac{1}{2}\hsig_+^\prime t e^{i(2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}})t/2}}{(2g\alpha+\Delta _{\rm{q}})t/2}
+    +\frac{1}{2}\hsig_-^\prime t e^{i(-2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}})t/2}}{(-2g\alpha+\Delta _{\rm{q}})t/2}
+\end{align}
+
+
+
+
+\begin{align}
+    \int_{0}^{t}ds\ e^{iAs}
+    &=\frac{1}{iA}\left[e^{iAs}\right]_{s=0}^{s=t}
+    =\frac{e^{iAs}-1}{iA}=\frac{e^{iAt/2}}{e^{iAt/2}}\frac{e^{iAt}-1}{iA}\nn[10pt]
+    &=t e^{iAt/2}\frac{e^{iAt/2}-e^{-iAt/2}}{2iAt/2}
+    =t e^{iAt/2}\frac{\sin{At/2}}{At/2}
+\end{align}
+
+initial state $\ket{\psi_0}$, final state$\ket{\psi_f}$
+\begin{align}
+    &C^{(1)}=\int_{0}^{t_1} dt_1 \braket{\psi_f|\hH_{\I}(t_1)|\psi_0}\nn[10pt]
+    &=\braket{\psi_f|\hat{Z}|\psi_0}t e^{-i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}
+    +\frac{1}{2}\braket{\psi_f|\hsig_+^\prime|\psi_0} t e^{i(2g\alpha-\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}})t/2}}{(2g\alpha-\Delta _{\rm{q}})t/2}
+    -\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0} t e^{-i(2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}})t/2}}{-(2g\alpha+\Delta _{\rm{q}})t/2}\nn[10pt]
+    &+\braket{\psi_f|\hat{Z}|\psi_0}t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}
+    -\frac{1}{2}\braket{\psi_f|\hsig_+^\prime|\psi_0} t e^{i(2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}})t/2}}{(2g\alpha+\Delta _{\rm{q}})t/2}
+    +\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0} t e^{i(-2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}})t/2}}{(-2g\alpha+\Delta _{\rm{q}})t/2}
+\end{align}
+
+\begin{align}
+    &|C^{(1)}|^2=4|\braket{\psi_f|\hat{Z}|\psi_0}|^2t \frac{\sin^2{\Delta _{\rm{q}} t/2}}{t(\Delta _{\rm{q}} /2)^2}\nn[10pt]
+    &+\frac{1}{4}\Biggl(
+    |\braket{\psi_f|\hsig_+^\prime|\psi_0}|^2 + |\braket{\psi_f|\hsig_-^\prime|\psi_0}|^2
+    +\braket{\psi_f|\hsig_+^\prime|\psi_0}\braket{\psi_f|\hsig_-^\prime|\psi_0}
+    +\braket{\psi_f|\hsig_-^\prime|\psi_0}\braket{\psi_f|\hsig_+^\prime|\psi_0}
+    \Biggr)
+    t \frac{\sin^2{(2g\alpha+\Delta _{\rm{q}})t/2}}{t((2g\alpha+\Delta _{\rm{q}})/2)^2}
+    \nn[10pt]
+    &
+    +\frac{1}{4}\Biggl(
+    |\braket{\psi_f|\hsig_+^\prime|\psi_0}|^2 + |\braket{\psi_f|\hsig_-^\prime|\psi_0}|^2
+    +\braket{\psi_f|\hsig_+^\prime|\psi_0}\braket{\psi_f|\hsig_-^\prime|\psi_0}
+    +\braket{\psi_f|\hsig_-^\prime|\psi_0}\braket{\psi_f|\hsig_+^\prime|\psi_0}
+    \Biggr)
+    t \frac{\sin^2{(2g\alpha-\Delta _{\rm{q}})t/2}}{t((2g\alpha-\Delta _{\rm{q}})/2)^2}
+\end{align}
+
+
+\begin{align}
+    &|C^{(1)}|^2/t
+    =4|\braket{\psi_f|\hat{Z}|\psi_0}|^2 2\pi\delta{\Delta _{\rm{q}}}\nn[10pt]
+    &+\frac{1}{4}\Biggl(
+    |\braket{\psi_f|\hsig_+^\prime|\psi_0}|^2 + |\braket{\psi_f|\hsig_-^\prime|\psi_0}|^2
+    +\braket{\psi_f|\hsig_+^\prime|\psi_0}\braket{\psi_f|\hsig_-^\prime|\psi_0}
+    +\braket{\psi_f|\hsig_-^\prime|\psi_0}\braket{\psi_f|\hsig_+^\prime|\psi_0}
+    \Biggr)
+    2\pi\delta{(2g\alpha+\Delta _{\rm{q}})}
+    \nn[10pt]
+    &
+    +\frac{1}{4}\Biggl(
+    |\braket{\psi_f|\hsig_+^\prime|\psi_0}|^2 + |\braket{\psi_f|\hsig_-^\prime|\psi_0}|^2
+    +\braket{\psi_f|\hsig_+^\prime|\psi_0}\braket{\psi_f|\hsig_-^\prime|\psi_0}
+    +\braket{\psi_f|\hsig_-^\prime|\psi_0}\braket{\psi_f|\hsig_+^\prime|\psi_0}
+    \Biggr)
+    2\pi\delta{(2g\alpha-\Delta _{\rm{q}})}
+\end{align}
+
+\begin{align}
+|C^{(1)(t)}|
+&=
+\frac{4 \text{A2} \text{B3} e^{2 i t (2 \text{g$\alpha $}-\Delta )} \sin
+   ^2\left(\frac{1}{2} t (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha
+   $}-\Delta )^2}
+   +\frac{4 \text{A3} \text{B2} e^{i t (\Delta -2 \text{g$\alpha $})-i
+   t (2 \text{g$\alpha $}-\Delta )} \sin ^2\left(\frac{1}{2} t (2 \text{g$\alpha$}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta )^2}\nn[10pt]
+   &+\frac{4 \text{A3} \text{B3} e^{i t (2 \text{g$\alpha $}-\Delta )+i t (\Delta -2 \text{g$\alpha $})} \sin^2\left(\frac{1}{2} t (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha
+   $}-\Delta )^2}+\frac{4 \text{A2} \text{B2} \sin ^2\left(\frac{1}{2} t (2
+   \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta )^2}\nn[10pt]
+   &+\frac{4
+   \text{A3} \text{B2} e^{-i t (2 \text{g$\alpha $}-\Delta )-i t (2 \text{g$\alpha
+   $}+\Delta )} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{1}{2} t (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha
+   $}-\Delta ) (2 \text{g$\alpha $}+\Delta )}\nn[10pt]
+   &+\frac{4 \text{A2} \text{B2} e^{i t (2
+   \text{g$\alpha $}-\Delta )-i t (2 \text{g$\alpha $}+\Delta )} \sin
+   \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin \left(\frac{1}{2} t
+   (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) (2
+   \text{g$\alpha $}+\Delta )}
+   +\frac{4 \text{A3} \text{B3} e^{i t (2 \text{g$\alpha
+   $}-\Delta )-i t (2 \text{g$\alpha $}+\Delta )} \sin \left(\frac{1}{2} t (2\text{g$\alpha $}+\Delta )\right) \sin \left(\frac{1}{2} t (2 \text{g$\alpha
+   $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) (2 \text{g$\alpha $}
+   +\Delta)}
+   \nn[10pt]
+   &+\frac{4 \text{A3} \text{B2} e^{i t (\Delta -2 \text{g$\alpha $})-i t (2
+   \text{g$\alpha $}+\Delta )} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta
+   )\right) \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}-\Delta )\right)}{(2
+   \text{g$\alpha $}-\Delta ) (2 \text{g$\alpha $}+\Delta )}\nn[10pt]
+   &+\frac{4 \text{A2}
+   \text{B2} e^{i t (2 \text{g$\alpha $}+\Delta )-i t (2 \text{g$\alpha $}-\Delta )}
+   \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{1}{2} t (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha
+   $}-\Delta ) (2 \text{g$\alpha $}+\Delta )}
+   \nn[10pt]
+   &+\frac{8 \text{A2} \text{B3} e^{i t (2
+   \text{g$\alpha $}-\Delta )+i t (2 \text{g$\alpha $}+\Delta )} \sin
+   \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin \left(\frac{1}{2} t
+   (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) (2
+   \text{g$\alpha $}+\Delta )}\nn[10pt]
+   &
+   +\frac{4 \text{A3} \text{B3} e^{i t (\Delta -2
+   \text{g$\alpha $})+i t (2 \text{g$\alpha $}+\Delta )} \sin \left(\frac{1}{2} t (2
+   \text{g$\alpha $}+\Delta )\right) \sin \left(\frac{1}{2} t (2 \text{g$\alpha
+   $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) (2 \text{g$\alpha $}+\Delta
+   )}\nn[10pt]
+   &
+   +\frac{4 \text{A1} \text{B2} e^{-\text{i$\Delta $t}-i t (2 \text{g$\alpha
+   $}-\Delta )} \sin \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2}
+   t (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta
+   }\nn[10pt]
+   &
+   +\frac{4 \text{A1} \text{B2} e^{\text{i$\Delta $t}-i t (2 \text{g$\alpha
+   $}-\Delta )} \sin \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2}
+   t (2 \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta
+   }\nn[10pt]
+   &
+   +\frac{4 \text{A2} \text{B1} e^{i t (2 \text{g$\alpha $}-\Delta )-\text{i$\Delta
+   $t}} \sin \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2} t (2
+   \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta }\nn[10pt]
+   &
+   +\frac{4
+   \text{A1} \text{B3} e^{i t (2 \text{g$\alpha $}-\Delta )-\text{i$\Delta $t}} \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2} t (2
+   \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta }\nn[10pt]
+   &
+   +\frac{4
+   \text{A2} \text{B1} e^{\text{i$\Delta $t}+i t (2 \text{g$\alpha $}-\Delta )} \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2} t (2
+   \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta }
+   +\frac{4
+   \text{A1} \text{B3} e^{\text{i$\Delta $t}+i t (2 \text{g$\alpha $}-\Delta )} \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2} t (2
+   \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta }\nn[10pt]
+   &+\frac{4
+   \text{A3} \text{B1} e^{i t (\Delta -2 \text{g$\alpha $})-\text{i$\Delta $t}} \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2} t (2
+   \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta }+\frac{4
+   \text{A3} \text{B1} e^{\text{i$\Delta $t}+i t (\Delta -2 \text{g$\alpha $})} \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right) \sin \left(\frac{1}{2} t (2
+   \text{g$\alpha $}-\Delta )\right)}{(2 \text{g$\alpha $}-\Delta ) \Delta }\nn[10pt]
+   &+\frac{4
+   \text{A3} \text{B2} e^{-2 i t (2 \text{g$\alpha $}+\Delta )} \sin
+   ^2\left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right)}{(2 \text{g$\alpha
+   $}+\Delta )^2}+\frac{4 \text{A2} \text{B3} e^{2 i t (2 \text{g$\alpha $}+\Delta )}
+   \sin ^2\left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right)}{(2 \text{g$\alpha
+   $}+\Delta )^2}\notag
+   \end{align}
+   
+   \begin{align}
+   &+\frac{4 \text{A2} \text{B2} \sin ^2\left(\frac{1}{2} t (2
+   \text{g$\alpha $}+\Delta )\right)}{(2 \text{g$\alpha $}+\Delta )^2}
+   +\frac{4
+   \text{A3} \text{B3} \sin ^2\left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta
+   )\right)}{(2 \text{g$\alpha $}+\Delta )^2}\nn[10pt]
+   &
+   +\frac{4 \text{A1} \text{B1} e^{-2
+   \text{i$\Delta $t}} \sin ^2\left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta
+   ^2}
+   +\frac{4 \text{A1} \text{B1} e^{2 \text{i$\Delta $t}} \sin
+   ^2\left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta ^2}\nn[10pt]
+   &
+   +\frac{8 \text{A1} \text{B1}
+   \sin ^2\left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta ^2}
+   +\frac{4 \text{A3}
+   \text{B1} e^{-\text{i$\Delta $t}-i t (2 \text{g$\alpha $}+\Delta )} \sin
+   \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta
+   )}\nn[10pt]
+   &
+   +\frac{4 \text{A1} \text{B2} e^{-\text{i$\Delta $t}-i t (2 \text{g$\alpha
+   $}+\Delta )} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta
+   )}\nn[10pt]
+   &
+   +\frac{4 \text{A3} \text{B1} e^{\text{i$\Delta $t}-i t (2 \text{g$\alpha
+   $}+\Delta )} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta
+   )}\nn[10pt]
+   &
+   +\frac{4 \text{A1} \text{B2} e^{\text{i$\Delta $t}-i t (2 \text{g$\alpha
+   $}+\Delta )} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta
+   )}\nn[10pt]
+   &
+   +\frac{4 \text{A2} \text{B1} e^{i t (2 \text{g$\alpha $}+\Delta )-\text{i$\Delta
+   $t}} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta
+   )}
+   +\frac{4 \text{A1} \text{B3} e^{i t (2 \text{g$\alpha $}+\Delta )-\text{i$\Delta
+   $t}} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta
+   )}\nn[10pt]
+   &
+   +\frac{4 \text{A2} \text{B1} e^{\text{i$\Delta $t}+i t (2 \text{g$\alpha
+   $}+\Delta )} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta
+   )}\nn[10pt]
+   &
+   +\frac{4 \text{A1} \text{B3} e^{\text{i$\Delta $t}+i t (2 \text{g$\alpha
+   $}+\Delta )} \sin \left(\frac{1}{2} t (2 \text{g$\alpha $}+\Delta )\right) \sin
+   \left(\frac{\text{$\Delta $t}}{2}\right)}{\Delta  (2 \text{g$\alpha $}+\Delta )} 
+\end{align}
+
+\subsection{second order}
+\begin{align}
+    &\hH_{\I}(t_1)\hH_{\I}(t_2)\nn[10pt]
+    &= \left(\textcolor{red}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}
+    +\textcolor{blue}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \nn[10pt]
+    &\times\left(\textcolor{green}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}
+    +\textcolor{violet}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)\nn[15pt]
+    %%%%%%%%%%
+    &= \left(\textcolor{red}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \nn[10pt]
+    &+\left(\textcolor{red}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{violet}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \nn[10pt]
+    &+\left(\textcolor{blue}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)\nn[10pt]
+    &+\left(\textcolor{blue}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{violet}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)\nn[10pt]
+    &=A + B + C +D
+\end{align}
+
+
+\begin{align}
+    %%%%%%%%%%
+    A=&\left(\textcolor{red}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \\[20pt]
+    B=&\left(\textcolor{red}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{violet}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \\[20pt]
+    C=&\left(\textcolor{blue}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}
+    +\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}
+    -\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)\\[20pt]
+    D=&\left(\textcolor{blue}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{violet}{
+    \hat{Z}e^{i\Delta _{\rm{q}} t_1}
+    -\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}
+    +\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+\end{align}
+
+
+
+
+
+
+
+\subsection{Calculation of A}
+%%%
+\begin{align}
+    A=&\left(\hat{Z}\hat{Z}e^{-i\Delta _{\rm{q}} t_1}e^{-i\Delta _{\rm{q}} t_2}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_2}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_2}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}\right)
+\end{align}
+
+%%%
+\begin{align}
+    \int_{0}^{t_1}dt_2A&=\left(e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+\end{align}
+
+
+
+%%%
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2A=&\left(e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+\end{align}
+
+
+
+
+
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2A=&\left(e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z} e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+\end{align}
+
+
+
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2A=&\left(\frac{e^{-i\Delta _{\rm{q}} t_1}e^{-i\Delta _{\rm{q}} t_1}-e^{-i\Delta _{\rm{q}} t_1}}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{e^{-i\Delta _{\rm{q}} t_1}e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-e^{-i\Delta _{\rm{q}} t_1}}{-i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{e^{-i\Delta _{\rm{q}} t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-e^{-i\Delta _{\rm{q}} t_1}}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z} \frac{e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_1}-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_1}-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+\end{align}
+
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2A=&\left(\frac{1}{-i\Delta _{\rm{q}}}(e^{-i2\Delta _{\rm{q}} t_1}-e^{-i\Delta _{\rm{q}} t_1})
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}(e^{-i(2g\alpha) t_1}-e^{-i\Delta _{\rm{q}} t_1})
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}(e^{-i(2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{-i\Delta _{\rm{q}} t_1})\right)\nn[10pt]
+    %
+    &\left(\frac{1}{2}\hsig_+^\prime\hat{Z} \frac{1}{-i\Delta _{\rm{q}}}(e^{i(2g\alpha-2\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}(e^{i(-2\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1})\right)\nn[10pt]
+    %
+    &\left(-\frac{1}{2}\hsig_-^\prime \hat{Z}\frac{1}{-i\Delta _{\rm{q}}}(e^{-i(2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1})
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}(e^{-i(22g\alpha) t_1}-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1})\right)
+\end{align}
+
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t}dt_1\int_{0}^{t_1}dt_2A=&\Biggl(\frac{1}{-i\Delta _{\rm{q}}}
+    (t e^{i-2\Delta _{\rm{q}} t/2}\frac{\sin{-2\Delta _{\rm{q}} t/2}}{-2\Delta _{\rm{q}} t/2}
+    -t e^{i-\Delta _{\rm{q}} t/2}\frac{\sin{-\Delta _{\rm{q}} t/2}}{-\Delta _{\rm{q}} t/2})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &+\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{-(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})\Biggr)\nn[30pt]
+    %
+    &+\Biggl(+\frac{1}{2}\hsig_+^\prime\hat{Z} \frac{1}{-i\Delta _{\rm{q}}}
+    (t e^{i(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-2\Delta _{\rm{q}}) t/2}}{(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i(-2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2\Delta _{\rm{q}}) t/2}}{(-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2})\Biggr)\nn[30pt]
+    %
+    &\Biggl(-\frac{1}{2}\hsig_-^\prime \hat{Z}\frac{1}{-i\Delta _{\rm{q}}}
+    (t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{ -(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &-\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i(-22g\alpha) t/2}\frac{\sin{(-22g\alpha) t/2}}{(-22g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{ -(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)
+\end{align}
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t}dt_1\int_{0}^{t_1}dt_2A
+    =&\Biggl\{\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i-2\Delta _{\rm{q}} t/2}\frac{\sin{-2\Delta _{\rm{q}} t/2}}{-2\Delta _{\rm{q}} t/2}
+    -t e^{i-\Delta _{\rm{q}} t/2}\frac{\sin{-\Delta _{\rm{q}} t/2}}{-\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}-\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{-(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{+\frac{1}{2}-\hsig_+^\prime \frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-2\Delta _{\rm{q}}) t/2}}{(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2\Delta _{\rm{q}}) t/2}}{(-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &\Biggl\{-\frac{1}{2}\hsig_-^\prime \frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{ -(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-22g\alpha) t/2}\frac{\sin{(-22g\alpha) t/2}}{(-22g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{ -(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+\end{align}
+
+
+
+\subsection{Calculation of B}
+%%%
+\begin{align}    
+%%%%%%%%%%%%%%%%
+    B=&e^{-i\Delta _{\rm{q}} t_1}e^{i\Delta _{\rm{q}} t_2}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}\nn[10pt]
+    %
+    & 
+    \left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{i\Delta _{\rm{q}} t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i\Delta _{\rm{q}} t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}
+    -\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}\end{align}
+%%%
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 B=&e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\nn[10pt]
+    %
+    & 
+    \left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{align}
+%%%
+
+
+%%%
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 B&e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\nn[10pt]
+    %
+    & 
+    \left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \end{align}
+    
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 B=&e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\nn[10pt]
+    %
+    & 
+    \left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+\end{align}
+    
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 B=&e^{-i\Delta _{\rm{q}} t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{e^{-i\Delta _{\rm{q}} t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-e^{-i\Delta _{\rm{q}} t_1}}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{e^{-i\Delta _{\rm{q}} t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-e^{-i\Delta _{\rm{q}} t_1}}{i(-2g\alpha+\Delta _{\rm{q}})}\nn[10pt]
+    %
+    & 
+    \left(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{i\Delta _{\rm{q}} t_1}-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}}{i(-2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} \frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i\Delta _{\rm{q}} t_1}-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}{i(2g\alpha+\Delta _{\rm{q}})}
+    \end{align}
+    
+
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 B&=\frac{1}{i\Delta _{\rm{q}}}(-e^{-i\Delta _{\rm{q}} t_1})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}(e^{i(2g\alpha) t_1}-e^{-i\Delta _{\rm{q}} t_1})
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}(e^{i(-2g\alpha) t_1}-e^{-i\Delta _{\rm{q}} t_1})\nn[10pt]
+    %
+    & 
+    \left(+\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\Delta _{\rm{q}}}(e^{i(2g\alpha) t_1}-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1})
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}(-e^{i(2g\alpha-\Delta _{\rm{q}}) t_1})\right)\nn[10pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} \frac{1}{i\Delta _{\rm{q}}}(e^{-i(2g\alpha) t_1}-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1})
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}(-e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1})
+    \end{align}
+
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    \int_{0}^{t}dt_1\int_{0}^{t_1}dt_2 B=&\frac{1}{i\Delta _{\rm{q}}}\Biggl(-t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &+\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[30pt]
+    %
+    & 
+    \left(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\Delta _{\rm{q}}}
+    (t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2})
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    (-t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2})\right)\nn[30pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime\hat{Z} \frac{1}{i\Delta _{\rm{q}}}
+    (t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2})
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    (-t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2})\notag
+\end{align}
+
+
+%%%%
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    &\int_{0}^{t}dt_1\int_{0}^{t_1}dt_2 B\nn[10pt]
+    =&\frac{1}{i\Delta _{\rm{q}}}\Biggl\{-t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &-\frac{1}{2}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl((t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}-\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Bigg)\Biggr\}\nn[30pt]
+    %
+    & 
+    \Bigg\{\frac{1}{2}-\hsig_+^\prime\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(-t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime \frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(-t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\notag
+\end{align}
+
+
+
+
+\subsection{Calculation of C}
+\begin{align}
+    C=&\left(e^{i\Delta _{\rm{q}} t_1}e^{-i\Delta _{\rm{q}} t_2}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}\right)\nn[10pt]
+    %
+    &+\left(-\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}\right)\nn[10pt]
+    %
+    &
+    +\left(+\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}
+    -\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}\right)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{align}
+
+
+\begin{align}
+    \int_{0}^{t_1}dt_2 C=&\left(e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha-\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(-\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &
+    +\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{align}
+
+
+%%%
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 C=&\left(e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha-\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(-\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &
+    +\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+    \end{align}
+    
+    
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 C=&\left(e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha-\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(-\frac{1}{2}\hsig_+^\prime \hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &
+    +\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i\Delta _{\rm{q}} t_1}-1}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-1}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+    \end{align}
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 C=&\left(\frac{e^{i\Delta _{\rm{q}} t_1}e^{-i\Delta _{\rm{q}} t_1}-e^{i\Delta _{\rm{q}} t_1}}{-i\Delta _{\rm{q}}}
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{e^{i\Delta _{\rm{q}} t_1}e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-e^{i\Delta _{\rm{q}} t_1}}{-i(2g\alpha-\Delta _{\rm{q}})}
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{e^{i\Delta _{\rm{q}} t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-e^{i\Delta _{\rm{q}} t_1}}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(-\frac{1}{2}\hsig_+^\prime \hat{Z}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_1}-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}}{-i(2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &
+    +\left(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i\Delta _{\rm{q}} t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}{-i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{-i(2g\alpha-\Delta _{\rm{q}}) t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}{-i(2g\alpha+\Delta _{\rm{q}})}\right)
+\end{align}
+
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t_1}dt_2 C=&\left(\frac{1}{-i\Delta _{\rm{q}}}(-e^{i\Delta _{\rm{q}} t_1})
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(2g\alpha-\Delta _{\rm{q}})}(e^{-i(2g\alpha-2\Delta _{\rm{q}}) t_1}-e^{i\Delta _{\rm{q}} t_1})
+    -\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}(e^{-i(2g\alpha) t_1}-e^{i\Delta _{\rm{q}} t_1})\right)\nn[10pt]
+    %
+    &+\left(-\frac{1}{2}\hsig_+^\prime \hat{Z}\frac{1}{-i\Delta _{\rm{q}}}(e^{i(2g\alpha) t_1}-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1})
+    +\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}(-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1})\right)\nn[10pt]
+    %
+    &
+    +\left(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{-i\Delta _{\rm{q}}}(e^{i(-2g\alpha) t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1})
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}(e^{i(-22g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1})\right)
+    \end{align}
+
+
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \int_{0}^{t}dt_1\int_{0}^{t_1}dt_2C=&\Biggl(\frac{1}{-i\Delta _{\rm{q}}}\Biggl(t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})
+    +\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{-i(2g\alpha-\Delta _{\rm{q}})}
+    (t e^{i-(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha-2\Delta _{\rm{q}}) t/2}}{-(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2})\nn[10pt]
+    &-\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2})\Biggr)\nn[30pt]
+    %
+    &+\Biggl(-\frac{1}{2}\hsig_+^\prime \hat{Z}\frac{1}{-i\Delta _{\rm{q}}}
+    t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &+\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2})\Biggr)\nn[30pt]
+    %
+    &
+    +\Biggl(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{-i\Delta _{\rm{q}}}
+    (t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (t e^{i(-22g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-22g\alpha+2\Delta _{\rm{q}}) t/2}}{(-22g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2})\Biggr)
+\end{align}
+
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &\int_{0}^{t}dt_1\int_{0}^{t_1}dt_2C\nn[10pt]
+    =&\Biggl\{\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}\hsig_+^\prime \frac{1}{-i(2g\alpha-\Delta _{\rm{q}})}
+    \Biggl(t e^{i-(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha-2\Delta _{\rm{q}}) t/2}}{-(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}-\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{-\frac{1}{2}-\hsig_+^\prime\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &
+    +\Biggl\{\frac{1}{2}-\hsig_-^\prime\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-22g\alpha+2\Delta _{\rm{q}}) t/2}}{(-22g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+\end{align}
+
+
+
+\subsection{Calculation of D}
+\begin{align}
+    D
+    &= \left(e^{i\Delta _{\rm{q}} (t_1+t_2)}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i\Delta _{\rm{q}} t_2}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{i\Delta _{\rm{q}} t_2}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}\right)
+\end{align}
+    
+\begin{align}
+    \int_{0}^{t_1}dt_2D&= \left(e^{i\Delta _{\rm{q}} (t_1)}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_+^\prime\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{4}\hsig_-^\prime\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)
+\end{align}
+%%%
+\begin{align}
+    \int_{0}^{t_1}dt_2 D
+    &= \left(e^{i\Delta _{\rm{q}} (t_1)}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    +\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}\right)
+    \end{align}
+    
+\begin{align}
+    \int_{0}^{t_1}dt_2 D
+    &=\left(e^{i\Delta _{\rm{q}} (t_1)}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime e^{i\Delta _{\rm{q}} t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(-2g\alpha+\Delta _{\rm{q}})}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}\frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-1}{i(2g\alpha+\Delta _{\rm{q}})}\right)
+\end{align}
+
+
+
+\begin{align}
+    \int_{0}^{t_1}dt_2 D
+    &= \left(e^{i\Delta _{\rm{q}} (t_1)}\frac{e^{i\Delta _{\rm{q}} t_1}-1}{i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}(e^{i(2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i\Delta _{\rm{q}} t_1})
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}(e^{i(-2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i\Delta _{\rm{q}} t_1})\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\Delta _{\rm{q}}}(e^{i(2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}}{i(-2g\alpha+\Delta _{\rm{q}})}\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{i\Delta _{\rm{q}} t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}{i\Delta _{\rm{q}}}
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}{i(2g\alpha+\Delta _{\rm{q}})}\right)
+    \end{align}
+
+
+
+\begin{align}
+    \int_{0}^{t_1}dt_2 D
+    &= \left(\frac{1}{i\Delta _{\rm{q}}}((e^{i2\Delta _{\rm{q}} t_1}-e^{i\Delta _{\rm{q}} (t_1)})
+    -\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}(e^{i(2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i\Delta _{\rm{q}} t_1})
+    +\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}(e^{i(-2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i\Delta _{\rm{q}} t_1})\right)\nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\Delta _{\rm{q}}}(e^{i(2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1})
+    -\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}(e^{i(2\Delta _{\rm{q}}) t_1}-e^{i(2g\alpha+\Delta _{\rm{q}}) t_1})\right)
+    \nn[10pt]
+    %
+    &+\left(\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{i\Delta _{\rm{q}}}(e^{i(-2g\alpha+2\Delta _{\rm{q}}) t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1})
+    -\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}(e^{i(2\Delta _{\rm{q}}) t_1}-e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1})\right)
+    \end{align}
+
+
+
+
+
+\begin{align}
+    \int_{0}^{t}dt_1\int_{0}^{t_1}dt_2 D
+    &= \Biggl\{\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}-t e^{i \Delta _{\rm{q}} t/2}\frac{\sin{ \Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\hat{Z}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}\hat{Z}\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}\hsig_+^\prime\hat{Z}\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+    \nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}\hsig_-^\prime\hat{Z}\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+    \end{align}
+
+
+
+
+
+\begin{align}
+    \int_{0}^{t}dt_1\int_{0}^{t_1}dt_2 D
+    &= \Biggl\{\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}-t e^{i \Delta _{\rm{q}} t/2}\frac{\sin{ \Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}-\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}-\hsig_+^\prime\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+    \nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}\hsig_-^\prime\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+    \end{align}
+
+
+
+
+\subsection{Results}
+%%%
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    D_2
+    =&\Biggl\{\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i-2\Delta _{\rm{q}} t/2}\frac{\sin{-2\Delta _{\rm{q}} t/2}}{-2\Delta _{\rm{q}} t/2}
+    -t e^{i-\Delta _{\rm{q}} t/2}\frac{\sin{-\Delta _{\rm{q}} t/2}}{-\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}-\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{-(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{+\frac{1}{2}-\hsig_+^\prime \frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-2\Delta _{\rm{q}}) t/2}}{(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2\Delta _{\rm{q}}) t/2}}{(-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &\Biggl\{-\frac{1}{2}\hsig_-^\prime \frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{ -(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-22g\alpha) t/2}\frac{\sin{(-22g\alpha) t/2}}{(-22g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{ -(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\notag
+\end{align}
+
+%%%%
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    &+\frac{1}{i\Delta _{\rm{q}}}\Biggl\{-t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &-\frac{1}{2}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl((t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}-\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Bigg)\Biggr\}\nn[30pt]
+    %
+    & 
+    \Bigg\{\frac{1}{2}-\hsig_+^\prime\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(-t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &-\frac{1}{2}\hsig_-^\prime \frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(-t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\notag
+\end{align}
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\Biggl\{\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}\hsig_+^\prime \frac{1}{-i(2g\alpha-\Delta _{\rm{q}})}
+    \Biggl(t e^{i-(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha-2\Delta _{\rm{q}}) t/2}}{-(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}-\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{-\frac{1}{2}-\hsig_+^\prime\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &
+    +\Biggl\{\frac{1}{2}-\hsig_-^\prime\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-22g\alpha+2\Delta _{\rm{q}}) t/2}}{(-22g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\notag
+\end{align}
+
+\begin{align}
+    &+ \Biggl\{\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}-t e^{i \Delta _{\rm{q}} t/2}\frac{\sin{ \Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}-\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}-\hsig_+^\prime\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_+^\prime\hsig_-^\prime \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+    \nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}\hsig_-^\prime\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\hsig_-^\prime\hsig_+^\prime \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\notag
+    \end{align}
+    
+    
+    
+\subsection{Second-order transition probability}
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    D_2
+    =&\Biggl\{\braket{\psi_f|\psi_0}\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i-2\Delta _{\rm{q}} t/2}\frac{\sin{-2\Delta _{\rm{q}} t/2}}{-2\Delta _{\rm{q}} t/2}
+    -t e^{i-\Delta _{\rm{q}} t/2}\frac{\sin{-\Delta _{\rm{q}} t/2}}{-\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\braket{\psi_f|\hsig_+^\prime|\psi_0} \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0} \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{-(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{-\frac{1}{2}\braket{\psi_f|\hsig_+^\prime|\psi_0} \frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-2\Delta _{\rm{q}}) t/2}}{(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\braket{\psi_f|\hsig_+^\prime\hsig_-^\prime|\psi_0} \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2\Delta _{\rm{q}}) t/2}}{(-2\Delta _{\rm{q}}) t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &\Biggl\{-\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0} \frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i-(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+2\Delta _{\rm{q}}) t/2}}{ -(2g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\braket{\psi_f|\hsig_-^\prime\hsig_+^\prime |\psi_0}\frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-22g\alpha) t/2}\frac{\sin{(-22g\alpha) t/2}}{(-22g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{ -(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\notag
+\end{align}
+
+%%%%
+\begin{align}
+    %%%%%%%%%%%%%%%%
+    &+\braket{\psi_f|\psi_0}\frac{1}{i\Delta _{\rm{q}}}\Biggl\{-t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2})\nn[10pt]
+    &-\frac{1}{2}\braket{\psi_f|\hsig_+^\prime |\psi_0} \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl((t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0} \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Bigg)\Biggr\}\nn[30pt]
+    %
+    & 
+    -\Bigg\{\frac{1}{2}\braket{\psi_f|\hsig_+^\prime |\psi_0}\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\braket{\psi_f|\hsig_+^\prime\hsig_-^\prime |\psi_0} \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(-t e^{i(2g\alpha-\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}}) t/2}}{(2g\alpha-\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &-\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0}\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\braket{\psi_f|\hsig_-^\prime\hsig_+^\prime |\psi_0} \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(-t e^{i-(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}}) t/2}}{-(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\notag
+\end{align}
+
+\begin{align}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    &+\Biggl\{\braket{\psi_f|\psi_0}\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-\Delta _{\rm{q}}) t/2}\frac{\sin{(-\Delta _{\rm{q}}) t/2}}{(-\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}\braket{\psi_f|\hsig_+^\prime |\psi_0} \frac{1}{-i(2g\alpha-\Delta _{\rm{q}})}
+    \Biggl(t e^{i-(2g\alpha-2\Delta _{\rm{q}}) t/2}\frac{\sin{-(2g\alpha-2\Delta _{\rm{q}}) t/2}}{-(2g\alpha-2\Delta _{\rm{q}}) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0}\frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}\braket{\psi_f|\hsig_+^\prime |\psi_0}\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2g\alpha t/2}\frac{\sin{2g\alpha t/2}}{2g\alpha t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\braket{\psi_f|\hsig_+^\prime\hsig_-^\prime |\psi_0} \frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    (-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &
+    +\Biggl\{-\frac{1}{2}\braket{\psi_f|\hsig_+^\prime |\psi_0}\frac{1}{-i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha) t/2}\frac{\sin{(-2g\alpha) t/2}}{(-2g\alpha) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &+\frac{1}{4}\braket{\psi_f|\hsig_-^\prime\hsig_+^\prime |\psi_0}\frac{1}{-i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-22g\alpha+2\Delta _{\rm{q}}) t/2}}{(-22g\alpha+2\Delta _{\rm{q}}) t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\notag
+\end{align}
+
+\begin{align}
+    &+ \Biggl\{\braket{\psi_f\psi_0}\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}-t e^{i \Delta _{\rm{q}} t/2}\frac{\sin{ \Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\braket{\psi_f|\hsig_+^\prime |\psi_0} \frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{2}\braket{\psi_f|\hsig_-^\prime |\psi_0} \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}\Biggr)\Biggr\}\nn[30pt]
+    %
+    &+\Biggl\{-\frac{1}{2}\braket{\psi_f|\hsig_+^\prime |\psi_0}\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+2\Delta _{\rm{q}}) t/2}}{(2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\braket{\psi_f|\hsig_+^\prime\hsig_-^\prime |\psi_0} \frac{1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}}) t/2}}{(2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}
+    \nn[30pt]
+    %
+    &+\Biggl\{\frac{1}{2}\braket{\psi_f|\hsig_-^\prime|\psi_0}\frac{1}{i\Delta _{\rm{q}}}
+    \Biggl(t e^{i(-2g\alpha+2\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+2\Delta _{\rm{q}}) t/2}}{(-2g\alpha+2\Delta _{\rm{q}}) t/2}-t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\nn[10pt]
+    &-\frac{1}{4}\braket{\psi_f|\hsig_-^\prime\hsig_+^\prime |\psi_0}\frac{1}{i(2g\alpha+\Delta _{\rm{q}})}
+    \Biggl(t e^{i2\Delta _{\rm{q}} t/2}\frac{\sin{2\Delta _{\rm{q}} t/2}}{2\Delta _{\rm{q}} t/2}
+    -t e^{i(-2g\alpha+\Delta _{\rm{q}}) t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}}) t/2}}{(-2g\alpha+\Delta _{\rm{q}}) t/2}\Biggr)\Biggr\}\notag
+    \end{align}
+
+
+\begin{align}
+    \int_{0}^{t}ds\ e^{iAs}
+    &=\frac{1}{iA}\left[e^{iAs}\right]_{s=0}^{s=t}
+    =\frac{e^{iAs}-1}{iA}=\frac{e^{iAt/2}}{e^{iAt/2}}\frac{e^{iAt}-1}{iA}\nn[10pt]
+    &=t e^{iAt/2}\frac{e^{iAt/2}-e^{-iAt/2}}{2iAt/2}
+    =t e^{iAt/2}\frac{\sin{At/2}}{At/2}
+\end{align}
+
+\begin{align}
+    \hsig_-^\prime\hat{Z}&=\ket{g}\bra{e}(\ket{g}\bra{g}-\ket{e}\bra{e})=-\ket{g}\bra{e}=-\sigma_-^\prime\\[10pt]
+    \hsig_+^\prime\hat{Z}&=\ket{e}\bra{g}(\ket{g}\bra{g}-\ket{e}\bra{e})=\ket{e}\bra{g}=\sigma_+^\prime\\[10pt]
+    \hat{Z}\hsig_-^\prime&=(\ket{g}\bra{g}-\ket{e}\bra{e})\ket{g}\bra{e}=\ket{g}\bra{e}=\sigma_-^\prime\\[10pt]
+    \hat{Z}\hsig_+^\prime&=(\ket{g}\bra{g}-\ket{e}\bra{e})\ket{e}\bra{g}=-\ket{e}\bra{g}=-\sigma_+^\prime
+\end{align}
+
+
+
+\appendix
+\section{Second order purtabation theory}\label{purtabation}
+In this appendix, to understand the violation of the rotating wave approximation in in Figs.~\ref{fig:spec2}, we calculate the second-order transition probability with the effective qubit Hamiltonian~Eq.\eqref{qubit_Hamiltonian}.
+We consider the following Hamiltonian
+\begin{equation}
+    \hH=g\alpha\ \hsig_x+\lambda_{\rm{p}}\left(\hsig_+ e^{-i\Delta _{\rm{q}}t}+\hsig_- e^{i\Delta _{\rm{q}}t}\right).
+\end{equation}
+
+We can rewrite Hamiltonian as
+\begin{align}
+    \hH=g\alpha\hsig_x + \lambda_{\rm{p}} ((\hsig_x+i\hsig_y)e^{i\Delta _{\rm{q}} t} + (\hsig_x-\hsig_y)e^{-i\Delta _{\rm{q}} t}),
+\end{align}
+where we use
+\begin{align}
+    \hsig_+&=\hsig_x+i\hsig_y\\[10pt]
+    \hsig_-&=\hsig_x-\hsig_y.
+\end{align}
+
+We change the basis of $\hsig_z$ to the one of $\hsig_x$, and get
+\begin{align}
+    \hH=g\alpha\ \hat{Z} + \lambda_{\rm{p}} ((\hat{Z}+i\hat{Y})e^{i\Delta _{\rm{q}} t} + (\hat{Z}-\hat{Y})e^{-i\Delta _{\rm{q}} t})
+\end{align}
+where we define
+\begin{align}
+    \hat{X} &\equiv \hsig_z 
+    = \ket{+}\bra{-} + \ket{-}\bra{+}\\[10pt]
+    \hat{Y} &\equiv \hsig_y 
+    = -i\ket{+}\bra{-} +i \ket{-}\bra{-}\\[10pt]
+    \hat{Z} &\equiv \hsig_x 
+    = \ket{+}\bra{+} - \ket{-}\bra{-},
+\end{align}
+\begin{align}
+    \ket{+} &
+    = \frac{1}{\sqrt{2}}
+    (\ket{e} + \ket{g})\\[10pt]
+    \ket{-} &
+    = \frac{1}{\sqrt{2}}
+    (\ket{e} - \ket{g})
+\end{align}
+
+We can rewrite Hamiltonian as
+\begin{align}
+    \hH=g\alpha\ \hat{Z} + \lambda_{\rm{p}} \left(\left\{\hat{Z}+i\frac{\hsig_+^\prime-\hsig_-^\prime}{2i}\right\}e^{i\Delta _{\rm{q}} t} + \left\{\hat{Z}-\frac{\hsig_+^\prime-\hsig_-^\prime}{2i}\right\}e^{-i\Delta _{\rm{q}} t}\right)
+\end{align}
+
+We can transform out of the interaction picture by using the transformation
+\begin{equation}
+    \hU=\exp{\left(i\ g\alpha\ \hat{Z}\right)}.
+\end{equation}
+
+The resulting Hamiltonian is
+\begin{align}
+    \hH_{\rm{I}}(t)&=\lambda_{\rm{p}} 
+    \left(
+    \left\{\hat{Z}+i\frac{\hsig_+^\prime e^{2ig\alpha t}-\hsig_-^\prime e^{-2ig\alpha t}}{2i}\right\}e^{i\Delta _{\rm{q}} t} + \left\{\hat{Z}-\frac{\hsig_+^\prime e^{2ig\alpha t}-\hsig_-^\prime e^{-2ig\alpha t}}{2i}\right\}e^{-i\Delta _{\rm{q}} t}
+    \right)\nn[10pt]
+    %
+    &=\lambda_{\rm{p}} \Biggl(\hat{Z}e^{i\Delta _{\rm{q}} t}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t}-\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t}\nn[10pt]
+    &\hspace{80pt}+\hat{Z}e^{-i\Delta _{\rm{q}} t}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t}\Biggr).
+\end{align}
+
+We solve time dependent Schrodinger eqation at interaction picture
+\begin{equation}
+    i\hbar\frac{d}{dt}\ket{\psi(t)}=\hH_{\rm{I}}(t)\ket{\psi(t)}.
+\end{equation}
+We can perform the time-dependent perturbation theory up to the second
+order, and obtain the following
+\begin{align}
+    \ket{\psi(t)}\simeq\ket{\psi(0)} + \frac{1}{i\hbar}\int_{0}^{t} \hH_{\rm{I}}(t_1)\ket{\psi(0)} 
+    +\frac{1}{(i\hbar)^2}\int_{0}^{t}\int_{0}^{t_1}dt_2\hH_{\rm{I}}(t_1)\hH_{\rm{I}}(t_2) \ket{\psi(0)}
+\end{align}
+We set a initial state as $\ket{g}$ where is the ground state.
+We have the transition probability from $ket{e}$ to $ket{g}$
+\begin{align}
+    \ket{\psi(t)}\simeq\ket{g} + C^{(1)}_{g\to e}(t)\ket{g} 
+    +C^{(1)}_{g\to e}(t) \ket{g}
+\end{align}
+\begin{align}
+    C^{(1)}_{g\to e}(t) &= \frac{1}{i\hbar}\int_{0}^{t} \hH_{\rm{I}}(t_1)\\[10pt]
+    C^{(2)}_{g\to e}(t) &= \frac{1}{(i\hbar)^2}\int_{0}^{t}\int_{0}^{t_1}dt_2\hH_{\rm{I}}(t_1)\hH_{\rm{I}}(t_2)
+\end{align}
+
+\subsection{first order}
+We evaluate first order transition
+\begin{align}
+    C^{(1)}_{g\to e}(t) &= \frac{1}{i\hbar}\int_{0}^{t} \hH_{\rm{I}}(t_1)\nn[10pt]
+    &=\hat{Z}\frac{e^{i\Delta _{\rm{q}} t}-1}{i\Delta _{\rm{q}}}+\frac{1}{2}\hsig_+^\prime \frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{1}{2}\hsig_-^\prime \frac{e^{i(-2g\alpha+\Delta _{\rm{q}}) t}-1}{i(-2g\alpha+\Delta _{\rm{q}})}
+    +\hat{Z}\frac{e^{-i\Delta _{\rm{q}} t}-1}{-i\Delta _{\rm{q}}}
+    -\frac{1}{2}\hsig_+^\prime \frac{e^{i(2g\alpha-\Delta _{\rm{q}}) t}-1}{i(2g\alpha-\Delta _{\rm{q}})} -\frac{1}{2}\hsig_-^\prime \frac{e^{-i(2g\alpha+\Delta _{\rm{q}}) t}-1}{-i(2g\alpha+\Delta _{\rm{q}})} \nn[10pt]
+    &=\hat{Z}t e^{i\Delta _{\rm{q}} t/2}\frac{\sin{\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}
+    +\frac{1}{2}\hsig_+^\prime t e^{i(2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}})t/2}}{(2g\alpha+\Delta _{\rm{q}})t/2}
+    -\frac{1}{2}\hsig_-^\prime t e^{i(-2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{(-2g\alpha+\Delta _{\rm{q}})t/2}}{(-2g\alpha+\Delta _{\rm{q}})t/2}\nn[10pt]
+    &+\hat{Z}t e^{-i\Delta _{\rm{q}} t/2}\frac{\sin{-\Delta _{\rm{q}} t/2}}{\Delta _{\rm{q}} t/2}
+    -\frac{1}{2}\hsig_+^\prime t e^{i(2g\alpha-\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}})t/2}}{(2g\alpha-\Delta _{\rm{q}})t/2}
+    -\frac{1}{2}\hsig_-^\prime t e^{-i(2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{-(2g\alpha+\Delta _{\rm{q}})t/2}}{-(2g\alpha+\Delta _{\rm{q}})t/2}
+\end{align}
+
+
+\begin{align}
+    \int_{0}^{t}ds\ e^{iAs}
+    &=\frac{1}{iA}\left[e^{iAs}\right]_{s=0}^{s=t}
+    =\frac{e^{iAs}-1}{iA}=\frac{e^{iAt/2}}{e^{iAt/2}}\frac{e^{iAt}-1}{iA}\nn[10pt]
+    &=t e^{iAt/2}\frac{e^{iAt/2}-e^{-iAt/2}}{2iAt/2}
+    =t e^{iAt/2}\frac{\sin{At/2}}{At/2}
+\end{align}
+
+\begin{align}
+    C_{0\to1}^{1}=&\int_{0}^{t_1} dt_1 \braket{1|\hH_{\rm{I}}(t_1)|0}\nn[10pt]
+    &=\frac{\lambda_{\rm{p}}}{2} \frac{e^{i(2g\alpha+\Delta _{\rm{q}}) t}-1}{i(2g\alpha+\Delta _{\rm{q}})}
+    -\frac{\lambda_{\rm{p}}}{2}\frac{e^{i(2g\alpha-\Delta _{\rm{q}}) t}-1}{i(2g\alpha-\Delta _{\rm{q}})}\nn[10pt]
+    &=\frac{\lambda_{\rm{p}}}{2} e^{i(2g\alpha+\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha+\Delta _{\rm{q}})t/2}}{(2g\alpha+\Delta _{\rm{q}})t/2}
+    -\frac{\lambda_{\rm{p}}}{2} e^{i(2g\alpha-\Delta _{\rm{q}})t/2}\frac{\sin{(2g\alpha-\Delta _{\rm{q}})t/2}}{(2g\alpha-\Delta _{\rm{q}})t/2}\nn[10pt]
+\end{align}
+
+
+
+\subsection{second order}
+\begin{align}
+    &\frac{1}{\lambda_{\rm{p}}^2}\hH_{\rm{I}}(t_1)\hH_{\rm{I}}(t_2)\nn[10pt]
+    &= \left(\textcolor{red}{\hat{Z}e^{i\Delta _{\rm{q}} t_1}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}
+    +\textcolor{blue}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)\nn[10pt]
+    &\times\left(\textcolor{green}{\hat{Z}e^{i\Delta _{\rm{q}} t_2}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}-\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}}
+    +\textcolor{violet}{\hat{Z}e^{-i\Delta _{\rm{q}} t_2}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}}\right)\nn[15pt]
+    %%%%%%%%%%
+    &= \left(\textcolor{red}{\hat{Z}e^{i\Delta _{\rm{q}} t_1}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{i\Delta _{\rm{q}} t_2}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}-\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}}\right)
+    \nn[10pt]
+    &+\left(\textcolor{red}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{violet}{\hat{Z}e^{i\Delta _{\rm{q}} t_2}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_2}-\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_2}}\right)
+    \nn[10pt]
+    &+\left(\textcolor{blue}{\hat{Z}e^{i\Delta _{\rm{q}} t_1}+\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha+\Delta _{\rm{q}}) t_1}-\frac{1}{2}\hsig_-^\prime e^{i(-2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{green}{\hat{Z}e^{-i\Delta _{\rm{q}} t_2}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}}\right)\nn[10pt]
+    &+\left(\textcolor{blue}{\hat{Z}e^{-i\Delta _{\rm{q}} t_1}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_1}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_1}}\right)
+    \left(\textcolor{violet}{\hat{Z}e^{-i\Delta _{\rm{q}} t_2}-\frac{1}{2}\hsig_+^\prime e^{i(2g\alpha-\Delta _{\rm{q}}) t_2}-\frac{1}{2}\hsig_-^\prime e^{-i(2g\alpha+\Delta _{\rm{q}}) t_2}}\right)
+\end{align}

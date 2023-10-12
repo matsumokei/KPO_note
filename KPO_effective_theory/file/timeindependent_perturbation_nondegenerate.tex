@@ -1,0 +1,529 @@
+%
+\section{縮退のない場合}
+\subsection{1次摂動}
+\paragraph*{\large{固有エネルギーの1次摂動\\}}
+はじめに固有エネルギーの1次摂動$E_{n}^{(1)}$を求める．(\ref{pereq1})を次のように整理する：
+\begin{align}\label{eq11}
+(E^{(1)}_n-\hat{V})\ket{\varphi^{(0)}_n}=
+(\hat{H}_0-\epsilon_n)\ket{\varphi^{(1)}_n}
+\end{align}
+(\ref{eq11})の両辺に左から，$\bra{\varphi_{n}^{(0)}}$をかけると，
+　\begin{align}
+　\label{eq12}
+\Braket{\varphi_{n}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}=\Braket{\varphi_{n}^{(0)}|(\hat{H_0}-\epsilon_{n})|\varphi_{n}^{(1)}}
+\end{align}
+となる．ここで，$\ket{\varphi_{n}^{(1)}}$を正規直交完全系$\left\{\ket{\varphi_n^{(0)}}\right\}_{n=1,2,3,\cdots}$で展開すると
+　\begin{align}
+　\label{phi1CONS}
+\ket{\varphi_{n}^{(1)}}=\displaystyle\sum_{m=1}^\infty C_{m}\ket{\varphi_{m}^{(0)}},\ \ \ \ C_m=\Braket{\varphi_{n}^{(0)}|\varphi_{n}^{(1)}}
+\end{align}
+と展開できる．(\ref{phi1CONS})を(\ref{eq12})へ代入すると
+　\begin{align}
+　\label{eq13}
+\Braket{\varphi_{n}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}=\displaystyle\sum_{m=1}^\infty\Braket{\varphi_{n}^{(0)}|(\hat{H_0}-\epsilon_{n})|C_{m}\varphi_{m}^{(0)}}
+\end{align}
+となる．このとき，(\ref{eq13})の左辺は，
+　\begin{align}
+\Braket{\varphi_{n}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}
+&=\Braket{\varphi_{n}^{(0)}|E_{n}^{(1)}|\varphi_{n}^{(0)}}-\Braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\notag\\[10pt]
+&=E_{n}^{(1)}-\Braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+\end{align}
+となる．また，(\ref{eq13})の右辺は$\hat{H_0}\ket{\varphi_m^{(0)}}=\epsilon_m\ket{\varphi_m^{(0)}}$より，
+　\begin{align}
+　\label{eq13RHS}
+\displaystyle\sum_{m=1}^\infty\Braket{\varphi_{n}^{(0)}|(\hat{H_0}-\epsilon_{n})|C_{m}\varphi_{m}^{(0)}}
+&=\displaystyle\sum_{m=1}^\infty\Braket{\varphi_{n}^{(0)}|(\epsilon_{m}-\epsilon_{n})C_{m}|\varphi_{m}^{(0)}}\notag
+\\[5pt]
+&=\displaystyle\sum_{m=1}^\infty(\epsilon_{m}-\epsilon_{n})C_{m}\Braket{\varphi_{n}^{(0)}|\varphi_{m}^{(0)}}\notag
+\\[5pt]
+&=\displaystyle\sum_{m=1}^\infty(\epsilon_{m}-\epsilon_{n})C_{m}\delta_{n,m}
+\end{align}
+となる．ここで$\delta_{n,m}$はクロネッカーのデルタである．(\ref{eq13RHS})の右辺に対して，$m$で和をとると，$m\neq n$の項では$\delta_{n,m}=0$に，$m=n$の項では$(\epsilon_{m}-\epsilon_{n})=0$となる．したがって，(\ref{eq13RHS})は恒等的に$0$となることがわかる．
+%
+　\begin{align}
+\therefore\displaystyle\sum_{m=1}^\infty\Braket{\varphi_{n}^{(0)}|(\hat{H_0}-\epsilon_{n})|C_{m}\varphi_{m}^{(0)}}=0
+\end{align}
+よって，(\ref{eq13})は
+　\begin{align}
+\Braket{\varphi_{n}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}=0
+\end{align}
+となる．したがって，固有エネルギーの1次の摂動は
+%
+　\begin{align}\label{parE1}
+E_{n}^{(1)}=\Braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+\end{align}
+と求まる．すでにわかっている固有状態$\ket{\varphi_{n}^{(0)}}$に対する摂動$\hat{V}$の期待値を求めることで$E_{n}^{(1)}$を求めることができる．これは，極めて重要なことである．$\ket{\varphi_{n}^{(0)}}$にとって，摂動$\hat{V}$の影響はどれくらいか，(\ref{parE1})を用いて，調べることができるのである．まとめると，固有エネルギーの1次の近似は
+\begin{align}
+E_n\simeq E_{n}^{(0)}+\lambda E_{n}^{(1)}=\epsilon_n+\Braket{\varphi_{n}^{(0)}|\lambda\hat{V}|\varphi_{n}^{(0)}}
+\end{align}
+で与えられる．\\
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+\paragraph*{\large{固有状態の1次摂動\\}}
+次に固有状態の1次摂動$\ket{\varphi_{n}^{(1)}}$を求める．(\ref{eq11})の両辺に左から，$\bra{\varphi_{m}^{(0)}}$をかけると，
+　\begin{align}
+　\label{es12}
+\Braket{\varphi_{m}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}
+&=\Braket{\varphi_{m}^{(0)}|(\hat{H_0}-\epsilon_{n})|\varphi_{n}^{(1)}}\notag\\[10pt]
+&=\Braket{\varphi_{m}^{(0)}|\hat{H_0}|\varphi_{n}^{(1)}}
+-\epsilon_{n}\Braket{\varphi_{m}^{(0)}|\varphi_{n}^{(1)}}
+\end{align}
+となる．(\ref{es12})の右辺第1項について，共役をとり，$\hat{H}_0$のエルミート性$\hat{H}_0^\dag=\hat{H}_0$を用いると
+%
+　\begin{align}
+\Braket{\varphi_{m}^{(0)}|\hat{H_0}|\varphi_{n}^{(1)}}^{\ast}
+=\Braket{\varphi_{n}^{(1)}|\hat{H_0}^\dag|\varphi_{m}^{(0)}}
+=\Braket{\varphi_{n}^{(1)}|\hat{H_0}|\varphi_{m}^{(0)}}
+=\epsilon_{m}\Braket{\varphi_{n}^{(1)}|\varphi_{m}^{(0)}}
+\end{align}
+%
+そして，もう一度上式に対して共役とると，
+　\begin{align}
+\Braket{\varphi_{m}^{(0)}|\hat{H_0}|\varphi_{n}^{(1)}}
+=\epsilon_{m}^{\ast}\Braket{\varphi_{n}^{(1)}|\varphi_{m}^{(0)}}^{\ast}
+=\epsilon_{m}\Braket{\varphi_{m}^{(0)}|\varphi_{n}^{(1)}}
+\end{align}
+となる．よって，(\ref{es12})は
+　\begin{align}
+　\label{es13}
+\Braket{\varphi_{m}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}
+=(\epsilon_{m}-\epsilon_{n})\Braket{\varphi_{m}^{(0)}|\varphi_{n}^{(1)}}
+\end{align}
+となる．
+%
+%
+%
+ここで再び，$\ket{\varphi_{n}^{(1)}}$を正規直交完全系$\left\{\ket{\varphi_n^{(0)}}\right\}_{n=1,2,3,\cdots}$で展開し，
+　\begin{align}
+　\label{phi1CONSk}
+\ket{\varphi_{n}^{(1)}}=\displaystyle\sum_{k=1}^\infty C_{k}\ket{\varphi_{k}^{(0)}},\ \ \ \ C_k=\Braket{\varphi_{n}^{(0)}|\varphi_{n}^{(1)}}
+\end{align}
+(\ref{phi1CONSk})を(\ref{es13})へ代入すると
+%
+　\begin{align}
+　\label{es14}
+\Braket{\varphi_{m}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}
+=\displaystyle\sum_{k=1}^\infty (\epsilon_{m}-\epsilon_{n})\Braket{\varphi_{m}^{(0)}|C_{k}\varphi_{k}^{(0)}}
+\end{align}
+となる．このとき，(\ref{es14})の左辺は，
+　\begin{align}
+\Braket{\varphi_{m}^{(0)}|(E_{n}^{(1)}-\hat{V})|\varphi_{n}^{(0)}}
+&=\Braket{\varphi_{m}^{(0)}|E_{n}^{(1)}|\varphi_{n}^{(0)}}-\Braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\notag\\[10pt]
+&=E_{n}^{(1)}\Braket{\varphi_{m}^{(0)}|\varphi_{n}^{(0)}}-\Braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\notag\\[10pt]
+&=-\Braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+\end{align}
+となる．最後の等式で，$\braket{\varphi_{m}^{(0)}|\varphi_{n}^{(0)}}=0$を用いた．また，(\ref{es14})の右辺は$\hat{H_0}\ket{\varphi_m^{(0)}}=\epsilon_m\ket{\varphi_m^{(0)}}$より，
+　\begin{align}
+　\label{es14RHS}
+\displaystyle\sum_{k=1}^\infty (\epsilon_{m}-\epsilon_{n})\Braket{\varphi_{m}^{(0)}|C_{k}\varphi_{k}^{(0)}}
+&=\displaystyle\sum_{k=1}^\infty(\epsilon_{m}-\epsilon_{n})C_{k}\Braket{\varphi_{m}^{(0)}|\varphi_{k}^{(0)}}\notag
+\\[5pt]
+&=\displaystyle\sum_{k=1}^\infty(\epsilon_{m}-\epsilon_{n})C_{k}\delta_{m,k}
+\end{align}
+となる．ここで$\delta_{m,k}$はクロネッカーのデルタである．(\ref{es14RHS})の右辺に対して，$k$で和をとると，$k=m$の項のみ残る．したがって，(\ref{eq13RHS})は
+%
+　\begin{align}
+\displaystyle\sum_{k=1}^\infty (\epsilon_{m}-\epsilon_{n})\braket{\varphi_{m}^{(0)}|C_{k}\varphi_{k}^{(0)}}
+=(\epsilon_{m}-\epsilon_{n})C_{m}
+\end{align}
+よって，(\ref{es14})は
+　\begin{align}
+-\Braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}=(\epsilon_{m}-\epsilon_{n})C_{m}
+\end{align}
+となる．$m\neq n$のとき，$(\epsilon_{m}-\epsilon_{n})\neq0$であるから，展開係数$C_m$は
+%
+　\begin{align}\label{parcm}
+C_{m}=\frac{\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\end{align}
+と求まる．展開係数(\ref{parcm})を用いて，$\ket{\varphi_{n}^{(1)}}$を展開すれば，固有状態の1次摂動
+　\begin{align}\label{pars1}
+　\ket{\varphi_{n}^{(1)}}
+　=\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty C_{m}\ket{\varphi_{m}^{(0)}}=
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\ket{\varphi_{m}^{(0)}}
+\end{align}
+と求まる．ここで，$\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty$は$m=n$を除いて，$m$について和をとることを意味する．$m=n$を除き和をとるという条件は展開係数$C_m$を決めるときの$m\neq n$からきている．まとめると，固有状態の1次の近似は
+　\begin{align}
+\ket{\varphi_{n}}\simeq\ket{\varphi_{n}^{(0)}}+\lambda\ket{\varphi_{n}^{(1)}}=\ket{\varphi_{n}^{(0)}}
++
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{\braket{\varphi_{m}^{(0)}|\lambda\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\ket{\varphi_{m}^{(0)}}
+\end{align}
+で与えられる．
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+\subsection{2次摂動}
+\paragraph*{\large{固有エネルギーの2次摂動\\}}
+はじめに固有エネルギーの2次摂動$E_{n}^{(1)}$を求める．(\ref{pereq2})を次のように整理する：
+\begin{align}\label{eq21}
+(\hat{V}-E^{(1)}_n)\ket{\varphi^{(1)}_n}
+=(\epsilon_n-\hat{H}_0)\ket{\varphi^{(2)}_n}+E^{(2)}_n\ket{\varphi^{(0)}_n}
+\end{align}
+(\ref{eq21})の両辺に左から，$\bra{\varphi_{n}^{(0)}}$をかけると，
+　\begin{align}
+　\label{eq22}
+\Braket{\varphi_{n}^{(0)}|(\hat{V}-E_{n}^{(1)})|\varphi_{n}^{(1)}}
+=\Braket{\varphi_{n}^{(0)}|(\epsilon_{n}-\hat{H_0})|\varphi_{n}^{(2)}}+E_n^{(2)}
+\end{align}
+となる．
+%
+このとき，(\ref{eq22})の左辺は，
+　\begin{align}\label{eq22L}
+\Braket{\varphi_{n}^{(0)}|(\hat{V}-E_{n}^{(1)})|\varphi_{n}^{(1)}}
+&=\Braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(1)}}-\Braket{\varphi_{n}^{(0)}|E_{n}^{(1)}|\varphi_{n}^{(1)}}
+\end{align}
+となる．(\ref{eq22L})の第1項に(\ref{pars1})を代入すると
+%左辺第1項
+　\begin{align}\label{eq22L1}
+\Braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(1)}}
+&=\bra{\varphi_{n}^{(0)}}\hat{V}
+\left(
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\ket{\varphi_{m}^{(0)}}
+\right)\notag\\[10pt]
+%
+&=\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{n}^{(0)}}\hat{V}\ket{\varphi_{m}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\end{align}
+%
+また，(\ref{eq22L})の第2項に(\ref{pars1})を代入すると
+%左辺第2項
+　\begin{align}
+\Braket{\varphi_{n}^{(0)}|E_{n}^{(1)}|\varphi_{n}^{(1)}}
+&=E_{n}^{(1)}\bra{\varphi_{n}^{(0)}}
+\left(
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\ket{\varphi_{m}^{(0)}}
+\right)\notag\\[10pt]
+%
+&=E_{n}^{(1)}\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+   \braket{\varphi_{n}^{(0)}|\varphi_{m}^{(0)}}\notag\\[10pt]
+   %
+   &=E_{n}^{(1)}\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\delta_{n,m}
+\end{align}
+となる．最後の項で$m=n$は除いて$m$について和をとれば，$\delta_{n,m}=0$となるから，結局
+　\begin{align}\label{eq22L2}
+\Braket{\varphi_{n}^{(0)}|E_{n}^{(1)}|\varphi_{n}^{(1)}}=0
+\end{align}
+である．\\
+%
+%
+　次に，(\ref{eq22})の右辺を計算する．$\ket{\varphi_{n}^{(2)}}$を正規直交完全系$\left\{\ket{\varphi_n^{(0)}}\right\}_{n=1,2,3,\cdots}$を用いて展開する．
+　\begin{align}
+　\label{phi2CONS}
+\ket{\varphi_{n}^{(2)}}=\displaystyle\sum_{k=1}^\infty C_{k}^\prime\ket{\varphi_{k}^{(0)}},\ \ \ \ C_k^\prime=\Braket{\varphi_{n}^{(0)}|\varphi_{n}^{(2)}}
+\end{align}
+(\ref{phi2CONS})を(\ref{eq22})の右辺第1項へ代入すると
+　\begin{align}
+　\label{eq22R2}
+\Braket{\varphi_{n}^{(0)}|(\epsilon_{n}-\hat{H_0})|\varphi_{n}^{(2)}}
+&=\Braket{\varphi_{n}^{(0)}|(\epsilon_{n}-\hat{H_0})|\varphi_{n}^{(2)}}\notag\\[10pt]
+%
+&=\displaystyle\sum_{k=1}^\infty 
+\Braket{\varphi_{n}^{(0)}|(\epsilon_{n}-\hat{H_0})|C_{k}^\prime\varphi_{k}^{(0)}}\notag\\[10pt]
+%
+&=\displaystyle\sum_{k=1}^\infty 
+(\epsilon_{n}-\epsilon_{k})C_{k}^\prime
+\Braket{\varphi_{n}^{(0)}|\varphi_{k}^{(0)}}\notag\\[10pt]
+%%
+&=\displaystyle\sum_{k=1}^\infty 
+(\epsilon_{n}-\epsilon_{k})C_{k}^\prime
+\delta_{n,k}=0
+\end{align}
+となる．(\ref{eq22L1})，(\ref{eq22L2})，(\ref{eq22R2})より，固有エネルギーの2次の摂動は
+\begin{align}
+　\label{parE2}
+E_n^{(2)}
+=\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{n}^{(0)}}\hat{V}\ket{\varphi_{m}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\end{align}
+と求まる．まとめると，固有エネルギーの2次の近似は
+\begin{align}
+E_n&\simeq E_{n}^{(0)}+\lambda E_{n}^{(1)}+\lambda^2 E_{n}^{(2)}\notag\\[10pt]
+&=\epsilon_n+\Braket{\varphi_{n}^{(0)}|\lambda\hat{V}|\varphi_{n}^{(0)}}
++\lambda^2\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{n}^{(0)}}\hat{V}\ket{\varphi_{m}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\end{align}
+で与えられる．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+\paragraph*{\large{固有状態の2次摂動\\}}
+次に固有状態の2次摂動$\ket{\varphi_{n}^{(2)}}$を求める．(\ref{eq21})の両辺に左から，$\bra{\varphi_{m}^{(0)}}$をかけると，
+　\begin{align}
+　\label{es22}
+\Braket{\varphi_{m}^{(0)}|(\hat{V}-E_{n}^{(1)})|\varphi_{n}^{(1)}}
+=\Braket{\varphi_{m}^{(0)}|(\epsilon_{n}-\hat{H_0})|\varphi_{n}^{(2)}}
++E_n^{(2)}\Braket{\varphi_{m}^{(0)}|\varphi_{n}^{(0)}}
+\end{align}
+となる．
+%
+%
+このとき，(\ref{es22})の左辺は，
+　\begin{align}\label{es22L}
+\Braket{\varphi_{m}^{(0)}|(\hat{V}-E_{n}^{(1)})|\varphi_{n}^{(1)}}
+&=\Braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(1)}}-\Braket{\varphi_{m}^{(0)}|E_{n}^{(1)}|\varphi_{n}^{(1)}}
+\end{align}
+となる．(\ref{es22L})の第1項に(\ref{pars1})を代入すると（ただし，和をとる記号は$m\to k$と変える．）
+%左辺第1項
+　\begin{align}\label{es22L1}
+\Braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(1)}}
+&=\bra{\varphi_{m}^{(0)}}\hat{V}
+\left(
+\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{\braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})}
+\ket{\varphi_{k}^{(0)}}
+\right)\notag\\[10pt]
+%
+&=\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{k}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})}
+\end{align}
+%
+また，(\ref{es22L})の第2項に(\ref{pars1})を代入すると，
+%左辺第2項
+　\begin{align}\label{es22L2}
+\Braket{\varphi_{m}^{(0)}|E_{n}^{(1)}|\varphi_{n}^{(1)}}
+&=E_{n}^{(1)}\bra{\varphi_{m}^{(0)}}
+\left(
+\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{\braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})}
+\ket{\varphi_{k}^{(0)}}
+\right)\notag\\[10pt]
+&=E_{n}^{(1)}\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})}
+   \braket{\varphi_{m}^{(0)}|\varphi_{k}^{(0)}}\notag\\[10pt]
+   %
+   &=E_{n}^{(1)}\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})}
+\delta_{m,k}
+%
+=E_{n}^{(1)}
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}\notag\\[10pt]
+%
+&=
+ \frac{
+ \braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\end{align}
+となる．最後の等式で$E_{n}^{(1)}$へ(\ref{parE1})を代入した．\\
+%
+%
+%
+%
+　次に，(\ref{es22})の右辺を計算する．$\ket{\varphi_{n}^{(2)}}$を正規直交完全系$\left\{\ket{\varphi_n^{(0)}}\right\}_{n=1,2,3,\cdots}$を用いて展開する．
+　\begin{align}
+　\label{phi2CONSl}
+\ket{\varphi_{n}^{(2)}}=\displaystyle\sum_{k=1}^\infty C_{l}^\prime\ket{\varphi_{l}^{(0)}},\ \ \ \ C_l^\prime=\Braket{\varphi_{n}^{(0)}|\varphi_{n}^{(2)}}
+\end{align}
+(\ref{phi2CONSl})を(\ref{es22})の右辺第1項へ代入すると
+　\begin{align}
+　\label{es22R1}
+\Braket{\varphi_{m}^{(0)}|(\epsilon_{n}-\hat{H_0})|\varphi_{n}^{(2)}}
+%
+&=\displaystyle\sum_{l=1}^\infty 
+\Braket{\varphi_{m}^{(0)}|(\epsilon_{n}-\hat{H_0})|C_{l}^\prime\varphi_{l}^{(0)}}\notag\\[10pt]
+%
+&=\displaystyle\sum_{l=1}^\infty 
+(\epsilon_{n}-\epsilon_{l})C_{l}^\prime
+\Braket{\varphi_{m}^{(0)}|\varphi_{l}^{(0)}}\notag\\[10pt]
+%%
+&=\displaystyle\sum_{l=1}^\infty 
+(\epsilon_{n}-\epsilon_{l})C_{l}^\prime
+\delta_{m,l}
+=(\epsilon_{n}-\epsilon_{m})C_{m}^\prime
+\end{align}
+となる．そして，(\ref{es22})右辺第2項に(\ref{parE2})を代入すると，
+\begin{align}
+　\label{es22R2}
+E_n^{(2)}\Braket{\varphi_{m}^{(0)}|\varphi_{n}^{(0)}}
+=\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{n}^{(0)}}\hat{V}\ket{\varphi_{m}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+  \delta_{m,n}
+  =0
+\end{align}
+となる．最後の項では，$m=n$を除いて，$m$で和をとったとき，$\delta_{m,n}=0$となることを用いた．
+(\ref{es22L1})，(\ref{es22L2})，(\ref{es22R1})，(\ref{es22R2})より，(\ref{es22})は
+　\begin{align}
+　\label{es23}
+　\left(
+\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{k}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})}
+  \right)
+  -
+   \frac{
+ \braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+=(\epsilon_{n}-\epsilon_{m})C_{m}^\prime
+\end{align}
+
+
+
+
+
+となる．$m\neq n$のとき，$(\epsilon_{m}-\epsilon_{n})\neq0$であるから，展開係数$C_m$は
+%
+　\begin{align}\label{cm2}
+C_{m}^\prime=
+　\left(
+\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{k}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})(\epsilon_{n}-\epsilon_{m})}
+    \right)
+  -
+   \frac{
+ \braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})^2}
+\end{align}
+と求まる．展開係数(\ref{cm2})を用いて，$\ket{\varphi_{n}^{(2)}}$を展開すれば，固有状態の2次摂動
+\footnotesize
+　\begin{align}\label{pars2}
+　\ket{\varphi_{n}^{(2)}}
+　&=\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty C_{m}^\prime\ket{\varphi_{m}^{(0)}}\notag\\[10pt]
+　&=\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+　\left[\left(
+\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{k}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})(\epsilon_{n}-\epsilon_{m})}
+    \right)
+  -
+   \frac{
+ \braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})^2}
+  \right]
+\ket{\varphi_{m}^{(0)}}
+\end{align}
+\normalsize
+と求まる．まとめると，固有状態の2次の近似は
+\begin{align}
+\ket{\varphi_{n}}&\simeq\ket{\varphi_{n}^{(0)}}+\lambda\ket{\varphi_{n}^{(1)}}+\lambda^2\ket{\varphi_{n}^{(2)}}\notag\\[10pt]
+&=\ket{\varphi_{n}^{(0)}}
++
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+ \frac{\braket{\varphi_{n}^{(0)}|\lambda\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}
+\ket{\varphi_{m}^{(0)}}\notag\\[10pt]
+&+\lambda^2
+\displaystyle\sum_{\substack{m=1 \\ m\neq n}}^\infty
+　\left[\left(
+\displaystyle\sum_{\substack{k=1 \\ k\neq n}}^\infty
+ \frac{
+ \braket{\varphi_{k}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}
+  \bra{\varphi_{m}^{(0)}}\hat{V}\ket{\varphi_{k}^{(0)}}}{(\epsilon_{n}-\epsilon_{k})(\epsilon_{n}-\epsilon_{m})}
+    \right)
+  -
+   \frac{
+ \braket{\varphi_{n}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})^2}
+  \right]
+\ket{\varphi_{m}^{(0)}}
+\end{align}
+で与えられる．
+
+
+%
+\subsection{摂動論が有効なための条件}
+摂動論が有効なためには，摂動によって生まれる補正が小さいものでなければならない．その場合には，1次の摂動論の計算で十分である．しかし，固有エネルギー，または固有状態の1次の摂動を計算したときに，たまたま$0$となったときには，2次の摂動を計算する必要がある．\\
+　状態$\ket{\varphi_n}$の1次の摂動が小さいための条件は，(\ref{pars1})から，
+　　\begin{align}\label{cond1}
+ \frac{\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}}{(\epsilon_{n}-\epsilon_{m})}&\ll1\notag\\[10pt]
+ %
+\therefore
+\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}&\ll(\epsilon_{n}-\epsilon_{m})
+\end{align}
+がすべての$m\neq n$に対して成り立つことである．つまり，摂動$\hat{V}$の行列要素$\braket{\varphi_{m}^{(0)}|\hat{V}|\varphi_{n}^{(0)}}$に比べて，非摂動固有エネルギーの準位の差が十分大きくなければならない．
+
+
+
+
+
+
+
+
+
+
+

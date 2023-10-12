@@ -1,0 +1,267 @@
+\section{5,6, September, 2022}
+SSDMに向けてスライドを作成，そして発表練習を行った．
+以下の質問を頂いた．\\
+・mollow triplet の実験は他の系で試されているか？\\
+・我々の手法のエラーのオリジンはなにか？ー解答は，quantum effective Hamiltonian に近似したときに発生する．
+
+
+
+
+
+{\LARGE{
+\section{原稿}
+\subsection{page 0}
+Hi everyone! This is Keisuke Matsumoto.
+
+Today, I am talking about this title.
+
+%this work was done in collaboration between tokyo univercity of science and Aist and NEC.
+
+Hereafter, I call A as KPO.
+
+\subsection{QUantum adiabatic evolution}
+First, I introduce about KPO.
+First we start from initial Hmiltonian like this. then the initial ground state is vacuum state.
+By performing adiabatic evolution with increasing $\beta$.
+
+through a squeezed state, finally one can arrive at a cat state. the cat state is the ground state of final Hamiltonian.
+
+% we start from vacuum states, and we gradually increase parametric driving terms with $\beta$ in an adiabatic way. Then, we get a cat state as a final state. A cat state is a super position of two coherent states.
+Here, $\ket{\alpha}$ is corresponding to up spin, and $\ket{-\alpha}$ is corresponding to down spin.
+
+\subsection{page 1}
+
+
+Next, I briefly introduce about Quantum annealing with KPOs and our motivation to estimat the photon number of KPOs.
+
+% Recently, Quantum annealing with KPOs was proposed by these people
+
+ Ising Hamiltonian can be mapped to N body KPO. 
+ Therefore, one can perform quantum annealing with KPO.
+ 
+Adiabatic increasing $\beta$, a ground state of N body KPO is tensor product of the coherent state 
+
+So the final energy is given by this.
+
+From this equation We find for accurately mapping the Ising Hamiltonian to the KPO Hamiltonian, we need to precisely control and estimate the photon number of KPO.
+
+\subsection{page 2}
+
+To address this problem, We propose a experimentally feasible method to estimate the mean photon number of KPO $\alpha$ squared by using spectroscopic measurement.
+
+In conventional method, one use a formula as follows to calculate the photon number of KPO.
+
+But this value can be different from this actual vale.
+
+On the other, In our method, we consider a KPO coupled with an ancillary qubit system as this schematic.
+
+%This schematic shows our system. 
+Here we use Transmon as an ancillary qubit.
+
+Our method allow us to estimate the photon number from peak or dip positions of the spectra of the qubit.
+
+We find our method is more accurate than the conventional method from a numerical simulation.
+
+
+
+\subsection{page 3}
+Next, I introducce our model Hamiltonian.
+Our model is KPO coupled with ancillary qubit system.
+
+
+This total Hamiltonian is this one which move into a rotating frame at the frequency
+of $\omega_{\rm{p}}/2$ and adapt the rotating wave approximation.
+
+1st term is KPO Hamiltonian
+
+2nd term is qubit Hamiltonian
+
+3rd term is coupling interaction between KPO and qubit
+
+finally $H_D$ is coherent drive for Qubit
+
+
+
+\subsection{page 4}
+Fouthermore, Let us consider our model with decoherence.
+
+To consider the effect of decoherence such as a single photon disspation of the KPO and a Spontaneous emission of the qubit, we use the followng GKSL type master equation.
+In this master equation, 2nd term is a single photon disspation and 3rd term is a spontaneous emission.
+
+
+\subsection{page 5}
+For a large $\beta$ the ground state of KPO  become a superposition of two coherent state.
+
+Then, a Qubit Effective Hamiltonian is approximately wrriten as this, where $H_I$ is rewrriten as this.
+
+the information of the photon number of KPO can be encoded to this interaction.
+
+Let us consider this Hamiltonian, We can observe a Mollow triplet via spectroscopic measurement.
+
+This is an example of Mollow triplet, then, two peaks at $\pm2g\alpha$ are important.
+
+Because we can estimte the value of $\alpha$ from the peak positions in the Mollow triplet
+
+
+
+
+
+
+\subsection{page 6,7}
+Next, I explain our protocol.
+
+Step1, For a large $\beta$, we prepare a steady state without coherent drive as an initial state.
+
+Step2, we perform time evolution with coherent drive.
+when the sysytem is steady, then, we measure the population of the qubit as this.
+
+Step3, we calculate the time integrated spectra of measured population.
+
+Finally, we estimate the photon number of KPO from the peak positions of the spectra.
+This shows a example of the spectram.
+
+We can find two dips, then we can obtain the frequency difference of two dips corresponding to $4g\alpha$.
+
+Therefore, we can estimate the photon number of KPO $|\alpha|^2$ as this equation.
+
+
+
+\subsection{page 8}
+We show our numerical results.
+
+In this slide, we discuss the relation between spectra and an energy diagram.
+
+our numerical result gives these spectra, where we set these parameters.
+and By diagonalizing this Hamiltonian, we obtain the energy diagram.
+
+We find two dips.
+
+As shown spectra and energy diagram, two dips are corresponding to these transition.
+
+Next, We find another peak.
+this peak correspond to this transition.
+
+
+
+
+\subsection{page 9}
+we evaluate the performance of our method by comparing with the conventional method.
+
+
+This spectra is same as one before slide
+
+In our method, we can estimate the photon number  from the frequency difference of two dips.
+
+In conventional method, using the analytical formula, one can estimate the photon number.
+
+Here, we define exact photon number as this, where $\rho_{\rm{ss}}$ is asteady state of this master equation.
+
+Also, we define relative error between our method and exact photon number.
+
+the conventional method is similar.
+
+This table shows our method is more accurate than the conventional method.
+
+
+
+\subsection{page 10}
+Furthermore, we evaluate the performance of our method with other parameters.
+
+We plot these relative error against the detuning of KPO.
+
+red plot is our method. blue plot is the conventional method.
+
+This figure shows our method is more accurate than the conventional method.
+
+
+
+
+Finaly, My presentation is closed by summary.
+
+\section{Appendix}
+By diagonalizing the Hamiltonian, we recognized that
+we have a transition from the second excited state to the
+third excited state with an energy difference of $2π × 0.5$
+MHz. However, we cannot resolve this peak in the numerical simulation possibly due to the large width of the
+peak at $\Delta_{\rm{q}}^{(0)}$.
+
+
+It
+is worth mentioning that, in the original proposal of QA
+with KPO [1], KPO has a finite detuning during QA.
+Therefore, our scheme is useful for such circumstances.
+}}
+
+\section{}
+Quantum Singular Value Transform (QSVT)は，任意の行列の特異値に対して，多項式変換を行う手法である．多項式変換から，Taylor展開を使い任意の関数変換を生成することができるため，QSVTはとても強力である．QSVT protocolは，より制約の多い量子信号処理（QSP, Quantum signal processing）protocolの拡張である．QSPは，単一量子ビットユニタリー演算子の行列要素を多項式変換する方法である．QSVT-protocolは洗練されているが，そのコアとなる考え方は非常にシンプルである．
+
+
+QSPはある制約を満たす，区間$[-1, 1]$上の任意の関数を近似するとても強力なtoolである．まずいくつかの直感的な例を見てみる．以下の$a\in[-1,1]$によって，パラメータ化されたsingle量子ビット演算子を考える：
+\begin{equation}
+    \hat{W}(\alpha)=\left(
+        \begin{array}{cc}
+       a&i\sqrt{1-a^2}\\[10pt]
+        i\sqrt{1-a^2}&a \\
+        \end{array}
+        \right)，
+\end{equation}
+ここで，$\hat{W}(a)$はsignal rotation operator (SRO)と呼ばれている．この演算子を用いることで，signal procesing operator (SPO)と呼ばれる別の演算子を定義することができる：
+\begin{equation}
+    \hat{U}_{\mathrm{sp}} = \hat{R}_z(\phi_0)\ \prod_{k=1}^{d}\hat{W}(a)\hat{R}_z(\phi_k).
+\end{equation}
+SPO $\hat{U}_{\mathrm{sp}}$はベクトル$\vec{\phi}=(\phi_0,\phi_1,\ldots,\phi_k,\ldots,\phi_d)\in\mathbb{}{R}^{d+1}$によって，パラメータ化されている．ここで，$d$はSRO $\hat{W}(a)$を作用する繰り返し数を表しており，我々が自由に決めることができるパラメータである．
+
+
+例として$d=2$, $\vec{\phi}=(0,0,0)$の場合を考えてみよう．このとき，行列要素$\braket{0|\hat{U}_{\mathrm{sp}}|0}$を計算すると，
+\begin{align}
+    \braket{0|\hat{U}_{\mathrm{sp}}|0} 
+    &= \braket{0|\hat{R}_z(0)\ \prod_{k=1}^{2}\hat{W}(a)\hat{R}_z(0)|0}\nn[10pt]
+    &=\braket{0|\hat{W}^2(a)|0}\nn[10pt]
+    &=\braket{0|
+    \left(
+        \begin{array}{cc}
+       a&i\sqrt{1-a^2}\\[10pt]
+        i\sqrt{1-a^2}&a \\
+        \end{array}
+        \right)
+    \left(
+        \begin{array}{cc}
+       a&i\sqrt{1-a^2}\\[10pt]
+        i\sqrt{1-a^2}&a \\
+        \end{array}
+        \right)
+    |0}\nn[10pt]
+    %
+    &=\braket{0|
+    \left(
+        \begin{array}{cc}
+       2a^2-1&2a i\sqrt{1-a^2}\\[10pt]
+        2a i\sqrt{1-a^2} & 2a^2-1\\
+        \end{array}
+        \right)
+    |0}\nn[10pt]
+    \therefore  \braket{0|\hat{U}_{\mathrm{sp}}|0} & = 2a^2-1
+\end{align}
+このとき，行列要素は$a$の多項式となることがわかる． 同様に，写像 $\mathcal{S} : a \to 2 a^ 2 - 1$を表現したいとすると，この期待値を求めることが，そのような写像を与える手段となる．この処理は写像 $\mathcal{S} : a \to \mathrm{poly}(a)$を生成するために一般化できることが分かる．次の定理はその方法を示している．
+
+\section{}
+\begin{theorem}[Quantum signal processing]\label{thm:qsp}
+There exists a set of phase factors $\Phi := (\phi_0, \cdots, \phi_d) \in \mathbb{R}^{d+1}$ such that
+\begin{equation}
+  U_{\Phi}(x) = e^{i \phi_0 Z} \prod_{j=1}^{d} \left[ O(x) e^{\I \phi_j Z} \right] = \left( \begin{array}{cc}
+    P(x) & -Q(x) \sqrt{1 - x^2}\\
+    Q^*(x) \sqrt{1 - x^2} & P^*(x)
+  \end{array} \right)
+  \label{eqn:QSP_representation}
+\end{equation}
+if and only if $P,Q\in \mathbb{C}[x]$ satisfy
+\begin{itemize}
+     \item $\deg(P) \leq d, \deg(Q) \leq d-1$,
+    \item $P$ has parity $d \bmod 2$ and $Q$ has parity $d-1 \bmod 2$, and
+    \item $|P(x)|^2 + (1-x^2) |Q(x)|^2 = 1, \forall x \in [-1, 1]$.
+\end{itemize}
+Here $\deg Q=-1$ means $Q=0$.
+\end{theorem}
+
+
+
